@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAIS — Universal AI Safety Architecture</title>
+  <meta name="description" content="Visual explainer for UAIS, a consequence-first pre-standard architecture for AI authority, real-world impact, trustworthiness, and human sovereignty.">
+  <meta property="og:title" content="Universal AI Safety Architecture (UAIS)">
+  <meta property="og:description" content="Assume unlimited intelligence. Limit autonomous authority.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cresta13.github.io/universal-ai-safety-architecture/">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="UAIS home"><span></span>UAIS</a>
+    <nav aria-label="Main">
+      <a href="#map">Map</a>
+      <a href="#layers">Layers</a>
+      <a href="#trust">Evidence</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="https://github.com/cresta13/universal-ai-safety-architecture">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="status">Draft 1.0 Candidate / Public Review</p>
+        <h1>Universal AI Safety Architecture</h1>
+        <p class="tagline">Assume unlimited intelligence. Limit autonomous authority.</p>
+      </div>
+      <div class="hero-scene" aria-label="UAIS consequence-first architecture diagram">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="node n1">Capability</div>
+        <div class="node n2">Authority</div>
+        <div class="node n3">Evidence</div>
+        <div class="node n4">Human control</div>
+        <div class="core">Consequence<br>Gate</div>
+      </div>
+    </section>
+
+    <section id="map" class="band map-band">
+      <div class="section-head">
+        <p>Core idea</p>
+        <h2>Control the path to consequence</h2>
+      </div>
+      <div class="flow-board" data-mode="authority">
+        <button class="mode active" data-mode="authority">Authority</button>
+        <button class="mode" data-mode="evidence">Evidence</button>
+        <button class="mode" data-mode="human">Human</button>
+        <div class="flow-row">
+          <div class="flow-step mint">AI capability</div>
+          <div class="flow-link"></div>
+          <div class="flow-step peach">Consequence interface</div>
+          <div class="flow-link"></div>
+          <div class="flow-step lavender">Authority gate</div>
+          <div class="flow-link"></div>
+          <div class="flow-step lemon">World impact</div>
+        </div>
+        <div class="mode-panels">
+          <div class="panel active" data-panel="authority">
+            <strong>Permission is not intelligence.</strong>
+            <span>UAIS separates what a system can do from what it may exercise.</span>
+          </div>
+          <div class="panel" data-panel="evidence">
+            <strong>Claims need replayable evidence.</strong>
+            <span>Verifier-friendly records constrain gates before authority expands.</span>
+          </div>
+          <div class="panel" data-panel="human">
+            <strong>Human sovereignty stays outside the model path.</strong>
+            <span>Independent override, isolation, and recovery remain mandatory where consequences rise.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="layers" class="band">
+      <div class="section-head">
+        <p>Functional blocks</p>
+        <h2>One architecture, separate axes</h2>
+      </div>
+      <div class="layer-grid">
+        <article class="layer mint"><b>Capability</b><span>tools, actions, outputs</span></article>
+        <article class="layer sky"><b>Reachability</b><span>future authority paths</span></article>
+        <article class="layer peach"><b>Consequence</b><span>harm modality + severity</span></article>
+        <article class="layer lavender"><b>Authority</b><span>grants, ceilings, gates</span></article>
+        <article class="layer sage"><b>Evidence</b><span>fresh, scoped, independent</span></article>
+        <article class="layer rose"><b>Sovereignty</b><span>override and physical limits</span></article>
+      </div>
+    </section>
+
+    <section id="trust" class="band trust-band">
+      <div class="section-head">
+        <p>Trustworthiness</p>
+        <h2>Status, rating, and caps stay separate</h2>
+      </div>
+      <div class="trust-diagram">
+        <div class="trust-node mint">Evidence supported rating</div>
+        <div class="cap-stack">
+          <span class="cap peach">critical errors</span>
+          <span class="cap lemon">freshness</span>
+          <span class="cap sky">independence</span>
+          <span class="cap lavender">disagreement</span>
+          <span class="cap rose">change carryover</span>
+        </div>
+        <div class="trust-node sage">Final rating level</div>
+        <div class="trust-node white">Separate status</div>
+        <div class="trust-node ink">Registry history</div>
+      </div>
+      <p class="microcopy">A high rating can restrict use rules. It cannot create authority or certify general safety.</p>
+    </section>
+
+    <section class="band limits-band">
+      <div class="section-head">
+        <p>Honest boundary</p>
+        <h2>Strong claims come from visible limits</h2>
+      </div>
+      <div class="limit-map">
+        <div>unknown paths</div>
+        <div>coalition emergence</div>
+        <div>off-grid replication</div>
+        <div>common-mode failure</div>
+        <div>privacy leakage</div>
+        <div>post-sovereignty control</div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="band roadmap-band">
+      <div class="section-head">
+        <p>Next work</p>
+        <h2>From draft architecture to tested evidence</h2>
+      </div>
+      <div class="timeline">
+        <a href="../ROADMAP.md" class="phase mint"><b>1</b><span>Spec hardening</span></a>
+        <a href="../ROADMAP.md" class="phase sky"><b>2</b><span>Formal schemas</span></a>
+        <a href="../ROADMAP.md" class="phase peach"><b>3</b><span>Reference prototypes</span></a>
+        <a href="../ROADMAP.md" class="phase lavender"><b>4</b><span>Adversarial tests</span></a>
+        <a href="../ROADMAP.md" class="phase lemon"><b>5</b><span>Domain profiles</span></a>
+        <a href="../ROADMAP.md" class="phase sage"><b>6</b><span>Standards translation</span></a>
+        <a href="../ROADMAP.md" class="phase rose"><b>7</b><span>External review</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>UAIS Draft 1.0 Candidate / Public Review</span>
+    <a href="https://github.com/cresta13/universal-ai-safety-architecture">Repository</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

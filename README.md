@@ -1,0 +1,87 @@
+# Universal AI Safety Architecture (UAIS)
+
+**Pre-standard research architecture — Draft 1.0 Candidate / Public Review**
+
+**Assume unlimited intelligence. Limit autonomous authority.**
+
+UAIS constrains consequential authority and consequence pathways rather than trying to control intelligence as such.
+
+This repository publishes a public Draft 1.0 Candidate for technical and policy review. It is not an adopted standard, certification scheme, compliance claim, or guarantee of AI safety.
+
+[Visual explainer](https://cresta13.github.io/universal-ai-safety-architecture/) · [Master Index](spec/00_MASTER_INDEX.md) · [Roadmap](ROADMAP.md) · [Known Limitations](KNOWN_LIMITATIONS.md)
+
+## What UAIS controls
+
+```mermaid
+flowchart LR
+  A[Capability] --> B[Consequence Interface]
+  B --> C{Authority Gate}
+  C -->|legitimate and bounded| D[Permitted Action]
+  C -->|missing evidence| E[Restrict / Review]
+  F[Reachable Future Authority] --> C
+  G[Human Harm Severity + Modality] --> C
+  H[Safety Evidence] --> I[Deterministic Evidence Verifier]
+  I --> C
+```
+
+UAIS separates:
+
+| Dimension | Question |
+|---|---|
+| Capability | What can the system do? |
+| Authority | What is it permitted and technically able to exercise? |
+| Consequence | What protected interests can be affected? |
+| Evidence | What is known, fresh, independent, and verifiable? |
+| Sovereignty | Can humans still intervene outside the AI path? |
+
+## Repository map
+
+| Area | Start here |
+|---|---|
+| Architecture overview | [Master Index](spec/00_MASTER_INDEX.md) |
+| Terms and identifiers | [Normative Vocabulary](spec/03_NORMATIVE_VOCABULARY.md), [Global Name Registry](spec/GLOBAL_NAME_REGISTRY.md) |
+| Threats and boundaries | [Threat Model](spec/02_THREAT_MODEL.md), [Known Limitations](KNOWN_LIMITATIONS.md) |
+| Classification and evidence | [Classification Model](spec/04_CLASSIFICATION_MODEL.md), [Safety Assurance Model](spec/06_SAFETY_ASSURANCE_MODEL.md) |
+| Authority, Guardian, physical sovereignty | [Authority Architecture](spec/08_CAPABILITY_AUTHORITY_ARCHITECTURE.md), [Guardian](spec/09_GUARDIAN_ARCHITECTURE.md), [Stage II](spec/12_STAGE_II_PHYSICAL_SOVEREIGNTY.md) |
+| Trustworthiness and error evidence | [Safety Assurance Model](spec/06_SAFETY_ASSURANCE_MODEL.md), [UAIS-1700](spec/17_UAIS_STANDARDS_FAMILY.md) |
+| Public review | [Contributing](CONTRIBUTING.md), [Issue templates](.github/ISSUE_TEMPLATE) |
+
+## Trustworthiness and error evidence
+
+UAIS includes a proposed AI Trustworthiness & Error Evidence layer. It separates profile status from rating level, uses domain-specific scoring policies, preserves historical error records, and applies hard rating caps for critical errors, stale evidence, weak independence, disagreement, and version carryover.
+
+Trustworthiness can constrain delegated use; it cannot create authority, replace Safety Assurance Level, or certify that an AI is safe.
+
+## Policy and standards relevance
+
+UAIS explores implementation pathways through voluntary standards, procurement requirements, independent evaluation, certification / assurance, post-deployment reporting, lifecycle governance, high-consequence capability boundaries, and interoperable evidence.
+
+Current policy-oriented work is focusing on AI Trustworthiness & Error Evidence as a narrower, potentially implementable module within the broader UAIS architecture.
+
+The standards crosswalk identifies candidate conceptual overlap and research relationships. It is not a clause-level compliance statement and does not establish conformance with any external standard.
+
+## What comes next
+
+UAIS is moving from architecture drafting toward:
+1. specification hardening,
+2. formal schemas,
+3. reference prototypes,
+4. adversarial evaluation,
+5. domain pilots,
+6. standards and procurement translation,
+7. independent external review.
+
+See [ROADMAP.md](ROADMAP.md).
+
+## Citation
+
+Use [CITATION.cff](CITATION.cff) and cite the specific version reviewed.
+
+## Author
+
+**Anna Simakova**  
+AI Researcher • System Architect • Product Builder
+
+- Website: https://annasimakova.tilda.ws/
+- LinkedIn: https://www.linkedin.com/in/cresta13
+- GitHub: https://github.com/cresta13
