@@ -77,6 +77,10 @@ See [ROADMAP.md](ROADMAP.md).
 
 Use [CITATION.cff](CITATION.cff) and cite the specific version reviewed.
 
+## Licensing and use
+
+All rights are reserved by Anna Simakova. This repository is available for reading, review, citation, linking, and public discussion. Any other use or reuse requires prior written permission from the author. See [NOTICE.md](NOTICE.md).
+
 ## Author
 
 **Anna Simakova**  
