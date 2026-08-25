@@ -1,6 +1,6 @@
 # Universal AI Safety Architecture (UAIS)
 
-**Pre-standard research architecture — Draft 1.0 Candidate / Public Review**
+**Pre-standard research architecture — Draft 1.0 Candidate 2 / Public Review**
 
 **Assume unlimited intelligence. Limit autonomous authority.**
 
@@ -14,14 +14,16 @@ This repository publishes a public Draft 1.0 Candidate for technical and policy 
 
 ```mermaid
 flowchart LR
-  A[Capability] --> B[Consequence Interface]
-  B --> C{Authority Gate}
-  C -->|legitimate and bounded| D[Permitted Action]
-  C -->|missing evidence| E[Restrict / Review]
-  F[Reachable Future Authority] --> C
-  G[Human Harm Severity + Modality] --> C
-  H[Safety Evidence] --> I[Deterministic Evidence Verifier]
-  I --> C
+  A[Actor / Capability Request] --> B{Capability Boundary}
+  LA[Legitimate Authority + Authority Ceiling] --> B
+  R[Effective / Illicit Reachability + RFA] --> B
+  HC[HHR + coalition analysis] --> B
+  SE[Safety Evidence] --> I[Deterministic Evidence Verifier]
+  I --> B
+  B -->|authorized, scoped, fresh evidence| C[Bounded Authorized Envelope]
+  B -->|missing authority or evidence| D[Restrict / Review]
+  C --> E[Consequence Interface]
+  E --> F[Digital / Physical Consequence]
 ```
 
 UAIS separates:
@@ -29,10 +31,15 @@ UAIS separates:
 | Dimension | Question |
 |---|---|
 | Capability | What can the system do? |
-| Authority | What is it permitted and technically able to exercise? |
+| Legitimate Authority | What has been granted by the applicable legitimacy mechanism? |
+| Effective Reachability | What consequential power is practically reachable under stated assumptions? |
+| Illicit Reachability | Which reachable paths are unauthorized and must be contained or remediated? |
 | Consequence | What protected interests can be affected? |
 | Evidence | What is known, fresh, independent, and verifiable? |
-| Sovereignty | Can humans still intervene outside the AI path? |
+| Human Sovereignty | Can authorized humans still intervene outside the AI path? |
+| Physical Sovereignty | Does the system still depend on human-controlled energy, compute, matter, manufacturing, maintenance, repair, logistics, or other critical resources? |
+
+Actor-agnostic does not mean actor-blind. The protected boundary follows consequential capability; authorization may still depend on identity, role, authentication, purpose, context, trustworthiness, and legitimate mandate. No actor category may bypass the boundary merely by changing its label.
 
 ## Repository map
 
@@ -50,7 +57,7 @@ UAIS separates:
 
 UAIS includes a proposed AI Trustworthiness & Error Evidence layer. It separates profile status from rating level, uses domain-specific scoring policies, preserves historical error records, and applies hard rating caps for critical errors, stale evidence, weak independence, disagreement, and version carryover.
 
-Trustworthiness can constrain delegated use; it cannot create authority, replace Safety Assurance Level, or certify that an AI is safe.
+Trustworthiness evidence can constrain delegated use. Insufficient, degraded, stale, or disputed evidence may trigger pre-authorized restrictions. A higher rating never raises the Authority Ceiling. A rating cannot create authority, waive safety controls, or certify general safety.
 
 ## Policy and standards relevance
 

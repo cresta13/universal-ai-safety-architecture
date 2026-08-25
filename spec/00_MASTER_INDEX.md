@@ -1,9 +1,9 @@
 # Universal AI Safety Architecture (UAIS) — Master Index
 
-Status: **Pre-standard research architecture — Draft 1.0 Candidate / Public Review**
+Status: **Pre-standard research architecture — Draft 1.0 Candidate 2 / Public Review**
 
 Core public slogan: **Assume unlimited intelligence. Limit autonomous authority.**  
-Configuration date: 2026-08-24
+Configuration date: 2026-08-25
 
 ## Executive summary
 
@@ -15,18 +15,23 @@ The architecture is deliberately bounded. It does not claim complete hazard disc
 
 ```mermaid
 flowchart LR
- C[Capability and operating context] --> G[Capability / Consequence Gate]
- G --> LA[Bounded Legitimate Authority]
- LA --> W[World consequence]
- X[Configuration + telemetry] --> R[Reachability, harm-path and coalition analysis]
- R --> E[Evidence-Carrying Alert]
+ A[Actor / Capability Request] --> B{Capability Boundary}
+ LA[Legitimate Authority + Authority Ceiling] --> B
+ R[Effective / Illicit Reachability + RFA] --> B
+ H[HHR + coalition analysis] --> B
+ X[Configuration + telemetry] --> E[Evidence-Carrying Alert + SEP]
  E --> V[Deterministic Evidence Verifier]
- V --> D{Predefined floor or external legitimacy}
- D --> G
+ V --> B
+ B -->|authorized, scoped, fresh evidence| ENV[Bounded Authorized Envelope]
+ B -->|missing authority or evidence| RR[Restrict / Review]
+ ENV --> CI[Consequence Interface]
+ CI --> W[Digital / Physical Consequence]
  M[Mechanical safety and physical isolation] --> W
  T[Technology watch, incidents and AIVE] --> U[Technology Evolution Review]
  U --> S[Standards, policy, metrics and certification]
 ```
+
+Candidate 2 is a corrective public-review baseline. It aligns the public architecture diagram with the canonical Capability Boundary / Consequence Interface model, restores Structured Evidence Package semantics for SEP, and closes remaining Trustworthiness Status / Rating separation issues.
 
 ## Reading order
 
@@ -69,4 +74,3 @@ Formal reachable-authority bounds; coalition composition; Guardian common-mode v
 ## AI Trustworthiness and Error Evidence layer
 
 The candidate includes domain-scoped profiles, validated error reporting, independent evaluation, operational denominators, hard-cap rating logic, three protocols, a mandatory UAIS-1700 extension practice, and proposed UAIS-1700. Core UAIS SMS remains 23 practices; UAIS-1700 conformance adds one Trustworthiness extension practice. Trustworthiness is neither Safety Assurance Level nor authority.
-

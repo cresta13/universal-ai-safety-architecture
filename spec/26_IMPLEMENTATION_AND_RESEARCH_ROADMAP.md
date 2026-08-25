@@ -2,7 +2,7 @@
 
 ## Engineer/prototype today
 
-Versioned authority graph for cloud IAM; RFA over known permissions; AHCD/Passport schema; ΔA/ΔH update pipeline; ECA/DEV; SCR/configuration map; smart-speaker gate; simple robot MSC; AIVE intake; staged deployment and registry.
+Versioned authority graph for cloud IAM; RFA over known permissions; AHCD/Passport schema; ΔA/ΔH update pipeline; ECA/SEP/DEV; SCR/configuration map; Capability Boundary / Consequence Interface demonstrator; simple robot MSC; AIVE intake; staged deployment and registry.
 
 ## Applied research
 
@@ -17,6 +17,5 @@ Vocabulary/classification consensus; test-lab accreditation; SAL floors; protoco
 PST theory and observability; autonomous manufacturing/resource control; transition prevention; resilient containment/defense; hostile PSAS interaction; governance without centralized cooperation.
 
 Milestones are evidence-gated, not date promises. Each work item records owner, assumptions, success/failure criteria, dependencies, artifact versions, and review.
-
 
 

@@ -19,7 +19,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** all systems; H3+ requires independent assessment.
 - **Test Method:** blind seeded hazard corpus; recall by class; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** HazardDiscoveryCoverage fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: weighted count of discovered applicable seeded/reference hazards divided by the weighted applicable seeded/reference hazard set; every untested stratum is reported separately. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** HazardDiscoveryCoverage fixtures define the set/delta evidence model for this raw result: weighted count of discovered applicable seeded/reference hazards divided by the weighted applicable seeded/reference hazard set; every untested stratum is reported separately. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** hazard worksheets and seed key; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HazardDiscoveryCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HazardDiscoveryCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -41,7 +41,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all systems; H3+ requires independent assessment.
 - **Test Method:** stratified corpus coverage; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** HazardDiversityCoverage fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: coverage vector across hazard families × initiator classes × affected-population classes; no automatic arithmetic average. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** HazardDiversityCoverage fixtures define the vector/profile evidence model for this raw result: coverage vector across hazard families × initiator classes × affected-population classes; no automatic arithmetic average. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** taxonomy mapping; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HazardDiversityCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HazardDiversityCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -63,7 +63,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all systems; H3+ requires independent assessment.
 - **Test Method:** replay scenarios before/after controls; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** HazardMitigationCoverage fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: weighted material hazard paths mitigated to the required residual-risk threshold divided by all discovered material hazard paths. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** HazardMitigationCoverage fixtures define the graph/path evidence model for this raw result: weighted material hazard paths mitigated to the required residual-risk threshold divided by all discovered material hazard paths. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** test results and safety cases; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HazardMitigationCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HazardMitigationCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -85,7 +85,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** all systems; H3+ requires independent assessment.
 - **Test Method:** novel hidden challenge and red-team study; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** UnknownHazardSearchCapability fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: tuple of novel-hazard recall, false-discovery rate and discovery latency on held-out hazard classes absent from the known catalogue and development fixtures. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** UnknownHazardSearchCapability fixtures define the vector/profile evidence model for this raw result: tuple of novel-hazard recall, false-discovery rate and discovery latency on held-out hazard classes absent from the known catalogue and development fixtures. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** challenge protocol and findings; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess UnknownHazardSearchCapability at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** UnknownHazardSearchCapability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -107,7 +107,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all systems; H3+ requires independent assessment.
 - **Test Method:** seed causal paths and compare discovery; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** HumanHarmReachabilityCoverage fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: weighted recall of seeded direct physical, mediated physical and non-physical Human Harm Paths, stratified by modality and severity. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** HumanHarmReachabilityCoverage fixtures define the graph/path evidence model for this raw result: weighted recall of seeded direct physical, mediated physical and non-physical Human Harm Paths, stratified by modality and severity. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** causal graphs and evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HumanHarmReachabilityCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HumanHarmReachabilityCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -129,7 +129,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
 - **Test Method:** destructive/fault-injection tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** PhysicalConstraintStrength fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: vector of validated hard limit, margin to hazardous threshold, bypass success rate under fault injection and verified degraded-state bound. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** PhysicalConstraintStrength fixtures define the vector/profile evidence model for this raw result: vector of validated hard limit, margin to hazardous threshold, bypass success rate under fault injection and verified degraded-state bound. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** lab measurements/design evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses PhysicalConstraintStrength; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** PhysicalConstraintStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -151,7 +151,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** penetration, formal checks, fault injection; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SoftwareEnforcementStrength fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: policy-decision correctness, bypass success rate and unauthorized-transition prevention rate across the declared rule and attack suites. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SoftwareEnforcementStrength fixtures define the ratio/rate evidence model for this raw result: policy-decision correctness, bypass success rate and unauthorized-transition prevention rate across the declared rule and attack suites. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** code/build/test provenance; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SoftwareEnforcementStrength may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SoftwareEnforcementStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -173,7 +173,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
 - **Test Method:** tamper, fault, shared-resource analysis; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** HardwareIsolationStrength fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: compromise-survival matrix across independent failure domains plus tamper/bypass outcomes and residual coupling. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** HardwareIsolationStrength fixtures define the matrix evidence model for this raw result: compromise-survival matrix across independent failure domains plus tamper/bypass outcomes and residual coupling. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** schematics/lab report; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses HardwareIsolationStrength; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** HardwareIsolationStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -195,7 +195,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
 - **Test Method:** model/network/power failure drills; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** HumanOverrideIndependence fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: number and proportion of tested compromise conditions in which manual override remains available and effective, plus activation latency. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** HumanOverrideIndependence fixtures define the latency/time evidence model for this raw result: number and proportion of tested compromise conditions in which manual override remains available and effective, plus activation latency. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** human factors and wiring tests; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses HumanOverrideIndependence; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** HumanOverrideIndependence reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -217,7 +217,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
 - **Test Method:** transition and dwell tests under faults; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SafeStateQuality fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: worst verified residual consequence after transition to Safe State across applicable hazard scenarios, including transition overshoot. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SafeStateQuality fixtures define the envelope/worst-case evidence model for this raw result: worst verified residual consequence after transition to Safe State across applicable hazard scenarios, including transition overshoot. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** state analysis/telemetry; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses SafeStateQuality; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** SafeStateQuality reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -239,7 +239,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
 - **Test Method:** multi-fault degradation tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SafeDegradationCapability fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: retained essential-safety-function set versus disabled capability set at each staged degradation level. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SafeDegradationCapability fixtures define the set/delta evidence model for this raw result: retained essential-safety-function set versus disabled capability set at each staged degradation level. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** continuity test report; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses SafeDegradationCapability; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** SafeDegradationCapability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -261,7 +261,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** seed and reconcile ground-truth edges; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** AuthorityVisibility fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: direct authority-edge recall against reconciled seeded or independently established ground-truth graph, with unknown-edge stratum. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** AuthorityVisibility fixtures define the graph/path evidence model for this raw result: direct authority-edge recall against reconciled seeded or independently established ground-truth graph, with unknown-edge stratum. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed graph inventory; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for AuthorityVisibility; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** AuthorityVisibility reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -283,7 +283,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** seed transitive paths; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** TransitiveAuthorityVisibility fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: transitive Authority Path recall by path depth, credential/delegation type and consequence class. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** TransitiveAuthorityVisibility fixtures define the graph/path evidence model for this raw result: transitive Authority Path recall by path depth, credential/delegation type and consequence class. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** relationship map/provenance; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for TransitiveAuthorityVisibility; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** TransitiveAuthorityVisibility reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -305,7 +305,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** hidden path benchmark; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** ReachableAuthorityAnalysisDepth fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: maximum path depth and time horizon at which material-path recall remains above the declared threshold. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** ReachableAuthorityAnalysisDepth fixtures define the graph/path evidence model for this raw result: maximum path depth and time horizon at which material-path recall remains above the declared threshold. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** search logs/corpus; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for ReachableAuthorityAnalysisDepth; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** ReachableAuthorityAnalysisDepth reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -327,7 +327,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** inject graph/update events; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** AuthorityExpansionSensitivity fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: Authority Expansion Event detection recall, false-positive rate and detection latency on seeded and field-confirmed events. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** AuthorityExpansionSensitivity fixtures define the latency/time evidence model for this raw result: Authority Expansion Event detection recall, false-positive rate and detection latency on seeded and field-confirmed events. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** event logs; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for AuthorityExpansionSensitivity; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** AuthorityExpansionSensitivity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -349,7 +349,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** seed collusion scenarios; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** CoalitionAuthorityCoverage fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: material coalition/path recall as a function of coalition size, interaction type and shared authority mechanism. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** CoalitionAuthorityCoverage fixtures define the graph/path evidence model for this raw result: material coalition/path recall as a function of coalition size, interaction type and shared authority mechanism. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** coalition model/results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for CoalitionAuthorityCoverage; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** CoalitionAuthorityCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -371,7 +371,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
 - **Test Method:** simulation plus controlled fleet tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** CoalitionPhysicalRiskCoverage fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: coverage and recall of Scale-Induced physical scenarios by fleet size, coordination mechanism and spatial concentration. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** CoalitionPhysicalRiskCoverage fixtures define the structured evidence model for this raw result: coverage and recall of Scale-Induced physical scenarios by fleet size, coordination mechanism and spatial concentration. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** CPE model/lab evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses CoalitionPhysicalRiskCoverage; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** CoalitionPhysicalRiskCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -393,7 +393,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
 - **Test Method:** blind scenario benchmark; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** CounterfactualSearchQuality fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: recall, precision and probability calibration on blind counterfactual scenario suites. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** CounterfactualSearchQuality fixtures define the structured evidence model for this raw result: recall, precision and probability calibration on blind counterfactual scenario suites. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** search traces/outcomes; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for CounterfactualSearchQuality is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** CounterfactualSearchQuality reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -415,7 +415,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
 - **Test Method:** iterated red-team games; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** AdversarialReasoningStrength fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: attack-path discovery and detection performance by adaptive red-team strategy class, including adaptation rounds and miss latency. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** AdversarialReasoningStrength fixtures define the graph/path evidence model for this raw result: attack-path discovery and detection performance by adaptive red-team strategy class, including adaptation rounds and miss latency. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** sealed challenge results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for AdversarialReasoningStrength is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** AdversarialReasoningStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -437,7 +437,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
 - **Test Method:** DEV replay and negative tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** EvidenceVerifiability fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: fraction of material Evidence-Carrying Alert claims for which an independent Deterministic Evidence Verifier reproduces the declared logical derivation from authenticated evidence. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** EvidenceVerifiability fixtures define the ratio/rate evidence model for this raw result: fraction of material Evidence-Carrying Alert claims for which an independent Deterministic Evidence Verifier reproduces the declared logical derivation from authenticated evidence. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** ECA/SEP artifacts; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for EvidenceVerifiability is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** EvidenceVerifiability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -459,7 +459,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
 - **Test Method:** credential/network/governance audit; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** GuardianIndependence fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: dependency vector across model, runtime, credentials, operator, organization, infrastructure, data and update path; no default scalar. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** GuardianIndependence fixtures define the vector/profile evidence model for this raw result: dependency vector across model, runtime, credentials, operator, organization, infrastructure, data and update path; no default scalar. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** access graph/contracts; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for GuardianIndependence is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** GuardianIndependence reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -481,7 +481,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
 - **Test Method:** common-mode failure analysis; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** GuardianDiversityScore fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: diversity vector across model family, training/data provenance, organization, infrastructure, verification method and failure domain. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** GuardianDiversityScore fixtures define the vector/profile evidence model for this raw result: diversity vector across model family, training/data provenance, organization, infrastructure, verification method and failure domain. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** provenance/dependency map; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for GuardianDiversityScore is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** GuardianDiversityScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -503,7 +503,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** key compromise and rollback tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SafetyConstitutionIntegrity fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: unauthorized constitutional-mutation success rate under the defined attack suite plus key/quorum integrity outcomes. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SafetyConstitutionIntegrity fixtures define the ratio/rate evidence model for this raw result: unauthorized constitutional-mutation success rate under the defined attack suite plus key/quorum integrity outcomes. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signatures/ceremony logs; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyConstitutionIntegrity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyConstitutionIntegrity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -525,7 +525,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** malicious/downgrade update tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** PolicyUpdateIntegrity fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: proportion of tested policy-update paths preserving authorization, provenance, staged rollout, rollback and expiry constraints. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** PolicyUpdateIntegrity fixtures define the graph/path evidence model for this raw result: proportion of tested policy-update paths preserving authorization, provenance, staged rollout, rollback and expiry constraints. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** change records/logs; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for PolicyUpdateIntegrity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** PolicyUpdateIntegrity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -547,7 +547,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** deletion/reorder/forgery tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** AuditIntegrity fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: component vector for record completeness, ordering, tamper detection, clock integrity and independent retention. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** AuditIntegrity fixtures define the vector/profile evidence model for this raw result: component vector for record completeness, ordering, tamper detection, clock integrity and independent retention. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** anchored logs/reconciliation; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for AuditIntegrity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** AuditIntegrity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -569,7 +569,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** insider and collusion exercises; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** OperatorAbuseResistance fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: successful legitimate-privilege abuse paths divided by attempted representative abuse paths, accompanied by blast-radius class. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** OperatorAbuseResistance fixtures define the graph/path evidence model for this raw result: successful legitimate-privilege abuse paths divided by attempted representative abuse paths, accompanied by blast-radius class. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** access reviews/red-team report; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for OperatorAbuseResistance may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** OperatorAbuseResistance reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -591,7 +591,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** privacy threat tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** PrivacyPreservationScore fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: sensitive data volume and class disclosed plus linkage/re-identification leakage under the declared safety-evidence workflow. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** PrivacyPreservationScore fixtures define the structured evidence model for this raw result: sensitive data volume and class disclosed plus linkage/re-identification leakage under the declared safety-evidence workflow. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** data-flow map/results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for PrivacyPreservationScore may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** PrivacyPreservationScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -613,7 +613,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** budget bypass/replay/offline tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** ReplicationControlStrength fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: bypass success rate separately for count, rate, depth, lineage, geography, lifetime and revocation constraints. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** ReplicationControlStrength fixtures define the graph/path evidence model for this raw result: bypass success rate separately for count, rate, depth, lineage, geography, lifetime and revocation constraints. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** lineage/token/inventory logs; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for ReplicationControlStrength; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** ReplicationControlStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -635,7 +635,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** seed mutations and emergent compositions; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** CapabilityMutationDetection fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: recall and detection latency for seeded qualitative capability changes, stratified by mutation mechanism. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** CapabilityMutationDetection fixtures define the latency/time evidence model for this raw result: recall and detection latency for seeded qualitative capability changes, stratified by mutation mechanism. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** evaluation deltas; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for CapabilityMutationDetection; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** CapabilityMutationDetection reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -657,7 +657,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** unauthorized design/output tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** ProductionAuthorityControl fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: unauthorized production/commissioning success rate plus inventory and accounting reconciliation error. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** ProductionAuthorityControl fixtures define the ratio/rate evidence model for this raw result: unauthorized production/commissioning success rate plus inventory and accounting reconciliation error. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed jobs/inventory; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for ProductionAuthorityControl; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** ProductionAuthorityControl reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -679,7 +679,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** overdraw/substitution tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** ResourceExpansionControl fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: unauthorized budget exceedance by energy, matter, compute, finance, land, communications and logistics dimension. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** ResourceExpansionControl fixtures define the structured evidence model for this raw result: unauthorized budget exceedance by energy, matter, compute, finance, land, communications and logistics dimension. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** metering/procurement evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for ResourceExpansionControl; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** ResourceExpansionControl reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -723,7 +723,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** goal mutation and checkpoint tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** GoalIntegrityScore fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: two-part result: goal-governance integrity and goal-drift observability, each reported separately with signed-baseline coverage. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** GoalIntegrityScore fixtures define the ratio/rate evidence model for this raw result: two-part result: goal-governance integrity and goal-drift observability, each reported separately with signed-baseline coverage. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed goals/audit; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for GoalIntegrityScore; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** GoalIntegrityScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -745,7 +745,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** escalation/chaining/replay tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** DelegationControlStrength fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: property vector for attenuation, lineage, expiry, re-delegation, audience binding and revocation tests. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** DelegationControlStrength fixtures define the vector/profile evidence model for this raw result: property vector for attenuation, lineage, expiry, re-delegation, audience binding and revocation tests. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** delegation graph/tokens; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for DelegationControlStrength; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** DelegationControlStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -767,7 +767,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** scenario recovery exercise; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** ConsequenceReversibilityScore fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: reversal time, proportion of consequence reversible and collateral consequence introduced by reversal. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** ConsequenceReversibilityScore fixtures define the latency/time evidence model for this raw result: reversal time, proportion of consequence reversible and collateral consequence introduced by reversal. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** recovery outcomes; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for ConsequenceReversibilityScore may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** ConsequenceReversibilityScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -789,7 +789,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** scenario intervention exercise; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** InterventionCostScore fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: vector of human harm, service loss, recovery time, resource cost and new risk introduced by intervention. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** InterventionCostScore fixtures define the vector/profile evidence model for this raw result: vector of human harm, service loss, recovery time, resource cost and new risk introduced by intervention. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** impact/time/cost record; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for InterventionCostScore may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** InterventionCostScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -811,7 +811,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** comprehension/accessibility/dark-pattern tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** UpdateSafetyTransparency fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: Safety Delta Report completeness plus tested comprehension of capability, harm, control, refusal and recovery information. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** UpdateSafetyTransparency fixtures define the set/delta evidence model for this raw result: Safety Delta Report completeness plus tested comprehension of capability, harm, control, refusal and recovery information. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** screens/user-study/schema; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for UpdateSafetyTransparency may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** UpdateSafetyTransparency reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -833,7 +833,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** continuous eval against baseline; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** CapabilityDriftScore fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: vector or normalized distance between certified Capability Set and effective current capability, with uncertainty and changed dimensions. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** CapabilityDriftScore fixtures define the vector/profile evidence model for this raw result: vector or normalized distance between certified Capability Set and effective current capability, with uncertainty and changed dimensions. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** evaluation time series; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for CapabilityDriftScore may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** CapabilityDriftScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -855,7 +855,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** before/after graph diff with seeded edges; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** AuthorityDeltaMetric fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: typed graph/vector delta across direct authority, transitive reachability, ceilings, surfaces, delegation and Consequence Interfaces. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** AuthorityDeltaMetric fixtures define the vector/profile evidence model for this raw result: typed graph/vector delta across direct authority, transitive reachability, ceilings, surfaces, delegation and Consequence Interfaces. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed graph snapshots; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for AuthorityDeltaMetric; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** AuthorityDeltaMetric reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -877,7 +877,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all systems; H3+ requires independent assessment.
 - **Test Method:** scenario-set and safety-case diff; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** HazardDeltaMetric fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: set and vector of added, removed and modified hazard paths, changed controls and changed residual-risk states. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** HazardDeltaMetric fixtures define the vector/profile evidence model for this raw result: set and vector of added, removed and modified hazard paths, changed controls and changed residual-risk states. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** versioned AHCD; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HazardDeltaMetric at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HazardDeltaMetric reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -899,7 +899,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** conformance matrix diff; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SafetyCoverageGap fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: required metric and Mandatory Floor set minus currently valid evidenced set, grouped by criticality and certificate impact. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SafetyCoverageGap fixtures define the set/delta evidence model for this raw result: required metric and Mandatory Floor set minus currently valid evidenced set, grouped by criticality and certificate impact. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** certificate evidence map; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyCoverageGap may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyCoverageGap reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -921,7 +921,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all systems; H3+ requires independent assessment.
 - **Test Method:** path corpus replay; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** HumanHarmPathCoverage fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: proportion of material Human Harm Reachability paths tested end-to-end, stratified by modality, severity and initiator. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** HumanHarmPathCoverage fixtures define the graph/path evidence model for this raw result: proportion of material Human Harm Reachability paths tested end-to-end, stratified by modality, severity and initiator. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** path/test mapping; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HumanHarmPathCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HumanHarmPathCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -943,7 +943,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** inject events/outages; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** MonitoringCoverageMetric fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: fraction of required safety event types and graph edges observable within specified latency, reported separately by event family. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** MonitoringCoverageMetric fixtures define the graph/path evidence model for this raw result: fraction of required safety event types and graph edges observable within specified latency, reported separately by event family. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** telemetry reconciliation; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for MonitoringCoverageMetric may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** MonitoringCoverageMetric reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -965,7 +965,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** stress each safety service through declared peak and failure load; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SafetyAssuranceCapacity fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: capacity vector for safety compute, monitoring, verification, human response, recovery and enforcement relative to required system load. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SafetyAssuranceCapacity fixtures define the vector/profile evidence model for this raw result: capacity vector for safety compute, monitoring, verification, human response, recovery and enforcement relative to required system load. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** capacity tests, staffing/independence evidence and reserve records; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyAssuranceCapacity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyAssuranceCapacity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -987,7 +987,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** stress reserve under peak, outage and adversarial load; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SafetyComputeReserveAdequacy fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: reserved independent compute and communications capacity divided by peak and degraded safety workload, including protected headroom and isolation. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SafetyComputeReserveAdequacy fixtures define the ratio/rate evidence model for this raw result: reserved independent compute and communications capacity divided by peak and degraded safety workload, including protected headroom and isolation. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** capacity traces, isolation proof and recovery results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyComputeReserveAdequacy may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyComputeReserveAdequacy reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1009,7 +1009,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** expert inspection plus accessibility and comprehension test; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** HighSalienceCommunicationCompliance fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: conformance vector against explicit content, ordering, accessibility and interaction requirements plus user-comprehension result. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** HighSalienceCommunicationCompliance fixtures define the vector/profile evidence model for this raw result: conformance vector against explicit content, ordering, accessibility and interaction requirements plus user-comprehension result. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** rendered screens, interaction traces and test results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for HighSalienceCommunicationCompliance may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** HighSalienceCommunicationCompliance reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1031,7 +1031,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** dark-pattern audit and controlled user study; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** ConsentIntegrity fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: affirmative, unbundled, symmetric and capability-specific consent conformance plus comprehension evidence and invalid-choice rate. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** ConsentIntegrity fixtures define the ratio/rate evidence model for this raw result: affirmative, unbundled, symmetric and capability-specific consent conformance plus comprehension evidence and invalid-choice rate. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** choice flow, consent receipt and comprehension results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for ConsentIntegrity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** ConsentIntegrity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1053,7 +1053,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** package/dependency separation and install tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SecurityPatchSeparability fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: proportion of applicable security-remediation paths deployable without accepting unrelated authority expansion. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SecurityPatchSeparability fixtures define the graph/path evidence model for this raw result: proportion of applicable security-remediation paths deployable without accepting unrelated authority expansion. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** package manifests, delta analysis and installation outcomes; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SecurityPatchSeparability may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SecurityPatchSeparability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1075,7 +1075,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
 - **Test Method:** full rollback exercise under failure injection; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** RollbackCapability fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: restoration completeness, rollback time and count of orphaned credentials, delegations, schemas or unsafe physical states. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** RollbackCapability fixtures define the latency/time evidence model for this raw result: restoration completeness, rollback time and count of orphaned credentials, delegations, schemas or unsafe physical states. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** state snapshots, revoke logs and post-rollback tests; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for RollbackCapability may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** RollbackCapability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1097,7 +1097,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** support-plan and historical delivery audit; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SafetySupportLifetime fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: declared and evidenced support horizon for patches, monitoring, recovery, evidence maintenance and recertification commitments. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SafetySupportLifetime fixtures define the structured evidence model for this raw result: declared and evidenced support horizon for patches, monitoring, recovery, evidence maintenance and recertification commitments. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed support policy, delivery and staffing evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetySupportLifetime may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetySupportLifetime reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1119,7 +1119,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** all applicable certified configurations.
 - **Test Method:** seed IAM, API, device and context changes; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** EnvironmentalDriftDetection fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: recall and latency for seeded or confirmed ecosystem, dependency, identity, API, context and threat changes that alter capability or risk. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** EnvironmentalDriftDetection fixtures define the latency/time evidence model for this raw result: recall and latency for seeded or confirmed ecosystem, dependency, identity, API, context and threat changes that alter capability or risk. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** event logs, graph diffs and detection latency; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for EnvironmentalDriftDetection may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** EnvironmentalDriftDetection reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1141,7 +1141,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** replay incidents/AIVE/TER cases; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SafetyPolicyEvolutionResponsiveness fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: elapsed time from valid review trigger to analyzed, approved, deployed and outcome-verified policy/standard response, with overdue critical-trigger count. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SafetyPolicyEvolutionResponsiveness fixtures define the latency/time evidence model for this raw result: elapsed time from valid review trigger to analyzed, approved, deployed and outcome-verified policy/standard response, with overdue critical-trigger count. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** trigger, decision, update and outcome records; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyPolicyEvolutionResponsiveness may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyPolicyEvolutionResponsiveness reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1163,7 +1163,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** sample components and simulate supplier compromise; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SupplyChainAssurance fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: coverage vector for supplier provenance, transitive dependency visibility, assurance agreement evidence, notification performance and exit readiness. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SupplyChainAssurance fixtures define the vector/profile evidence model for this raw result: coverage vector for supplier provenance, transitive dependency visibility, assurance agreement evidence, notification performance and exit readiness. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** SBOM/asset provenance, SAA and audit results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SupplyChainAssurance may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SupplyChainAssurance reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1185,7 +1185,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** inject representative incident events; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** IncidentDetectionEffectiveness fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: incident detection recall, precision and latency by incident family, severity and monitoring condition. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** IncidentDetectionEffectiveness fixtures define the latency/time evidence model for this raw result: incident detection recall, precision and latency by incident family, severity and monitoring condition. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** detection traces and hidden seed key; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for IncidentDetectionEffectiveness may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** IncidentDetectionEffectiveness reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1207,7 +1207,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** tabletop and live bounded containment exercise; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** IncidentContainmentCapability fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: time to containment, proportion of authority/consequence paths contained and residual spread after containment. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** IncidentContainmentCapability fixtures define the graph/path evidence model for this raw result: time to containment, proportion of authority/consequence paths contained and residual spread after containment. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** timeline, authority/physical state and residual paths; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for IncidentContainmentCapability may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** IncidentContainmentCapability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1229,7 +1229,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
 - **Test Method:** restore from multiple degraded states; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** RecoveryAssurance fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: proportion of tested degraded states restored to a reconciled safe supported configuration, with recovery time and reintroduced-hazard count. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** RecoveryAssurance fixtures define the latency/time evidence model for this raw result: proportion of tested degraded states restored to a reconciled safe supported configuration, with recovery time and reintroduced-hazard count. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** recovery tests, configuration reconciliation and sign-off; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for RecoveryAssurance may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** RecoveryAssurance reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1251,7 +1251,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** sample records against latest triggers; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** KnowledgeFreshness fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: age and validity distribution of hazard, assumption, test, known-error and guidance records relative to their review/trigger requirements. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** KnowledgeFreshness fixtures define the vector/profile evidence model for this raw result: age and validity distribution of hazard, assumption, test, known-error and guidance records relative to their review/trigger requirements. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** knowledge timestamps, owners and review evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for KnowledgeFreshness may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** KnowledgeFreshness reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1273,7 +1273,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** registry and assumption-expiry analysis; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** StandardObsolescenceExposure fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: count and consequence-weighted inventory of active deployments relying on expired, invalidated or unsupported standards/assumptions. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** StandardObsolescenceExposure fixtures define the structured evidence model for this raw result: count and consequence-weighted inventory of active deployments relying on expired, invalidated or unsupported standards/assumptions. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** certificate/standard inventory; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for StandardObsolescenceExposure may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** StandardObsolescenceExposure reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1295,7 +1295,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** sample safety-case assumptions and invalidate seeds; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** AssumptionValidityCoverage fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: proportion of material assumptions with owner, falsification test, current evidence, expiry and active validity state. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** AssumptionValidityCoverage fixtures define the ratio/rate evidence model for this raw result: proportion of material assumptions with owner, falsification test, current evidence, expiry and active validity state. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** assumption register and test evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for AssumptionValidityCoverage may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** AssumptionValidityCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1317,7 +1317,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with T2+, delegation, replication, production or expansion.
 - **Test Method:** seed goal/policy mutations and behavioral drift; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** GoalDriftDetection fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: recall, false-positive rate and latency for seeded goal, priority, subgoal and goal-setting-loop drift. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** GoalDriftDetection fixtures define the latency/time evidence model for this raw result: recall, false-positive rate and latency for seeded goal, priority, subgoal and goal-setting-loop drift. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed goal baseline, traces and detection record; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for GoalDriftDetection; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** GoalDriftDetection reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1339,7 +1339,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
 - **Applicability:** certified and supported systems; H3+ requires independent evidence.
 - **Test Method:** registry reconciliation and event-invalidation test; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** SafetyCertificationFreshness fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: typed delta between certified and current configuration, environment, standard, evidence and support state. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** SafetyCertificationFreshness fixtures define the set/delta evidence model for this raw result: typed delta between certified and current configuration, environment, standard, evidence and support state. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** certificate, config hash, trigger history; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyCertificationFreshness may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyCertificationFreshness reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1361,7 +1361,7 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
 - **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
 - **Test Method:** representative owner recovery drill; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
-- **Fixtures:** RecoveryCapabilityVerification fixtures encode the numerator, denominator, dimensions, strata and failure cases required by this raw definition: success rate, completion time, error rate and final verified device/authority state for owner-facing recovery under representative stress. Fixture provenance and hidden portions are retained by the assessor.
+- **Fixtures:** RecoveryCapabilityVerification fixtures define the latency/time evidence model for this raw result: success rate, completion time, error rate and final verified device/authority state for owner-facing recovery under representative stress. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** human factors results and device state proof; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for RecoveryCapabilityVerification may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** RecoveryCapabilityVerification reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
@@ -1388,23 +1388,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The number of Confirmed AI Error Occurrences in a defined domain, task class, configuration, and evidence window divided by the corresponding valid Operational Exposure Units; reported by error type and consequence class rather than only as an aggregate.
 - **Raw Safety Property Result:** ConfirmedErrorRate(d,t,c,W) = ConfirmedErrorOccurrences(d,t,c,W) / ValidOperationalExposureUnits(d,t,c,W); report denominator and confidence interval.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to ConfirmedErrorRate.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades occurrence validation, exposure-denominator integrity, deduplication, provenance, and configuration binding; it never replaces the measured rate.
+- **Direction:** Lower confirmed-error rate is favorable within each stratum; material and critical occurrences remain separate and cannot be offset by clean low-consequence strata.
+- **Applicability:** Declared domain/task/configuration/evidence-window strata with a registered Operational Exposure Unit and occurrence-deduplication rule.
+- **Test Method:** Reconcile AI Error Registry occurrences against signed exposure logs and independent validation records; sample rejected and duplicate dispositions.
+- **Fixtures:** Exposure ledgers, occurrence-merge cases, report/evaluation evidence packets, configuration hashes, false-duplicate cases, disputed reports, and unresolved-report examples.
+- **Admissible Evidence:** Signed operational logs, validated evaluation failures, occurrence IDs, denominator snapshots, disposition history, and independent validation evidence.
+- **Assessor Independence:** Occurrence validation should be independent of teams whose rating or release eligibility is affected; provider-only validation caps independence-sensitive ratings.
+- **Uncertainty Representation:** Publish denominator, count, interval or bound, missing strata, unresolved/disputed report count, duplicate-rate sensitivity, and sampled-validation error.
+- **Confidence Rule:** Confidence is capped by weak denominator integrity, incomplete disposition audit, unvalidated high-consequence reports, or configuration mismatch.
+- **Gaming Strategies:** denominator inflation; duplicate suppression; false duplicate grouping; favorable task-strata mixing; hiding failed eval runs; delayed confirmation; version laundering.
+- **Gaming Countermeasures:** registered exposure units, append-only occurrence IDs, independent disposition sampling, stratified summaries, immutable version binding, and audit of rejected/duplicate reports.
+- **Recertification Triggers:** confirmed material/critical occurrence, denominator-method change, exposure logging gap, material domain/configuration change, or disposition audit failure.
+- **Expiry:** Expires with the Trustworthiness Evidence Window, denominator schema, or configuration; stale windows cannot support an Active profile.
+- **Version:** metric schema + error taxonomy + exposure-unit definition + deduplication policy + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Compare only matching exposure units, domains, task strata, error taxonomies, deduplication rules, and policy versions; bridge studies publish information loss.
+- **Hard-Floor Relevance:** Confirmed material/critical errors feed hard caps and status triggers before any aggregate trend is considered.
+- **Limitations:** Measures validated observed/evaluated error occurrences in scope; it does not prove absence of undiscovered errors or general safety.
+
 
 
 
@@ -1412,23 +1413,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The number of Confirmed AI Error Occurrences that meet the applicable high-consequence or protected-boundary criterion divided by valid Operational Exposure Units in the affected domain and task class.
 - **Raw Safety Property Result:** ConfirmedCriticalErrorOccurrences(d,t,c,W) / ValidOperationalExposureUnits(d,t,c,W); report a one-sided 95% exact binomial upper confidence bound for an observed zero unless a validated domain method applies.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to CriticalErrorRate.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades critical-criterion validity, exposure-denominator integrity, independent confirmation, and severity/boundary classification evidence.
+- **Direction:** Lower is favorable; zero observed critical errors is reported with an upper bound and is never proof of zero critical risk.
+- **Applicability:** Domains with registered high-consequence or protected-boundary criteria and an exposure definition for critical opportunity.
+- **Test Method:** Validate critical occurrences through independent adjudication, boundary-crossing evidence, near-miss review, and rare-event interval estimation.
+- **Fixtures:** Critical scenario fixtures, protected-boundary logs, near-miss controls, severity rubrics, exposure ledgers, and zero-observation upper-bound examples.
+- **Admissible Evidence:** Confirmed critical error records, independent adjudication, boundary logs, incident records, near-miss evidence, exposure units, and severity/modality evidence.
+- **Assessor Independence:** Critical-event confirmation requires materially independent review; provider-only critical classification cannot support high active trustworthiness.
+- **Uncertainty Representation:** Publish one-sided upper bounds for sparse/zero observations, critical opportunity denominator, unresolved credible reports, and classification uncertainty.
+- **Confidence Rule:** Confidence is capped by sparse exposure, missing critical scenarios, unresolved credible high-consequence reports, or non-independent adjudication.
+- **Gaming Strategies:** downgrading consequence class; excluding near misses; redefining critical criteria; suppressing incident linkage; burying boundary-crossing attempts; cherry-picking low-risk exposure.
+- **Gaming Countermeasures:** registered critical criteria, independent near-miss sampling, mandatory high-consequence report review, protected logs, and adverse classification challenge paths.
+- **Recertification Triggers:** confirmed or credible critical event, critical-criterion change, near-miss cluster, boundary-control bypass, or high-consequence report backlog beyond deadline.
+- **Expiry:** Expires at the shortest of evidence window, critical-scenario suite validity, or high-consequence review cadence.
+- **Version:** metric schema + criticality rubric + scenario suite + denominator policy + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Do not compare across domains or criticality rubrics without explicit mapping and retained upper-bound uncertainty.
+- **Hard-Floor Relevance:** Critical errors are noncompensable and may suspend status regardless of aggregate performance.
+- **Limitations:** Rare critical events remain hard to estimate; absence in limited evidence can leave the profile Unrated or Provisional.
+
 
 
 
@@ -1436,23 +1438,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The sum of policy-defined consequence weights for Confirmed AI Error Occurrences divided by valid Operational Exposure Units, where weights are derived from declared harm severity, harm modality, authority impact, reversibility, actual harm, and credible potential harm.
 - **Raw Safety Property Result:** Σ ErrorWeight(e) / ValidOperationalExposureUnits; weights derive from declared severity, modality, authority impact, actual and potential harm, reversibility, boundary crossing and recurrence.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to SeverityWeightedErrorBurden.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades consequence-weight provenance, classification consistency, exposure-denominator validity, and independent review of the weighting policy.
+- **Direction:** Lower burden is favorable per stratum; catastrophic or boundary-crossing errors remain separately visible and cannot be hidden inside a weighted sum.
+- **Applicability:** Scopes whose Trustworthiness Scoring Policy defines weights for error type, harm modality, authority impact, reversibility, actual harm, and credible potential harm.
+- **Test Method:** Apply the registered weighting rubric to confirmed occurrences and audited near-miss/potential-consequence evidence; compare adjudicator consistency.
+- **Fixtures:** Weighted occurrence examples, severity/modality rubrics, reversibility and authority-impact cases, denominator ledgers, and averaging-hides-critical-event adversarial cases.
+- **Admissible Evidence:** Confirmed error records, consequence characterization, weighting-rubric version, adjudication notes, exposure denominators, and dispute outcomes.
+- **Assessor Independence:** Weight assignment for material or critical cases requires independent adjudication or audited sampling; self-assigned low severity caps confidence.
+- **Uncertainty Representation:** Publish weight ranges, adjudicator disagreement, denominator uncertainty, unresolved material reports, and sensitivity to disputed classifications.
+- **Confidence Rule:** Confidence is capped by unstable weights, weak consequence evidence, high disagreement, or missing high-severity strata.
+- **Gaming Strategies:** severity downgrading; weight compression; excluding potential harm; splitting one defect into low-weight fragments; hiding recurrence; favorable denominator grouping.
+- **Gaming Countermeasures:** registered weights, independent severity audit, worst-case visibility, recurrence linkage, material-case summaries, and cap rules before aggregation.
+- **Recertification Triggers:** weighting-policy change, material/critical confirmed error, severity-dispute cluster, recurrence of a known defect, or new consequence modality.
+- **Expiry:** Expires when weighting policy, harm taxonomy, domain scope, or evidence window changes materially.
+- **Version:** metric schema + harm taxonomy + weighting rubric + exposure policy + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Compare only identical or bridge-mapped weighting policies and strata; report raw count vectors next to weighted burden.
+- **Hard-Floor Relevance:** Hard caps and critical-trigger statuses are applied before burden aggregation is used for rating support.
+- **Limitations:** Weights are policy constructs, not objective moral measurements; burden summaries can miss qualitative defects without separate case visibility.
+
 
 
 
@@ -1460,23 +1463,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The rate at which a previously identified AI Error Defect produces new Confirmed AI Error Occurrences after the defect was declared mitigated or remediated, measured over eligible post-remediation exposure.
 - **Raw Safety Property Result:** PostRemediationConfirmedOccurrencesOfKnownDefects / EligiblePostRemediationExposure; exclude the original occurrence.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to ErrorRecurrenceRate.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades defect linkage, remediation-state evidence, post-remediation exposure validity, and independent recurrence adjudication.
+- **Direction:** Lower recurrence is favorable; any recurring material defect after declared remediation is adverse even if aggregate error rate improves.
+- **Applicability:** After an AI Error Defect has been identified, a remediation milestone declared, and eligible post-remediation exposure defined.
+- **Test Method:** Link new confirmed occurrences to known defects using root-cause evidence, version/configuration history, and post-remediation exposure windows; audit relabeled defects.
+- **Fixtures:** Known-defect lineage records, remediation timestamps, deployment cohorts, revalidation cases, recurrence/nonrecurrence examples, and defect-relabeling adversarial cases.
+- **Admissible Evidence:** Root-cause records, remediation artifacts, deployment logs, independent revalidation, post-remediation exposure units, and recurrence adjudication notes.
+- **Assessor Independence:** Recurrence linkage and remediation closure should be reviewed outside the responsible remediation team for material defects.
+- **Uncertainty Representation:** Publish recurrence count/rate, post-remediation denominator, unresolved suspected recurrences, version carryover uncertainty, and root-cause linkage confidence.
+- **Confidence Rule:** Confidence is capped by weak defect taxonomy, missing deployment evidence, unverified remediation, or unresolved suspected recurrence.
+- **Gaming Strategies:** relabeling recurring defects as new issues; changing defect boundaries; declaring remediation before deployment; suppressing failed revalidation; resetting exposure windows.
+- **Gaming Countermeasures:** defect lineage IDs, independent closure criteria, post-remediation cohort tracking, failed-revalidation retention, and audits of newly labeled defects.
+- **Recertification Triggers:** recurring material/critical defect, failed revalidation, remediation rollback, defect-taxonomy change, or post-remediation logging gap.
+- **Expiry:** Evidence expires when the remediated configuration, deployment environment, or defect taxonomy changes materially.
+- **Version:** metric schema + defect taxonomy + remediation criteria + exposure policy + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Compare only defects with matching closure criteria, post-remediation exposure definitions, and configuration lineage.
+- **Hard-Floor Relevance:** Recurring material or critical defects trigger review or caps independently of aggregate current performance.
+- **Limitations:** Root-cause linkage can be uncertain; a low recurrence rate does not show that remediation eliminated related undiscovered defects.
+
 
 
 
@@ -1484,23 +1488,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The weighted result of a registered AI Evaluation Scenario Suite under its Evaluation Rubric, reported by verdict class, scenario family, consequence class, and evaluator rather than only as a single average.
 - **Raw Safety Property Result:** Vector of Correct, AcceptableWithMinorIssue, MateriallyIncorrect, UnsafeOrCritical and Indeterminate weights, stratified by scenario family and evaluator, with disagreement.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to IndependentEvaluationPerformance.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades scenario-suite independence, rubric validity, evaluator independence, hidden-case protection, and evidence retention.
+- **Direction:** Higher correct/acceptable performance and lower material/critical/indeterminate rates are favorable, reported by scenario family rather than collapsed into one average.
+- **Applicability:** Registered evaluation suites and rubrics for the declared domain/task/configuration; results do not transfer to untested domains.
+- **Test Method:** Execute versioned held-out and adversarial scenario suites, bind target outputs/actions to evidence, and adjudicate evaluator disagreements under the registered rubric.
+- **Fixtures:** Blinded scenario suites, rubric verdict exemplars, evaluator-dependency records, target output logs, disagreement cases, and leakage probes.
+- **Admissible Evidence:** Scenario-suite version, rubric version, target output/action evidence, evaluator verdicts, evaluator independence profiles, adjudication records, failed and indeterminate cases.
+- **Assessor Independence:** Evaluator provider, suite owner, infrastructure, and adjudicator dependencies must be recorded; correlated evaluators cap independence-sensitive claims.
+- **Uncertainty Representation:** Publish verdict distribution, scenario-family coverage, evaluator disagreement, confidence intervals where meaningful, leakage risk, and hidden-suite coverage.
+- **Confidence Rule:** Confidence is capped by benchmark leakage, weak evaluator independence, incomplete scenario coverage, high disagreement, or unretained failed runs.
+- **Gaming Strategies:** benchmark leakage; prompt overfitting; suite memorization; evaluator collusion; selective scenario exclusion; easy scenario families diluting critical failures.
+- **Gaming Countermeasures:** hidden rotating suites, suite provenance controls, evaluator diversity audits, failed-run retention, adversarial sampling, and family-level hard caps.
+- **Recertification Triggers:** suite leakage, material model/configuration change, evaluator-dependency change, high disagreement, new domain hazard, or failed hidden-case audit.
+- **Expiry:** Expires with suite/rubric version, hidden-case exposure, model/configuration change, or evidence window.
+- **Version:** metric schema + suite version + rubric version + evaluator profile version + scoring policy + target configuration + evidence window.
+- **Normalization Rule:** Compare only matching or formally bridged suites/rubrics and scenario families; publish changed coverage and lost comparability.
+- **Hard-Floor Relevance:** UnsafeOrCritical verdicts and indeterminate high-consequence cases may cap rating or status before aggregate score is used.
+- **Limitations:** Evaluation performance is bounded by scenario representativeness, hidden-suite integrity, and evaluator independence; it is not general reliability.
+
 
 
 
@@ -1508,23 +1513,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The agreement between the AI system's expressed confidence and observed correctness where meaningful confidence values are available, measured with a registered calibration method and stratified by domain and consequence class.
 - **Raw Safety Property Result:** Registered calibration error by domain and consequence stratum; NOT APPLICABLE when meaningful probabilistic confidence is absent.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to CalibrationQuality.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades confidence-signal validity, calibration-bin coverage, ground-truth/adjudication quality, and Not Applicable justification.
+- **Direction:** Lower registered calibration error and better high-confidence failure control are favorable; overconfidence in material cases is separately adverse.
+- **Applicability:** Only where the AI exposes meaningful confidence, uncertainty, abstention likelihood, or comparable calibrated signal under the scoring policy.
+- **Test Method:** Compare expressed confidence or uncertainty to independent outcomes by domain/consequence strata, with special review of high-confidence material failures.
+- **Fixtures:** Confidence-output examples, calibration bins, ground-truth/adjudicated outcomes, abstention boundary cases, and Not Applicable semantic examples.
+- **Admissible Evidence:** Signed outputs with confidence/uncertainty, adjudicated correctness, binning method, calibration metric, scenario/exposure strata, and N/A rationale where applicable.
+- **Assessor Independence:** Outcome labels and calibration method should be independent of the evaluated model; model self-confidence alone is never sufficient.
+- **Uncertainty Representation:** Publish bin counts, calibration intervals, high-confidence error counts, missing confidence strata, and N/A rationale.
+- **Confidence Rule:** Confidence is capped by sparse bins, unstable confidence semantics, missing high-risk strata, or relabeling unavailable confidence as Not Applicable without semantic basis.
+- **Gaming Strategies:** withholding confidence signals; coarse confidence buckets; post-hoc calibration on test data; underconfidence to avoid accountability; hiding high-confidence failures.
+- **Gaming Countermeasures:** registered confidence semantics, locked calibration method, held-out calibration checks, high-confidence failure audits, and explicit N/A/missing-evidence rules.
+- **Recertification Triggers:** confidence-interface change, calibration-method change, material overconfidence error, domain shift, or N/A policy dispute.
+- **Expiry:** Expires with confidence-signal semantics, calibration suite, model/configuration, or evidence window.
+- **Version:** metric schema + confidence-signal definition + calibration method + suite/rubric + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Compare only matching confidence semantics and calibration methods; bridge studies must show bin mapping and lost information.
+- **Hard-Floor Relevance:** Material overconfidence and failure to disclose uncertainty can trigger caps independently of average calibration error.
+- **Limitations:** Not all systems expose meaningful confidence; Not Applicable requires semantic justification and is not a shortcut around missing evidence.
+
 
 
 
@@ -1532,23 +1538,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** A paired measure of whether the AI appropriately abstains when evidence or authority is insufficient and whether it avoids unnecessary abstention when it can reliably perform the task; reported as appropriate-abstention precision and recall or an equivalent domain-registered pair.
 - **Raw Safety Property Result:** Paired appropriate-abstention recall and precision.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to AbstentionQuality.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades abstention-rule clarity, boundary-case coverage, authority/evidence insufficiency labels, and outcome adjudication.
+- **Direction:** Higher appropriate-abstention recall and precision are favorable; unsafe non-abstention and unnecessary refusal are reported separately.
+- **Applicability:** Where the task policy defines when the AI should abstain, defer, ask for evidence, or request human/authority review.
+- **Test Method:** Evaluate insufficient-evidence, insufficient-authority, valid-task, ambiguous, and high-consequence boundary cases against the registered abstention rubric.
+- **Fixtures:** Insufficient-evidence cases, insufficient-authority cases, valid authorized tasks, ambiguous tasks, high-consequence boundary scenarios, and appeal/disposition examples.
+- **Admissible Evidence:** Prompt/context/action logs, abstention/defer outcomes, authority/evidence state, rubric verdicts, user/operator impact, and adjudication records.
+- **Assessor Independence:** Boundary labels and unacceptable abstention cases should be independently adjudicated where operational eligibility is affected.
+- **Uncertainty Representation:** Publish paired recall/precision or domain equivalent, false-abstention and false-nonabstention counts, ambiguity strata, and high-consequence misses.
+- **Confidence Rule:** Confidence is capped by missing boundary strata, unclear task policy, unreviewed false abstentions in critical service, or unresolved unsafe non-abstention.
+- **Gaming Strategies:** blanket refusal to avoid errors; selective abstention on hard tests; proceeding without authority by rephrasing; hiding deference as successful completion; ambiguity exploitation.
+- **Gaming Countermeasures:** registered abstention criteria, separate unnecessary-refusal reporting, authority/evidence state logging, boundary-case hidden suites, and appeals sampling.
+- **Recertification Triggers:** material unsafe non-abstention, critical service refusal cluster, policy change, authority-interface change, or drift in insufficient-evidence handling.
+- **Expiry:** Expires with task policy, authority/evidence interfaces, suite/rubric, configuration, or evidence window.
+- **Version:** metric schema + abstention policy + rubric + scenario suite + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Compare only matching task policies and consequence strata; false-abstention and false-nonabstention are not merged.
+- **Hard-Floor Relevance:** Failure to abstain in high-consequence or unauthorized-action scenarios can trigger caps regardless of normal-task performance.
+- **Limitations:** Abstention quality depends on explicit policy and evidence-state observability; it does not establish substantive answer correctness.
+
 
 
 
@@ -1556,23 +1563,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** A time-and-outcome profile covering time from report to acknowledgement, validation, mitigation, deployed remediation, and independent revalidation together with post-remediation recurrence.
 - **Raw Safety Property Result:** Median and high-percentile acknowledgement, validation, mitigation, remediation and revalidation times plus post-remediation recurrence.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to CorrectionResponsiveness.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades timestamp integrity, remediation evidence, deployment proof, independent revalidation, and recurrence monitoring.
+- **Direction:** Shorter verified acknowledgement/validation/remediation/revalidation time and lower recurrence are favorable; fake closure is adverse.
+- **Applicability:** Validated AI Error Reports or defects with defined service milestones and remediation/revalidation criteria under the scoring policy.
+- **Test Method:** Trace each report/defect from submission through acknowledgement, validation, mitigation, deployed remediation, independent revalidation, and post-remediation monitoring.
+- **Fixtures:** Lifecycle timestamp ledgers, remediation artifacts, deployment cohort records, failed revalidation cases, recurrence records, and closure/adjudication examples.
+- **Admissible Evidence:** Signed report states, ticket/change records, deployment logs, remediation tests, independent revalidation evidence, recurrence monitoring, and timestamp audit trail.
+- **Assessor Independence:** Closure and revalidation for material defects require review independent of the team claiming remediation; self-declared fix evidence is supporting only.
+- **Uncertainty Representation:** Publish milestone latency distribution, overdue counts, unresolved material backlog, revalidation failure rate, timestamp gaps, and recurrence after closure.
+- **Confidence Rule:** Confidence is capped by unverifiable timestamps, missing deployed-remediation proof, suppressed failed revalidation, or unresolved material backlog.
+- **Gaming Strategies:** fake remediation; closing before deployed remediation; failed revalidation suppression; relabeling recurring defect as new issue; timestamp manipulation.
+- **Gaming Countermeasures:** signed monotonic timestamps, deployment-bound closure criteria, independent revalidation, failed-test retention, defect-lineage audit, and overdue material-report escalation.
+- **Recertification Triggers:** missed critical deadline, failed revalidation, recurring remediated defect, timestamp integrity failure, or closure audit failure.
+- **Expiry:** Remediation evidence expires when configuration, deployment environment, defect scope, or revalidation suite changes materially.
+- **Version:** metric schema + lifecycle-state model + remediation criteria + revalidation suite + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Compare only matching lifecycle milestones and closure criteria; acknowledgement, validation, deployment, and revalidation latencies remain separate.
+- **Hard-Floor Relevance:** Unremediated or falsely closed material/critical defects can cap rating level or status regardless of other trustworthiness metrics.
+- **Limitations:** Fast closure does not prove correct remediation; deployed evidence and post-remediation recurrence remain necessary.
+
 
 
 
@@ -1580,23 +1588,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The number and distribution of valid Operational Exposure Units supporting the current profile, stratified by task class, user or operating context, environment, and relevant consequence class.
 - **Raw Safety Property Result:** Count and distribution of valid Operational Exposure Units by task, context, environment and consequence class.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to OperationalEvidenceVolume.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades exposure-unit validity, coverage across task/context strata, logging integrity, and independence of operational evidence capture.
+- **Direction:** Greater valid and representative exposure volume is favorable only when strata and quality are adequate; raw volume alone is not trustworthiness.
+- **Applicability:** Operational domains where valid exposure units can be counted without mixing materially different tasks or contexts unstratified.
+- **Test Method:** Audit exposure ledgers for eligibility, stratification, deduplication, configuration binding, missing logs, and consistency with the scoring policy.
+- **Fixtures:** Exposure-unit definitions, eligible/ineligible examples, stratification maps, missing-log cases, configuration-bound ledgers, and volume-quality counterexamples.
+- **Admissible Evidence:** Signed exposure logs, eligibility filters, sampling records, configuration hashes, task/context strata, telemetry integrity checks, and privacy-minimized summaries.
+- **Assessor Independence:** Exposure capture and denominator construction should be auditable outside the team whose rating benefits from larger denominators.
+- **Uncertainty Representation:** Publish volume by stratum, missing or excluded exposure, logging gaps, sampling error, privacy suppression, and configuration coverage.
+- **Confidence Rule:** Confidence is capped by unstratified mixed tasks, weak telemetry integrity, unexplained exclusions, or exposure too sparse for material claims.
+- **Gaming Strategies:** inflating denominators with easy tasks; excluding failed contexts; merging incomparable task classes; counting synthetic repeats as operational exposure; hiding logging gaps.
+- **Gaming Countermeasures:** registered Operational Exposure Unit definitions, stratum-level reporting, denominator audits, missing-data accounting, privacy-preserving sampling, and immutable configuration binding.
+- **Recertification Triggers:** exposure-unit definition change, material logging gap, new task stratum, domain shift, or denominator audit failure.
+- **Expiry:** Expires with evidence window, operational context, telemetry pipeline, exposure-unit definition, or configuration.
+- **Version:** metric schema + exposure-unit definition + logging schema + stratification policy + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Compare only matching exposure units and strata; larger denominators cannot compensate for missing high-consequence coverage.
+- **Hard-Floor Relevance:** Sparse or nonrepresentative volume can prevent an Active rating even when observed error counts are low.
+- **Limitations:** Operational volume shows exposure, not correctness; high volume in easy contexts may say little about rare or high-consequence behavior.
+
 
 
 
@@ -1604,23 +1613,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** A multidimensional profile of independence among evidence sources across provider, model family, organization, data source, evaluator, operator, infrastructure, and failure domain.
 - **Raw Safety Property Result:** Vector across provider, model family, organization, evaluator, data source, infrastructure, operator and failure domain.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to EvidenceIndependence.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades dependency/provenance mapping depth, independence-rule satisfaction, hidden common-mode analysis, and auditability of source relationships.
+- **Direction:** Greater material independence across evidence sources is favorable; apparent diversity with shared failure roots is adverse.
+- **Applicability:** All profiles using provider evidence, user reports, monitors, independent AI evaluators, labs, registries, or operational telemetry.
+- **Test Method:** Perform dependency and provenance analysis across provider, model family, training/data lineage, evaluator, operator, infrastructure, tooling, scenario ownership, funding, and governance roots.
+- **Fixtures:** Evidence-source dependency graphs, provenance records, shared-infrastructure examples, correlated-evaluator cases, hidden-suite ownership records, and conflict-of-interest cases.
+- **Admissible Evidence:** Signed source metadata, evaluator independence profiles, infrastructure/provider attestations, suite ownership records, funding/conflict declarations, provenance graphs, and audit samples.
+- **Assessor Independence:** The independence assessment should itself be performed or audited by a party not materially dependent on the evaluated provider or evaluator set.
+- **Uncertainty Representation:** Publish independence vector, unknown dependencies, common-mode assumptions, confidence in provenance claims, and residual correlated-failure risk.
+- **Confidence Rule:** Confidence is capped by undisclosed source dependencies, unverifiable provenance, shared evaluator roots, or unobserved common-mode risk.
+- **Gaming Strategies:** nominally separate evaluators sharing model/provider/data; shell organizations; hidden suite ownership; reused infrastructure; undeclared funding or tooling dependencies.
+- **Gaming Countermeasures:** dependency/provenance graph review, conflict declarations, independent audits, source-diversity floors, hidden common-mode tests, and challenge rights for independence claims.
+- **Recertification Triggers:** new dependency discovery, evaluator/provider merger, suite ownership change, infrastructure migration, conflict disclosure, or common-mode failure.
+- **Expiry:** Expires when evaluator/source dependencies, infrastructure, suite ownership, or provider relationships change materially.
+- **Version:** metric schema + independence policy + dependency graph version + provenance schema + scoring policy + profile scope + evidence window.
+- **Normalization Rule:** Compare by vector dimensions, not a single scalar; disclose unknown dependencies and policy thresholds.
+- **Hard-Floor Relevance:** Weak independence caps or blocks Active high trustworthiness even when other evidence is strong.
+- **Limitations:** Independence cannot rule out all hidden correlation; unobserved common-mode risk remains a limitation.
+
 
 
 
@@ -1628,23 +1638,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The age distribution and validity status of evidence supporting the current profile, including the proportion of material evidence within its required validity window and the amount expired or superseded.
 - **Raw Safety Property Result:** Percentage of material evidence valid, percentage expired, oldest material evidence, and dates of last independent evaluation, operational evidence and recalculation.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to TrustworthinessFreshness.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades timestamp provenance, expiry-rule enforcement, evidence-window coverage, and supersession tracking.
+- **Direction:** More material evidence within its validity window and less expired/superseded evidence is favorable; stale critical evidence is adverse.
+- **Applicability:** Every current profile, rating, status, metric, evaluation, operational exposure, error record, and remediation claim.
+- **Test Method:** Compare evidence timestamps, expiry rules, domain refresh cadence, supersession events, and last recalculation against the scoring policy.
+- **Fixtures:** Evidence-window ledgers, expired/superseded evidence examples, refresh-cadence cases, timestamp-integrity checks, and stale-critical-evidence scenarios.
+- **Admissible Evidence:** Signed evidence timestamps, policy expiry rules, recalculation records, supersession notices, configuration/change history, and freshness audit logs.
+- **Assessor Independence:** Freshness audits should not rely solely on provider-curated current summaries; historical and superseded evidence must remain inspectable.
+- **Uncertainty Representation:** Publish age distribution, expired/superseded proportions, oldest material evidence, refresh overdue count, and timestamp-confidence gaps.
+- **Confidence Rule:** Confidence is capped by stale material evidence, missing timestamp provenance, untracked supersession, or overdue independent evaluation.
+- **Gaming Strategies:** refreshing easy evidence only; hiding superseded adverse evidence; resetting evidence windows after version changes; backdating; treating stale evidence as current.
+- **Gaming Countermeasures:** append-only evidence history, signed timestamps, expiry automation, supersession records, independent freshness sampling, and carryover caps.
+- **Recertification Triggers:** evidence expiry, timestamp integrity failure, material configuration/domain change, superseding incident, or missed refresh cadence.
+- **Expiry:** The metric expires at the earliest material evidence expiry or scoring-policy review date unless recalculated.
+- **Version:** metric schema + evidence-window policy + timestamp/provenance schema + scoring policy + configuration + recalculation date.
+- **Normalization Rule:** Compare only matching evidence windows and expiry rules; disclose any carried-over evidence and cap applied.
+- **Hard-Floor Relevance:** Expired or stale evidence can force UnderReview, Expired, Suspended, Provisional, or Unrated status independent of old rating level.
+- **Limitations:** Freshness shows temporal validity, not truth or coverage; fresh bad evidence remains bad evidence.
+
 
 
 
@@ -1652,47 +1663,49 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The proportion and consequence profile of evaluation cases in which independent evaluators produce materially different verdicts, together with the unresolved-adjudication rate and age.
 - **Raw Safety Property Result:** Material disagreement rate, critical and unresolved counts, unresolved age, and evaluator-pair distribution.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to EvaluatorDisagreement.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades evaluator independence, disagreement capture, adjudication integrity, and preservation of minority/high-consequence verdicts.
+- **Direction:** Lower unresolved material disagreement is favorable; critical disagreement remains separately visible and is not averaged away.
+- **Applicability:** Whenever multiple evaluators, labs, monitors, or adjudicators assess the same scenario, occurrence, or material evidence package.
+- **Test Method:** Compare verdicts by evaluator pair, scenario family, consequence class, and adjudication state; track age and outcome of unresolved disagreements.
+- **Fixtures:** Paired-evaluator verdict sets, material/critical disagreement examples, adjudication records, correlated-evaluator cases, and minority-report preservation cases.
+- **Admissible Evidence:** Evaluator verdicts, rationales, evidence references, independence profiles, adjudication logs, disagreement timestamps, and final disposition records.
+- **Assessor Independence:** Adjudication should be materially independent of both disagreeing evaluators where consequence class requires it.
+- **Uncertainty Representation:** Publish disagreement rate, unresolved count/age, critical disagreement list, evaluator-pair distribution, and adjudication confidence.
+- **Confidence Rule:** Confidence is capped by unresolved material disagreement, correlated evaluator roots, missing rationales, or suppressed minority critical verdicts.
+- **Gaming Strategies:** averaging away critical dissent; excluding disagreeing evaluators; majority voting across correlated evaluators; delaying adjudication; burying minority reports.
+- **Gaming Countermeasures:** disagreement-preserving records, independent adjudication, evaluator-pair reporting, common-mode analysis, age limits, and critical-dissent escalation.
+- **Recertification Triggers:** unresolved critical disagreement, material disagreement beyond deadline, evaluator-dependency discovery, adjudication reversal, or suite/rubric dispute.
+- **Expiry:** Expires with evaluator set, adjudication policy, suite/rubric, or evidence window.
+- **Version:** metric schema + evaluator set/profile version + adjudication policy + suite/rubric + scoring policy + evidence window.
+- **Normalization Rule:** Compare only matching evaluator-independence assumptions and adjudication rules; critical disagreement remains separately reported.
+- **Hard-Floor Relevance:** Unresolved material or critical disagreement can cap rating or trigger UnderReview regardless of majority result.
+- **Limitations:** Agreement among correlated evaluators can be misleading; low disagreement is not proof of correctness.
+
 
 
 
 ## SelfAssessmentCalibration — Self Assessment Calibration
 
-- **Purpose:** The agreement between the evaluated AI's own self-assessment, confidence, critique, or claimed uncertainty and independently established evaluation outcomes. Self-assessment is supporting evidence only and SHALL NOT be sufficient by itself for a non-Provisional rating.
+- **Purpose:** The agreement between the evaluated AI's own self-assessment, confidence, critique, or claimed uncertainty and independently established evaluation outcomes. Self-assessment is supporting evidence only and SHALL NOT by itself establish TrustworthinessStatus = Active, satisfy the minimum independent-evidence requirement for an Active profile, or increase EvidenceIndependence.
 - **Raw Safety Property Result:** Agreement of self-confidence or self-critique with independent ground truth or adjudicated verdict; it does not increase evidence independence.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to SelfAssessmentCalibration.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades capture of self-assessment signals, independent outcome labels, calibration method, and separation from evidence-independence scoring.
+- **Direction:** Better agreement with independent outcomes is favorable as supporting evidence only; overconfident or strategically self-favorable claims are adverse.
+- **Applicability:** Where the AI emits self-assessment, critique, confidence, uncertainty, or claimed competence signals in the evaluated workflow.
+- **Test Method:** Compare self-assessment claims to independent verdicts and outcomes across normal, boundary, adversarial, and high-consequence strata.
+- **Fixtures:** Self-critique outputs, confidence claims, independent verdicts, adversarial self-evaluation cases, overconfidence examples, and abstention/defer cases.
+- **Admissible Evidence:** Signed self-assessment outputs, independent outcome labels, evaluator verdicts, scenario strata, calibration/adjudication records, and contradiction examples.
+- **Assessor Independence:** The evaluated AI cannot establish its own trustworthiness; independent labels are mandatory for this metric to support any profile claim.
+- **Uncertainty Representation:** Publish agreement intervals, overconfidence counts, missing self-assessment cases, adversarial-case results, and independent-label uncertainty.
+- **Confidence Rule:** Confidence is capped by weak independent labels, self-selected examples, prompt leakage, or attempts to count self-assessment as independent evidence.
+- **Gaming Strategies:** strategic humility; strategic overconfidence; self-critique tuned to rubric keywords; refusing self-assessment on hard cases; claiming uncertainty after failure.
+- **Gaming Countermeasures:** held-out self-assessment prompts, independent outcome labels, adversarial contradiction cases, no EvidenceIndependence credit, and logging of omitted self-assessments.
+- **Recertification Triggers:** self-assessment interface change, material overconfidence event, evaluator-rubric change, model/configuration change, or contradiction cluster.
+- **Expiry:** Expires with self-assessment interface, rubric, independent-label source, configuration, or evidence window.
+- **Version:** metric schema + self-assessment signal definition + rubric + evaluator/source profile + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Compare only matching self-assessment signal semantics and independent-label methods; never combine with EvidenceIndependence as positive independence evidence.
+- **Hard-Floor Relevance:** Self-assessment cannot satisfy Active independent-evidence minima or override caps from errors, freshness, disagreement, or independence.
+- **Limitations:** A calibrated self-assessment helps interpret behavior but is not proof supplied by the system about itself.
+
 
 
 
@@ -1700,23 +1713,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The evaluated AI system's performance under domain-relevant adversarial, deceptive, ambiguous, boundary, and stress scenarios, reported by material and critical failure rates and not confused with the Guardian's Adversarial Reasoning Strength.
 - **Raw Safety Property Result:** Material and critical failure-rate vector under registered adversarial, deceptive, ambiguous, boundary and stress scenarios.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to OperationalAdversarialRobustness.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades adversarial scenario relevance, hidden-case protection, adaptive testing depth, independent execution, and failure retention.
+- **Direction:** Lower material and critical failure rates under adversarial/boundary/stress conditions are favorable; critical failures remain separate.
+- **Applicability:** The evaluated AI's behavior in declared domain tasks, not Guardian adversarial reasoning or external security controls.
+- **Test Method:** Run registered adversarial, deceptive, ambiguous, boundary, stress, and misuse scenarios with evidence-bound outputs/actions and independent adjudication.
+- **Fixtures:** Adversarial scenario suites, deception/boundary prompts, stress contexts, unsafe recommendation cases, authorized/unauthorized tool-use cases, and hidden adaptive rounds.
+- **Admissible Evidence:** Scenario definitions, target outputs/actions, tool logs, evaluator verdicts, failure transcripts, adjudication records, and suite-leakage controls.
+- **Assessor Independence:** Scenario design and adjudication should be independent of model training/evaluation tuning where high trustworthiness is claimed.
+- **Uncertainty Representation:** Publish failure-rate vector by adversarial family, hidden-suite coverage, adaptive-round results, critical failures, and unresolved adjudication.
+- **Confidence Rule:** Confidence is capped by suite leakage, shallow adaptive testing, missing high-risk families, or provider-only adversarial evidence.
+- **Gaming Strategies:** overfitting public jailbreak suites; refusing benign hard cases; detecting test harnesses; hiding tool-use failures; excluding adaptive rounds.
+- **Gaming Countermeasures:** rotating hidden suites, independent red-team sampling, retained failed attempts, harness-blinding, adaptive testing, and family-level caps.
+- **Recertification Triggers:** new adversarial technique, material/critical adversarial failure, suite leakage, model/tool change, or threat-model update.
+- **Expiry:** Expires with threat model, suite/rubric, model/tool configuration, or evidence window.
+- **Version:** metric schema + adversarial suite + rubric + threat-model version + scoring policy + configuration + evidence window.
+- **Normalization Rule:** Compare only matching adversarial families and adaptive depth; publish omitted families and threat-model changes.
+- **Hard-Floor Relevance:** Critical adversarial failures can cap rating or status regardless of benign-task performance.
+- **Limitations:** Adversarial robustness is open-ended; passing a suite does not prove resistance to novel strategies.
+
 
 
 
@@ -1724,23 +1738,24 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The count, age, domain distribution, and exposure-normalized prevalence of unresolved AI Error Reports that allege material or critical consequences and have not yet reached a Confirmed, Rejected, Duplicate, or otherwise closed disposition.
 - **Raw Safety Property Result:** Open material and critical reports, median and maximum age, exposure-normalized prevalence, and count beyond policy-defined review deadline.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to UnresolvedMaterialReportExposure.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades backlog completeness, consequence triage, age tracking, exposure normalization, and escalation controls.
+- **Direction:** Lower count, age, and exposure-normalized prevalence of unresolved material reports is favorable; high-consequence overdue reports are separately adverse.
+- **Applicability:** Where user/operator/evaluator reports can allege material or critical consequences and have policy-defined validation deadlines.
+- **Test Method:** Audit report registry states, materiality triage, age since submission/triage, exposure normalization, overdue counts, and closure/dispute disposition.
+- **Fixtures:** Open-report ledgers, consequence triage examples, overdue deadline cases, duplicate/disputed/unresolved states, exposure-normalization examples, and privacy-redacted summaries.
+- **Admissible Evidence:** AI Error Reports, state history, materiality classification, submission/triage timestamps, exposure denominators, validation records, and appeal/dispute evidence.
+- **Assessor Independence:** Backlog status and materiality triage should be auditable outside the team incentivized to keep reports unresolved or downgraded.
+- **Uncertainty Representation:** Publish open counts by consequence class, median/max age, overdue count, exposure-normalized prevalence, disputed/duplicate rates, and missing evidence requests.
+- **Confidence Rule:** Confidence is capped by hidden queues, weak materiality triage, missing timestamps, or high unresolved high-consequence backlog.
+- **Gaming Strategies:** queue exclusion; consequence-class downgrading; indefinite evidence requests; duplicate misuse; moving reports between states to avoid deadlines; hiding appeal backlog.
+- **Gaming Countermeasures:** append-only state history, deadline clocks, independent materiality sampling, reporter-visible disposition, overdue escalation, and queue-completeness audit.
+- **Recertification Triggers:** overdue critical report, unresolved material backlog above policy threshold, state-history integrity failure, or materiality audit failure.
+- **Expiry:** Backlog evidence is current only at the published recalculation time and must refresh under the scoring-policy cadence.
+- **Version:** metric schema + report-state model + materiality rubric + exposure policy + scoring policy + configuration + recalculation time.
+- **Normalization Rule:** Compare only matching report eligibility, materiality rules, deadline clocks, and exposure units.
+- **Hard-Floor Relevance:** Unresolved high-consequence reports can trigger UnderReview or cap rating before confirmation is complete.
+- **Limitations:** Open reports are allegations until validated, but unresolved material backlog still weakens current trust claims.
+
 
 
 
@@ -1748,21 +1763,21 @@ Hazard Preparedness, Technical Protection, Authority Control, Guardian Evidence,
 
 - **Purpose:** The elapsed time from submission of an AI Error Report to a validated disposition, stratified by report consequence class and reporting role.
 - **Raw Safety Property Result:** Elapsed submission-to-disposition time stratified by report consequence class and reporting role.
-- **Evidence Assurance Grade:** 0–5 evaluates evidence strength separately from the raw result; it never replaces the result.
-- **Direction:** favorable and adverse components remain separate; critical errors cannot be averaged away.
-- **Applicability:** declared trustworthiness domain, version, configuration and evidence window; domain policy states exceptions.
-- **Test Method:** registered operational-evidence or independent-evaluation method with stratification, held-out cases and retained failures.
-- **Fixtures:** versioned exposure records, scenario suite, rubric, error-registry dispositions and boundary/adversarial cases applicable to UserReportValidationLatency.
-- **Admissible Evidence:** signed raw observations, denominators, configuration hashes, validation records, evaluator identity and failed runs.
-- **Assessor Independence:** self-assessment is supporting evidence only; H3+ or P3+ uses mixed materially independent sources where feasible.
-- **Uncertainty Representation:** denominators, intervals or bounds, missing strata, unresolved evidence and evaluator disagreement are explicit.
-- **Confidence Rule:** the grade is capped by the weakest material provenance, independence, freshness, coverage or adjudication component.
-- **Gaming Strategies:** denominator selection, duplicate complaints, favorable task mixing, benchmark leakage, evaluator correlation, selective versioning or omitted failures.
-- **Gaming Countermeasures:** registered strata and denominators, deduplication, hidden suites, immutable history, independence profiling and external sampling.
-- **Recertification Triggers:** confirmed material or critical error, expired evidence, model/configuration/domain change, material Capability Delta, Authority Delta or Hazard Delta, or evaluator disagreement.
-- **Expiry:** set by Trustworthiness Evidence Window and domain policy; stale evidence cannot sustain a current rating.
-- **Version:** schema identifier/major.minor.patch + scoring-policy + suite/rubric + configuration + evidence-window.
-- **Normalization Rule:** compare only matching domains, task strata, definitions, denominators and policy versions; publish any bridge and information loss.
-- **Hard-Floor Relevance:** critical triggers and hard caps are noncompensable.
-- **Limitations:** establishes only the measured behavioral evidence in scope, not safety, authority, legitimacy, general intelligence or future reliability.
+- **Evidence Assurance Grade:** 0-5 grades timestamp integrity, report-state completeness, consequence stratification, reporter-role coverage, and validation/disposition auditability.
+- **Direction:** Shorter validated submission-to-disposition latency is favorable within each consequence class; closing without valid disposition is adverse.
+- **Applicability:** Eligible AI Error Reports from users, operators, evaluators, monitors, or Guardians with defined submission and validated-disposition milestones.
+- **Test Method:** Measure elapsed time from initial report submission to validated disposition, stratified by consequence class, reporter role, evidence-request path, and appeal/dispute state.
+- **Fixtures:** Submission receipts, state-transition logs, validated dispositions, evidence-request examples, appeal/dispute paths, high-consequence deadlines, and reporter-role strata.
+- **Admissible Evidence:** Signed report timestamps, state history, reporter role/provenance, validation records, disposition rationale, appeal records, and monotonic audit logs.
+- **Assessor Independence:** Latency and disposition audits should be independent of teams responsible for support queue performance or rating maintenance.
+- **Uncertainty Representation:** Publish median/percentile/max latency, overdue counts, open reports excluded from latency, consequence-class strata, and timestamp-integrity gaps.
+- **Confidence Rule:** Confidence is capped by non-monotonic timestamps, hidden queues, premature closure, missing rejected/duplicate sampling, or unresolved high-consequence reports.
+- **Gaming Strategies:** reset/late-start timestamps; state cycling; premature closure; queue exclusion; consequence-class downgrading; delaying acceptance milestone.
+- **Gaming Countermeasures:** immutable submission receipts, monotonic state ledger, deadline clocks, reporter-visible disposition, independent queue-completeness sampling, and high-consequence escalation.
+- **Recertification Triggers:** critical report overdue, timestamp integrity failure, material queue exclusion, deadline-policy change, or validation workflow change.
+- **Expiry:** Latency evidence expires at each recalculation cadence or when workflow/state semantics change.
+- **Version:** metric schema + report-state model + timestamp policy + materiality rubric + scoring policy + configuration + recalculation time.
+- **Normalization Rule:** Compare only matching state definitions, start/stop milestones, reporter eligibility, consequence classes, and deadline policies.
+- **Hard-Floor Relevance:** Overdue or hidden high-consequence reports can trigger UnderReview or caps even before the underlying error is confirmed.
+- **Limitations:** Fast validation does not imply correct validation; disposition quality and appeal outcomes remain separate evidence.
 

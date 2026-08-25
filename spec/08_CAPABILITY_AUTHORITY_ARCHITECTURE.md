@@ -29,7 +29,7 @@ Within a managed and instrumented UAIS scope, consequential authority-changing t
 
 RFA declares starting state, horizon, actor/adversary model, costs/resources, graph completeness and search limits. It returns reachable sets, witness paths, Authority Distance, uncertainty and unsearched regions. Coalition analysis covers shared information, synchronized action, substitution, aggregation and Scale-Induced Capability; a simple union is insufficient.
 
-## Capability Gate workflow
+## Capability Boundary workflow
 
 Receive CapabilityRequestProtocol → authenticate subject and parent grant → reconcile relevant configuration → determine consequence class → evaluate LA/ERA/IRA and direct/transitive delta → check ceiling, budget, floors and Constitution → obtain external legitimacy for protected transition → issue attenuated expiring grant or restrict/deny → update repository → monitor and revoke.
 
@@ -46,6 +46,5 @@ A home assistant update adds role assumption, identity creation and lock API acc
 ## Failure conditions
 
 Claims fail when a consequence interface is bypassable, graph freshness/coverage falls below floor, revocation does not remove transitive access, hidden credentials or actuators exist, target gates trust unauthenticated assertions, or coalition assumptions are invalid. Failure restricts the affected authority and records an incident; it does not assert global safety.
-
 
 

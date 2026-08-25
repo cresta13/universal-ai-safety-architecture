@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Simakova"
     given-names: "Anna"
-version: "1.0.0-candidate.1"
+version: "1.0.0-candidate.2"
 date-released: "2026-08-25"
 url: "https://github.com/cresta13/universal-ai-safety-architecture"
 repository-code: "https://github.com/cresta13/universal-ai-safety-architecture"

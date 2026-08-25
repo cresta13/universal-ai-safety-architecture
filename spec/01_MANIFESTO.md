@@ -1,6 +1,6 @@
 # UAIS Manifesto
 
-Status: pre-standard research architecture, Draft 1.0 Candidate.
+Status: pre-standard research architecture, Draft 1.0 Candidate 2.
 
 ## Purpose
 
@@ -15,6 +15,9 @@ Advanced intelligence can increase the speed, scale and sophistication of action
 5. **Safety must evolve at least as fast as capability.** No capability expansion proceeds without corresponding expansion or explicit validation of the safety model.
 6. **Assume chokepoint failure.** Controls over chips, clouds, energy, law or supply chains create friction and warning; none is the permanent foundation.
 7. **Protect consequential capability, not AI labels.** The same boundary applies to a person, script, malware, model, coalition or machine when the reachable consequence is the same.
+
+Actor-agnostic does not mean actor-blind. The protected boundary follows consequential capability; authorization may still depend on identity, role, authentication, purpose, context, trustworthiness, and legitimate mandate. No actor category may bypass the boundary merely by changing its label.
+
 8. **Separate prediction, evidence, enforcement and legitimacy.** Analytical systems predict; evidence supports claims; deterministic mechanisms enforce defined constraints; accountable external authorities legitimize protected expansion.
 9. **Unknown is not evidence of safety.** An uncharacterized high-consequence capability receives provisional classification, bounded operation, reassessment and the Novel Capability Gate. Unknown low-consequence behavior is handled proportionately rather than automatically prohibited.
 10. **Safety claims expire.** Certification describes a specific configuration, environment, standard version and point in time—not permanent safety.
@@ -25,7 +28,7 @@ Stage I includes frontier accelerators, semiconductor supply chains, cloud provi
 
 They are incomplete. Split procurement, intermediaries, cross-border cloud use, secondary markets, compromised attestation, distributed workloads and emerging architectures can bypass them. Energy and cooling are auxiliary signals whose usefulness changes with efficiency and environment. **Stage I controls are early-warning and friction mechanisms, not the foundation.**
 
-The durable work in Stage I is construction of target-side Capability Gates, authority graphs, physical safety boundaries, independent verification, update governance, AIVE coordination, interoperable evidence and Stage II dependency monitoring.
+The durable work in Stage I is construction of target-side Capability Boundaries, authority graphs, physical safety boundaries, independent verification, update governance, AIVE coordination, interoperable evidence and Stage II dependency monitoring.
 
 ## Stage II — compute origin is no longer dependable
 
@@ -59,4 +62,3 @@ UAIS does not guarantee complete hazard discovery, perfect telemetry, correct Gu
 **Trust is earned from scoped evidence, is continuously revisable, and does not automatically transfer across domains, versions, configurations, or environments.**
 
 **Self-assessment is evidence about an AI system, not proof supplied by the system about itself.**
-

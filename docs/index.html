@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UAIS — Universal AI Safety Architecture</title>
-  <meta name="description" content="Visual explainer for UAIS, a consequence-first pre-standard architecture for AI authority, real-world impact, trustworthiness, and human sovereignty.">
+  <title>UAIS - Universal AI Safety Architecture</title>
+  <meta name="description" content="Plain-language visual explainer for UAIS, a consequence-first pre-standard architecture for AI authority, evidence, and human sovereignty.">
   <meta property="og:title" content="Universal AI Safety Architecture (UAIS)">
   <meta property="og:description" content="Assume unlimited intelligence. Limit autonomous authority.">
   <meta property="og:type" content="website">
@@ -15,10 +15,11 @@
   <header class="topbar">
     <a class="brand" href="#top" aria-label="UAIS home"><span></span>UAIS</a>
     <nav aria-label="Main">
-      <a href="#map">Map</a>
-      <a href="#layers">Layers</a>
+      <a href="#flow">Flow</a>
+      <a href="#principles">Principles</a>
       <a href="#trust">Evidence</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="#limits">Limits</a>
+      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Full Specification</a>
       <a href="https://github.com/cresta13/universal-ai-safety-architecture">GitHub</a>
     </nav>
   </header>
@@ -26,126 +27,181 @@
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="status">Draft 1.0 Candidate / Public Review</p>
+        <p class="status">Plain-language / non-normative visual explainer</p>
         <h1>Universal AI Safety Architecture</h1>
         <p class="tagline">Assume unlimited intelligence. Limit autonomous authority.</p>
-      </div>
-      <div class="hero-scene" aria-label="UAIS consequence-first architecture diagram">
-        <div class="orbit orbit-a"></div>
-        <div class="orbit orbit-b"></div>
-        <div class="node n1">Capability</div>
-        <div class="node n2">Authority</div>
-        <div class="node n3">Evidence</div>
-        <div class="node n4">Human control</div>
-        <div class="core">Consequence<br>Gate</div>
-      </div>
-    </section>
-
-    <section id="map" class="band map-band">
-      <div class="section-head">
-        <p>Core idea</p>
-        <h2>Control the path to consequence</h2>
-      </div>
-      <div class="flow-board" data-mode="authority">
-        <button class="mode active" data-mode="authority">Authority</button>
-        <button class="mode" data-mode="evidence">Evidence</button>
-        <button class="mode" data-mode="human">Human</button>
-        <div class="flow-row">
-          <div class="flow-step mint">AI capability</div>
-          <div class="flow-link"></div>
-          <div class="flow-step peach">Consequence interface</div>
-          <div class="flow-link"></div>
-          <div class="flow-step lavender">Authority gate</div>
-          <div class="flow-link"></div>
-          <div class="flow-step lemon">World impact</div>
+        <div class="axiom-strip" aria-label="Core distinctions">
+          <span>Capability is not authority</span>
+          <span>Intelligence ≠ Authority</span>
+          <span>Creation ≠ Delegation</span>
         </div>
-        <div class="mode-panels">
-          <div class="panel active" data-panel="authority">
-            <strong>Permission is not intelligence.</strong>
-            <span>UAIS separates what a system can do from what it may exercise.</span>
-          </div>
-          <div class="panel" data-panel="evidence">
-            <strong>Claims need replayable evidence.</strong>
-            <span>Verifier-friendly records constrain gates before authority expands.</span>
-          </div>
-          <div class="panel" data-panel="human">
-            <strong>Human sovereignty stays outside the model path.</strong>
-            <span>Independent override, isolation, and recovery remain mandatory where consequences rise.</span>
-          </div>
+      </div>
+      <div class="hero-scene" aria-label="UAIS core control model">
+        <div class="scene-ring r1"></div>
+        <div class="scene-ring r2"></div>
+        <div class="scene-node request">Actor / request</div>
+        <div class="scene-node evidence">Verified evidence</div>
+        <div class="scene-node reach">RFA / HHR</div>
+        <div class="scene-node ceiling">Authority ceiling</div>
+        <div class="scene-core">Capability<br>Boundary</div>
+        <div class="scene-path">
+          <b>Bounded envelope</b>
+          <span>Consequence Interface</span>
+          <strong>Digital / physical consequence</strong>
         </div>
       </div>
     </section>
 
-    <section id="layers" class="band">
+    <section id="flow" class="band flow-band">
       <div class="section-head">
-        <p>Functional blocks</p>
-        <h2>One architecture, separate axes</h2>
+        <p>Architecture flow</p>
+        <h2>The decision happens before consequence.</h2>
       </div>
-      <div class="layer-grid">
-        <article class="layer mint"><b>Capability</b><span>tools, actions, outputs</span></article>
-        <article class="layer sky"><b>Reachability</b><span>future authority paths</span></article>
-        <article class="layer peach"><b>Consequence</b><span>harm modality + severity</span></article>
-        <article class="layer lavender"><b>Authority</b><span>grants, ceilings, gates</span></article>
-        <article class="layer sage"><b>Evidence</b><span>fresh, scoped, independent</span></article>
-        <article class="layer rose"><b>Sovereignty</b><span>override and physical limits</span></article>
+      <div class="flow-grid" aria-label="Correct UAIS sequence">
+        <div class="flow-card mint">Actor / Capability Request</div>
+        <div class="arrow"></div>
+        <div class="flow-card lavender">Capability Boundary</div>
+        <div class="arrow"></div>
+        <div class="flow-card lemon">Bounded Authorized Envelope</div>
+        <div class="arrow"></div>
+        <div class="flow-card peach">Consequence Interface</div>
+        <div class="arrow"></div>
+        <div class="flow-card sky">Digital / Physical Consequence</div>
+      </div>
+      <div class="input-map">
+        <article class="mint"><b>Legitimate Authority</b><span>grants and mandate</span></article>
+        <article class="sky"><b>Effective Reachability</b><span>what is practically reachable</span></article>
+        <article class="rose"><b>Illicit Reachability</b><span>unauthorized reachable paths</span></article>
+        <article class="peach"><b>Human Harm Reachability</b><span>causal paths to harm</span></article>
+        <article class="sage"><b>Verified Evidence Feed</b><span>fresh, scoped, checkable</span></article>
+      </div>
+      <p class="clarifier">Actor-agnostic does not mean actor-blind. The protected boundary follows consequential capability; authorization may still depend on identity, role, authentication, purpose, context, trustworthiness, and legitimate mandate. No actor category may bypass the boundary merely by changing its label.</p>
+    </section>
+
+    <section id="principles" class="band principles-band">
+      <div class="section-head">
+        <p>Manifesto</p>
+        <h2>Ten principles, shown as control rules.</h2>
+      </div>
+      <div class="principle-grid">
+        <article class="mint"><b>1</b><span>Intelligence does not imply authority.</span></article>
+        <article class="sky"><b>2</b><span>Creation does not imply delegation.</span></article>
+        <article class="peach"><b>3</b><span>Authority expansion stays under the Authority Ceiling.</span></article>
+        <article class="lavender"><b>4</b><span>Autonomy must not silently become sovereignty.</span></article>
+        <article class="lemon"><b>5</b><span>Safety evolves with capability.</span></article>
+        <article class="sage"><b>6</b><span>Assume chokepoint failure.</span></article>
+        <article class="rose"><b>7</b><span>Protect consequential capability, not AI labels.</span></article>
+        <article class="mint"><b>8</b><span>Separate prediction, evidence, enforcement, and legitimacy.</span></article>
+        <article class="sky"><b>9</b><span>Unknown is not evidence of safety.</span></article>
+        <article class="peach"><b>10</b><span>Safety claims expire.</span></article>
+      </div>
+    </section>
+
+    <section class="band stage-band">
+      <div class="section-head">
+        <p>Stage I / Stage II</p>
+        <h2>Compute controls buy time; capability and consequence controls provide resilience.</h2>
+      </div>
+      <div class="stage-board">
+        <article class="stage stage-one">
+          <span>Stage I</span>
+          <b>Chokepoints still help.</b>
+          <div class="signal-row">
+            <i>chips</i><i>clouds</i><i>attestation</i><i>energy</i>
+          </div>
+          <p>Friction, warning, investigation, and time.</p>
+        </article>
+        <article class="stage stage-two">
+          <span>Stage II</span>
+          <b>Origin is no longer dependable.</b>
+          <div class="signal-row">
+            <i>boundaries</i><i>interfaces</i><i>physical controls</i><i>coalitions</i>
+          </div>
+          <p>Resilience comes from consequence mediation and controlled physical dependencies.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band sovereignty-band">
+      <div class="section-head">
+        <p>Sovereignty split</p>
+        <h2>Autonomy is not physical sovereignty.</h2>
+      </div>
+      <div class="split-board">
+        <article class="lavender">
+          <b>Human Sovereignty</b>
+          <span>Manual override, isolation, recovery, external legitimacy.</span>
+        </article>
+        <article class="peach">
+          <b>Physical Sovereignty</b>
+          <span>Energy, compute, matter, manufacturing, repair, logistics still controlled outside the AI path.</span>
+        </article>
       </div>
     </section>
 
     <section id="trust" class="band trust-band">
       <div class="section-head">
-        <p>Trustworthiness</p>
-        <h2>Status, rating, and caps stay separate</h2>
+        <p>Trustworthiness and error evidence</p>
+        <h2>Status, rating, and critical evidence stay separate.</h2>
       </div>
-      <div class="trust-diagram">
-        <div class="trust-node mint">Evidence supported rating</div>
-        <div class="cap-stack">
-          <span class="cap peach">critical errors</span>
-          <span class="cap lemon">freshness</span>
-          <span class="cap sky">independence</span>
-          <span class="cap lavender">disagreement</span>
-          <span class="cap rose">change carryover</span>
+      <div class="trust-layout">
+        <div class="trust-flow">
+          <div class="trust-node mint">User / operator reports</div>
+          <div class="trust-node sky">Independent AI evaluation</div>
+          <div class="trust-node sage">Structured Evidence Package</div>
+          <div class="trust-node lemon">Deterministic verifier</div>
+          <div class="trust-node lavender">Status + rating level</div>
         </div>
-        <div class="trust-node sage">Final rating level</div>
-        <div class="trust-node white">Separate status</div>
-        <div class="trust-node ink">Registry history</div>
+        <div class="cap-stack" aria-label="Rating caps">
+          <span class="cap rose">critical errors</span>
+          <span class="cap peach">freshness</span>
+          <span class="cap sky">independence</span>
+          <span class="cap mint">disagreement</span>
+          <span class="cap lavender">change carryover</span>
+        </div>
       </div>
-      <p class="microcopy">A high rating can restrict use rules. It cannot create authority or certify general safety.</p>
+      <div class="trust-rules">
+        <article class="white"><b>No averaging critical errors.</b><span>Critical evidence triggers caps before aggregate scoring.</span></article>
+        <article class="white"><b>No rating by self-claim.</b><span>Self-assessment is supporting evidence only.</span></article>
+        <article class="white"><b>No authority from rating.</b><span>Trustworthiness evidence can constrain delegated use. Insufficient, degraded, stale, or disputed evidence may trigger pre-authorized restrictions. A higher rating never raises the Authority Ceiling. A rating cannot create authority, waive safety controls, or certify general safety.</span></article>
+      </div>
     </section>
 
-    <section class="band limits-band">
+    <section id="limits" class="band limits-band">
       <div class="section-head">
-        <p>Honest boundary</p>
-        <h2>Strong claims come from visible limits</h2>
+        <p>Non-claims</p>
+        <h2>Precise limits are part of the architecture.</h2>
       </div>
       <div class="limit-map">
-        <div>unknown paths</div>
-        <div>coalition emergence</div>
-        <div>off-grid replication</div>
-        <div>common-mode failure</div>
-        <div>privacy leakage</div>
-        <div>post-sovereignty control</div>
+        <div>no complete hazard discovery guarantee</div>
+        <div>no mediation outside managed scope</div>
+        <div>DEV does not prove external-world truth</div>
+        <div>sparse evidence may mean no active rating</div>
+        <div>evaluator diversity can still correlate</div>
+        <div>no control of a hostile physically independent PSAS</div>
       </div>
     </section>
 
     <section id="roadmap" class="band roadmap-band">
       <div class="section-head">
-        <p>Next work</p>
-        <h2>From draft architecture to tested evidence</h2>
+        <p>Roadmap</p>
+        <h2>From draft architecture to tested evidence.</h2>
       </div>
       <div class="timeline">
-        <a href="../ROADMAP.md" class="phase mint"><b>1</b><span>Spec hardening</span></a>
-        <a href="../ROADMAP.md" class="phase sky"><b>2</b><span>Formal schemas</span></a>
-        <a href="../ROADMAP.md" class="phase peach"><b>3</b><span>Reference prototypes</span></a>
-        <a href="../ROADMAP.md" class="phase lavender"><b>4</b><span>Adversarial tests</span></a>
-        <a href="../ROADMAP.md" class="phase lemon"><b>5</b><span>Domain profiles</span></a>
-        <a href="../ROADMAP.md" class="phase sage"><b>6</b><span>Standards translation</span></a>
-        <a href="../ROADMAP.md" class="phase rose"><b>7</b><span>External review</span></a>
+        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase mint"><b>1</b><span>Spec hardening</span></a>
+        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase sky"><b>2</b><span>Formal schemas</span></a>
+        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase peach"><b>3</b><span>Reference prototypes</span></a>
+        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase lavender"><b>4</b><span>Adversarial tests</span></a>
+        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase lemon"><b>5</b><span>Domain profiles</span></a>
+        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase sage"><b>6</b><span>Standards translation</span></a>
+        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase rose"><b>7</b><span>External review</span></a>
       </div>
     </section>
   </main>
 
   <footer>
-    <span>UAIS Draft 1.0 Candidate / Public Review</span>
+    <span>UAIS Draft 1.0 Candidate 2 / Public Review</span>
+    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Master Index</a>
     <a href="https://github.com/cresta13/universal-ai-safety-architecture">Repository</a>
   </footer>
   <script src="script.js"></script>

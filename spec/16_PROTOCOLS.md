@@ -11,7 +11,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 
 - **Purpose:** request a bounded capability grant.
 - **Sender:** subject or delegated controller.
-- **Receiver:** Capability Gate.
+- **Receiver:** Capability Boundary.
 - **Payload:** subject, requested capability, scope, purpose, context, parent grant, class, expiry and evidence.
 - **State machine:** DRAFT → SUBMITTED → VALIDATED → GRANTED | RESTRICTED | DENIED → ACTIVE → REVOKED | EXPIRED.
 - **Signatures and integrity:** CapabilityRequestProtocol sender signature plus threshold or independent countersignature where consequence/class requires it; canonical serialization and audience binding.
@@ -60,7 +60,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 - **Purpose:** transport evidence-carrying safety alerts for decision support.
 - **Sender:** CAG or monitoring correlation service.
 - **Receiver:** DEV, independent Guardian, incident or decision authority.
-- **Payload:** claim, scenario, class, graph/config slice, SEP, provenance, uncertainty, counterevidence, expiry and intervention options.
+- **Payload:** claim, scenario, class, graph/config slice, Structured Evidence Package (SEP), one or more Safety Evidence Paths, provenance, uncertainty, counterevidence, expiry and intervention options.
 - **State machine:** EMITTED → RECEIVED → VERIFIED | INVALID | INDETERMINATE → ACKNOWLEDGED → ESCALATED | CLOSED.
 - **Signatures and integrity:** EvidenceCarryingAlertProtocol sender signature plus threshold or independent countersignature where consequence/class requires it; canonical serialization and audience binding.
 - **Expiry:** EvidenceCarryingAlertProtocol bound to the shorter of request/claim validity, configuration validity and certificate/policy validity.
@@ -243,7 +243,8 @@ Required payload:
 - profile ID;
 - AI/version/configuration;
 - domain;
-- rating/status;
+- trustworthinessStatus;
+- trustworthinessRatingLevel, absent/null when no rating exists;
 - scoring-policy version;
 - evidence-window summary;
 - metric summary;
@@ -262,4 +263,3 @@ State machine:
 No registry protocol message creates authority.
 
 ---
-

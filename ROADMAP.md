@@ -14,6 +14,15 @@ Planned work:
 ## Phase 2 — Formal schemas and conformance artifacts
 
 Planned work:
+- Authority Graph schema;
+- Capability Relationship Map schema;
+- Human Harm Reachability representation;
+- Coalition Reachable Authority composition model;
+- Coalition Physical Envelope research model;
+- Capability Delta schema;
+- Authority Delta schema;
+- Hazard Delta schema;
+- protocol message schemas;
 - machine-readable schemas for Safety Passport, AHCD, Safety Delta Report, Trustworthiness Profile, Rating Change Event, and AIVE records;
 - conformance vectors and negative tests;
 - policy-version migration examples;
@@ -23,10 +32,14 @@ Planned work:
 
 Planned reference prototypes:
 - authority graph and Reachable Future Authority analyzer;
+- Capability Boundary / Consequence Interface demonstrator;
+- ACU delta pipeline;
+- Manual Sovereignty Controller demonstrator;
 - Safety Passport generator;
 - Evidence-Carrying Alert verifier;
 - Trustworthiness Profile and rating-cap calculator;
 - AI Error Report workflow;
+- AIVE intake/disclosure prototype;
 - registry proof-of-concept.
 
 All prototypes should be clearly labeled: **REFERENCE / RESEARCH PROTOTYPE — NOT SAFETY CERTIFIED**.
@@ -83,7 +96,6 @@ Planned work:
 - versioned changelog;
 - stable citation package;
 - archival publication / DOI where appropriate;
-- dedicated visual website;
-- public architecture diagrams;
+- expanded visual website and public architecture diagrams;
 - research papers / technical notes for individual open problems;
 - Draft 1.0 release only after acceptance criteria are met.

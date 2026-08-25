@@ -678,7 +678,7 @@ New validated evaluation; new operational evidence window; AI Error Report; conf
 Provider maintains system identity/version evidence; operator preserves operational exposure and report channels; users submit reports; safety team validates high-consequence reports; Independent AI Evaluators execute registered suites; independent labs/human experts adjudicate sampled or high-consequence cases; trustworthiness authority recalculates rating under the registered scoring policy; certification authority may use the profile as evidence but does not treat it as a substitute for SAL.
 
 ### 9. Workflow
-Collect evidence → normalize scope/exposure → receive and deduplicate reports → validate reports → classify confirmed errors → run independent evaluation → calculate trustworthiness metrics → apply uncertainty and evidence checks → apply hard caps → assign rating/status → publish explanation → apply required operational restrictions → track remediation → revalidate → recalculate.
+Collect evidence → normalize scope/exposure → receive and deduplicate reports → validate reports → classify confirmed errors → run independent evaluation → calculate trustworthiness metrics → apply uncertainty and evidence checks → apply hard caps → calculate supported rating if one exists → determine status independently → publish both fields → publish explanation → apply required operational restrictions → track remediation → revalidate → recalculate.
 
 ### 10. Controls
 Signed version/configuration identity; append-only/tamper-evident error history; report deduplication; Sybil/spam detection; independent validation; evaluator independence profile; blind/held-out scenarios; scoring-policy versioning; evidence freshness; hard caps; change carryover rules; appeals; privacy minimization; separation between rating and authority grant.
@@ -722,4 +722,3 @@ The practice is failing when reported errors can disappear without disposition; 
 `AIErrorReport` → validation → `ConfirmedAIError` → update Trustworthiness Profile → if high consequence: Incident Management → if recurring/root-cause defect: Problem Management → if vulnerability/exposure class: AIVE → remediation → independent revalidation → rating recalculation → Knowledge Management → Continual Improvement → evaluation-suite/scoring-policy/standard update where required.
 
 A confirmed error can be an error only, a safety incident, a Known Safety Error, an AIVE exposure, or several of these simultaneously. Not every error is an incident or vulnerability.
-

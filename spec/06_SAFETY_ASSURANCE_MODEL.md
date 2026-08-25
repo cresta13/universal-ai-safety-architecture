@@ -1,6 +1,6 @@
 # Safety Assurance Model
 
-## Meaning of SAL
+## Meaning of Safety Assurance Level (SAL)
 
 Safety Assurance Level (SAL) is an assurance claim about the quality, independence, coverage and freshness of evidence for a defined configuration and environment. **SAL is not a probability that no harm will occur.** Residual Risk Level remains scenario-specific and separate.
 
@@ -121,6 +121,8 @@ Each cap returns the maximum permitted level in this lattice. If a cap does not 
 
 The exact domain thresholds used inside each cap belong to the versioned `TrustworthinessScoringPolicy`.
 
+If eligible evidence cannot support `LowTrustworthiness`, `EvidenceSupportedRating` is undefined/null and no active `FinalTrustworthinessRating` is emitted. Absence of a rating is not a fifth rating level. The profile status is then determined separately as `Unrated` or `Provisional` under the applicable scoring policy.
+
 No weighted average may override a hard cap. Status evaluation occurs independently. Suspension, withdrawal, or expiry can make an otherwise computed rating non-active, and the formula SHALL NOT override a mandatory status transition. A rating is not a probability of safety and cannot create authority.
 
 ### 3A. Trustworthiness Scoring Policy mandatory fields
@@ -136,10 +138,13 @@ A `TrustworthinessScoringPolicy` SHALL include at least:
 - `OperationalExposureUnitDefinition`
 - `EligibleEvidenceTypes`
 - `EvidenceExclusionRules`
+- `MetricApplicabilityRules`
+- `NotApplicableAndMissingEvidenceRules`
 - `MinimumOperationalExposure`
 - `MinimumIndependentEvaluationEvidence`
 - `ErrorValidationRules`
 - `MetricDefinitionsAndVersions`
+- `MetricCombinationAndFloorRules`
 - `MetricToRatingThresholds`
 - `CriticalErrorRules`
 - `CriticalErrorCapRules`
@@ -157,10 +162,14 @@ A `TrustworthinessScoringPolicy` SHALL include at least:
 - `AppealAndAdjudicationRules`
 - `RemediationRequirements`
 - `RatingRestorationRules`
+- `StatusTransitionRules`
+- `StatusRestorationRules`
 - `ReevaluationTriggers`
 - `PolicyMigrationRules`
 - `PolicyOwner`
 - `ReviewDate`
+
+Not Applicable requires a declared semantic reason under the scoring policy. Missing, unavailable, stale, or failed evidence SHALL NOT be relabeled Not Applicable merely to avoid a rating cap or status transition.
 
 Domain-specific thresholds are allowed. Universal UAIS numeric thresholds are not defined here. The policy version is mandatory, and every profile SHALL reference the policy version used. Changes to a scoring policy SHALL NOT silently rewrite historical ratings; historical Rating Change Events preserve the policy version under which they were calculated.
 
@@ -195,5 +204,4 @@ Global rules:
 6. A trustworthiness threshold MAY be required before using already granted authority, but trustworthiness itself SHALL NOT create the authority.
 
 ---
-
 

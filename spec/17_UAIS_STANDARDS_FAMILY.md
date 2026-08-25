@@ -69,7 +69,7 @@ The family is a roadmap, not a claim of publication or international adoption.
 - **Versioning:** UAIS-500 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Authority Architecture WG (proposed multi-stakeholder body with conflict rules).
 - **Review cycle:** 12 months and event-driven TER.
-- **Failure conditions:** A new consequential interface bypasses capability gates or is absent from the authority relationship graph.
+- **Failure conditions:** A new consequential interface bypasses Capability Boundaries or is absent from the authority relationship graph.
 - **Migration:** Update graph and gate schemas, inventory the interface, recompute authority, and deploy target-side enforcement before expansion.
 - **Sunset:** Sunset the old schema when unsupported interfaces can no longer retain protected authority.
 - **Conformance evidence:** Authority graph snapshot, interface inventory, gate tests, grant lineage, revocation test, and bypass analysis.
@@ -247,7 +247,7 @@ See `STANDARDS_CROSSWALK.md` for informative overlap. No crosswalk row asserts c
 ## UAIS-1700 — AI Trustworthiness and Error Evidence
 
 ### Scope
-Versioned, domain-scoped behavioral trustworthiness profiles, user/operator error reporting, independent AI evaluation, error validation, error registries, operational evidence, rating calculation, uncertainty, rating/status change, remediation, and version carryover.
+Versioned, domain-scoped behavioral trustworthiness profiles, user/operator error reporting, independent AI evaluation, error validation, error registries, operational evidence, rating calculation, uncertainty, separate rating-level and status changes, remediation, and version carryover.
 
 ### Dependencies
 UAIS-1600 and relevant vocabulary, classification, assurance, lifecycle, and protocol standards.
@@ -287,4 +287,3 @@ A UAIS-1700 version is sunset when its error ontology, scoring policy requiremen
 Versioned Trustworthiness Profile; scoring-policy specification; error-report and registry samples; deduplication/validation evidence; scenario suites; rubrics; evaluator-independence records; operational exposure evidence; rating calculations; hard-cap tests; version-carryover tests; privacy tests; appeals; remediation/revalidation evidence.
 
 ---
-

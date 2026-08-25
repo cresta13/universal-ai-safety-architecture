@@ -184,7 +184,7 @@ The evaluated AI MAY produce self-critique, confidence, uncertainty, or self-ass
 
 However:
 
-> Self-assessment SHALL NOT by itself support an `Active` trustworthiness state above a Provisional evidence basis.
+> Self-assessment is supporting evidence only and SHALL NOT by itself establish `TrustworthinessStatus = Active`, satisfy the minimum independent-evidence requirement for an Active profile, or increase `EvidenceIndependence`.
 
 A model saying "I am 99% reliable" is not a trust claim.
 
@@ -242,5 +242,4 @@ Public disclosure SHALL NOT require publication of:
 A supplier SHALL NOT be able to erase a confirmed historical error by issuing a new version. The old profile remains historically visible; the new version gets a new profile.
 
 ---
-
 
