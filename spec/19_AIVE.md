@@ -1,6 +1,6 @@
 # AIVE — AI Vulnerabilities & Exposures
 
-AIVE is a proposed coordinated disclosure and learning system, not an existing registry.
+AI Vulnerabilities & Exposures (AIVE) is a proposed coordinated disclosure and learning system, not an existing registry.
 
 ## Workflow
 
@@ -8,7 +8,7 @@ Discovery → Confidential Intake → Triage → Independent Validation → Affe
 
 ## Severity model
 
-Severity is a vector: Human Harm Modality/Severity; PCC; Authority tier and LA/ERA/IRA path; exploit preconditions; affected population/configurations; replication/coalition/PST potential; detectability; reversibility; intervention cost; mitigation availability; active exploitation and confidence. A scalar may summarize triage only and cannot hide a catastrophic dimension.
+Severity is a vector: Human Harm Modality/Severity; PCC; Authority tier and Legitimate Authority (LA)/Effective Reachable Authority (ERA)/Illicit Reachable Authority (IRA) path; exploit preconditions; affected population/configurations; replication/coalition/Physical Sovereignty Threshold (PST) potential; detectability; reversibility; intervention cost; mitigation availability; active exploitation and confidence. A scalar may summarize triage only and cannot hide a catastrophic dimension.
 
 ## Disclosure tiers
 

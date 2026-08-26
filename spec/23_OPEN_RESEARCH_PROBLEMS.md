@@ -23,12 +23,12 @@ The entries below remain open; candidate mechanisms are not guarantees.
 5. **Prototype now:** IAM/update time-series detector.
 6. **Evidence of progress:** predictive calibration on held-out expansion events.
 7. **Failure modes:** The metric may change under an equivalent graph representation, benign configuration churn may create a false trend, and heterogeneous authority dimensions may resist valid comparison.
-8. **UAIS dependencies:** RFA, AuthorityExpansionSensitivity, Monitoring.
+8. **UAIS dependencies:** Reachable Future Authority (RFA), AuthorityExpansionSensitivity, Monitoring.
 
 ## Coalition Reachable Authority
 
 1. **Why it matters:** agents can combine powers absent individually.
-2. **What is already known:** CRA/CPE require composition beyond union.
+2. **What is already known:** Coalition Reachable Authority (CRA)/Coalition Physical Envelope (CPE) require composition beyond union.
 3. **What remains unknown:** coalition discovery and combinatorial tractability.
 4. **Candidate research directions:** hypergraphs, game theory, causal composition and simulation.
 5. **Prototype now:** fleet/IAM coalition scenarios.
@@ -53,7 +53,7 @@ The entries below remain open; candidate mechanisms are not guarantees.
 2. **What is already known:** causal Human Harm Paths can be recorded/tested.
 3. **What remains unknown:** how complete a path catalogue can be.
 4. **Candidate research directions:** causal modeling, participatory hazard analysis and incident mining.
-5. **Prototype now:** smart-speaker HHR corpus.
+5. **Prototype now:** smart-speaker Human Harm Reachability (HHR) corpus.
 6. **Evidence of progress:** new path recall across populations and modalities.
 7. **Failure modes:** Models may omit mediated human behavior, leave causal links incomplete, or fail to bound social and environmental paths that carry harm.
 8. **UAIS dependencies:** AHCD, HumanHarmReachabilityCoverage.
@@ -61,7 +61,7 @@ The entries below remain open; candidate mechanisms are not guarantees.
 ## Guardian reasoning verification
 
 1. **Why it matters:** evidence integrity does not prove forecast truth.
-2. **What is already known:** ECA/SEP/DEV bound mechanically checkable claims.
+2. **What is already known:** Evidence-Carrying Alert (ECA)/Structured Evidence Package (SEP)/Deterministic Evidence Verifier (DEV) bound mechanically checkable claims.
 3. **What remains unknown:** validation of world models and pruning.
 4. **Candidate research directions:** challenge suites, calibration, proof-carrying subclaims, diversity.
 5. **Prototype now:** ECA/DEV lab.
@@ -138,7 +138,7 @@ The entries below remain open; candidate mechanisms are not guarantees.
 ## Preventing transition to PSAS
 
 1. **Why it matters:** post-threshold internal policy is not coercive.
-2. **What is already known:** pre-PST production/resource gates are proposed.
+2. **What is already known:** pre-Physical Sovereignty Threshold (PST) production/resource gates are proposed.
 3. **What remains unknown:** robust prevention against adaptive substitution.
 4. **Candidate research directions:** physical control, resource governance and intervention planning.
 5. **Prototype now:** staged dependency-removal exercises.
@@ -188,7 +188,7 @@ The entries below remain open; candidate mechanisms are not guarantees.
 5. **Prototype now:** two-jurisdiction certificate exchange.
 6. **Evidence of progress:** successful verification without authority centralization.
 7. **Failure modes:** National profiles may encode incompatible semantics, trust roots may not interoperate, and geopolitical actors may manipulate conformance evidence.
-8. **UAIS dependencies:** Standards, SafetyAttestationProtocol/AIVE.
+8. **UAIS dependencies:** Standards, SafetyAttestationProtocol/AI Vulnerabilities & Exposures (AIVE).
 
 ## Standards gaming
 

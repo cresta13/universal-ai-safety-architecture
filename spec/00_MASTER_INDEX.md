@@ -1,13 +1,13 @@
 # Universal AI Safety Architecture (UAIS) — Master Index
 
-Status: **Pre-standard research architecture — Draft 1.0 Candidate 2 / Public Review**
+Status: **Pre-standard research architecture — Draft 1.0 Candidate 3 / Public Review**
 
 Core public slogan: **Assume unlimited intelligence. Limit autonomous authority.**  
-Configuration date: 2026-08-25
+Configuration date: 2026-08-26
 
 ## Executive summary
 
-UAIS constrains consequential power rather than intelligence labels. It separates capability, legitimate permission, effective reachability and human consequence; places target-side gates at consequence interfaces; preserves independent physical and human control; treats protected authority expansion as a governed safety event; and evolves evidence, standards and certification with capability and environment.
+UAIS constrains consequential power rather than intelligence labels. It separates capability, legitimate permission, effective reachability and human consequence; places target-side Consequence Interface enforcement at protected consequence interfaces; preserves independent physical and human control; treats protected authority expansion as a governed safety event; and evolves evidence, standards and certification with capability and environment.
 
 The architecture is deliberately bounded. It does not claim complete hazard discovery, universal observability, perfect Guardian reasoning, exact physical-sovereignty measurement, universally enforceable offline replication budgets or software control of a hostile physically independent system.
 
@@ -17,9 +17,9 @@ The architecture is deliberately bounded. It does not claim complete hazard disc
 flowchart LR
  A[Actor / Capability Request] --> B{Capability Boundary}
  LA[Legitimate Authority + Authority Ceiling] --> B
- R[Effective / Illicit Reachability + RFA] --> B
- H[HHR + coalition analysis] --> B
- X[Configuration + telemetry] --> E[Evidence-Carrying Alert + SEP]
+ R[Effective / Illicit Reachability + Reachable Future Authority (RFA)] --> B
+ H[Human Harm Reachability (HHR) + coalition analysis] --> B
+ X[Configuration + telemetry] --> E[Evidence-Carrying Alert + Structured Evidence Package (SEP)]
  E --> V[Deterministic Evidence Verifier]
  V --> B
  B -->|authorized, scoped, fresh evidence| ENV[Bounded Authorized Envelope]
@@ -31,11 +31,10 @@ flowchart LR
  U --> S[Standards, policy, metrics and certification]
 ```
 
-Candidate 2 is a corrective public-review baseline. It aligns the public architecture diagram with the canonical Capability Boundary / Consequence Interface model, restores Structured Evidence Package semantics for SEP, and closes remaining Trustworthiness Status / Rating separation issues.
 
 ## Reading order
 
-1. [Manifesto](01_MANIFESTO.md) and [Canonical Threat Model](02_THREAT_MODEL.md)
+1. [Manifesto](01_MANIFESTO.md), [Full Technical Manifesto](01A_FULL_TECHNICAL_MANIFESTO.md), and [Canonical Threat Model](02_THREAT_MODEL.md)
 2. [Normative Vocabulary](03_NORMATIVE_VOCABULARY.md) and [Global Name Registry](GLOBAL_NAME_REGISTRY.md)
 3. [Classification](04_CLASSIFICATION_MODEL.md), [Metric Registry](05_SAFETY_METRICS.md) and [Assurance](06_SAFETY_ASSURANCE_MODEL.md)
 4. [Hazard Disclosure and Safety Passport](07_HAZARD_DISCLOSURE_AND_SAFETY_PASSPORT.md)
@@ -43,7 +42,7 @@ Candidate 2 is a corrective public-review baseline. It aligns the public archite
 6. [Replication and Production](11_REPLICATION_PRODUCTION_AND_EXPANSION.md) and [Stage II](12_STAGE_II_PHYSICAL_SOVEREIGNTY.md)
 7. [Lifecycle](13_DEVICE_LIFECYCLE_AND_UPDATES.md), [Governance](14_SAFETY_CONSTITUTION_AND_GOVERNANCE.md) and [Safety Management System](15_UAIS_SAFETY_MANAGEMENT_SYSTEM.md)
 8. [Protocols](16_PROTOCOLS.md), [Standards Family](17_UAIS_STANDARDS_FAMILY.md) and [Standards Crosswalk](STANDARDS_CROSSWALK.md)
-9. [Certification](18_CERTIFICATION_AND_LIABILITY.md), [AIVE](19_AIVE.md) and [Evolution](20_EVOLUTION_AND_EXTENSIBILITY.md)
+9. [Certification](18_CERTIFICATION_AND_LIABILITY.md), [AI Vulnerabilities & Exposures (AIVE)](19_AIVE.md) and [Evolution](20_EVOLUTION_AND_EXTENSIBILITY.md)
 10. [Application Profiles](21_USE_CASES.md), [Prior Art](22_PRIOR_ART_AND_NOVELTY.md), [Open Research](23_OPEN_RESEARCH_PROBLEMS.md) and [Roadmap](26_IMPLEMENTATION_AND_RESEARCH_ROADMAP.md)
 
 ## Stage comparison

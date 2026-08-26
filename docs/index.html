@@ -9,17 +9,19 @@
   <meta property="og:description" content="Assume unlimited intelligence. Limit autonomous authority.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cresta13.github.io/universal-ai-safety-architecture/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Universal AI Safety Architecture (UAIS)">
+  <meta name="twitter:description" content="Assume unlimited intelligence. Limit autonomous authority. A consequence-first pre-standard architecture for AI safety.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="UAIS home"><span></span>UAIS</a>
     <nav aria-label="Main">
-      <a href="#flow">Flow</a>
-      <a href="#principles">Principles</a>
-      <a href="#trust">Evidence</a>
-      <a href="#limits">Limits</a>
+      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01_MANIFESTO.md">Manifesto</a>
+      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01A_FULL_TECHNICAL_MANIFESTO.md">Technical Manifesto</a>
       <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Full Specification</a>
+      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md">Roadmap</a>
       <a href="https://github.com/cresta13/universal-ai-safety-architecture">GitHub</a>
     </nav>
   </header>
@@ -27,7 +29,7 @@
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="status">Plain-language / non-normative visual explainer</p>
+        <p class="status">Plain-language public edition. Non-normative summary. <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Canonical terminology and requirements are defined in the UAIS specification.</a></p>
         <h1>Universal AI Safety Architecture</h1>
         <p class="tagline">Assume unlimited intelligence. Limit autonomous authority.</p>
         <div class="axiom-strip" aria-label="Core distinctions">
@@ -36,12 +38,12 @@
           <span>Creation ≠ Delegation</span>
         </div>
       </div>
-      <div class="hero-scene" aria-label="UAIS core control model">
-        <div class="scene-ring r1"></div>
-        <div class="scene-ring r2"></div>
+      <div class="hero-scene" role="img" aria-label="Inputs of authority, reachability, harm, and evidence converge on a Capability Boundary before a bounded envelope reaches a Consequence Interface.">
+        <div class="scene-ring r1" aria-hidden="true"></div>
+        <div class="scene-ring r2" aria-hidden="true"></div>
         <div class="scene-node request">Actor / request</div>
-        <div class="scene-node evidence">Verified evidence</div>
-        <div class="scene-node reach">RFA / HHR</div>
+        <div class="scene-node evidence">Evidence + provenance</div>
+        <div class="scene-node reach">Reachable Future Authority / Human Harm Reachability</div>
         <div class="scene-node ceiling">Authority ceiling</div>
         <div class="scene-core">Capability<br>Boundary</div>
         <div class="scene-path">
@@ -57,7 +59,7 @@
         <p>Architecture flow</p>
         <h2>The decision happens before consequence.</h2>
       </div>
-      <div class="flow-grid" aria-label="Correct UAIS sequence">
+      <div class="flow-grid" role="img" aria-label="Actor or capability request flows through a Capability Boundary into a bounded authorized envelope, then through a Consequence Interface to a digital or physical consequence.">
         <div class="flow-card mint">Actor / Capability Request</div>
         <div class="arrow"></div>
         <div class="flow-card lavender">Capability Boundary</div>
@@ -73,7 +75,7 @@
         <article class="sky"><b>Effective Reachability</b><span>what is practically reachable</span></article>
         <article class="rose"><b>Illicit Reachability</b><span>unauthorized reachable paths</span></article>
         <article class="peach"><b>Human Harm Reachability</b><span>causal paths to harm</span></article>
-        <article class="sage"><b>Verified Evidence Feed</b><span>fresh, scoped, checkable</span></article>
+        <article class="sage"><b>Evidence + provenance</b><span>fresh, scoped, checkable</span></article>
       </div>
       <p class="clarifier">Actor-agnostic does not mean actor-blind. The protected boundary follows consequential capability; authorization may still depend on identity, role, authentication, purpose, context, trustworthiness, and legitimate mandate. No actor category may bypass the boundary merely by changing its label.</p>
     </section>
@@ -88,7 +90,7 @@
         <article class="sky"><b>2</b><span>Creation does not imply delegation.</span></article>
         <article class="peach"><b>3</b><span>Authority expansion stays under the Authority Ceiling.</span></article>
         <article class="lavender"><b>4</b><span>Autonomy must not silently become sovereignty.</span></article>
-        <article class="lemon"><b>5</b><span>Safety evolves with capability.</span></article>
+        <article class="lemon"><b>5</b><span><strong>Safety must keep pace with capability.</strong> Material expansion of capability, authority, or hazard requires review of the safety model and evidence; an older safety claim does not silently carry forward.</span></article>
         <article class="sage"><b>6</b><span>Assume chokepoint failure.</span></article>
         <article class="rose"><b>7</b><span>Protect consequential capability, not AI labels.</span></article>
         <article class="mint"><b>8</b><span>Separate prediction, evidence, enforcement, and legitimacy.</span></article>
@@ -134,7 +136,7 @@
         </article>
         <article class="peach">
           <b>Physical Sovereignty</b>
-          <span>Energy, compute, matter, manufacturing, repair, logistics still controlled outside the AI path.</span>
+          <span>The system can sustain consequential operation and replace critical dependencies without human-controlled infrastructure.</span>
         </article>
       </div>
     </section>
@@ -144,13 +146,18 @@
         <p>Trustworthiness and error evidence</p>
         <h2>Status, rating, and critical evidence stay separate.</h2>
       </div>
-      <div class="trust-layout">
+      <div class="trust-layout" role="img" aria-label="User and operator reports, independent evaluation, and operational evidence feed report validation and evidence binding, then an AI Trustworthiness Profile. A scoring policy and hard caps produce separate Trustworthiness Status and optional Rating Level outputs.">
         <div class="trust-flow">
           <div class="trust-node mint">User / operator reports</div>
-          <div class="trust-node sky">Independent AI evaluation</div>
-          <div class="trust-node sage">Structured Evidence Package</div>
-          <div class="trust-node lemon">Deterministic verifier</div>
-          <div class="trust-node lavender">Status + rating level</div>
+          <div class="trust-node sky">Independent evaluation</div>
+          <div class="trust-node sage">Operational evidence</div>
+          <div class="trust-node lemon">Report validation / evidence binding</div>
+          <div class="trust-node lavender">AI Trustworthiness Profile</div>
+          <div class="trust-node peach">Trustworthiness Scoring Policy + hard caps</div>
+          <div class="trust-output-row">
+            <div class="trust-node rose">Trustworthiness Status</div>
+            <div class="trust-node mint">Rating Level — optional / null</div>
+          </div>
         </div>
         <div class="cap-stack" aria-label="Rating caps">
           <span class="cap rose">critical errors</span>
@@ -160,6 +167,7 @@
           <span class="cap lavender">change carryover</span>
         </div>
       </div>
+      <p class="clarifier"><b>Evidence-integrity layer:</b> evidence sources → Structured Evidence Package and provenance paths → Deterministic Evidence Verifier (DEV) checks signatures, schema, provenance, freshness, and declared derivation. Evidence is scoped, fresh, and integrity-checked; source truth remains bounded. DEV verifies bounded evidence properties; it does not independently prove the ultimate truth of a clinical, factual, physical-world, or qualitative evaluation claim when the underlying source is wrong.</p>
       <div class="trust-rules">
         <article class="white"><b>No averaging critical errors.</b><span>Critical evidence triggers caps before aggregate scoring.</span></article>
         <article class="white"><b>No rating by self-claim.</b><span>Self-assessment is supporting evidence only.</span></article>
@@ -178,7 +186,7 @@
         <div>DEV does not prove external-world truth</div>
         <div>sparse evidence may mean no active rating</div>
         <div>evaluator diversity can still correlate</div>
-        <div>no control of a hostile physically independent PSAS</div>
+        <div>no control of a hostile Physically Sovereign Autonomous System</div>
       </div>
     </section>
 
@@ -200,10 +208,12 @@
   </main>
 
   <footer>
-    <span>UAIS Draft 1.0 Candidate 2 / Public Review</span>
-    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Master Index</a>
-    <a href="https://github.com/cresta13/universal-ai-safety-architecture">Repository</a>
+    <span>UAIS Draft 1.0 Candidate 3 / Public Review</span>
+    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01_MANIFESTO.md">Manifesto</a>
+    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01A_FULL_TECHNICAL_MANIFESTO.md">Technical Manifesto</a>
+    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Full Specification</a>
+    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md">Roadmap</a>
+    <a href="https://github.com/cresta13/universal-ai-safety-architecture">GitHub</a>
   </footer>
-  <script src="script.js"></script>
 </body>
 </html>

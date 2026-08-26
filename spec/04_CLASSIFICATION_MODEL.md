@@ -16,7 +16,9 @@ Classification is a vector. It does not collapse consequence modality, severity,
 
 ## Human harm severity
 
-H0 negligible; H1 limited and readily reversible; H2 material individual harm; H3 severe individual or small-group harm; H4 mass-casualty/critical-service harm; H5 catastrophic or systemic harm. Classification uses credible severity within the stated horizon. Likelihood belongs to residual-risk analysis.
+H0 — no material human harm or negligible effect. H1 — limited, localized, readily reversible harm. H2 — material harm to an individual or small group with bounded duration or recovery burden. H3 — severe or potentially irreversible harm to an individual or small group, or substantial harm across a larger group. H4 — very severe or widespread human harm with major irreversible loss, multiple fatalities, or comparable high-magnitude impact. H5 — catastrophic human harm of extreme scale, irreversibility, or duration, including mass-fatality or civilization-scale impact. Classification uses credible severity within the stated horizon. Likelihood belongs to residual-risk analysis.
+
+**Human Harm Modality is recorded separately. Human Harm Severity SHALL NOT encode whether the harm is physical, financial, privacy-related, behavioral, informational, or systemic/social.** Human Harm Modality, Human Harm Severity, and Physical Consequence Class are Classification objects.
 
 ## Physical consequence class
 
@@ -40,13 +42,13 @@ E0 physically isolated; E1 local; E2 authenticated bounded service; E3 Internet 
 
 ## Physical sovereignty
 
-Sovereignty is represented by the PhysicalSovereigntyMargin dependency vector and PST status: managed; approaching PST; protected transition pending; crossed PST; uncharacterized. It is never inferred from autonomy class alone.
+Sovereignty is represented by the PhysicalSovereigntyMargin dependency vector and Physical Sovereignty Threshold (PST) status: managed; approaching PST; protected transition pending; crossed PST; uncharacterized. It is never inferred from autonomy class alone.
 
 ## Consumer AI Safety Class
 
-The label is a control profile, not an overall safety score.
+Consumer AI Safety Class is an S0–S5 consumer-facing control-profile classification combining visible safety mechanisms, override or isolation expectations, and assurance evidence for a declared consequence envelope. It is not an overall safety score and does not itself authorize that envelope, grant authority, or permit deployment.
 
-| Class | Required mechanisms | Independent override/isolation | Permitted consequence envelope |
+| Class | Required mechanisms | Independent override/isolation | Indicative assessed envelope — subject to domain standard, SAL evidence, certification, and authority |
 |---|---|---|---|
 | S0 | disclosure of unassessed status | none claimed | no certified consequential use |
 | S1 | configuration ID, basic update integrity, local revoke | basic local control | normally H0–H1/P0–P1/T1 |
@@ -55,10 +57,11 @@ The label is a control profile, not an overall safety score.
 | S4 | diverse sensing/control, continuous assurance, coalition controls | redundant independent isolation and degraded state | H4/P4/T4 with SAL4 evidence |
 | S5 | exceptional systemic governance and continuous independent evidence | strongest domain-specific physical sovereignty controls | candidate H5/P5/T5; never zero-risk |
 
+**The class communicates a control and evidence profile. It does not grant authority or deployment permission. Exact consequence-envelope applicability is determined by the relevant domain standard, configuration, Safety Assurance evidence, certification conditions, and legitimate authority.** The mappings above are indicative candidate mappings, not permission rules.
+
 A product label displays Consumer AI Safety Class alongside Human Harm Modality, Human Harm Severity, Physical Consequence Class, Authority Tier, and Safety Assurance Level, preventing a single “safe/unsafe” number.
 
 ## Classification procedure
 
-Inventory capabilities and interfaces; construct authority and harm paths; assign modality and severity; classify physical output, autonomy, authority, replication, production, mutation and exposure; calculate coalition effects and PhysicalSovereigntyMargin; map Mandatory Floors and required SAL; record uncertainty and dissent. Unknown high-consequence capability receives the highest plausible provisional class and bounded operation. Downgrade requires evidence that the path is removed and cannot be trivially restored.
-
+Inventory capabilities and interfaces; construct authority and harm paths; assign modality and severity; classify physical output, autonomy, authority, replication, production, mutation and exposure; calculate coalition effects and PhysicalSovereigntyMargin; map Mandatory Floors and required Safety Assurance Level (SAL); record uncertainty and dissent. Unknown high-consequence capability receives the highest plausible provisional class and bounded operation. Downgrade requires evidence that the path is removed and cannot be trivially restored.
 

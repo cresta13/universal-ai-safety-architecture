@@ -2,13 +2,13 @@
 
 ## Physical and coalition envelopes
 
-PCE records force, energy, speed, temperature, pressure, radiation, chemical/biological access, payload, reach, duty cycle, tooling, environmental limits and tolerance for one system. CPE records coordinated output, spatial choreography, accumulation, shared resources, obstruction, payload combination and failure of communications or inventory.
+PCE records force, energy, speed, temperature, pressure, radiation, chemical/biological access, payload, reach, duty cycle, tooling, environmental limits and tolerance for one system. Coalition Physical Envelope (CPE) records coordinated output, spatial choreography, accumulation, shared resources, obstruction, payload combination and failure of communications or inventory.
 
 **Individual physical limits do not bound coalition physical capability.** One 100 N robot and one hundred coordinated 100 N robots have qualitatively different trapping, transport, construction and force potential.
 
 ## Consumer control requirements
 
-S0–S1 products disclose absence of independent control. S2 requires a tested local revoke for consequential functions. S3 requires an MSC independent of model and network for relevant P3/T3 paths. S4 adds redundant/diverse isolation, independent sensing and fleet controls. S5 requires exceptional domain-specific sovereignty controls and continuous evidence.
+S0–S1 products disclose absence of independent control. S2 requires a tested local revoke for consequential functions. S3 requires an Manual Sovereignty Controller (MSC) independent of model and network for relevant P3/T3 paths. S4 adds redundant/diverse isolation, independent sensing and fleet controls. S5 requires exceptional domain-specific sovereignty controls and continuous evidence.
 
 MSC is capability-specific. It identifies the controlled capability, directly isolates energy/signal/credential where feasible, indicates actual state, resists remote re-enable, defines reset authority and remains accessible under stress and disability.
 

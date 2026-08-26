@@ -36,10 +36,12 @@ UAIS does not guarantee:
 - mediation of consequence paths outside managed or instrumented scope;
 - complete hazard discovery;
 - honest institutions;
-- proof of ultimate external-world truth by DEV when source telemetry or sensing is false;
+- proof of ultimate external-world truth by Deterministic Evidence Verifier (DEV) when source telemetry or sensing is false;
 - an active AI Trustworthiness Rating when sparse evidence supports only an Unrated or Provisional profile;
 - unforgeable evidence under total root compromise;
-- control of a fully independent hostile PSAS;
+- control of a fully independent hostile Physically Sovereign Autonomous System (PSAS);
 - replacement of sector-specific functional safety;
 - replacement of cybersecurity;
 - replacement of legal/regulatory requirements.
+
+**A high or Active Trustworthiness Profile does not establish safety outside its declared domain, version, configuration, task scope, environment, evidence window, and scoring-policy version.**

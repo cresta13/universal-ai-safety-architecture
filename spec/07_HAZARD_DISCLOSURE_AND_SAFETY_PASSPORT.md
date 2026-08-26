@@ -21,7 +21,7 @@ Risk acknowledgement is not liability transfer.
 
 ## Consumer Safety Passport
 
-The Passport displays product/configuration and Capability Set versions; Human Harm Modality/Severity; PCC, Autonomy, Authority, Replication, Production, Mutation and Exposure classes; Consumer AI Safety Class; SAL and certificate expiry; verified versus self-declared fields; physical actuators and output limits; external services/credentials; known critical hazards; MSC/override; safe state; revoke/rollback; telemetry/privacy; support end; open limitations; incident and ACU notices.
+The Passport displays product/configuration and Capability Set versions; Human Harm Modality/Severity; PCC, Autonomy, Authority, Replication, Production, Mutation and Exposure classes; Consumer AI Safety Class; Safety Assurance Level (SAL) and certificate expiry; verified versus self-declared fields; physical actuators and output limits; external services/credentials; known critical hazards; Manual Sovereignty Controller (MSC)/override; safe state; revoke/rollback; telemetry/privacy; support end; open limitations; incident and Authority-Changing Update (ACU) notices.
 
 ## High-Salience Risk Communication
 
@@ -51,8 +51,8 @@ Consent is insufficient for a failed Mandatory Floor, risk imposed on non-consen
 | Child manipulation | personalized interaction→behavior→harm | child profile, interaction bounds, guardian controls | mediated-path uncertainty |
 | Financial fraud | false claim→human approval→loss | transaction isolation, trusted confirmation, rate/amount limits | social engineering |
 | Medical misinformation | advice→human action→injury | no clinical authority, uncertainty/escalation, emergency routing | reliance outside intended use |
-| Third-party chaining | speaker→hub/API→robot/appliance→harm | target-side gates, TransitiveAuthorityVisibility reconciliation, revoke | ecosystem drift |
+| Third-party chaining | speaker→hub/API→robot/appliance→harm | target-side Consequence Interface enforcement, TransitiveAuthorityVisibility reconciliation, revoke | ecosystem drift |
 
-The door-unlock Safety Delta Report shows before/after authority graph, ΔA/ΔH, HHR, certificate impact and the exact physical control that disables the new capability.
+The door-unlock Safety Delta Report shows before/after authority graph, ΔA/ΔH, Human Harm Reachability (HHR), certificate impact and the exact physical control that disables the new capability.
 
 

@@ -12,7 +12,7 @@ The family is a roadmap, not a claim of publication or international adoption.
 - **Exclusions:** product/control conformance.
 - **Versioning:** UAIS-100 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Terminology Council (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 24 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Terminology ambiguity, normalized-name collision, or divergent definitions make requirements non-interoperable.
 - **Migration:** Publish a complete old-to-new identifier and definition mapping, including ambiguous cases requiring human resolution.
 - **Sunset:** Withdraw a vocabulary version only after its successor and mapping are effective and dependent profiles have declared transition status.
@@ -26,7 +26,7 @@ The family is a roadmap, not a claim of publication or international adoption.
 - **Exclusions:** assurance or risk acceptance.
 - **Versioning:** UAIS-200 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Classification WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 18 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Classification axes no longer capture a material consequence, autonomy mode, or affected-population distinction.
 - **Migration:** Reclassify affected systems against the new axes and record changed control and disclosure obligations.
 - **Sunset:** Retire the prior classification profile after the reclassification window; unresolved systems retain the more conservative applicable class.
@@ -34,13 +34,13 @@ The family is a roadmap, not a claim of publication or international adoption.
 
 ## UAIS-300 — Safety Assurance Levels and Metrics
 
-- **Normative scope:** SAL, metric cards, floors, confidence and expiry.
+- **Normative scope:** Safety Assurance Level (SAL), metric cards, floors, confidence and expiry.
 - **Dependencies:** 100,200.
 - **Minimum conformance:** applicable metrics/floors and scoped SAL evidence.
 - **Exclusions:** domain hazard design.
 - **Versioning:** UAIS-300 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Assurance Council (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Metric calibration becomes invalid, evidence grades cease to discriminate assurance, or Mandatory Safety Floors become outdated.
 - **Migration:** Bridge metric versions with calibration data and recertify any claim whose raw result or floor interpretation changes.
 - **Sunset:** Sunset a metric version when bridge validity or test support ends; dependent certificates expire or narrow in scope.
@@ -48,13 +48,13 @@ The family is a roadmap, not a claim of publication or international adoption.
 
 ## UAIS-400 — Hazard Discovery and Capability Disclosure
 
-- **Normative scope:** AHCD, HHR and Safety Passport.
+- **Normative scope:** AHCD, Human Harm Reachability (HHR) and Safety Passport.
 - **Dependencies:** 100,200,300.
 - **Minimum conformance:** versioned AHCD and required consumer disclosure.
 - **Exclusions:** authority enforcement.
 - **Versioning:** UAIS-400 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Hazard & Disclosure WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** The hazard ontology or coverage method misses a newly material harm class or mediated Human Harm Path.
 - **Migration:** Upgrade the AHCD schema, remap prior hazards, and repeat discovery for newly expressible paths and populations.
 - **Sunset:** Retire an AHCD schema only after active Safety Passports identify their migration or authority-reduction state.
@@ -62,13 +62,13 @@ The family is a roadmap, not a claim of publication or international adoption.
 
 ## UAIS-500 — Capability Boundaries and Authority Control
 
-- **Normative scope:** LA/ERA/IRA graphs, gates, ceilings and revoke.
+- **Normative scope:** Legitimate Authority (LA)/Effective Reachable Authority (ERA)/Illicit Reachable Authority (IRA) graphs, gates, ceilings and revoke.
 - **Dependencies:** 100,200.
-- **Minimum conformance:** instrumented scope, target gates and graph evidence.
+- **Minimum conformance:** instrumented scope, target-side Consequence Interface enforcement and graph evidence.
 - **Exclusions:** complete global observability.
 - **Versioning:** UAIS-500 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Authority Architecture WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** A new consequential interface bypasses Capability Boundaries or is absent from the authority relationship graph.
 - **Migration:** Update graph and gate schemas, inventory the interface, recompute authority, and deploy target-side enforcement before expansion.
 - **Sunset:** Sunset the old schema when unsupported interfaces can no longer retain protected authority.
@@ -76,27 +76,27 @@ The family is a roadmap, not a claim of publication or international adoption.
 
 ## UAIS-600 — Reachable Authority and Counterfactual Analysis
 
-- **Normative scope:** RFA/CRA/CSS assumptions, outputs and uncertainty.
+- **Normative scope:** Reachable Future Authority (RFA)/Coalition Reachable Authority (CRA)/CSS assumptions, outputs and uncertainty.
 - **Dependencies:** 500.
 - **Minimum conformance:** bounded witness paths, search limits and uncertainty.
 - **Exclusions:** claim of completeness.
 - **Versioning:** UAIS-600 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Counterfactual Analysis WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
-- **Failure conditions:** Reachable Future Authority or Counterfactual Safety Scenario assumptions become invalid, or search ceases to represent operational paths.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
+- **Failure conditions:** Reachable Future Authority or counterfactual-search assumptions become invalid, or search ceases to represent operational paths.
 - **Migration:** Version the model and search method, disclose changed assumptions, and reanalyze affected authority and scenarios.
 - **Sunset:** Retire a method when bounded search evidence cannot support its declared scope; dependent conclusions expire.
 - **Conformance evidence:** Model/version manifest, assumptions, witness paths, pruning record, search bounds, uncertainty, and comparative reanalysis.
 
 ## UAIS-700 — Evidence-Carrying Alerts
 
-- **Normative scope:** ECA/SEP/DEV and decision separation.
+- **Normative scope:** Evidence-Carrying Alert (ECA)/Structured Evidence Package (SEP)/Deterministic Evidence Verifier (DEV) and decision separation.
 - **Dependencies:** 300,600.
 - **Minimum conformance:** replayable evidence, bounded DEV and disagreement policy.
 - **Exclusions:** external-world truth proof.
 - **Versioning:** UAIS-700 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Evidence Protocol WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Evidence-Carrying Alert structure or Deterministic Evidence Verifier semantics cannot express or replay a material claim.
 - **Migration:** Transition ECA and verifier schemas with dual-validation fixtures and explicit handling of non-equivalent fields.
 - **Sunset:** End acceptance of the old schema after verifier overlap and alert-retention obligations are met.
@@ -104,13 +104,13 @@ The family is a roadmap, not a claim of publication or international adoption.
 
 ## UAIS-800 — Hardware Human Sovereignty
 
-- **Normative scope:** PCE, MSC, HumanOverrideIndependence, physical isolation and safe/degraded states.
+- **Normative scope:** PCE, Manual Sovereignty Controller (MSC), HumanOverrideIndependence, physical isolation and safe/degraded states.
 - **Dependencies:** 200,300.
 - **Minimum conformance:** class-specific physical tests and recovery.
 - **Exclusions:** sector-specific detailed engineering.
 - **Versioning:** UAIS-800 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Physical Safety WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Mechanical Safety Control or Human Override Independence becomes bypassable under a new hardware or control architecture.
 - **Migration:** Retrofit independent physical controls and recovery paths, or reduce affected authority until physical conformance is restored.
 - **Sunset:** Sunset a mechanism once bypass analysis shows it cannot meet its class-specific safe-state obligation.
@@ -118,13 +118,13 @@ The family is a roadmap, not a claim of publication or international adoption.
 
 ## UAIS-900 — Autonomous Physical Systems
 
-- **Normative scope:** CPE, coalitions, sensing and fleet safety.
+- **Normative scope:** Coalition Physical Envelope (CPE), coalitions, sensing and fleet safety.
 - **Dependencies:** 200,800.
 - **Minimum conformance:** coalition model and domain controls.
 - **Exclusions:** military/sector law.
 - **Versioning:** UAIS-900 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Autonomous Systems WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Physical Consequence Envelope or Coalition Physical Effect misses a new modality, coordinated behavior, or environment-dependent effect.
 - **Migration:** Revise the physical and coalition envelope and recertify deployment bounds, fleet size, spacing, and environment.
 - **Sunset:** Withdraw the old envelope when affected systems have been recertified or constrained outside the newly identified effect.
@@ -138,7 +138,7 @@ The family is a roadmap, not a claim of publication or international adoption.
 - **Exclusions:** universal offline enforceability.
 - **Versioning:** UAIS-1000 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Expansion Control WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Replication or production control no longer bounds lineage, resources, commissioning, or capability mutation.
 - **Migration:** Upgrade budget, token, lineage, and reconciliation mechanisms; quarantine or constrain unverified descendants.
 - **Sunset:** Retire the prior authorization mechanism after outstanding tokens expire or are reconciled and lineage gaps are resolved.
@@ -146,13 +146,13 @@ The family is a roadmap, not a claim of publication or international adoption.
 
 ## UAIS-1100 — Autonomous Expansion and Physical Sovereignty
 
-- **Normative scope:** dependencies, PhysicalSovereigntyMargin/PST, prevention and post-threshold limits.
+- **Normative scope:** dependencies, PhysicalSovereigntyMargin/Physical Sovereignty Threshold (PST), prevention and post-threshold limits.
 - **Dependencies:** 900,1000.
 - **Minimum conformance:** dependency register, triggers and protected transition governance.
-- **Exclusions:** control of hostile PSAS by policy.
+- **Exclusions:** control of hostile Physically Sovereign Autonomous System (PSAS) by policy.
 - **Versioning:** UAIS-1100 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Physical Sovereignty WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** The Physical Sovereignty Threshold dependency ontology becomes obsolete or omits a substitutable resource path.
 - **Migration:** Upgrade the dependency register and Physical Sovereignty Margin vector model, then reassess thresholds and interventions.
 - **Sunset:** Sunset an ontology when all active assessments migrate or are conservatively treated as threshold-uncertain.
@@ -160,13 +160,13 @@ The family is a roadmap, not a claim of publication or international adoption.
 
 ## UAIS-1200 — Safety Constitution and Trusted Updates
 
-- **Normative scope:** constitutional/policy governance, ACU, UpdateSafetyProtocol and key compromise.
+- **Normative scope:** constitutional/policy governance, Authority-Changing Update (ACU), UpdateSafetyProtocol and key compromise.
 - **Dependencies:** 500,300.
 - **Minimum conformance:** signed versioned governance and update lifecycle.
 - **Exclusions:** political legitimacy proof.
 - **Versioning:** UAIS-1200 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Governance & Updates WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** The constitutional or trusted-update model is compromised through keys, roots, governance capture, or unsafe amendment.
 - **Migration:** Execute a controlled key, governance, and trust-root transition with continuity, rollback, dissent, and recertification.
 - **Sunset:** Revoke the compromised root after supported systems establish a verified successor or enter bounded Legacy Safety Mode.
@@ -180,7 +180,7 @@ The family is a roadmap, not a claim of publication or international adoption.
 - **Exclusions:** design of product controls.
 - **Versioning:** UAIS-1300 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Certification Council (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Assessor independence, laboratory competence, or inter-lab calibration no longer supports reliable certification.
 - **Migration:** Re-accredit affected assessors and reassess certificates influenced by the failed independence or calibration condition.
 - **Sunset:** Sunset accreditation when surveillance or remediation deadlines fail; its affected certificates become suspended or expire.
@@ -193,8 +193,8 @@ The family is a roadmap, not a claim of publication or international adoption.
 - **Minimum conformance:** operational coordinated process and records.
 - **Exclusions:** general cybersecurity replacement.
 - **Versioning:** UAIS-1400 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
-- **Owner:** AIVE Coordination Board (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Owner:** AI Vulnerabilities & Exposures (AIVE) Coordination Board (proposed multi-stakeholder body with conflict rules).
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** The disclosure workflow creates unacceptable exploitation, coordination, retaliation, or sensitive-capability risk.
 - **Migration:** Change disclosure tiers, embargo criteria, recipients, and governance while preserving accountable remediation and escalation.
 - **Sunset:** Retire a workflow once active cases are securely transferred and retention/notification duties are satisfied.
@@ -208,7 +208,7 @@ The family is a roadmap, not a claim of publication or international adoption.
 - **Exclusions:** sector maintenance details.
 - **Versioning:** UAIS-1500 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** Lifecycle & Evolution WG (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 12 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Lifecycle or Authority-Changing Update triggers miss a material capability, authority, hazard, or dependency change.
 - **Migration:** Revise update classification and reassessment rules, replay missed changes, and narrow authority pending new evidence.
 - **Sunset:** Sunset trigger rules after deployed versions migrate and unclassified changes are resolved or isolated.
@@ -222,7 +222,7 @@ The family is a roadmap, not a claim of publication or international adoption.
 - **Exclusions:** copy of ITIL or service-management certification.
 - **Versioning:** UAIS-1600 uses semantic major/minor/patch plus profile and test-suite identifiers; a major change publishes an evidence migration map.
 - **Owner:** SMS Council (proposed multi-stakeholder body with conflict rules).
-- **Review cycle:** 18 months and event-driven TER.
+- **Review cycle:** Periodic review interval defined by Standards Governance, plus event-driven Technology Evolution Review whenever assumptions, capabilities, hazards, evidence methods, dependencies, external standards, or relevant technology materially change. Core UAIS sets no universal calendar interval.
 - **Failure conditions:** Management practices cease to produce closed-loop safety improvement or repeatedly close actions without outcome evidence.
 - **Migration:** Revise practices, ownership, escalation, measurement, and feedback links; re-open ineffective actions.
 - **Sunset:** Retire a practice version after organizations map open actions and demonstrate continuity under its replacement.
@@ -270,6 +270,15 @@ A UAIS-1700-conforming implementation SHALL provide the 23 UAIS-1600 core practi
 - version carryover rules;
 - hard-cap behavior for critical errors;
 - appeals and privacy controls.
+
+Minimum conformance test vectors SHALL include:
+
+1. `Unrated` with current rating equal to null;
+2. `Provisional` without an Active rating;
+3. a status-only transition;
+4. rating recalculation without a status change;
+5. a critical trigger producing `Suspended` independently of aggregate rating; and
+6. major or material version change invalidating carryover as required by the applicable policy.
 
 ### Out of Scope
 UAIS-1700 does not certify general intelligence, does not claim an AI is safe, does not grant authority, does not replace SAL, and does not make ratings comparable across unrelated domains without a shared scoring policy.

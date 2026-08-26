@@ -10,7 +10,7 @@ Every stage controls an identified Device + Firmware + Model + Capability Set + 
 
 ## ACU screening and decision chain
 
-Technology Watch/product change → change classification → ACU detection → ΔA/ΔH → LA/ERA/IRA and RFA recalculation → coalition/CPE → HHR → mitigation → verification/validation → SAL/certificate decision → Safety Delta Report → high-salience communication/legitimate choice → release → staged deployment → monitoring → incident/problem/knowledge/AIVE → improvement.
+Technology Watch/product change → change classification → Authority-Changing Update (ACU) detection → ΔA/ΔH → Legitimate Authority (LA)/Effective Reachable Authority (ERA)/Illicit Reachable Authority (IRA) and Reachable Future Authority (RFA) recalculation → coalition/Coalition Physical Envelope (CPE) → Human Harm Reachability (HHR) → mitigation → verification/validation → Safety Assurance Level (SAL)/certificate decision → Safety Delta Report → high-salience communication/legitimate choice → release → staged deployment → monitoring → incident/problem/knowledge/AI Vulnerabilities & Exposures (AIVE) → improvement.
 
 ACU includes new tools, credentials, actuation, delegation, identity/IAM mutation, autonomy, replication, production, resource access, safety-control removal or ecosystem change creating equivalent effective power.
 
@@ -30,7 +30,7 @@ Missing evidence blocks the expansion, not automatically every existing function
 
 ## Certificate invalidation and recertification
 
-Triggers: ACU; class/floor crossing; Capability Set mismatch; Constitution/policy/gate/MSC change; model/tool mutation; new ERA/IRA edge; material environmental drift; fleet/coalition scale; key/root/supplier compromise; AIVE; incident; failed metric/SLO; standard obsolescence; support end; expiry. The registry records active, restricted, suspended, revoked, expired, legacy or decommissioned state.
+Triggers: ACU; class/floor crossing; Capability Set mismatch; Constitution/policy/gate/Manual Sovereignty Controller (MSC) change; model/tool mutation; new ERA/IRA edge; material environmental drift; fleet/coalition scale; key/root/supplier compromise; AIVE; incident; failed metric/SLO; standard obsolescence; support end; expiry. The registry records active, restricted, suspended, revoked, expired, legacy or decommissioned state.
 
 Emergency safety updates are minimal, signed, reversible where possible and reviewed retrospectively with ΔA/ΔH and certificate impact.
 

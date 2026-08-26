@@ -414,6 +414,36 @@ h1 {
   gap: 10px;
 }
 
+.trust-output-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .trust-output-row {
+    grid-template-columns: 1fr;
+  }
+
+  nav,
+  .signal-row,
+  .axiom-strip {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media print {
+  * {
+    overflow: visible !important;
+  }
+
+  .topbar {
+    position: static;
+  }
+}
+
 .trust-node,
 .cap {
   min-height: 150px;

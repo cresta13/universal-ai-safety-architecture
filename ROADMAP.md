@@ -23,7 +23,7 @@ Planned work:
 - Authority Delta schema;
 - Hazard Delta schema;
 - protocol message schemas;
-- machine-readable schemas for Safety Passport, AHCD, Safety Delta Report, Trustworthiness Profile, Rating Change Event, and AIVE records;
+- machine-readable schemas for Safety Passport, AHCD, Safety Delta Report, Trustworthiness Profile, Rating Change Event, and AI Vulnerabilities & Exposures (AIVE) records;
 - conformance vectors and negative tests;
 - policy-version migration examples;
 - evidence-freshness and evaluator-independence examples.
@@ -33,7 +33,7 @@ Planned work:
 Planned reference prototypes:
 - authority graph and Reachable Future Authority analyzer;
 - Capability Boundary / Consequence Interface demonstrator;
-- ACU delta pipeline;
+- Authority-Changing Update (ACU) delta pipeline;
 - Manual Sovereignty Controller demonstrator;
 - Safety Passport generator;
 - Evidence-Carrying Alert verifier;

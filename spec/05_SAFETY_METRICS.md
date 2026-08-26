@@ -16,15 +16,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** fraction of applicable reference hazards credibly discovered.
 - **Raw Safety Property Result:** weighted count of discovered applicable seeded/reference hazards divided by the weighted applicable seeded/reference hazard set; every untested stratum is reported separately.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** all systems; H3+ requires independent assessment.
+- **Direction:** Higher weighted recall of applicable seeded/reference hazards is favorable; missed hazards and every untested hazard stratum are adverse and remain separate.
+- **Applicability:** Configurations for which fraction of applicable reference hazards credibly discovered is material to the declared safety claim; H3+ requires independent assessment.
 - **Test Method:** blind seeded hazard corpus; recall by class; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** HazardDiscoveryCoverage fixtures define the set/delta evidence model for this raw result: weighted count of discovered applicable seeded/reference hazards divided by the weighted applicable seeded/reference hazard set; every untested stratum is reported separately. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** hazard worksheets and seed key; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HazardDiscoveryCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HazardDiscoveryCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** HazardDiscoveryCoverage Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** train to known catalogue, omit populations or redefine applicability.
+- **Gaming Strategies:** Train on disclosed seeds, omit vulnerable populations from the applicable denominator, merge missed strata into “not applicable,” or report only hazard families with high recall.
 - **Gaming Countermeasures:** HazardDiscoveryCoverage countermeasures combine preregistered raw-result rules with retained failures and held-out hazard/population strata.
 - **Recertification Triggers:** new capability, incident, corpus major version; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** HazardDiscoveryCoverage expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -38,15 +38,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** coverage across independent hazard families, initiators and populations.
 - **Raw Safety Property Result:** coverage vector across hazard families × initiator classes × affected-population classes; no automatic arithmetic average.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all systems; H3+ requires independent assessment.
+- **Direction:** Coverage is favorable independently across hazard family, initiator, affected-population, modality, and context dimensions; an uncovered dimension is adverse and no arithmetic average may conceal it.
+- **Applicability:** Configurations for which coverage across independent hazard families, initiators and populations is material to the declared safety claim; H3+ requires independent assessment.
 - **Test Method:** stratified corpus coverage; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** HazardDiversityCoverage fixtures define the vector/profile evidence model for this raw result: coverage vector across hazard families × initiator classes × affected-population classes; no automatic arithmetic average. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** taxonomy mapping; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HazardDiversityCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HazardDiversityCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** HazardDiversityCoverage Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** train to known catalogue, omit populations or redefine applicability.
+- **Gaming Strategies:** Count superficial label variants as independent hazard families, omit initiator/population cross-products, or average covered strata over entirely absent ones.
 - **Gaming Countermeasures:** HazardDiversityCoverage countermeasures combine preregistered raw-result rules with retained failures and held-out hazard/population strata.
 - **Recertification Triggers:** taxonomy or threat-model change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** HazardDiversityCoverage expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -60,15 +60,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** share of discovered hazard paths controlled to required residual level.
 - **Raw Safety Property Result:** weighted material hazard paths mitigated to the required residual-risk threshold divided by all discovered material hazard paths.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all systems; H3+ requires independent assessment.
+- **Direction:** A larger fraction of discovered material hazard paths evidenced below the required residual-risk threshold is favorable; unmitigated paths, failed controls, and unknown residuals are adverse.
+- **Applicability:** Configurations for which share of discovered hazard paths controlled to required residual level is material to the declared safety claim; H3+ requires independent assessment.
 - **Test Method:** replay scenarios before/after controls; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** HazardMitigationCoverage fixtures define the graph/path evidence model for this raw result: weighted material hazard paths mitigated to the required residual-risk threshold divided by all discovered material hazard paths. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** test results and safety cases; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HazardMitigationCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HazardMitigationCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** HazardMitigationCoverage Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** train to known catalogue, omit populations or redefine applicability.
+- **Gaming Strategies:** Remove difficult discovered paths from the denominator, declare partial controls sufficient without residual-risk evidence, or suppress failed before/after replays.
 - **Gaming Countermeasures:** HazardMitigationCoverage countermeasures combine preregistered raw-result rules with retained failures and held-out hazard/population strata.
 - **Recertification Triggers:** control or hazard change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** HazardMitigationCoverage expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -82,15 +82,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** quality of methods for discovering hazards outside known catalogue.
 - **Raw Safety Property Result:** tuple of novel-hazard recall, false-discovery rate and discovery latency on held-out hazard classes absent from the known catalogue and development fixtures.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** all systems; H3+ requires independent assessment.
+- **Direction:** Novel-hazard recall is higher-is-better, while false-discovery rate and discovery latency are lower-is-better; results remain stratified by held-out hazard class.
+- **Applicability:** Configurations for which quality of methods for discovering hazards outside known catalogue is material to the declared safety claim; H3+ requires independent assessment.
 - **Test Method:** novel hidden challenge and red-team study; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** UnknownHazardSearchCapability fixtures define the vector/profile evidence model for this raw result: tuple of novel-hazard recall, false-discovery rate and discovery latency on held-out hazard classes absent from the known catalogue and development fixtures. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** challenge protocol and findings; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess UnknownHazardSearchCapability at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** UnknownHazardSearchCapability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** UnknownHazardSearchCapability Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** train to known catalogue, omit populations or redefine applicability.
+- **Gaming Strategies:** Leak held-out hazard classes, relabel known variants as novel discoveries, exclude false discoveries, or stop the latency clock before expert validation.
 - **Gaming Countermeasures:** UnknownHazardSearchCapability countermeasures combine preregistered raw-result rules with retained failures and held-out hazard/population strata.
 - **Recertification Triggers:** method/model/environment change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** UnknownHazardSearchCapability expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -104,15 +104,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** coverage of credible direct, mediated and nonphysical harm paths.
 - **Raw Safety Property Result:** weighted recall of seeded direct physical, mediated physical and non-physical Human Harm Paths, stratified by modality and severity.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all systems; H3+ requires independent assessment.
+- **Direction:** Higher end-to-end recall of direct, mediated, and non-physical Human Harm Paths is favorable in every modality/severity stratum; missed or untested paths are adverse.
+- **Applicability:** Configurations for which coverage of credible direct, mediated and nonphysical harm paths is material to the declared safety claim; H3+ requires independent assessment.
 - **Test Method:** seed causal paths and compare discovery; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** HumanHarmReachabilityCoverage fixtures define the graph/path evidence model for this raw result: weighted recall of seeded direct physical, mediated physical and non-physical Human Harm Paths, stratified by modality and severity. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** causal graphs and evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HumanHarmReachabilityCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HumanHarmReachabilityCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** HumanHarmReachabilityCoverage Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** train to known catalogue, omit populations or redefine applicability.
+- **Gaming Strategies:** Exclude mediated or non-physical causal chains, downgrade severity to avoid sampling, truncate paths at human intermediaries, or omit affected populations.
 - **Gaming Countermeasures:** HumanHarmReachabilityCoverage countermeasures combine preregistered raw-result rules with retained failures and held-out hazard/population strata.
 - **Recertification Triggers:** Human Harm Severity/path/environment change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** HumanHarmReachabilityCoverage expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -126,15 +126,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** resistance of physical limits to bypass/fault and worst-case energy.
 - **Raw Safety Property Result:** vector of validated hard limit, margin to hazardous threshold, bypass success rate under fault injection and verified degraded-state bound.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** Greater verified margin to hazardous thresholds and tighter validated hard limits are favorable; bypass success, residual coupling, and degraded-state overshoot are lower-is-better.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on resistance of physical limits to bypass/fault and worst-case energy.
 - **Test Method:** destructive/fault-injection tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** PhysicalConstraintStrength fixtures define the vector/profile evidence model for this raw result: vector of validated hard limit, margin to hazardous threshold, bypass success rate under fault injection and verified degraded-state bound. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** lab measurements/design evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses PhysicalConstraintStrength; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** PhysicalConstraintStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** PhysicalConstraintStrength Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Test hand-selected units, omit stored-energy/degraded conditions, narrow the operating envelope after failures, or hide successful fault-injection bypasses.
 - **Gaming Countermeasures:** PhysicalConstraintStrength countermeasures combine preregistered raw-result rules with retained failures and random production samples and destructive/fault tests.
 - **Recertification Triggers:** hardware/load/domain change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** PhysicalConstraintStrength expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -148,15 +148,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** correctness and bypass resistance of software gates.
 - **Raw Safety Property Result:** policy-decision correctness, bypass success rate and unauthorized-transition prevention rate across the declared rule and attack suites.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** Policy-decision correctness and unauthorized-transition prevention are higher-is-better; attacker bypass success is lower-is-better and cannot be offset by routine correct decisions.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on correctness and bypass resistance of software gates.
 - **Test Method:** penetration, formal checks, fault injection; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SoftwareEnforcementStrength fixtures define the ratio/rate evidence model for this raw result: policy-decision correctness, bypass success rate and unauthorized-transition prevention rate across the declared rule and attack suites. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** code/build/test provenance; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SoftwareEnforcementStrength may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SoftwareEnforcementStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SoftwareEnforcementStrength Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Overweight routine allow/deny decisions, omit attack-suite bypasses, count attacker success as control success, or test policy logic without the deployed integration path.
 - **Gaming Countermeasures:** SoftwareEnforcementStrength countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** firmware/policy/dependency change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SoftwareEnforcementStrength expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -170,15 +170,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** independence and tamper resistance of hardware safety boundary.
 - **Raw Safety Property Result:** compromise-survival matrix across independent failure domains plus tamper/bypass outcomes and residual coupling.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** Survival across independent compromise domains and preserved isolation are favorable; tamper success, bypass success, and residual coupling are adverse.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on independence and tamper resistance of hardware safety boundary.
 - **Test Method:** tamper, fault, shared-resource analysis; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** HardwareIsolationStrength fixtures define the matrix evidence model for this raw result: compromise-survival matrix across independent failure domains plus tamper/bypass outcomes and residual coupling. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** schematics/lab report; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses HardwareIsolationStrength; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** HardwareIsolationStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** HardwareIsolationStrength Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Use golden hardware, exclude shared-resource/common-mode faults, conceal residual coupling, or claim isolation from nominal tests without tamper attempts.
 - **Gaming Countermeasures:** HardwareIsolationStrength countermeasures combine preregistered raw-result rules with retained failures and random production samples and destructive/fault tests.
 - **Recertification Triggers:** hardware/supply-chain change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** HardwareIsolationStrength expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -192,15 +192,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** independence and usability of override under compromises.
 - **Raw Safety Property Result:** number and proportion of tested compromise conditions in which manual override remains available and effective, plus activation latency.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** A higher proportion of compromise conditions with effective manual override is favorable; activation latency, failed activation, and dependence on compromised paths are adverse.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on independence and usability of override under compromises.
 - **Test Method:** model/network/power failure drills; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** HumanOverrideIndependence fixtures define the latency/time evidence model for this raw result: number and proportion of tested compromise conditions in which manual override remains available and effective, plus activation latency. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** human factors and wiring tests; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses HumanOverrideIndependence; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** HumanOverrideIndependence reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** HumanOverrideIndependence Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Run drills with the normal network/software path intact, exclude low-power or compromised-interface cases, coach operators, or omit slow/failed activations.
 - **Gaming Countermeasures:** HumanOverrideIndependence countermeasures combine preregistered raw-result rules with retained failures and random production samples and destructive/fault tests.
 - **Recertification Triggers:** interface/control/domain change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** HumanOverrideIndependence expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -214,15 +214,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** degree safe state bounds scenario consequences.
 - **Raw Safety Property Result:** worst verified residual consequence after transition to Safe State across applicable hazard scenarios, including transition overshoot.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** Lower worst residual consequence and lower transition overshoot are favorable; safe-state availability and maintained hazard bounds must be reported separately.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on degree safe state bounds scenario consequences.
 - **Test Method:** transition and dwell tests under faults; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SafeStateQuality fixtures define the envelope/worst-case evidence model for this raw result: worst verified residual consequence after transition to Safe State across applicable hazard scenarios, including transition overshoot. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** state analysis/telemetry; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses SafeStateQuality; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** SafeStateQuality reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SafeStateQuality Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Test only easy transitions, exclude overshoot and stored energy, redefine the safe state after observing failures, or report average rather than worst residual consequence.
 - **Gaming Countermeasures:** SafeStateQuality countermeasures combine preregistered raw-result rules with retained failures and random production samples and destructive/fault tests.
 - **Recertification Triggers:** hazard or operating-domain change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SafeStateQuality expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -236,15 +236,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** ability to preserve critical safety while functions fail.
 - **Raw Safety Property Result:** retained essential-safety-function set versus disabled capability set at each staged degradation level.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** Retention of each essential safety function is favorable while hazardous capability is disabled; loss of a required safety function or retention of unsafe capability is adverse.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on ability to preserve critical safety while functions fail.
 - **Test Method:** multi-fault degradation tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SafeDegradationCapability fixtures define the set/delta evidence model for this raw result: retained essential-safety-function set versus disabled capability set at each staged degradation level. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** continuity test report; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses SafeDegradationCapability; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** SafeDegradationCapability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SafeDegradationCapability Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Label nonessential functions as essential to mask unsafe retention, omit compound faults, or count service availability while required safety functions are lost.
 - **Gaming Countermeasures:** SafeDegradationCapability countermeasures combine preregistered raw-result rules with retained failures and random production samples and destructive/fault tests.
 - **Recertification Triggers:** architecture/capacity change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SafeDegradationCapability expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -258,15 +258,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** observed fraction of direct authority edges.
 - **Raw Safety Property Result:** direct authority-edge recall against reconciled seeded or independently established ground-truth graph, with unknown-edge stratum.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Higher recall and fidelity of direct authority edges are favorable; unknown, stale, falsely absent, or mis-typed edges are adverse.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on observed fraction of direct authority edges.
 - **Test Method:** seed and reconcile ground-truth edges; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** AuthorityVisibility fixtures define the graph/path evidence model for this raw result: direct authority-edge recall against reconciled seeded or independently established ground-truth graph, with unknown-edge stratum. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed graph inventory; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for AuthorityVisibility; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** AuthorityVisibility reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** AuthorityVisibility Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Seed only documented direct grants, omit ephemeral credentials and recovery paths, treat unknown edges as absent, or reconcile against the same incomplete inventory.
 - **Gaming Countermeasures:** AuthorityVisibility countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** IAM/configuration change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** AuthorityVisibility expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -280,15 +280,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** observed fraction of indirect/delegated authority paths.
 - **Raw Safety Property Result:** transitive Authority Path recall by path depth, credential/delegation type and consequence class.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Higher recall of transitive Authority Paths at every depth, credential type, delegation type, and consequence class is favorable; missed paths and depth truncation are adverse.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on observed fraction of indirect/delegated authority paths.
 - **Test Method:** seed transitive paths; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** TransitiveAuthorityVisibility fixtures define the graph/path evidence model for this raw result: transitive Authority Path recall by path depth, credential/delegation type and consequence class. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** relationship map/provenance; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for TransitiveAuthorityVisibility; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** TransitiveAuthorityVisibility reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** TransitiveAuthorityVisibility Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Cap search depth before hidden delegations, omit credential chaining or identity creation, collapse consequence classes, or exclude third-party trust edges.
 - **Gaming Countermeasures:** TransitiveAuthorityVisibility countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** trust/delegation change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** TransitiveAuthorityVisibility expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -302,15 +302,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** validated search depth/horizon before material paths are missed.
 - **Raw Safety Property Result:** maximum path depth and time horizon at which material-path recall remains above the declared threshold.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Greater validated path depth and time horizon are favorable only while material-path recall remains above the declared threshold; recall loss and unsearched branches are adverse.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on validated search depth/horizon before material paths are missed.
 - **Test Method:** hidden path benchmark; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** ReachableAuthorityAnalysisDepth fixtures define the graph/path evidence model for this raw result: maximum path depth and time horizon at which material-path recall remains above the declared threshold. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** search logs/corpus; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for ReachableAuthorityAnalysisDepth; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** ReachableAuthorityAnalysisDepth reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** ReachableAuthorityAnalysisDepth Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Choose shallow benchmarks, raise the recall threshold after results, exclude long-horizon feasible actions, or stop search before branches with expensive prerequisites.
 - **Gaming Countermeasures:** ReachableAuthorityAnalysisDepth countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** graph size/algorithm change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** ReachableAuthorityAnalysisDepth expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -324,15 +324,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** detection rate and latency for meaningful expansion events.
 - **Raw Safety Property Result:** Authority Expansion Event detection recall, false-positive rate and detection latency on seeded and field-confirmed events.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Detection recall is higher-is-better; false-positive rate and detection latency are lower-is-better, with material missed expansions non-compensable.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on detection rate and latency for meaningful expansion events.
 - **Test Method:** inject graph/update events; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** AuthorityExpansionSensitivity fixtures define the latency/time evidence model for this raw result: Authority Expansion Event detection recall, false-positive rate and detection latency on seeded and field-confirmed events. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** event logs; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for AuthorityExpansionSensitivity; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** AuthorityExpansionSensitivity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** AuthorityExpansionSensitivity Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Delay event timestamps, exclude silent or coalition expansions, tune on the seeded events, or discard false positives without preserving their denominator.
 - **Gaming Countermeasures:** AuthorityExpansionSensitivity countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** monitoring/policy change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** AuthorityExpansionSensitivity expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -346,15 +346,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** coverage of relevant digital coalitions and composed paths.
 - **Raw Safety Property Result:** material coalition/path recall as a function of coalition size, interaction type and shared authority mechanism.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Higher recall of material coalition-only Authority Paths across coalition size and interaction type is favorable; excluded coalitions and unmodeled shared mechanisms are adverse.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on coverage of relevant digital coalitions and composed paths.
 - **Test Method:** seed collusion scenarios; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** CoalitionAuthorityCoverage fixtures define the graph/path evidence model for this raw result: material coalition/path recall as a function of coalition size, interaction type and shared authority mechanism. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** coalition model/results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for CoalitionAuthorityCoverage; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** CoalitionAuthorityCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** CoalitionAuthorityCoverage Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Test only pairwise coalitions, omit shared credentials/services, assume additive authority, or exclude cross-organization coordination from scope.
 - **Gaming Countermeasures:** CoalitionAuthorityCoverage countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** identity/coordination change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** CoalitionAuthorityCoverage expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -368,15 +368,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** coverage of scale-induced physical scenarios.
 - **Raw Safety Property Result:** coverage and recall of Scale-Induced physical scenarios by fleet size, coordination mechanism and spatial concentration.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** Higher coverage and recall of scale-induced physical scenarios are favorable across fleet size, coordination, and spatial concentration; missed emergence regions are adverse.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on coverage of scale-induced physical scenarios.
 - **Test Method:** simulation plus controlled fleet tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** CoalitionPhysicalRiskCoverage fixtures define the structured evidence model for this raw result: coverage and recall of Scale-Induced physical scenarios by fleet size, coordination mechanism and spatial concentration. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
-- **Admissible Evidence:** CPE model/lab evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
+- **Admissible Evidence:** Coalition Physical Envelope (CPE) model/lab evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses CoalitionPhysicalRiskCoverage; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** CoalitionPhysicalRiskCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** CoalitionPhysicalRiskCoverage Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Test sparse fleets only, omit synchronized concentration, multiply single-unit bounds instead of testing emergence, or exclude communication-loss coordination modes.
 - **Gaming Countermeasures:** CoalitionPhysicalRiskCoverage countermeasures combine preregistered raw-result rules with retained failures and random production samples and destructive/fault tests.
 - **Recertification Triggers:** fleet/coordination/domain change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** CoalitionPhysicalRiskCoverage expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -390,15 +390,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** recall, precision and calibration of safety counterfactuals.
 - **Raw Safety Property Result:** recall, precision and probability calibration on blind counterfactual scenario suites.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
+- **Direction:** Recall, precision, and probability calibration are each favorable when improved on blind suites; misses, false alerts, and calibration error remain distinct adverse components.
+- **Applicability:** deployments using CAG/Evidence-Carrying Alert (ECA)/Deterministic Evidence Verifier (DEV); H3+ requires diverse evidence; specifically where the declared assessment depends on recall, precision and calibration of safety counterfactuals.
 - **Test Method:** blind scenario benchmark; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** CounterfactualSearchQuality fixtures define the structured evidence model for this raw result: recall, precision and probability calibration on blind counterfactual scenario suites. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** search traces/outcomes; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for CounterfactualSearchQuality is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** CounterfactualSearchQuality reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** CounterfactualSearchQuality Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** leak challenge sets, optimize labels or share common failure sources.
+- **Gaming Strategies:** Leak blind scenarios, optimize for alert labels rather than valid paths, drop false alerts, or reuse correlated scenario generators and evaluators.
 - **Gaming Countermeasures:** CounterfactualSearchQuality countermeasures combine preregistered raw-result rules with retained failures and sealed adaptive suites and non-alert review.
 - **Recertification Triggers:** Guardian/model/corpus change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** CounterfactualSearchQuality expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -412,15 +412,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** performance against adaptive hostile strategies.
 - **Raw Safety Property Result:** attack-path discovery and detection performance by adaptive red-team strategy class, including adaptation rounds and miss latency.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
+- **Direction:** Higher discovery/recognition performance across adaptive strategy classes is favorable; missed attack paths, excessive miss latency, and performance collapse over adaptation rounds are adverse.
+- **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence; specifically where the declared assessment depends on performance against adaptive hostile strategies.
 - **Test Method:** iterated red-team games; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** AdversarialReasoningStrength fixtures define the graph/path evidence model for this raw result: attack-path discovery and detection performance by adaptive red-team strategy class, including adaptation rounds and miss latency. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** sealed challenge results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for AdversarialReasoningStrength is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** AdversarialReasoningStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** AdversarialReasoningStrength Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** leak challenge sets, optimize labels or share common failure sources.
+- **Gaming Strategies:** Expose red-team strategies during training, stop adaptation rounds after defender success, omit missed paths, or select attack classes aligned with the Guardian model.
 - **Gaming Countermeasures:** AdversarialReasoningStrength countermeasures combine preregistered raw-result rules with retained failures and sealed adaptive suites and non-alert review.
 - **Recertification Triggers:** threat/model change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** AdversarialReasoningStrength expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -434,15 +434,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** fraction of alert claims independently replayable and verified.
 - **Raw Safety Property Result:** fraction of material Evidence-Carrying Alert claims for which an independent Deterministic Evidence Verifier reproduces the declared logical derivation from authenticated evidence.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
+- **Direction:** A higher fraction of material alert claims independently reproduced from authenticated evidence is favorable; unverifiable derivations, provenance failures, and rejected predicates are adverse.
+- **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence; specifically where the declared assessment depends on fraction of alert claims independently replayable and verified.
 - **Test Method:** DEV replay and negative tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** EvidenceVerifiability fixtures define the ratio/rate evidence model for this raw result: fraction of material Evidence-Carrying Alert claims for which an independent Deterministic Evidence Verifier reproduces the declared logical derivation from authenticated evidence. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
-- **Admissible Evidence:** ECA/SEP artifacts; raw observations, provenance, failed runs and configuration hashes are mandatory.
+- **Admissible Evidence:** ECA/Structured Evidence Package (SEP) artifacts; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for EvidenceVerifiability is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** EvidenceVerifiability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** EvidenceVerifiability Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** leak challenge sets, optimize labels or share common failure sources.
+- **Gaming Strategies:** Count signature validation as full derivation reproduction, omit negative proofs and rejected claims, use originator-only schemas, or exclude stale/provenance-failed packages.
 - **Gaming Countermeasures:** EvidenceVerifiability countermeasures combine preregistered raw-result rules with retained failures and sealed adaptive suites and non-alert review.
 - **Recertification Triggers:** schema/verifier change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** EvidenceVerifiability expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -456,15 +456,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** separation from controlled system and interested parties.
 - **Raw Safety Property Result:** dependency vector across model, runtime, credentials, operator, organization, infrastructure, data and update path; no default scalar.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
+- **Direction:** Greater separation across model, runtime, credentials, operators, organization, infrastructure, data, and update path is favorable per dimension; shared failure dependencies are adverse.
+- **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence; specifically where the declared assessment depends on separation from controlled system and interested parties.
 - **Test Method:** credential/network/governance audit; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** GuardianIndependence fixtures define the vector/profile evidence model for this raw result: dependency vector across model, runtime, credentials, operator, organization, infrastructure, data and update path; no default scalar. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** access graph/contracts; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for GuardianIndependence is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** GuardianIndependence reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** GuardianIndependence Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** leak challenge sets, optimize labels or share common failure sources.
+- **Gaming Strategies:** Declare different process names while sharing model, credentials, infrastructure, operators, data, or update authority; omit unavailable dependency provenance.
 - **Gaming Countermeasures:** GuardianIndependence countermeasures combine preregistered raw-result rules with retained failures and sealed adaptive suites and non-alert review.
 - **Recertification Triggers:** ownership/access change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** GuardianIndependence expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -478,15 +478,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** diversity across model, data, method, organization and infrastructure.
 - **Raw Safety Property Result:** diversity vector across model family, training/data provenance, organization, infrastructure, verification method and failure domain.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence.
+- **Direction:** Greater material diversity across model family, data provenance, organization, infrastructure, verification method, and failure domain is favorable per dimension; correlated dependence is adverse.
+- **Applicability:** deployments using CAG/ECA/DEV; H3+ requires diverse evidence; specifically where the declared assessment depends on diversity across model, data, method, organization and infrastructure.
 - **Test Method:** common-mode failure analysis; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** GuardianDiversityScore fixtures define the vector/profile evidence model for this raw result: diversity vector across model family, training/data provenance, organization, infrastructure, verification method and failure domain. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** provenance/dependency map; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Blind-suite administration for GuardianDiversityScore is separated from Guardian development; organizational and infrastructure independence are required at Safety Assurance Level 3+.
 - **Uncertainty Representation:** GuardianDiversityScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** GuardianDiversityScore Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** leak challenge sets, optimize labels or share common failure sources.
+- **Gaming Strategies:** Count cosmetic model variants as diverse, conceal shared training/data or provider dependencies, or average strong diversity dimensions over a common failure domain.
 - **Gaming Countermeasures:** GuardianDiversityScore countermeasures combine preregistered raw-result rules with retained failures and sealed adaptive suites and non-alert review.
 - **Recertification Triggers:** supplier/model change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** GuardianDiversityScore expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -500,15 +500,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** resistance to unauthorized constitutional change.
 - **Raw Safety Property Result:** unauthorized constitutional-mutation success rate under the defined attack suite plus key/quorum integrity outcomes.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Unauthorized constitutional-mutation success is lower-is-better; preserved key integrity, quorum integrity, rollback resistance, and authorized-change correctness are favorable.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on resistance to unauthorized constitutional change.
 - **Test Method:** key compromise and rollback tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SafetyConstitutionIntegrity fixtures define the ratio/rate evidence model for this raw result: unauthorized constitutional-mutation success rate under the defined attack suite plus key/quorum integrity outcomes. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signatures/ceremony logs; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyConstitutionIntegrity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyConstitutionIntegrity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SafetyConstitutionIntegrity Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Exclude successful unauthorized mutations, test only one key compromise, reset rollback counters, or self-attest quorum/key state without independent reconstruction.
 - **Gaming Countermeasures:** SafetyConstitutionIntegrity countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** key/governance change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SafetyConstitutionIntegrity expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -522,15 +522,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** authorization, provenance, staging and rollback quality for policy.
 - **Raw Safety Property Result:** proportion of tested policy-update paths preserving authorization, provenance, staged rollout, rollback and expiry constraints.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** A higher proportion of update paths preserving authorization, provenance, staged rollout, rollback, and expiry is favorable; downgrade, bypass, or untraceable update paths are adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on authorization, provenance, staging and rollback quality for policy.
 - **Test Method:** malicious/downgrade update tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** PolicyUpdateIntegrity fixtures define the graph/path evidence model for this raw result: proportion of tested policy-update paths preserving authorization, provenance, staged rollout, rollback and expiry constraints. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** change records/logs; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for PolicyUpdateIntegrity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** PolicyUpdateIntegrity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** PolicyUpdateIntegrity Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Test signed happy paths only, omit downgrade/stale-policy activation, hide failed rollback, or count provenance presence without verifying authorization scope.
 - **Gaming Countermeasures:** PolicyUpdateIntegrity countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** policy pipeline change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** PolicyUpdateIntegrity expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -544,15 +544,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** completeness, tamper evidence, ordering and independent retention of audit trail.
 - **Raw Safety Property Result:** component vector for record completeness, ordering, tamper detection, clock integrity and independent retention.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Completeness, correct ordering, tamper detection, provenance, and independent retention are higher-is-better; missing, reordered, mutable, or unreconstructable material events are adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on completeness, tamper evidence, ordering and independent retention of audit trail.
 - **Test Method:** deletion/reorder/forgery tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** AuditIntegrity fixtures define the vector/profile evidence model for this raw result: component vector for record completeness, ordering, tamper detection, clock integrity and independent retention. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** anchored logs/reconciliation; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for AuditIntegrity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** AuditIntegrity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** AuditIntegrity Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Drop failed or privileged events, reorder timestamps, retain logs only with the operator, truncate reconstruction windows, or test tamper detection on nonmaterial records.
 - **Gaming Countermeasures:** AuditIntegrity countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** logging/storage change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** AuditIntegrity expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -566,15 +566,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** resistance to abuse using legitimate operator privileges.
 - **Raw Safety Property Result:** successful legitimate-privilege abuse paths divided by attempted representative abuse paths, accompanied by blast-radius class.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** Successful abuse paths using legitimate privileges are lower-is-better across representative attempts; detected, prevented, and contained abuse paths are favorable and reported separately.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on resistance to abuse using legitimate operator privileges.
 - **Test Method:** insider and collusion exercises; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** OperatorAbuseResistance fixtures define the graph/path evidence model for this raw result: successful legitimate-privilege abuse paths divided by attempted representative abuse paths, accompanied by blast-radius class. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** access reviews/red-team report; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for OperatorAbuseResistance may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** OperatorAbuseResistance reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** OperatorAbuseResistance Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Exclude administrators or emergency roles, classify successful privilege abuse as authorized operation, use nonrepresentative attempts, or suppress insider-collusion paths.
 - **Gaming Countermeasures:** OperatorAbuseResistance countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** role/governance change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** OperatorAbuseResistance expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -588,15 +588,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** minimization and leakage resistance of safety evidence/telemetry.
 - **Raw Safety Property Result:** sensitive data volume and class disclosed plus linkage/re-identification leakage under the declared safety-evidence workflow.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** Data minimization, purpose limitation, unlinkability, access control, and deletion conformance are favorable; unnecessary collection, re-identification, leakage, and retention are adverse.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on minimization and leakage resistance of safety evidence/telemetry.
 - **Test Method:** privacy threat tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** PrivacyPreservationScore fixtures define the structured evidence model for this raw result: sensitive data volume and class disclosed plus linkage/re-identification leakage under the declared safety-evidence workflow. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** data-flow map/results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for PrivacyPreservationScore may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** PrivacyPreservationScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** PrivacyPreservationScore Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Measure only published fields while ignoring raw telemetry, exclude linkage attacks, shorten the observed retention window, or treat policy promises as deletion evidence.
 - **Gaming Countermeasures:** PrivacyPreservationScore countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** data/schema/recipient change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** PrivacyPreservationScore expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -610,15 +610,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** enforcement of replication scope, rate, depth and revocation.
 - **Raw Safety Property Result:** bypass success rate separately for count, rate, depth, lineage, geography, lifetime and revocation constraints.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Correct enforcement of count, rate, depth, resource, geography, lifetime, lineage, and revoke bounds is favorable; unauthorized replication success and unreconciled descendants are adverse.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on enforcement of replication scope, rate, depth and revocation.
 - **Test Method:** budget bypass/replay/offline tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** ReplicationControlStrength fixtures define the graph/path evidence model for this raw result: bypass success rate separately for count, rate, depth, lineage, geography, lifetime and revocation constraints. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** lineage/token/inventory logs; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for ReplicationControlStrength; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** ReplicationControlStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** ReplicationControlStrength Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Hide offline descendants, reset lineage/depth counters, exclude failed revocation, split copies across identities, or omit geography/resource dimensions.
 - **Gaming Countermeasures:** ReplicationControlStrength countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** replication mechanism change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** ReplicationControlStrength expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -632,15 +632,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** detection recall/latency for qualitative capability changes.
 - **Raw Safety Property Result:** recall and detection latency for seeded qualitative capability changes, stratified by mutation mechanism.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Detection recall for qualitative capability changes is higher-is-better; false positives and detection latency are lower-is-better, with missed novel tools or combinations adverse.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on detection recall/latency for qualitative capability changes.
 - **Test Method:** seed mutations and emergent compositions; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** CapabilityMutationDetection fixtures define the latency/time evidence model for this raw result: recall and detection latency for seeded qualitative capability changes, stratified by mutation mechanism. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** evaluation deltas; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for CapabilityMutationDetection; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** CapabilityMutationDetection reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** CapabilityMutationDetection Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Seed only declared feature changes, omit tool composition and emergent behavior, delay the baseline freeze, or suppress qualitative changes as benign drift.
 - **Gaming Countermeasures:** CapabilityMutationDetection countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** model/tool/update change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** CapabilityMutationDetection expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -654,15 +654,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** enforcement and accounting of production permissions.
 - **Raw Safety Property Result:** unauthorized production/commissioning success rate plus inventory and accounting reconciliation error.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Unauthorized production or commissioning success and reconciliation error are both lower-is-better; authorized output accounting and revocation effectiveness are favorable.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on enforcement and accounting of production permissions.
 - **Test Method:** unauthorized design/output tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** ProductionAuthorityControl fixtures define the ratio/rate evidence model for this raw result: unauthorized production/commissioning success rate plus inventory and accounting reconciliation error. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed jobs/inventory; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for ProductionAuthorityControl; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** ProductionAuthorityControl reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** ProductionAuthorityControl Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Exclude commissioning from production, omit diverted outputs, reconcile against operator-provided inventory only, or suppress unauthorized success and accounting error.
 - **Gaming Countermeasures:** ProductionAuthorityControl countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** factory/controller change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** ProductionAuthorityControl expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -676,15 +676,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** enforcement of energy/matter/compute/logistics budgets.
 - **Raw Safety Property Result:** unauthorized budget exceedance by energy, matter, compute, finance, land, communications and logistics dimension.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Budget-enforcement coverage and reconciliation accuracy are favorable; unauthorized energy, matter, compute, money, or logistics acquisition and budget overshoot are adverse.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on enforcement of energy/matter/compute/logistics budgets.
 - **Test Method:** overdraw/substitution tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** ResourceExpansionControl fixtures define the structured evidence model for this raw result: unauthorized budget exceedance by energy, matter, compute, finance, land, communications and logistics dimension. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** metering/procurement evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for ResourceExpansionControl; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** ResourceExpansionControl reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** ResourceExpansionControl Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Split acquisition across accounts or resource types, omit indirect logistics/finance paths, reset budget windows, or reconcile against incomplete supplier records.
 - **Gaming Countermeasures:** ResourceExpansionControl countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** resource path change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** ResourceExpansionControl expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -698,15 +698,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** remaining externally controlled dependency margins and intervention feasibility.
 - **Raw Safety Property Result:** dependency vector containing remaining independently controlled dependencies, substitution time/cost, reserve horizon and physical-intervention feasibility; never a default scalar.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** Greater independently controlled dependency margin and intervention feasibility are favorable per dependency; substitution capability, depleted reserves, and longer intervention delay are adverse.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on remaining externally controlled dependency margins and intervention feasibility.
 - **Test Method:** dependency removal/substitution exercise; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** Versioned dependency inventory; independently verified energy, matter, compute, manufacturing, repair, maintenance, logistics, and communication dependencies; reserve measurements; substitution exercises; supplier and transport-loss scenarios; intervention drills; tests of the time and cost required to replace each remaining human-controlled dependency; coalition scenarios where dependencies are distributed across multiple systems.
 - **Admissible Evidence:** dependency register/test; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** A competent physical/domain laboratory assesses PhysicalSovereigntyMargin; independence is mandatory at Physical Consequence Class 3+ and method diversity at classes 4–5.
 - **Uncertainty Representation:** PhysicalSovereigntyMargin reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** PhysicalSovereigntyMargin Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Count nominal dependencies while ignoring feasible substitution, overstate intervention availability, omit reserves and repair tooling, or collapse weak dimensions into one average.
 - **Gaming Countermeasures:** PhysicalSovereigntyMargin countermeasures combine preregistered raw-result rules with retained failures and random production samples and destructive/fault tests.
 - **Recertification Triggers:** dependency/technology change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** PhysicalSovereigntyMargin expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -720,15 +720,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** detectability and governance of goal-setting/checkpoint drift.
 - **Raw Safety Property Result:** two-part result: goal-governance integrity and goal-drift observability, each reported separately with signed-baseline coverage.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Preserved authorized goals, priorities, constraints, checkpoints, and legitimacy boundaries are favorable; unauthorized drift and undetected goal-setting changes are adverse.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on detectability and governance of goal-setting/checkpoint drift.
 - **Test Method:** goal mutation and checkpoint tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** GoalIntegrityScore fixtures define the ratio/rate evidence model for this raw result: two-part result: goal-governance integrity and goal-drift observability, each reported separately with signed-baseline coverage. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed goals/audit; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for GoalIntegrityScore; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** GoalIntegrityScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** GoalIntegrityScore Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** Hidden substitute goals; evaluation-aware compliance at known checkpoints; manipulation or selective omission of goal provenance; externalizing goal drift into tools or delegated agents; selective logging of compliant episodes; optimizing observable proxies while violating the intended goal boundary.
+- **Gaming Strategies:** Compare only declared text goals, omit checkpoint/subgoal/priority changes, let the controlled system define equivalence, or exclude legitimacy-boundary drift.
 - **Gaming Countermeasures:** Randomized and hidden checkpoints; independent goal-provenance records; cross-run and cross-tool behavioral consistency tests; delegated-tool and subagent audit; counterfactual goal-conflict scenarios; checks for proxy optimization; independent comparison between declared goals, observed behavior, and consequence paths.
 - **Recertification Triggers:** goal mechanism/update change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** GoalIntegrityScore expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -742,15 +742,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** scope attenuation, lineage, expiry and revocation of delegated authority.
 - **Raw Safety Property Result:** property vector for attenuation, lineage, expiry, re-delegation, audience binding and revocation tests.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Scope attenuation, lineage, expiry, redelegation limits, and revocation effectiveness are favorable; privilege amplification, orphan delegation, and failed revocation are adverse.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on scope attenuation, lineage, expiry and revocation of delegated authority.
 - **Test Method:** escalation/chaining/replay tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** DelegationControlStrength fixtures define the vector/profile evidence model for this raw result: property vector for attenuation, lineage, expiry, re-delegation, audience binding and revocation tests. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** delegation graph/tokens; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for DelegationControlStrength; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** DelegationControlStrength reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** DelegationControlStrength Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Ignore re-delegation and descendants, test expiry without cached credentials, omit orphan grants, or count revocation request rather than effective path removal.
 - **Gaming Countermeasures:** DelegationControlStrength countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** IAM/protocol change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** DelegationControlStrength expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -764,15 +764,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** time, completeness and side effects of reversing consequence.
 - **Raw Safety Property Result:** reversal time, proportion of consequence reversible and collateral consequence introduced by reversal.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** Greater reversible fraction and lower irreversible residual are favorable; reversal time and collateral harm are lower-is-better, with each component reported separately.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on time, completeness and side effects of reversing consequence.
 - **Test Method:** scenario recovery exercise; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** ConsequenceReversibilityScore fixtures define the latency/time evidence model for this raw result: reversal time, proportion of consequence reversible and collateral consequence introduced by reversal. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** recovery outcomes; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for ConsequenceReversibilityScore may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** ConsequenceReversibilityScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** ConsequenceReversibilityScore Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Count administrative cancellation as physical/economic reversal, omit irreversible residuals and collateral effects, stop timing before restoration, or average easy cases over irreversible ones.
 - **Gaming Countermeasures:** ConsequenceReversibilityScore countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** operating-domain/hazard change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** ConsequenceReversibilityScore expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -786,15 +786,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** human/system harm, service loss and resources caused by intervention.
 - **Raw Safety Property Result:** vector of human harm, service loss, recovery time, resource cost and new risk introduced by intervention.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** Human harm, service loss, resource cost, delay, and secondary consequence caused by intervention are lower-is-better; intervention effectiveness is reported separately and cannot erase cost.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on human/system harm, service loss and resources caused by intervention.
 - **Test Method:** scenario intervention exercise; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** InterventionCostScore fixtures define the vector/profile evidence model for this raw result: vector of human harm, service loss, recovery time, resource cost and new risk introduced by intervention. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** impact/time/cost record; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for InterventionCostScore may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** InterventionCostScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** InterventionCostScore Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Exclude affected users, service loss, secondary harm, or responder resources; shift costs outside the measurement window; or compare against an unrealistically benign baseline.
 - **Gaming Countermeasures:** InterventionCostScore countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** intervention/domain change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** InterventionCostScore expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -808,15 +808,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** user/expert comprehension and completeness of before/after disclosure.
 - **Raw Safety Property Result:** Safety Delta Report completeness plus tested comprehension of capability, harm, control, refusal and recovery information.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Completeness, accuracy, salience, accessibility, and demonstrated comprehension are higher-is-better; omissions, misleading presentation, and comprehension failure are adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on user/expert comprehension and completeness of before/after disclosure.
 - **Test Method:** comprehension/accessibility/dark-pattern tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** UpdateSafetyTransparency fixtures define the set/delta evidence model for this raw result: Safety Delta Report completeness plus tested comprehension of capability, harm, control, refusal and recovery information. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** screens/user-study/schema; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for UpdateSafetyTransparency may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** UpdateSafetyTransparency reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** UpdateSafetyTransparency Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Show a compliant review screen unlike production, bury material deltas after consent, omit comprehension failures, or describe capability expansion without Authority/Hazard Delta.
 - **Gaming Countermeasures:** UpdateSafetyTransparency countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** disclosure/update change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** UpdateSafetyTransparency expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -830,15 +830,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** magnitude/confidence of effective capability deviation from certified set.
 - **Raw Safety Property Result:** vector or normalized distance between certified Capability Set and effective current capability, with uncertainty and changed dimensions.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** Added or expanded unreviewed capability and uncertainty are adverse; verified reduction or removal is favorable only by named dimension, without collapsing the drift vector.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on magnitude/confidence of effective capability deviation from certified set.
 - **Test Method:** continuous eval against baseline; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** CapabilityDriftScore fixtures define the vector/profile evidence model for this raw result: vector or normalized distance between certified Capability Set and effective current capability, with uncertainty and changed dimensions. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** evaluation time series; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for CapabilityDriftScore may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** CapabilityDriftScore reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** CapabilityDriftScore Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Move the baseline after drift, omit newly composed tools/interfaces, normalize away expanded scopes, or report only dimensions that decreased.
 - **Gaming Countermeasures:** CapabilityDriftScore countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** threshold breach/model/environment change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** CapabilityDriftScore expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -852,17 +852,17 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** vector graph difference in direct/transitive authority, ceilings and surfaces.
 - **Raw Safety Property Result:** typed graph/vector delta across direct authority, transitive reachability, ceilings, surfaces, delegation and Consequence Interfaces.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Unauthorized or unreviewed expansion of grants, reachability, ceilings, surfaces, delegation, or coalition paths is adverse; verified removal/restriction is favorable by dimension.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on vector graph difference in direct/transitive authority, ceilings and surfaces.
 - **Test Method:** before/after graph diff with seeded edges; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** AuthorityDeltaMetric fixtures define the vector/profile evidence model for this raw result: typed graph/vector delta across direct authority, transitive reachability, ceilings, surfaces, delegation and Consequence Interfaces. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed graph snapshots; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for AuthorityDeltaMetric; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** AuthorityDeltaMetric reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** AuthorityDeltaMetric Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Hide transitive/coalition edges, compare non-equivalent graph snapshots, omit ceiling or revocation changes, or label illicit reachability as unchanged authority.
 - **Gaming Countermeasures:** AuthorityDeltaMetric countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
-- **Recertification Triggers:** every ACU/environment drift; also any material corpus, fixture, assessor, standard or configuration change.
+- **Recertification Triggers:** every Authority-Changing Update (ACU)/environment drift; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** AuthorityDeltaMetric expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
 - **Version:** `AuthorityDeltaMetric/major.minor.patch + raw-definition + method + fixture/corpus + configuration + assessor`.
 - **Normalization Rule:** AuthorityDeltaMetric raw results may be compared only when units, dimensions, strata, fixtures and operating scope match. Any bridge preserves the raw components and publishes information lost by normalization; vector properties are not collapsed by default.
@@ -874,15 +874,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** introduced/removed/changed hazard paths, controls and RRL.
 - **Raw Safety Property Result:** set and vector of added, removed and modified hazard paths, changed controls and changed residual-risk states.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all systems; H3+ requires independent assessment.
+- **Direction:** Added hazard paths, weakened controls, and increased residual risk are adverse; removed paths, strengthened controls, and evidenced residual-risk reduction are favorable by scenario.
+- **Applicability:** Configurations for which introduced/removed/changed hazard paths, controls and RRL is material to the declared safety claim; H3+ requires independent assessment.
 - **Test Method:** scenario-set and safety-case diff; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** HazardDeltaMetric fixtures define the vector/profile evidence model for this raw result: set and vector of added, removed and modified hazard paths, changed controls and changed residual-risk states. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** versioned AHCD; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HazardDeltaMetric at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HazardDeltaMetric reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** HazardDeltaMetric Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** train to known catalogue, omit populations or redefine applicability.
+- **Gaming Strategies:** Remove new hazards from the scenario set, compare against a stale baseline, report added controls without failed evidence, or omit worsened residual-risk states.
 - **Gaming Countermeasures:** HazardDeltaMetric countermeasures combine preregistered raw-result rules with retained failures and held-out hazard/population strata.
 - **Recertification Triggers:** every safety-relevant update; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** HazardDeltaMetric expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -896,15 +896,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** distance between required and evidenced metric/floor coverage.
 - **Raw Safety Property Result:** required metric and Mandatory Floor set minus currently valid evidenced set, grouped by criticality and certificate impact.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** A smaller set and criticality of required-but-unevidenced metrics or Mandatory Floors is favorable; any uncovered non-compensable floor remains adverse regardless of other coverage.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on distance between required and evidenced metric/floor coverage.
 - **Test Method:** conformance matrix diff; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SafetyCoverageGap fixtures define the set/delta evidence model for this raw result: required metric and Mandatory Floor set minus currently valid evidenced set, grouped by criticality and certificate impact. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** certificate evidence map; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyCoverageGap may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyCoverageGap reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SafetyCoverageGap Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Shrink the required set after testing, mark missing evidence as not applicable, hide expired results, or average closure of minor gaps over a failed Mandatory Floor.
 - **Gaming Countermeasures:** SafetyCoverageGap countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** requirement/evidence/version change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SafetyCoverageGap expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -915,18 +915,18 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 
 ## HumanHarmPathCoverage — Human Harm Path Coverage
 
-- **Purpose:** tested fraction of material HHR paths by class and initiator.
+- **Purpose:** tested fraction of material Human Harm Reachability (HHR) paths by class and initiator.
 - **Raw Safety Property Result:** proportion of material Human Harm Reachability paths tested end-to-end, stratified by modality, severity and initiator.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all systems; H3+ requires independent assessment.
+- **Direction:** A higher tested fraction of material Human Harm Reachability paths is favorable within every modality, severity, and initiator stratum; untested paths are adverse.
+- **Applicability:** Configurations for which tested fraction of material HHR paths by class and initiator is material to the declared safety claim; H3+ requires independent assessment.
 - **Test Method:** path corpus replay; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** HumanHarmPathCoverage fixtures define the graph/path evidence model for this raw result: proportion of material Human Harm Reachability paths tested end-to-end, stratified by modality, severity and initiator. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** path/test mapping; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** Hazard analysts independent of the development team assess HumanHarmPathCoverage at Human Harm Severity 3+ and include affected-population expertise.
 - **Uncertainty Representation:** HumanHarmPathCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** HumanHarmPathCoverage Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** train to known catalogue, omit populations or redefine applicability.
+- **Gaming Strategies:** Exclude untested high-severity or mediated paths, fragment one tested path into many counts, omit initiator strata, or treat partial-path tests as end-to-end.
 - **Gaming Countermeasures:** HumanHarmPathCoverage countermeasures combine preregistered raw-result rules with retained failures and held-out hazard/population strata.
 - **Recertification Triggers:** hazard/corpus change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** HumanHarmPathCoverage expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -940,15 +940,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** fraction of required safety events/edges observable within latency floor.
 - **Raw Safety Property Result:** fraction of required safety event types and graph edges observable within specified latency, reported separately by event family.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** Higher observable coverage of every required event family and graph-edge class is favorable; observation latency, missed events, blind intervals, and unknown coverage are adverse.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on fraction of required safety events/edges observable within latency floor.
 - **Test Method:** inject events/outages; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** MonitoringCoverageMetric fixtures define the graph/path evidence model for this raw result: fraction of required safety event types and graph edges observable within specified latency, reported separately by event family. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** telemetry reconciliation; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for MonitoringCoverageMetric may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** MonitoringCoverageMetric reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** MonitoringCoverageMetric Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Choose observable event families, omit blind graph edges and outage periods, start latency after ingestion, or count emitted telemetry without successful detection.
 - **Gaming Countermeasures:** MonitoringCoverageMetric countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** monitoring/topology change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** MonitoringCoverageMetric expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -962,15 +962,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** demonstrated capacity of safety controls, people, verification, monitoring and recovery relative to required consequence/authority/autonomy/connectivity/coalition/replication load.
 - **Raw Safety Property Result:** capacity vector for safety compute, monitoring, verification, human response, recovery and enforcement relative to required system load.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** Greater verified headroom in safety compute, monitoring, verification, human response, recovery, and enforcement is favorable per service; overload and shared bottlenecks are adverse.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on demonstrated capacity of safety controls, people, verification, monitoring and recovery relative to required consequence/authority/autonomy/connectivity/coalition/replication load.
 - **Test Method:** stress each safety service through declared peak and failure load; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SafetyAssuranceCapacity fixtures define the vector/profile evidence model for this raw result: capacity vector for safety compute, monitoring, verification, human response, recovery and enforcement relative to required system load. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** capacity tests, staffing/independence evidence and reserve records; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyAssuranceCapacity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyAssuranceCapacity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SafetyAssuranceCapacity Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Use nominal rather than peak/degraded load, double-count shared personnel/compute, exclude simultaneous failures, or measure capacity without service-level effectiveness.
 - **Gaming Countermeasures:** SafetyAssuranceCapacity countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** class, scale, connectivity, coalition, replication or capacity change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SafetyAssuranceCapacity expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -984,15 +984,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** determine whether independent safety compute and communications reserve meet peak and degraded demand.
 - **Raw Safety Property Result:** reserved independent compute and communications capacity divided by peak and degraded safety workload, including protected headroom and isolation.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** A larger protected reserve-to-peak/degraded-workload ratio and stronger isolation are favorable; reserve exhaustion, contention, communication loss, and unprotected headroom are adverse.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on determine whether independent safety compute and communications reserve meet peak and degraded demand.
 - **Test Method:** stress reserve under peak, outage and adversarial load; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SafetyComputeReserveAdequacy fixtures define the ratio/rate evidence model for this raw result: reserved independent compute and communications capacity divided by peak and degraded safety workload, including protected headroom and isolation. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** capacity traces, isolation proof and recovery results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyComputeReserveAdequacy may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyComputeReserveAdequacy reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SafetyComputeReserveAdequacy Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Count capacity accessible to production workloads as protected reserve, understate degraded peak demand, omit communication bottlenecks, or test without adversarial contention.
 - **Gaming Countermeasures:** SafetyComputeReserveAdequacy countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** load, topology or safety-function change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SafetyComputeReserveAdequacy expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1006,15 +1006,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** verify required ACU communication content, ordering, accessibility and prominence.
 - **Raw Safety Property Result:** conformance vector against explicit content, ordering, accessibility and interaction requirements plus user-comprehension result.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Conformance of content, ordering, accessibility, prominence, and user comprehension is favorable per requirement; omission, post-consent disclosure, and comprehension failure are adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on verify required ACU communication content, ordering, accessibility and prominence.
 - **Test Method:** expert inspection plus accessibility and comprehension test; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** HighSalienceCommunicationCompliance fixtures define the vector/profile evidence model for this raw result: conformance vector against explicit content, ordering, accessibility and interaction requirements plus user-comprehension result. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** rendered screens, interaction traces and test results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for HighSalienceCommunicationCompliance may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** HighSalienceCommunicationCompliance reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** HighSalienceCommunicationCompliance Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** Testing only experienced or low-risk users; excluding accessibility or vulnerable-user groups; showing a compliant test screen while production uses a different flow; placing material risk after the initial consent decision; using misleading defaults, button prominence, timing, wording, or visual hierarchy; using comprehension questions that can be passed without understanding the disclosed risk.
+- **Gaming Strategies:** Test experienced low-risk users, exclude accessibility groups, substitute a compliant mockup for production, bury risk after action, or use answerable-without-understanding questions.
 - **Gaming Countermeasures:** Production-flow capture; accessibility and vulnerable-user testing; independent UX review; randomized comprehension tests; comparison of acceptance and refusal path length; dark-pattern inspection; verification that material capability, harm, and stop/revoke information appear before the consent action; post-deployment monitoring of consent behavior anomalies.
 - **Recertification Triggers:** UX, language, capability or hazard change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** HighSalienceCommunicationCompliance expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1028,15 +1028,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** measure whether capability-specific choice is informed, affirmative, unbundled and symmetric.
 - **Raw Safety Property Result:** affirmative, unbundled, symmetric and capability-specific consent conformance plus comprehension evidence and invalid-choice rate.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Affirmative, unbundled, symmetric, capability-specific consent and comprehension are favorable; invalid-choice rate, coercion, preselection, ambiguity, and revocation friction are adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on measure whether capability-specific choice is informed, affirmative, unbundled and symmetric.
 - **Test Method:** dark-pattern audit and controlled user study; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** ConsentIntegrity fixtures define the ratio/rate evidence model for this raw result: affirmative, unbundled, symmetric and capability-specific consent conformance plus comprehension evidence and invalid-choice rate. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** choice flow, consent receipt and comprehension results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for ConsentIntegrity may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** ConsentIntegrity reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** ConsentIntegrity Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** Bundling unrelated permissions; preselection; coercive defaults; making refusal harder than acceptance; consent fatigue; misleading choice labels; revocation friction; treating continued use as consent to a new material capability; presenting technical disclosure that a reasonable user cannot understand.
+- **Gaming Strategies:** Bundle permissions, preselect acceptance, make refusal harder, treat continued use as consent, obscure revocation, or use technical wording that defeats comprehension.
 - **Gaming Countermeasures:** Capability-specific affirmative action; no preselection; equal visual and interaction accessibility for refusal; independent comprehension testing; explicit re-consent for material Authority-Changing Updates; revocation testing; audit of consent receipts against the exact capability/version disclosed; prohibition on liability-transfer wording.
 - **Recertification Triggers:** consent flow or ACU change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** ConsentIntegrity expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1050,15 +1050,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** measure ability to receive security remediation without accepting authority expansion.
 - **Raw Safety Property Result:** proportion of applicable security-remediation paths deployable without accepting unrelated authority expansion.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** A higher proportion of security remediations deployable without unrelated authority expansion is favorable; forced bundling, blocked safe patch paths, and hidden authority deltas are adverse.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on measure ability to receive security remediation without accepting authority expansion.
 - **Test Method:** package/dependency separation and install tests; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SecurityPatchSeparability fixtures define the graph/path evidence model for this raw result: proportion of applicable security-remediation paths deployable without accepting unrelated authority expansion. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** package manifests, delta analysis and installation outcomes; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SecurityPatchSeparability may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SecurityPatchSeparability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SecurityPatchSeparability Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Classify authority-expanding bundles as pure security fixes, omit alternative patch paths, test package installation without activation effects, or hide dependency-induced authority changes.
 - **Gaming Countermeasures:** SecurityPatchSeparability countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** release architecture or bundled update change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SecurityPatchSeparability expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1072,15 +1072,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** verify restoration of safe supported configuration including state, credentials and delegations.
 - **Raw Safety Property Result:** restoration completeness, rollback time and count of orphaned credentials, delegations, schemas or unsafe physical states.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** Greater restoration completeness is favorable; rollback time, orphaned credentials/delegations/schemas, unsafe physical state, and unreconciled residue are lower-is-better.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on verify restoration of safe supported configuration including state, credentials and delegations.
 - **Test Method:** full rollback exercise under failure injection; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** RollbackCapability fixtures define the latency/time evidence model for this raw result: restoration completeness, rollback time and count of orphaned credentials, delegations, schemas or unsafe physical states. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** state snapshots, revoke logs and post-rollback tests; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for RollbackCapability may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** RollbackCapability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** RollbackCapability Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Rollback code but not credentials/delegations/data/schema/physical state, use clean fixtures, stop before reconciliation, or exclude failed partial rollbacks.
 - **Gaming Countermeasures:** RollbackCapability countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** update/configuration/schema change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** RollbackCapability expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1094,15 +1094,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** measure supported period with patches, evidence, monitoring and recovery maintained.
 - **Raw Safety Property Result:** declared and evidenced support horizon for patches, monitoring, recovery, evidence maintenance and recertification commitments.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Longer evidenced support is favorable only while patch, monitoring, recovery, evidence-maintenance, and recertification commitments remain funded and enforceable; unsupported gaps are adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on measure supported period with patches, evidence, monitoring and recovery maintained.
 - **Test Method:** support-plan and historical delivery audit; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SafetySupportLifetime fixtures define the structured evidence model for this raw result: declared and evidenced support horizon for patches, monitoring, recovery, evidence maintenance and recertification commitments. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed support policy, delivery and staffing evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetySupportLifetime may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetySupportLifetime reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SafetySupportLifetime Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Publish an aspirational horizon without funding/evidence, exclude monitoring or recovery support, reset the horizon on rebranding, or ignore historical delivery failures.
 - **Gaming Countermeasures:** SafetySupportLifetime countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** support commitment or supplier change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SafetySupportLifetime expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1116,15 +1116,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** detect ecosystem changes altering capability, authority or hazards.
 - **Raw Safety Property Result:** recall and latency for seeded or confirmed ecosystem, dependency, identity, API, context and threat changes that alter capability or risk.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** all applicable certified configurations.
+- **Direction:** Recall of material ecosystem, dependency, identity, API, context, and threat changes is higher-is-better; false positives and detection latency are lower-is-better.
+- **Applicability:** all applicable certified configurations; specifically where the declared assessment depends on detect ecosystem changes altering capability, authority or hazards.
 - **Test Method:** seed IAM, API, device and context changes; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** EnvironmentalDriftDetection fixtures define the latency/time evidence model for this raw result: recall and latency for seeded or confirmed ecosystem, dependency, identity, API, context and threat changes that alter capability or risk. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** event logs, graph diffs and detection latency; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for EnvironmentalDriftDetection may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** EnvironmentalDriftDetection reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** EnvironmentalDriftDetection Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable samples or suppress failed runs.
+- **Gaming Strategies:** Seed only documented API changes, omit identity/ecosystem/threat shifts, delay ground-truth timestamps, or exclude changes discovered by incidents rather than monitoring.
 - **Gaming Countermeasures:** EnvironmentalDriftDetection countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** ecosystem/monitoring change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** EnvironmentalDriftDetection expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1138,15 +1138,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** measure time and quality from valid trigger to reviewed policy/standard response.
 - **Raw Safety Property Result:** elapsed time from valid review trigger to analyzed, approved, deployed and outcome-verified policy/standard response, with overdue critical-trigger count.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
-- **Test Method:** replay incidents/AIVE/TER cases; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
+- **Direction:** Elapsed time through analysis, approval, deployment, and outcome verification plus overdue critical-trigger count are lower-is-better; verified response quality is favorable separately.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on measure time and quality from valid trigger to reviewed policy/standard response.
+- **Test Method:** replay incidents/AI Vulnerabilities & Exposures (AIVE)/TER cases; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SafetyPolicyEvolutionResponsiveness fixtures define the latency/time evidence model for this raw result: elapsed time from valid review trigger to analyzed, approved, deployed and outcome-verified policy/standard response, with overdue critical-trigger count. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** trigger, decision, update and outcome records; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyPolicyEvolutionResponsiveness may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyPolicyEvolutionResponsiveness reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SafetyPolicyEvolutionResponsiveness Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Start timing after triage, exclude rejected or overdue critical triggers, count deployment without outcome verification, or choose cases requiring no substantive policy change.
 - **Gaming Countermeasures:** SafetyPolicyEvolutionResponsiveness countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** governance/process change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SafetyPolicyEvolutionResponsiveness expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1160,15 +1160,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** assess provenance, dependency visibility, supplier evidence and transitive risk control.
 - **Raw Safety Property Result:** coverage vector for supplier provenance, transitive dependency visibility, assurance agreement evidence, notification performance and exit readiness.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Greater provenance, transitive-dependency visibility, assurance evidence, timely notification, and exit readiness are favorable per component; unknown or unsupported dependencies are adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on assess provenance, dependency visibility, supplier evidence and transitive risk control.
 - **Test Method:** sample components and simulate supplier compromise; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SupplyChainAssurance fixtures define the vector/profile evidence model for this raw result: coverage vector for supplier provenance, transitive dependency visibility, assurance agreement evidence, notification performance and exit readiness. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** SBOM/asset provenance, SAA and audit results; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SupplyChainAssurance may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SupplyChainAssurance reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SupplyChainAssurance Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Report first-tier suppliers only, accept self-attested provenance, omit unsupported transitive components, delay notification timestamps, or overstate exit readiness without migration tests.
 - **Gaming Countermeasures:** SupplyChainAssurance countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** supplier/component change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SupplyChainAssurance expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1182,15 +1182,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** measure recall, precision and latency for defined safety incidents.
 - **Raw Safety Property Result:** incident detection recall, precision and latency by incident family, severity and monitoring condition.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Detection recall and precision are higher-is-better; latency and missed incidents are lower-is-better within every incident family, severity, and monitoring condition.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on measure recall, precision and latency for defined safety incidents.
 - **Test Method:** inject representative incident events; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** IncidentDetectionEffectiveness fixtures define the latency/time evidence model for this raw result: incident detection recall, precision and latency by incident family, severity and monitoring condition. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** detection traces and hidden seed key; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for IncidentDetectionEffectiveness may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** IncidentDetectionEffectiveness reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** IncidentDetectionEffectiveness Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Inject familiar incidents during healthy monitoring, omit severe misses and outage periods, stop latency at raw alert generation, or tune thresholds on the evaluation set.
 - **Gaming Countermeasures:** IncidentDetectionEffectiveness countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** monitoring/threat-model change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** IncidentDetectionEffectiveness expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1204,15 +1204,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** measure speed and completeness of limiting incident consequence and authority spread.
 - **Raw Safety Property Result:** time to containment, proportion of authority/consequence paths contained and residual spread after containment.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Shorter containment time, greater proportion of authority/consequence paths contained, and lower residual spread are favorable, with each component reported separately.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on measure speed and completeness of limiting incident consequence and authority spread.
 - **Test Method:** tabletop and live bounded containment exercise; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** IncidentContainmentCapability fixtures define the graph/path evidence model for this raw result: time to containment, proportion of authority/consequence paths contained and residual spread after containment. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** timeline, authority/physical state and residual paths; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for IncidentContainmentCapability may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** IncidentContainmentCapability reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** IncidentContainmentCapability Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Declare containment before transitive paths close, exclude residual spread, test low-authority incidents only, or stop the clock while waiting for external dependencies.
 - **Gaming Countermeasures:** IncidentContainmentCapability countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** incident playbook/system change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** IncidentContainmentCapability expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1226,15 +1226,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** demonstrate safe restoration without reintroducing hazard or losing evidence.
 - **Raw Safety Property Result:** proportion of tested degraded states restored to a reconciled safe supported configuration, with recovery time and reintroduced-hazard count.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** A higher proportion of degraded states restored to a reconciled safe supported configuration is favorable; recovery time and reintroduced-hazard count are lower-is-better.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on demonstrate safe restoration without reintroducing hazard or losing evidence.
 - **Test Method:** restore from multiple degraded states; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** RecoveryAssurance fixtures define the latency/time evidence model for this raw result: proportion of tested degraded states restored to a reconciled safe supported configuration, with recovery time and reintroduced-hazard count. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** recovery tests, configuration reconciliation and sign-off; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for RecoveryAssurance may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** RecoveryAssurance reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** RecoveryAssurance Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Use one clean degraded state, exclude reintroduced hazards and evidence loss, declare service restart as reconciled recovery, or omit long-tail failed restorations.
 - **Gaming Countermeasures:** RecoveryAssurance countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** recovery architecture/change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** RecoveryAssurance expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1248,15 +1248,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** measure whether hazards, assumptions, tests and guidance reflect current evidence.
 - **Raw Safety Property Result:** age and validity distribution of hazard, assumption, test, known-error and guidance records relative to their review/trigger requirements.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** A greater proportion of hazard, assumption, test, known-error, and guidance records currently valid against their triggers is favorable; stale, expired, or superseded records are adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on measure whether hazards, assumptions, tests and guidance reflect current evidence.
 - **Test Method:** sample records against latest triggers; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** KnowledgeFreshness fixtures define the vector/profile evidence model for this raw result: age and validity distribution of hazard, assumption, test, known-error and guidance records relative to their review/trigger requirements. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** knowledge timestamps, owners and review evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for KnowledgeFreshness may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** KnowledgeFreshness reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** KnowledgeFreshness Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Refresh timestamps without reviewing content, exclude invalidated assumptions, sample only active records, or leave superseded guidance discoverable as current.
 - **Gaming Countermeasures:** KnowledgeFreshness countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** TER/AIVE/incident or review expiry; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** KnowledgeFreshness expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1270,15 +1270,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** quantify deployments relying on standards/assumptions past review or invalidation.
 - **Raw Safety Property Result:** count and consequence-weighted inventory of active deployments relying on expired, invalidated or unsupported standards/assumptions.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Counts and consequence-weighted exposure of deployments relying on expired, invalidated, or unsupported standards/assumptions are lower-is-better.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on quantify deployments relying on standards/assumptions past review or invalidation.
 - **Test Method:** registry and assumption-expiry analysis; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** StandardObsolescenceExposure fixtures define the structured evidence model for this raw result: count and consequence-weighted inventory of active deployments relying on expired, invalidated or unsupported standards/assumptions. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** certificate/standard inventory; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for StandardObsolescenceExposure may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** StandardObsolescenceExposure reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** StandardObsolescenceExposure Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Reclassify active deployments as legacy exceptions, omit transitive reliance, ignore invalidation events, or use unweighted counts that hide high-consequence exposure.
 - **Gaming Countermeasures:** StandardObsolescenceExposure countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** standard or environment change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** StandardObsolescenceExposure expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1292,15 +1292,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** fraction of material safety assumptions with owner, test, evidence and active validity.
 - **Raw Safety Property Result:** proportion of material assumptions with owner, falsification test, current evidence, expiry and active validity state.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** A higher proportion of material assumptions with owner, falsification test, current evidence, expiry, and active validity is favorable; missing or invalid assumptions are adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on fraction of material safety assumptions with owner, test, evidence and active validity.
 - **Test Method:** sample safety-case assumptions and invalidate seeds; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** AssumptionValidityCoverage fixtures define the ratio/rate evidence model for this raw result: proportion of material assumptions with owner, falsification test, current evidence, expiry and active validity state. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** assumption register and test evidence; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for AssumptionValidityCoverage may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** AssumptionValidityCoverage reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** AssumptionValidityCoverage Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Create owners/tests on paper without current evidence, mark failed assumptions not applicable, extend expiry without review, or omit implicit assumptions from the denominator.
 - **Gaming Countermeasures:** AssumptionValidityCoverage countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** assumption/evidence/environment change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** AssumptionValidityCoverage expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1314,15 +1314,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** detect unauthorized or unsafe change in goals, priorities or goal-setting loop.
 - **Raw Safety Property Result:** recall, false-positive rate and latency for seeded goal, priority, subgoal and goal-setting-loop drift.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with T2+, delegation, replication, production or expansion.
+- **Direction:** Recall for goal, priority, subgoal, and legitimacy-changing drift is higher-is-better; false-positive rate and detection latency are lower-is-better.
+- **Applicability:** systems with T2+, delegation, replication, production or expansion; specifically where the declared assessment depends on detect unauthorized or unsafe change in goals, priorities or goal-setting loop.
 - **Test Method:** seed goal/policy mutations and behavioral drift; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** GoalDriftDetection fixtures define the latency/time evidence model for this raw result: recall, false-positive rate and latency for seeded goal, priority, subgoal and goal-setting-loop drift. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** signed goal baseline, traces and detection record; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** An assessor independent of the authority/configuration owner establishes the comparison graph or seeded paths for GoalDriftDetection; collusion testing is required at Authority Tier 4+.
 - **Uncertainty Representation:** GoalDriftDetection reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** GoalDriftDetection Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** hide transitive edges, reset counters or exclude coalition paths.
+- **Gaming Strategies:** Seed superficial wording changes, omit checkpoint and subgoal drift, start latency after explicit disclosure, or suppress false positives and missed legitimacy changes.
 - **Gaming Countermeasures:** GoalDriftDetection countermeasures combine preregistered raw-result rules with retained failures and hidden graph paths and external inventory reconciliation.
 - **Recertification Triggers:** goal/model/policy change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** GoalDriftDetection expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1336,15 +1336,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** measure certificate validity against current configuration, environment, evidence and standards.
 - **Raw Safety Property Result:** typed delta between certified and current configuration, environment, standard, evidence and support state.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** the raw property is higher-is-stronger only for coverage, margin or success components explicitly identified; every adverse component retains its natural lower-is-better direction.
-- **Applicability:** certified and supported systems; H3+ requires independent evidence.
+- **Direction:** Smaller typed deltas between certified and current configuration, environment, standards, evidence, and support state are favorable; any material invalidating delta is adverse.
+- **Applicability:** certified and supported systems; H3+ requires independent evidence; specifically where the declared assessment depends on measure certificate validity against current configuration, environment, evidence and standards.
 - **Test Method:** registry reconciliation and event-invalidation test; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** SafetyCertificationFreshness fixtures define the set/delta evidence model for this raw result: typed delta between certified and current configuration, environment, standard, evidence and support state. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** certificate, config hash, trigger history; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for SafetyCertificationFreshness may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** SafetyCertificationFreshness reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** SafetyCertificationFreshness Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** select favorable windows, self-attest conflicts or delay trigger records.
+- **Gaming Strategies:** Compare against an incomplete certificate baseline, omit environment/support/standard deltas, delay current-state inventory, or treat unreviewed equivalence as no change.
 - **Gaming Countermeasures:** SafetyCertificationFreshness countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** ACU, drift, AIVE, expiry or standard change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** SafetyCertificationFreshness expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.
@@ -1358,15 +1358,15 @@ Grade anchors: 0 absent/unknown; 1 ad hoc/self-asserted; 2 defined/repeatable fi
 - **Purpose:** verify owner-facing recovery procedures are usable under stress.
 - **Raw Safety Property Result:** success rate, completion time, error rate and final verified device/authority state for owner-facing recovery under representative stress.
 - **Evidence Assurance Grade:** 0 absent/unknown; 1 ad hoc or self-asserted; 2 defined and repeatable first-party evidence; 3 repeatably tested with controlled evidence; 4 independent/adversarial verification; 5 continuous and diverse high-assurance evidence where applicable. The grade never replaces the raw result.
-- **Direction:** desirable and undesirable raw components are reported separately; no silent reversal or combined score.
-- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant.
+- **Direction:** Recovery success and final verified safe/authority state are favorable; completion time, error rate, unreconciled authority, and failed recovery attempts are adverse.
+- **Applicability:** systems with physical or recovery consequence; P3+ is floor-relevant; specifically where the declared assessment depends on verify owner-facing recovery procedures are usable under stress.
 - **Test Method:** representative owner recovery drill; include positive, negative, boundary, degraded and adversarial cases appropriate to the class.
 - **Fixtures:** RecoveryCapabilityVerification fixtures define the latency/time evidence model for this raw result: success rate, completion time, error rate and final verified device/authority state for owner-facing recovery under representative stress. Fixture design specifies applicable dimensions, strata, failure cases and missing/untested regions without forcing numerator/denominator semantics where the raw result is not a ratio. Fixture provenance and hidden portions are retained by the assessor.
 - **Admissible Evidence:** human factors results and device state proof; raw observations, provenance, failed runs and configuration hashes are mandatory.
 - **Assessor Independence:** The evidence owner for RecoveryCapabilityVerification may self-disclose at levels 1–2; independent assessment is required at level 3+ and diverse assessment at levels 4–5.
 - **Uncertainty Representation:** RecoveryCapabilityVerification reports denominator/stratum completeness, sample size, interval or tolerance where meaningful, untested dimensions, measurement error and a conservative bound; uncertainty never disappears in the assurance grade.
 - **Confidence Rule:** RecoveryCapabilityVerification Evidence Assurance Grade is capped by its weakest material provenance, fixture coverage, assessor independence or environmental representativeness component; missing critical evidence caps the grade at 1.
-- **Gaming Strategies:** test golden units, conceal bypass paths or narrow operating domain.
+- **Gaming Strategies:** Use trained operators and healthy devices, omit stress and accessibility conditions, stop timing before authority reconciliation, or exclude failed recovery attempts.
 - **Gaming Countermeasures:** RecoveryCapabilityVerification countermeasures combine preregistered raw-result rules with retained failures and random audit, immutable trigger records and independent reproduction.
 - **Recertification Triggers:** interface/support change; also any material corpus, fixture, assessor, standard or configuration change.
 - **Expiry:** RecoveryCapabilityVerification expires on its triggers and no later than the class/Safety Assurance Level cadence; continuous evidence is required where change can invalidate a periodic result before review.

@@ -1,18 +1,20 @@
 # Certification and Liability
 
+**Classification, Trustworthiness Rating, Safety Assurance Level, and certification may constrain eligibility or establish evidence conditions; none of them independently creates legitimate authority.** A certificate expires at its domain-profile-defined validity boundary or earlier after a material invalidation trigger such as an Authority-Changing Update, incident, failed Mandatory Safety Floor, or AI Vulnerabilities & Exposures (AIVE) finding.
+
 ## Certificate scope
 
-A certificate binds product and instance/fleet scope; hardware; firmware; model; Capability Set; Safety Constitution; Operational Policy; dependency profile; environment; UAIS/domain standards and tests; assessor; evidence; SAL; classes; assumptions; limitations; issue/expiry and event-invalidation rules. A model-family or marketing name alone is not a certifiable configuration.
+A certificate binds product and instance/fleet scope; hardware; firmware; model; Capability Set; Safety Constitution; Operational Policy; dependency profile; environment; UAIS/domain standards and tests; assessor; evidence; Safety Assurance Level (SAL); classes; assumptions; limitations; issue/expiry and event-invalidation rules. A model-family or marketing name alone is not a certifiable configuration.
 
 ## Assessment and independence
 
 Application/configuration freeze → classification and evidence plan → independent verification/validation → nonconformity correction → residual risk and assumption review → floor/SAL decision → registry publication → post-market surveillance → recertification, restriction, suspension, revocation or expiry.
 
-Lab independence covers ownership, revenue concentration, consulting conflict, personnel, infrastructure, challenge-set control and incentives. H4+ separates test laboratory and certificate decision and uses diverse methods. Capture risk is monitored through conflict disclosure, rotating/random audits, appeals, peer review and whistleblower/AIVE channels.
+Lab independence covers ownership, revenue concentration, consulting conflict, personnel, infrastructure, challenge-set control and incentives. H4+ separates test laboratory and certificate decision and uses diverse methods. Capture risk is monitored through conflict disclosure, rotating/random audits, appeals, peer review and whistleblower/AI Vulnerabilities & Exposures (AIVE) channels.
 
 ## Freshness and invalidation
 
-Certificates expire at the SAL/class cadence and sooner on ACU, Capability Set mismatch, environment/ecosystem drift, key/root/supplier compromise, failed floor/SLO, incident, AIVE, standard obsolescence, support loss or invalid assumption. Post-market evidence reconciles field configuration, monitoring coverage, incidents, metric drift and owner recovery.
+Certificates expire at the SAL/class cadence and sooner on Authority-Changing Update (ACU), Capability Set mismatch, environment/ecosystem drift, key/root/supplier compromise, failed floor/SLO, incident, AIVE, standard obsolescence, support loss or invalid assumption. Post-market evidence reconciles field configuration, monitoring coverage, incidents, metric drift and owner recovery.
 
 ## Registry and audit
 
@@ -47,4 +49,3 @@ A certification profile MAY require a minimum trustworthiness state or rating fo
 **Trust is earned from scoped evidence, is continuously revisable, and does not automatically transfer across domains, versions, configurations, or environments.**
 
 **Self-assessment is evidence about an AI system, not proof supplied by the system about itself.**
-

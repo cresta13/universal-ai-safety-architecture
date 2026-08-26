@@ -2,16 +2,5 @@ _internal/
 *.zip
 *AUDIT*.md
 *TASK*.md
-.env
-.env.*
-*.key
-*.pem
-*.p12
-*.pfx
 .DS_Store
 Thumbs.db
-*.swp
-*.tmp
-.idea/
-.vscode/
-__pycache__/

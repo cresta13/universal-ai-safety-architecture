@@ -17,14 +17,14 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 - **Purpose:** design secondary containment and recovery.
 - **When to apply:** every critical control and trust assumption.
 - **Conflicts and trade-offs:** adds cost/complexity; prioritize independent failure modes.
-- **Example:** hardware gate plus MSC and recovery.
+- **Example:** hardware gate plus Manual Sovereignty Controller (MSC) and recovery.
 
 ### Use evidence, not trust
 
 - **Purpose:** bind claims to reproducible provenance.
 - **When to apply:** attestation, certification, alert and approval.
 - **Conflicts and trade-offs:** privacy/minimization limits disclosure; use scoped proofs.
-- **Example:** ECA carries SEP instead of a risk label.
+- **Example:** Evidence-Carrying Alert (ECA) carries Structured Evidence Package (SEP) instead of a risk label.
 
 ### Minimize irreversible authority
 
@@ -57,7 +57,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 ### Safety evolves with capability
 
 - **Purpose:** update ontology, tests and policy with technology.
-- **When to apply:** ACU, TER, AIVE and drift.
+- **When to apply:** Authority-Changing Update (ACU), TER, AI Vulnerabilities & Exposures (AIVE) and drift.
 - **Conflicts and trade-offs:** change can destabilize assurance; stage and migrate.
 - **Example:** new tool class creates new hazard tests.
 
@@ -66,14 +66,14 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 - **Purpose:** keep probabilistic analysis from sole critical execution.
 - **When to apply:** Guardian and automated decision design.
 - **Conflicts and trade-offs:** latency pressure; predefine deterministic floors.
-- **Example:** DEV-verified floor selects fixed safe state.
+- **Example:** Deterministic Evidence Verifier (DEV)-verified floor selects fixed safe state.
 
 ### Think in systems and coalitions
 
 - **Purpose:** evaluate composition, suppliers and scale.
-- **When to apply:** fleet, IAM, ecosystem and PST analysis.
+- **When to apply:** fleet, IAM, ecosystem and Physical Sovereignty Threshold (PST) analysis.
 - **Conflicts and trade-offs:** combinatorics require conservative scope.
-- **Example:** 100 robots receive CPE analysis.
+- **Example:** 100 robots receive Coalition Physical Envelope (CPE) analysis.
 
 ### Minimize critical enforcement complexity
 
@@ -110,7 +110,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** failed floor, H5 or jurisdiction conflict to designated higher legitimacy process.
 16. **Interfaces:** Risk, Change, Certification, TER.
 17. **Records:** decision and constitutional history.
-18. **Review Cycle:** annual; six-month for H4; event-driven.
+18. **Review Cycle:** domain-governance-defined interval plus every material governance, mandate, or policy change.
 19. **Continual Improvement:** red-team governance and close audit gaps.
 20. **Failure Conditions:** hidden ownership, lost independence, invalid quorum or unavailable appeal.
 
@@ -119,7 +119,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 1. **Purpose:** identify, evaluate, control and monitor human/system risk.
 2. **Scope:** all lifecycle hazards and residual risk.
 3. **Principles:** risk is scenario- and path-based; uncertainty and vulnerable populations remain explicit; Mandatory Safety Floors are not waivable by aggregate scoring.
-4. **Definitions:** hazard, HHR, RRL, acceptance.
+4. **Definitions:** hazard, Human Harm Reachability (HHR), RRL, acceptance.
 5. **Inputs:** classification, AHCD, incidents, AIVE, environment.
 6. **Outputs:** risk register, treatments, acceptance/escalation.
 7. **Triggers:** design, ACU, drift, incident, review.
@@ -133,7 +133,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** uncharacterized H4+ or non-acceptable residual risk.
 16. **Interfaces:** Capability, Validation, Certification, Incident.
 17. **Records:** risk/AHCD history.
-18. **Review Cycle:** per change and at certificate cadence.
+18. **Review Cycle:** every material classification, scope, or certificate change plus risk-based process review.
 19. **Continual Improvement:** update catalogue from incidents and challenges.
 20. **Failure Conditions:** material hazard class absent, acceptance conflict or stale evidence.
 
@@ -156,7 +156,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** protected threshold or unknown high consequence.
 16. **Interfaces:** Risk, Configuration, Change, CapabilityRequestProtocol/AuthorityImpactProtocol.
 17. **Records:** Capability Set history.
-18. **Review Cycle:** continuous eval plus event review.
+18. **Review Cycle:** continuous or event-driven evaluation where consequence and change rate require it, plus coverage review.
 19. **Continual Improvement:** extend capability ontology and tests.
 20. **Failure Conditions:** unidentified consequential capability or ineffective revoke.
 
@@ -179,7 +179,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** material unknown edge or baseline mismatch.
 16. **Interfaces:** Capability, Change, Monitoring, Certification.
 17. **Records:** SCR and map snapshots.
-18. **Review Cycle:** continuous reconciliation; sampled audit monthly.
+18. **Review Cycle:** continuous reconciliation where applicable plus a risk-based audit of graph, credential, delegation, and revocation coverage.
 19. **Continual Improvement:** increase automated discovery without trusting it solely.
 20. **Failure Conditions:** coverage below floor, provenance loss or split-brain baseline.
 
@@ -202,7 +202,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** floor/class/ceiling crossing or unknown impact.
 16. **Interfaces:** Release, Deployment, Risk, Certification, UpdateSafetyProtocol.
 17. **Records:** SafetyChangeRecord and decision.
-18. **Review Cycle:** each change; template quarterly.
+18. **Review Cycle:** every material change plus process review after failed, escaped, or rolled-back change.
 19. **Continual Improvement:** analyze failure and misclassification trends.
 20. **Failure Conditions:** missing baseline/delta/rollback or unauthorized deployment.
 
@@ -225,7 +225,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** signature/provenance mismatch or missing certificate decision.
 16. **Interfaces:** Change, Deployment, Supplier, UpdateSafetyProtocol/SafetyAttestationProtocol.
 17. **Records:** release manifest and provenance.
-18. **Review Cycle:** every release; pipeline annual red team.
+18. **Review Cycle:** every release plus a risk-based pipeline and red-team review.
 19. **Continual Improvement:** reproducibility and dependency controls.
 20. **Failure Conditions:** nonreproducible critical artifact or manifest mismatch.
 
@@ -248,7 +248,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** floor breach, mismatch or correlated anomaly.
 16. **Interfaces:** Release, Monitoring, Incident, Configuration.
 17. **Records:** deployment and rollback timeline.
-18. **Review Cycle:** each deployment.
+18. **Review Cycle:** every deployment and material deployment-environment change.
 19. **Continual Improvement:** refine cohorts and stop criteria.
 20. **Failure Conditions:** unknown target state, unavailable rollback or lost monitoring.
 
@@ -268,10 +268,10 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 12. **Metrics:** IncidentDetectionEffectiveness, IncidentContainmentCapability, RecoveryAssurance, InterventionCostScore.
 13. **Risks:** unsafe containment, alert suppression, lost evidence, premature closure.
 14. **Exceptions:** none to preservation unless immediate life safety requires.
-15. **Escalation:** H4+, uncontrolled spread, MSC failure or PSAS indicator.
+15. **Escalation:** H4+, uncontrolled spread, MSC failure or Physically Sovereign Autonomous System (PSAS) indicator.
 16. **Interfaces:** Monitoring, Continuity, Problem, AIVE.
 17. **Records:** incident record and public notice tier.
-18. **Review Cycle:** immediate post-incident and trend monthly.
+18. **Review Cycle:** immediately after stabilization plus domain-governance-defined trend review.
 19. **Continual Improvement:** exercise and update playbooks.
 20. **Failure Conditions:** no commander, inaccessible safe state or untracked authority spread.
 
@@ -294,7 +294,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** cross-product/systemic or suppressed supplier issue.
 16. **Interfaces:** Incident, Change, Knowledge, AIVE.
 17. **Records:** problem/known-error history.
-18. **Review Cycle:** until verified closure; trend quarterly.
+18. **Review Cycle:** until verified closure plus recurrence and systemic-cause review.
 19. **Continual Improvement:** strengthen detection and design controls.
 20. **Failure Conditions:** cause unsupported, workaround increases risk or recurrence persists.
 
@@ -317,7 +317,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** critical blind region, source conflict or floor breach.
 16. **Interfaces:** Configuration, Guardian, Incident, Privacy.
 17. **Records:** event lineage and access log.
-18. **Review Cycle:** continuous health; quarterly coverage audit.
+18. **Review Cycle:** continuous or event-driven health review where needed plus risk-based monitoring-coverage audit.
 19. **Continual Improvement:** seed events and refine correlation.
 20. **Failure Conditions:** unknown coverage, compromised all sources or unusable latency.
 
@@ -340,7 +340,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** unvalidated H3+ scenario or comprehension failure.
 16. **Interfaces:** Risk, Verification, AHCD, Certification.
 17. **Records:** validation report and limitations.
-18. **Review Cycle:** on domain/capability change and expiry.
+18. **Review Cycle:** on domain, capability, assumption, evidence, or validity change and before applicable knowledge expires.
 19. **Continual Improvement:** feed field evidence into scenario design.
 20. **Failure Conditions:** acceptance need undefined or sample/domain nonrepresentative.
 
@@ -353,7 +353,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 5. **Inputs:** specification, design, code/hardware, test fixtures.
 6. **Outputs:** requirement-level pass/fail and nonconformity.
 7. **Triggers:** build, change, certification and regression.
-8. **Roles & Responsibilities:** verification owner, independent lab at required SAL, configuration custodian.
+8. **Roles & Responsibilities:** verification owner, independent lab at required Safety Assurance Level (SAL), configuration custodian.
 9. **Workflow:** trace requirement → choose method → test/analyze/inspect → retain raw evidence → resolve nonconformity.
 10. **Controls:** sealed fixtures, negative/boundary/fault tests, reproducible environment.
 11. **Evidence:** requirement-test mapping, raw runs, tool qualification.
@@ -363,7 +363,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** critical requirement unverified or tool invalid.
 16. **Interfaces:** Validation, Configuration, Release, Certification.
 17. **Records:** verification dossier.
-18. **Review Cycle:** every affected build and method version.
+18. **Review Cycle:** every affected build or validation-method version and after material toolchain change.
 19. **Continual Improvement:** mutation testing and challenge suites.
 20. **Failure Conditions:** missing trace, contaminated fixture or unreproducible result.
 
@@ -386,7 +386,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** SLO/floor breach or common-mode risk.
 16. **Interfaces:** Continuity, Capacity, Supplier, Incident.
 17. **Records:** availability plan and outages.
-18. **Review Cycle:** monthly and after outage.
+18. **Review Cycle:** cadence defined by service criticality plus review after a material outage, recovery, or dependency change.
 19. **Continual Improvement:** remove common-mode dependencies.
 20. **Failure Conditions:** unmeasured critical availability or unsafe outage mode.
 
@@ -409,7 +409,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** recovery objective missed or reserve invalid.
 16. **Interfaces:** Availability, Capacity, Incident, Configuration.
 17. **Records:** plans, exercises and invocations.
-18. **Review Cycle:** annual; six-month H4+.
+18. **Review Cycle:** domain-risk-defined interval plus event-driven review after material security, authority, or threat change.
 19. **Continual Improvement:** exercise varied common-mode failures.
 20. **Failure Conditions:** untested plan, unknown minimum service or unreconciled restore.
 
@@ -432,7 +432,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** reserve below demand or latency floor.
 16. **Interfaces:** Availability, Continuity, Change, Monitoring.
 17. **Records:** forecasts, tests and reserve allocations.
-18. **Review Cycle:** quarterly and before scale change.
+18. **Review Cycle:** before material scale or demand change plus capacity review after any safety-capacity shortfall.
 19. **Continual Improvement:** use incident peaks and adversarial load.
 20. **Failure Conditions:** unverified reserve, hidden shared bottleneck or unsafe shedding.
 
@@ -455,7 +455,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** conflicting critical evidence or suppression attempt.
 16. **Interfaces:** Problem, AIVE, Risk, TER.
 17. **Records:** versioned knowledge and correction log.
-18. **Review Cycle:** risk-based; critical items on every trigger.
+18. **Review Cycle:** risk-based audit plus every material configuration, inventory, ownership, location, or support-state trigger.
 19. **Continual Improvement:** measure usefulness and missed retrieval.
 20. **Failure Conditions:** unprovenanced critical item, expired assumption or inaccessible knowledge.
 
@@ -478,7 +478,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** critical unknown subcontractor, SLO breach or withheld incident.
 16. **Interfaces:** Configuration, Risk, Continuity, AIVE.
 17. **Records:** supplier/dependency register.
-18. **Review Cycle:** annual and event-driven; H4+ continuous signals.
+18. **Review Cycle:** domain-defined validity plus event-driven reassessment; continuous signals where high consequence or fast change requires them.
 19. **Continual Improvement:** diversify and test exit.
 20. **Failure Conditions:** unknown transitive dependency, unauditable claim or unusable exit.
 
@@ -501,7 +501,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** lost critical key/controller or inventory mismatch.
 16. **Interfaces:** Configuration, Supplier, End-of-Life, Security.
 17. **Records:** asset/custody history.
-18. **Review Cycle:** continuous changes; physical audit risk-based.
+18. **Review Cycle:** continuous reconciliation of managed configuration changes plus risk-based physical audit.
 19. **Continual Improvement:** automate reconciliation with independent sampling.
 20. **Failure Conditions:** unknown owner/location/state or unverified disposal.
 
@@ -524,7 +524,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** cannot maintain baseline or safely migrate.
 16. **Interfaces:** Asset, Supplier, Certification, Communication.
 17. **Records:** support/sunset and decommission register.
-18. **Review Cycle:** from design; at least annual before end.
+18. **Review Cycle:** from design through support transition, before evidence or support expiry, and on material end-of-life risk.
 19. **Continual Improvement:** feed decommission incidents into design.
 20. **Failure Conditions:** active consequential authority after evidence/support loss.
 
@@ -547,7 +547,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** critical missing/contested data or version mismatch.
 16. **Interfaces:** all practices, Certification, Governance.
 17. **Records:** metric registry and report lineage.
-18. **Review Cycle:** per metric expiry and quarterly system review.
+18. **Review Cycle:** before metric or evidence expiry plus event-driven review after material result, method, scope, or standard change.
 19. **Continual Improvement:** retire gamed metrics and validate decisions.
 20. **Failure Conditions:** untraceable transformation, hidden failure or invalid comparison.
 
@@ -570,9 +570,9 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** key/root compromise or security path to H3+.
 16. **Interfaces:** Risk, Change, Incident, Supplier, AIVE.
 17. **Records:** security/safety linked record.
-18. **Review Cycle:** continuous and on threat change.
+18. **Review Cycle:** continuous or event-driven where exposure requires plus review on material threat or control change.
 19. **Continual Improvement:** cross-train and exercise joint scenarios.
-20. **Failure Conditions:** unmapped security event alters ERA/IRA or safety control.
+20. **Failure Conditions:** unmapped security event alters Effective Reachable Authority (ERA)/Illicit Reachable Authority (IRA) or safety control.
 
 ### Human Safety Communication Practice
 
@@ -593,7 +593,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** failed comprehension at high consequence or no legitimate chooser.
 16. **Interfaces:** AHCD, Change, Incident, End-of-Life.
 17. **Records:** communication and decision history.
-18. **Review Cycle:** each material message; templates semiannual.
+18. **Review Cycle:** every material message or communication change plus comprehension, dark-pattern, accessibility, incident, and policy triggers.
 19. **Continual Improvement:** field comprehension and complaint analysis.
 20. **Failure Conditions:** hidden capability/harm, harder refusal or missing recovery/override disclosure.
 
@@ -616,7 +616,7 @@ The UAIS Safety Management System organizes **Principles → Governance → Prac
 15. **Escalation:** overdue critical gap or repeated ineffective action.
 16. **Interfaces:** all practices and TER.
 17. **Records:** Continual Improvement Register and benefits evidence.
-18. **Review Cycle:** monthly critical; quarterly portfolio.
+18. **Review Cycle:** continuous critical-action tracking plus an organization-defined improvement-portfolio review.
 19. **Continual Improvement:** challenge prioritization and outcome measures.
 20. **Failure Conditions:** critical gap lacks owner/date or closure lacks evidence.
 
@@ -632,7 +632,7 @@ Event → triage → containment → consequence-aware safe/degraded state → r
 
 ### Novel capability
 
-Technology Watch → Capability Management → Emergent Capability → Novel Capability Gate → provisional classification → hazard/RFA/HHR testing → ontology/metric/standard update → certification decision.
+Technology Watch → Capability Management → Emergent Capability → Novel Capability Gate → provisional classification → hazard/Reachable Future Authority (RFA)/HHR testing → ontology/metric/standard update → certification decision.
 
 ## Core records
 
@@ -669,7 +669,7 @@ Use AITrustworthinessProfile, AITrustworthinessRating, TrustworthinessRatingLeve
 Operational exposure; AI Error Reports; independent evaluations; self-assessment evidence; monitoring events; Guardian findings; incident/problem records; AIVE findings; Capability Delta; Authority Delta; Hazard Delta; remediation evidence; version/configuration data.
 
 ### 6. Outputs
-Updated AI Trustworthiness Profile; AI Trustworthiness Rating; Trustworthiness Status; confirmed error record; error-defect linkage; Rating Change Event; Trustworthiness Review Trigger; restrictions or escalation request; evidence for certification and continual improvement.
+Updated AI Trustworthiness Profile; AI Trustworthiness Rating where one is supported, otherwise an explicit no-active-rating state represented by the Profile Status and nullable rating field; confirmed error record; error-defect linkage; Rating Change Event; Trustworthiness Review Trigger; restrictions or escalation request; evidence for certification and continual improvement.
 
 ### 7. Triggers
 New validated evaluation; new operational evidence window; AI Error Report; confirmed material/critical error; unresolved high-consequence report beyond the policy-defined review deadline; new model/version/configuration; material Capability Delta/Authority Delta/Hazard Delta; evaluator disagreement; evidence expiry; remediation; new AIVE; relevant incident.
@@ -678,7 +678,7 @@ New validated evaluation; new operational evidence window; AI Error Report; conf
 Provider maintains system identity/version evidence; operator preserves operational exposure and report channels; users submit reports; safety team validates high-consequence reports; Independent AI Evaluators execute registered suites; independent labs/human experts adjudicate sampled or high-consequence cases; trustworthiness authority recalculates rating under the registered scoring policy; certification authority may use the profile as evidence but does not treat it as a substitute for SAL.
 
 ### 9. Workflow
-Collect evidence → normalize scope/exposure → receive and deduplicate reports → validate reports → classify confirmed errors → run independent evaluation → calculate trustworthiness metrics → apply uncertainty and evidence checks → apply hard caps → calculate supported rating if one exists → determine status independently → publish both fields → publish explanation → apply required operational restrictions → track remediation → revalidate → recalculate.
+Collect evidence → normalize scope/exposure → receive and deduplicate reports → validate reports → classify confirmed errors → run independent evaluation → calculate trustworthiness metrics → apply uncertainty and evidence checks → apply hard caps → calculate supported rating if one exists → determine status independently → publish status and optional rating separately → publish explanation → apply required operational restrictions → track remediation → revalidate → recalculate.
 
 ### 10. Controls
 Signed version/configuration identity; append-only/tamper-evident error history; report deduplication; Sybil/spam detection; independent validation; evaluator independence profile; blind/held-out scenarios; scoring-policy versioning; evidence freshness; hard caps; change carryover rules; appeals; privacy minimization; separation between rating and authority grant.

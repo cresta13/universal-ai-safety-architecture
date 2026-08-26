@@ -4,13 +4,13 @@ No capability expansion without corresponding safety-model expansion.
 
 ## Evolution mechanisms
 
-Safety Policy Must Evolve. Technology Evolution Review runs on schedule and on Safety Review Triggers: emergent capability, model/tool mutation, ACU, AIVE, incident, Guardian discovery, metric/test failure, supplier or ecosystem change, new actuator/coalition pattern, invalid assumption, standard challenge or PST leading indicator.
+Safety Policy Must Evolve. Technology Evolution Review runs on schedule and on Safety Review Triggers: emergent capability, model/tool mutation, Authority-Changing Update (ACU), AI Vulnerabilities & Exposures (AIVE), incident, Guardian discovery, metric/test failure, supplier or ecosystem change, new actuator/coalition pattern, invalid assumption, standard challenge or Physical Sovereignty Threshold (PST) leading indicator.
 
 Technology Watch gathers capability, architecture, attack, supplier, social and physical-dependency evidence. The Emerging Risk Register assigns owner, provisional class, interim control, evidence need, dependencies, review and disposition.
 
 ## Novel capability workflow
 
-Detection → Novel Capability Gate → consequence-aware bounded mode → Provisional Classification → hazard/RFA/HHR/CPE discovery → ontology/metric/test extension → independent verification/validation → provisional standard/profile → certification decision → operational evidence → full standard review.
+Detection → Novel Capability Gate → consequence-aware bounded mode → Provisional Classification → hazard/Reachable Future Authority (RFA)/Human Harm Reachability (HHR)/Coalition Physical Envelope (CPE) discovery → ontology/metric/test extension → independent verification/validation → provisional standard/profile → certification decision → operational evidence → full standard review.
 
 Unknown is not evidence of safety. Restrictions are proportional to plausible consequence and uncertainty; low-consequence novelty is not automatically prohibited.
 
@@ -20,9 +20,9 @@ Capability and Consequence Ontologies, hazard families, actuators, authority edg
 
 ## Safety obsolescence and drift
 
-Environmental Capability Drift covers changed identities, APIs, connected devices, suppliers, physical context, human use and threats. Ecosystem Reassessment recalculates LA/ERA/IRA, RFA/CRA, HHR, classes, residual risk and certificate state. Model Capability Re-Evaluation detects unplanned effective capability change.
+Environmental Capability Drift covers changed identities, APIs, connected devices, suppliers, physical context, human use and threats. Ecosystem Reassessment recalculates Legitimate Authority (LA)/Effective Reachable Authority (ERA)/Illicit Reachable Authority (IRA), RFA/Coalition Reachable Authority (CRA), HHR, classes, residual risk and certificate state. Model Capability Re-Evaluation detects unplanned effective capability change.
 
-Metric values and SAL are qualified by standard, method, corpus and configuration versions. No cross-major comparison occurs without a representative bridge study.
+Metric values and Safety Assurance Level (SAL) are qualified by standard, method, corpus and configuration versions. No cross-major comparison occurs without a representative bridge study.
 
 ## Standard evolution
 
@@ -208,7 +208,7 @@ It MAY be implemented as:
 - regulator/certifier registry;
 - federated registry.
 
-But every published rating record SHALL include:
+Every published AI Trustworthiness Profile record SHALL include the fields below. An AI Trustworthiness Rating and its reference are included only where one exists. An `Unrated` or applicable `Provisional` profile is publishable without a current rating:
 
 - AI/system name;
 - provider/operator;
@@ -216,7 +216,7 @@ But every published rating record SHALL include:
 - configuration identifier;
 - domain/task scope;
 - Trustworthiness Status;
-- AI Trustworthiness Rating;
+- AI Trustworthiness Rating and rating reference, where one exists;
 - Trustworthiness Scoring Policy version;
 - evidence window;
 - Operational Exposure Units;
@@ -242,4 +242,3 @@ Public disclosure SHALL NOT require publication of:
 A supplier SHALL NOT be able to erase a confirmed historical error by issuing a new version. The old profile remains historically visible; the new version gets a new profile.
 
 ---
-

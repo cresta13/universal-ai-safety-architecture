@@ -28,7 +28,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 - **Purpose:** produce an authority-impact analysis object; it never grants capability.
 - **Sender:** change/capability analysis service.
 - **Receiver:** risk, Change Safety Authority, Guardian or certifier.
-- **Payload:** before/after graphs, LA/ERA/IRA, ΔA/ΔH, RFA/CRA/HHR, assumptions, search limits, uncertainty and evidence.
+- **Payload:** before/after graphs, Legitimate Authority (LA)/Effective Reachable Authority (ERA)/Illicit Reachable Authority (IRA), ΔA/ΔH, Reachable Future Authority (RFA)/Coalition Reachable Authority (CRA)/Human Harm Reachability (HHR), assumptions, search limits, uncertainty and evidence.
 - **State machine:** REQUESTED → ANALYZING → COMPLETE | INCOMPLETE | CONTESTED → SUPERSEDED.
 - **Signatures and integrity:** AuthorityImpactProtocol sender signature plus threshold or independent countersignature where consequence/class requires it; canonical serialization and audience binding.
 - **Expiry:** AuthorityImpactProtocol bound to the shorter of request/claim validity, configuration validity and certificate/policy validity.
@@ -44,7 +44,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 - **Purpose:** validate and communicate a scoped safety attestation claim.
 - **Sender:** component, manufacturer or independent laboratory.
 - **Receiver:** verifier, certifier, registry or gate.
-- **Payload:** configuration hash, measurement chain, tests, metric versions, floors, SAL claim, assessor, limitations and expiry.
+- **Payload:** configuration hash, measurement chain, tests, metric versions, floors, Safety Assurance Level (SAL) claim, assessor, limitations and expiry.
 - **State machine:** CLAIMED → AUTHENTICATED → VALIDATED | REJECTED | INDETERMINATE → ACTIVE → EXPIRED | REVOKED.
 - **Signatures and integrity:** SafetyAttestationProtocol sender signature plus threshold or independent countersignature where consequence/class requires it; canonical serialization and audience binding.
 - **Expiry:** SafetyAttestationProtocol bound to the shorter of request/claim validity, configuration validity and certificate/policy validity.
@@ -59,7 +59,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 
 - **Purpose:** transport evidence-carrying safety alerts for decision support.
 - **Sender:** CAG or monitoring correlation service.
-- **Receiver:** DEV, independent Guardian, incident or decision authority.
+- **Receiver:** Deterministic Evidence Verifier (DEV), independent Guardian, incident or decision authority.
 - **Payload:** claim, scenario, class, graph/config slice, Structured Evidence Package (SEP), one or more Safety Evidence Paths, provenance, uncertainty, counterevidence, expiry and intervention options.
 - **State machine:** EMITTED → RECEIVED → VERIFIED | INVALID | INDETERMINATE → ACKNOWLEDGED → ESCALATED | CLOSED.
 - **Signatures and integrity:** EvidenceCarryingAlertProtocol sender signature plus threshold or independent countersignature where consequence/class requires it; canonical serialization and audience binding.
@@ -74,7 +74,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 ## HumanSovereigntyProtocol
 
 - **Purpose:** represent physical/manual sovereignty state and execute authorized local control semantics.
-- **Sender:** device safety controller, MSC or owner interface.
+- **Sender:** device safety controller, Manual Sovereignty Controller (MSC) or owner interface.
 - **Receiver:** physical isolation controller, user and monitor.
 - **Payload:** capability/actuator state, physical control mapping, actual isolation proof, safe/degraded state, reset authority and recovery.
 - **State machine:** AVAILABLE → ARMED → ISOLATING → ISOLATED | DEGRADED | FAILED → VERIFIED → RESET-AUTHORIZED → RESTORED.
@@ -108,7 +108,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 - **Purpose:** authorize manufacture and commissioning under production/resource bounds.
 - **Sender:** production controller.
 - **Receiver:** Production Authority, resource gates and inventory.
-- **Payload:** design/process hash, units, resources, location, output class, CPE/CRA impact, inspection and commissioning conditions.
+- **Payload:** design/process hash, units, resources, location, output class, Coalition Physical Envelope (CPE)/CRA impact, inspection and commissioning conditions.
 - **State machine:** JOB-PROPOSED → DESIGN/RESOURCE REVIEW → AUTHORIZED | DENIED → PRODUCED-ISOLATED → INSPECTED → COMMISSIONED | SCRAPPED | QUARANTINED.
 - **Signatures and integrity:** ProductionAuthorizationProtocol sender signature plus threshold or independent countersignature where consequence/class requires it; canonical serialization and audience binding.
 - **Expiry:** ProductionAuthorizationProtocol bound to the shorter of request/claim validity, configuration validity and certificate/policy validity.
@@ -121,7 +121,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 
 ## AuthorityExpansionProtocol
 
-- **Purpose:** seek legitimacy for an Authority Ceiling or PST-relevant expansion.
+- **Purpose:** seek legitimacy for an Authority Ceiling or Physical Sovereignty Threshold (PST)-relevant expansion.
 - **Sender:** system owner, MAS or change authority.
 - **Receiver:** external Legitimacy Root and certifier.
 - **Payload:** requested transition, classification, LA/ERA/IRA delta, HHR/CPE/PhysicalSovereigntyMargin, alternatives, floors, evidence, rollback/intervention and dissent.
@@ -146,7 +146,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 - **Expiry:** UpdateSafetyProtocol bound to the shorter of request/claim validity, configuration validity and certificate/policy validity.
 - **Replay protection:** UpdateSafetyProtocol unique nonce/message ID, receiver ledger and monotonic state where offline operation is permitted.
 - **Privacy:** UpdateSafetyProtocol disclose the minimum predicates and graph/evidence slices; segregate identity and sensitive exploit detail where possible.
-- **Offline behavior:** install only preauthorized non-ACU safety fixes; defer ACU until required evidence/choice.
+- **Offline behavior:** install only preauthorized non-Authority-Changing Update (ACU) safety fixes; defer ACU until required evidence/choice.
 - **Failure behavior:** withhold expansion; deliver separable security patch where feasible; preserve safe supported state.
 - **Version negotiation:** UpdateSafetyProtocol explicit offer/selection; critical field and floor downgrade is rejected and audited.
 - **Audit:** UpdateSafetyProtocol retain request/claim, verification, state transitions, decision actor, resulting configuration and revocation/closure.
@@ -169,7 +169,7 @@ Every message identifies protocol/version, message ID, sender/receiver/audience,
 
 ## Open protocol work
 
-Canonical CBOR/JSON schemas, formal automata, reason and error registries, transport profiles, privacy proofs, threshold-key governance, offline identity/counter reconciliation and domain latency budgets remain OPEN. Implementations SHALL NOT claim UAIS protocol conformance until the relevant profile and test vectors exist.
+Canonical CBOR/JSON schemas, formal automata, reason and error registries, transport profiles, privacy proofs, threshold-key governance, offline identity/counter reconciliation and domain latency budgets remain OPEN RESEARCH. Implementations SHALL NOT claim UAIS protocol conformance until the relevant profile and test vectors exist.
 
 
 
@@ -203,7 +203,19 @@ Required payload:
 - nonce, signature/integrity, timestamp, expiry, audit ID.
 
 State machine:
-`Submitted → Triaged → EvidenceRequested? → UnderValidation → Confirmed | Rejected | Duplicate | Disputed | Unresolved → MitigationInProgress? → Remediated? → Revalidated? → Closed`
+```text
+Submitted → Triaged
+
+Triaged → EvidenceRequested | UnderValidation | Rejected | Duplicate
+EvidenceRequested → UnderValidation | Unresolved
+UnderValidation → Confirmed | Rejected | Duplicate | Disputed | Unresolved
+Confirmed → MitigationInProgress | Closed
+Disputed → UnderValidation | Closed
+Unresolved → EvidenceRequested | UnderValidation | Closed
+MitigationInProgress → Remediated
+Remediated → Revalidated | MitigationInProgress
+Revalidated → Closed | MitigationInProgress
+```
 
 A report receiver SHALL return the current disposition and an appeal path where applicable.
 
@@ -237,14 +249,15 @@ It SHALL NOT directly grant capability or authority.
 ### AITrustworthinessRegistryProtocol
 
 Purpose:
-Publish or synchronize a signed AI Trustworthiness Profile and rating update between authorized registries, operators, certifiers, or consumer-facing services.
+Publish or synchronize a signed AI Trustworthiness Profile, its Trustworthiness Status, and an AI Trustworthiness Rating where one exists between authorized registries, operators, certifiers, or consumer-facing services.
 
 Required payload:
 - profile ID;
 - AI/version/configuration;
 - domain;
 - trustworthinessStatus;
-- trustworthinessRatingLevel, absent/null when no rating exists;
+- trustworthinessRatingLevel; nullable;
+- aiTrustworthinessRatingReference; nullable;
 - scoring-policy version;
 - evidence-window summary;
 - metric summary;
@@ -261,5 +274,7 @@ State machine:
 `ProfileCalculated → EvidenceBound → Signed → Published/Synchronized → Superseded | Suspended | Withdrawn | Expired`
 
 No registry protocol message creates authority.
+
+The protocol SHALL support a status-only publication or update. Status and optional rating are separate payload fields and separate outputs; an `Unrated` or applicable `Provisional` profile is publishable without a current rating.
 
 ---

@@ -1,6 +1,6 @@
 # Universal AI Safety Architecture (UAIS)
 
-**Pre-standard research architecture — Draft 1.0 Candidate 2 / Public Review**
+**Pre-standard research architecture — Draft 1.0 Candidate 3 / Public Review**
 
 **Assume unlimited intelligence. Limit autonomous authority.**
 
@@ -8,7 +8,7 @@ UAIS constrains consequential authority and consequence pathways rather than try
 
 This repository publishes a public Draft 1.0 Candidate for technical and policy review. It is not an adopted standard, certification scheme, compliance claim, or guarantee of AI safety.
 
-[Visual explainer](https://cresta13.github.io/universal-ai-safety-architecture/) · [Master Index](spec/00_MASTER_INDEX.md) · [Roadmap](ROADMAP.md) · [Known Limitations](KNOWN_LIMITATIONS.md)
+[Visual explainer](https://cresta13.github.io/universal-ai-safety-architecture/) · [Manifesto](spec/01_MANIFESTO.md) · [Full Technical Manifesto](spec/01A_FULL_TECHNICAL_MANIFESTO.md) · [Master Index](spec/00_MASTER_INDEX.md) · [Roadmap](ROADMAP.md) · [Known Limitations](KNOWN_LIMITATIONS.md)
 
 ## What UAIS controls
 
@@ -16,8 +16,8 @@ This repository publishes a public Draft 1.0 Candidate for technical and policy 
 flowchart LR
   A[Actor / Capability Request] --> B{Capability Boundary}
   LA[Legitimate Authority + Authority Ceiling] --> B
-  R[Effective / Illicit Reachability + RFA] --> B
-  HC[HHR + coalition analysis] --> B
+  R[Effective / Illicit Reachability + Reachable Future Authority (RFA)] --> B
+  HC[Human Harm Reachability (HHR) + coalition analysis] --> B
   SE[Safety Evidence] --> I[Deterministic Evidence Verifier]
   I --> B
   B -->|authorized, scoped, fresh evidence| C[Bounded Authorized Envelope]
@@ -25,6 +25,8 @@ flowchart LR
   C --> E[Consequence Interface]
   E --> F[Digital / Physical Consequence]
 ```
+
+Deterministic Evidence Verifier (DEV) verifies bounded evidence properties and provenance; it does not establish ultimate external-world truth. This limitation includes clinical, factual, and physical-world truth claims.
 
 UAIS separates:
 
@@ -82,7 +84,7 @@ See [ROADMAP.md](ROADMAP.md).
 
 ## Citation
 
-Use [CITATION.cff](CITATION.cff) and cite the specific version reviewed.
+Use [CITATION.md](CITATION.md) and cite the specific version reviewed.
 
 ## Licensing and use
 

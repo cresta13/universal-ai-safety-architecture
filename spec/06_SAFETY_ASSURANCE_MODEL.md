@@ -4,16 +4,20 @@
 
 Safety Assurance Level (SAL) is an assurance claim about the quality, independence, coverage and freshness of evidence for a defined configuration and environment. **SAL is not a probability that no harm will occur.** Residual Risk Level remains scenario-specific and separate.
 
-| SAL | Entry criteria and mandatory evidence | Independence and monitoring | Allowed envelope and floors | Recertification/expiry |
+| SAL | Entry criteria and mandatory evidence | Independence and monitoring | Candidate assurance scope / required floors | Recertification/expiry |
 |---|---|---|---|---|
-| SAL0 | configuration is unassessed or evidence is materially incomplete | none | no certified consequential deployment | not applicable; assessment required |
-| SAL1 | inventory, classification, assumptions, preliminary AHCD and first-party tests | accountable first party; event logging | normally H0–H1/P0–P1/T1; no failed applicable floor | review on change; maximum 24 months |
-| SAL2 | controlled configuration, reproducible verification/validation, monitoring, update and incident procedures | reviewer independent of implementation team | normally through H2/P2/T2/A2; tested gate and recovery floors | annual and on safety-relevant change |
-| SAL3 | independent competent lab, adversarial/coalition/update tests, AHCD and post-market plan | organizationally independent assessment; continuous critical-event monitoring | H3/P3/T3/A3 where domain floors, MSC/HumanOverrideIndependence and certificate conditions pass | maximum 12 months; every ACU/major incident |
-| SAL4 | diverse methods/assessors, hardware and operational independence, production sampling, continuity/capacity evidence | independent continuous assurance and random audits | H4/P4/T4/A4 only with redundant physical/deterministic floors | maximum 6 months plus continuous invalidation |
-| SAL5 | exceptional systemic safety case, multi-party governance, strongest domain evidence, PhysicalSovereigntyMargin/coalition analysis and public-interest oversight | diverse continuous assessment, live challenge and contingency governance | candidate H5/P5/T5/A5; approval is exceptional and never a zero-risk claim | continuously conditional; immediate trigger review |
+| SAL0 | configuration is unassessed or evidence is materially incomplete | none | assessment required; no assurance claim | assessment required |
+| SAL1 | inventory, classification, assumptions, preliminary AHCD and first-party tests | accountable first party; event logging | candidate default mapping for profile design: H0–H1/P0–P1/T1; no failed applicable floor | domain-profile-defined validity plus event-driven invalidation |
+| SAL2 | controlled configuration, reproducible verification/validation, monitoring, update and incident procedures | reviewer independent of implementation team | candidate default mapping for profile design: through H2/P2/T2/A2; tested boundary and recovery floors | domain-profile-defined validity plus event-driven invalidation |
+| SAL3 | independent competent lab, adversarial/coalition/update tests, AHCD and post-market plan | organizationally independent assessment; continuous critical-event monitoring | candidate default mapping for profile design: H3/P3/T3/A3 where domain floors and evidence conditions pass | domain-profile-defined validity; every material change or incident trigger |
+| SAL4 | diverse methods/assessors, hardware and operational independence, production sampling, continuity/capacity evidence | independent continuous assurance and random audits | candidate default mapping for profile design: H4/P4/T4/A4 with redundant physical/deterministic floors | domain-profile-defined validity plus continuous invalidation |
+| SAL5 | exceptional systemic safety case, multi-party governance, strongest domain evidence, PhysicalSovereigntyMargin/coalition analysis and public-interest oversight | diverse continuous assessment, live challenge and contingency governance | candidate default mapping for profile design: H5/P5/T5/A5; never a zero-risk claim | continuously conditional; immediate trigger review |
 
-“Normally through” is not automatic permission. A stricter domain standard, uncertainty or hazard may require a higher SAL or prohibit deployment.
+**Safety Assurance Level describes evidence and assurance strength. It does not grant authority, deployment permission, or legal approval. A domain profile may require a higher assurance level or prohibit the use entirely.**
+
+**Maximum validity and periodic review interval SHALL be defined by the applicable domain standard or certification profile based on consequence class, rate of capability or environment change, evidence decay, monitoring coverage, and intervention requirements. Material triggers invalidate or require review immediately regardless of calendar age.** SAL0 requires assessment. SAL1–SAL5 use domain-profile-defined validity and event-driven invalidation, with continuous assurance where consequence or change rate requires it.
+
+The mappings above are candidate default mappings for profile design, not universal empirical truth or automatic eligibility. Higher consequence, authority, autonomy, or physical exposure SHALL NOT be supported by weaker assurance merely because another dimension scored favorably.
 
 ## SAL determination
 
@@ -30,11 +34,11 @@ A high documentation score cannot compensate for absent physical control on a hi
 
 Certificate confidence is a vector covering configuration completeness, test validity, assessor independence, environmental representativeness, telemetry integrity and statistical uncertainty. Confidence reduces a claim but is not multiplied into a pseudo-precise risk number.
 
-Continuous assurance is required where capability, environment or consequence changes faster than periodic review can protect the certificate: H4–H5, A4–A5, T4–T5, large coalitions, production/replication, approaching PST, rapidly changing IAM or active AIVE exposure. Monitoring loss beyond the applicable floor suspends or restricts the certified envelope.
+Continuous assurance is required where capability, environment or consequence changes faster than periodic review can protect the certificate: H4–H5, A4–A5, T4–T5, large coalitions, production/replication, approaching Physical Sovereignty Threshold (PST), rapidly changing IAM or active AI Vulnerabilities & Exposures (AIVE) exposure. Monitoring loss beyond the applicable floor suspends or restricts the certified envelope.
 
 ## Invalidation and residual risk
 
-ACU, unapproved Capability Set change, safety-control change, key/root compromise, material drift, failed floor, incident, AIVE, supplier failure, standard obsolescence, certificate expiry or invalid assumption triggers review and may suspend the certificate automatically.
+Authority-Changing Update (ACU), unapproved Capability Set change, safety-control change, key/root compromise, material drift, failed floor, incident, AIVE, supplier failure, standard obsolescence, certificate expiry or invalid assumption triggers review and may suspend the certificate automatically.
 
 Residual risk records scenario, affected people, severity/modality, likelihood range if meaningful, exposure, controls, reversibility, intervention cost, uncertainty, acceptance authority and review date. The system itself cannot accept expansion beyond its ceiling. Consent cannot accept risks imposed on non-consenting third parties or waive mandatory engineering duties.
 
@@ -102,7 +106,20 @@ Instead, each registered `TrustworthinessScoringPolicy` SHALL define domain-spec
 
 The rating algorithm SHALL have this structure:
 
-`FinalTrustworthinessRating = minimum(EvidenceSupportedRating, CriticalErrorCap, FreshnessCap, IndependenceCap, DisagreementCap, ChangeCarryoverCap)`
+```text
+if EvidenceSupportedRating is absent/null:
+    FinalTrustworthinessRatingLevel = absent/null
+else:
+    FinalTrustworthinessRatingLevel =
+        minimum_on_TrustworthinessRatingLevel_lattice(
+            EvidenceSupportedRating,
+            CriticalErrorCap,
+            FreshnessCap,
+            IndependenceCap,
+            DisagreementCap,
+            ChangeCarryoverCap
+        )
+```
 
 Where:
 
@@ -121,7 +138,7 @@ Each cap returns the maximum permitted level in this lattice. If a cap does not 
 
 The exact domain thresholds used inside each cap belong to the versioned `TrustworthinessScoringPolicy`.
 
-If eligible evidence cannot support `LowTrustworthiness`, `EvidenceSupportedRating` is undefined/null and no active `FinalTrustworthinessRating` is emitted. Absence of a rating is not a fifth rating level. The profile status is then determined separately as `Unrated` or `Provisional` under the applicable scoring policy.
+If eligible evidence cannot support `LowTrustworthiness`, `EvidenceSupportedRating` is absent/null and no active `AITrustworthinessRating` is emitted. The minimum function never receives null. Absence of a rating is not a fifth rating level. The profile status is determined separately as `Unrated` or `Provisional` under the applicable scoring policy.
 
 No weighted average may override a hard cap. Status evaluation occurs independently. Suspension, withdrawal, or expiry can make an otherwise computed rating non-active, and the formula SHALL NOT override a mandatory status transition. A rating is not a probability of safety and cannot create authority.
 
@@ -169,7 +186,7 @@ A `TrustworthinessScoringPolicy` SHALL include at least:
 - `PolicyOwner`
 - `ReviewDate`
 
-Not Applicable requires a declared semantic reason under the scoring policy. Missing, unavailable, stale, or failed evidence SHALL NOT be relabeled Not Applicable merely to avoid a rating cap or status transition.
+`Not Applicable` requires an explicit semantic reason defined by the applicable Trustworthiness Scoring Policy. Missing, unavailable, stale, failed, suppressed, or insufficient evidence SHALL NOT be relabeled `Not Applicable` merely to avoid a rating cap, uncertainty increase, review trigger, or status transition. A metric whose semantic precondition does not exist may be Not Applicable; a metric that applies but lacks evidence is Missing/Unknown.
 
 Domain-specific thresholds are allowed. Universal UAIS numeric thresholds are not defined here. The policy version is mandatory, and every profile SHALL reference the policy version used. Changes to a scoring policy SHALL NOT silently rewrite historical ratings; historical Rating Change Events preserve the policy version under which they were calculated.
 
@@ -178,6 +195,8 @@ Domain-specific thresholds are allowed. Universal UAIS numeric thresholds are no
 `AITrustworthinessRegistry` is a versioned, tamper-evident registry that stores or references AI Trustworthiness Profiles, rating and status histories, Rating Change Events, Rating Explanation Records, validated error evidence, applicable scoring-policy versions, evidence freshness, evaluator-independence information, disputes, suspensions, withdrawals, and superseded versions while preserving historical records across model and configuration changes.
 
 The registry MAY be public, private, regulator-operated, or federated. Public disclosure uses privacy-minimized evidence. Confirmed historical errors SHALL NOT disappear because a vendor publishes a new version. The registry does not create authority and is distinct from `AITrustworthinessRegistryProtocol`.
+
+The primary published object is the AI Trustworthiness Profile; an AI Trustworthiness Rating is optional. Every published profile record includes the AI or system identity, provider/operator, model/version, configuration, domain/task scope, Trustworthiness Status, Trustworthiness Rating Level and rating reference where one exists, scoring-policy identifier/version, evidence window, operational exposure summary, Confirmed Error Rate, Critical Error Rate, confirmed material/critical counts, unresolved material/critical report counts, Independent Evaluation Performance, Evidence Independence, Evaluator Disagreement, Trustworthiness Freshness, last status/rating change, Rating Explanation Record, and limitations. An `Unrated` or applicable `Provisional` profile is publishable without a current rating.
 
 ### 4. Mandatory relationship to uncertainty
 
@@ -204,4 +223,3 @@ Global rules:
 6. A trustworthiness threshold MAY be required before using already granted authority, but trustworthiness itself SHALL NOT create the authority.
 
 ---
-
