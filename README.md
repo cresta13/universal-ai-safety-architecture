@@ -14,16 +14,16 @@ This repository publishes a public Draft 1.0 Candidate for technical and policy 
 
 ```mermaid
 flowchart LR
-  A[Actor / Capability Request] --> B{Capability Boundary}
-  LA[Legitimate Authority + Authority Ceiling] --> B
-  R[Effective / Illicit Reachability + Reachable Future Authority (RFA)] --> B
-  HC[Human Harm Reachability (HHR) + coalition analysis] --> B
-  SE[Safety Evidence] --> I[Deterministic Evidence Verifier]
+  A["Actor / Capability Request"] --> B{"Capability Boundary"}
+  LA["Legitimate Authority + Authority Ceiling"] --> B
+  R["Effective / Illicit Reachability + Reachable Future Authority (RFA)"] --> B
+  HC["Human Harm Reachability (HHR) + coalition analysis"] --> B
+  SE["Safety Evidence"] --> I["Deterministic Evidence Verifier"]
   I --> B
-  B -->|authorized, scoped, fresh evidence| C[Bounded Authorized Envelope]
-  B -->|missing authority or evidence| D[Restrict / Review]
-  C --> E[Consequence Interface]
-  E --> F[Digital / Physical Consequence]
+  B -->|"authorized, scoped, fresh evidence"| C["Bounded Authorized Envelope"]
+  B -->|"missing authority or evidence"| D["Restrict / Review"]
+  C --> E["Consequence Interface"]
+  E --> F["Digital / Physical Consequence"]
 ```
 
 Deterministic Evidence Verifier (DEV) verifies bounded evidence properties and provenance; it does not establish ultimate external-world truth. This limitation includes clinical, factual, and physical-world truth claims.

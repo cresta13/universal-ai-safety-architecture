@@ -15,20 +15,20 @@ The architecture is deliberately bounded. It does not claim complete hazard disc
 
 ```mermaid
 flowchart LR
- A[Actor / Capability Request] --> B{Capability Boundary}
- LA[Legitimate Authority + Authority Ceiling] --> B
- R[Effective / Illicit Reachability + Reachable Future Authority (RFA)] --> B
- H[Human Harm Reachability (HHR) + coalition analysis] --> B
- X[Configuration + telemetry] --> E[Evidence-Carrying Alert + Structured Evidence Package (SEP)]
- E --> V[Deterministic Evidence Verifier]
+ A["Actor / Capability Request"] --> B{"Capability Boundary"}
+ LA["Legitimate Authority + Authority Ceiling"] --> B
+ R["Effective / Illicit Reachability + Reachable Future Authority (RFA)"] --> B
+ H["Human Harm Reachability (HHR) + coalition analysis"] --> B
+ X["Configuration + telemetry"] --> E["Evidence-Carrying Alert + Structured Evidence Package (SEP)"]
+ E --> V["Deterministic Evidence Verifier"]
  V --> B
- B -->|authorized, scoped, fresh evidence| ENV[Bounded Authorized Envelope]
- B -->|missing authority or evidence| RR[Restrict / Review]
- ENV --> CI[Consequence Interface]
- CI --> W[Digital / Physical Consequence]
- M[Mechanical safety and physical isolation] --> W
- T[Technology watch, incidents and AIVE] --> U[Technology Evolution Review]
- U --> S[Standards, policy, metrics and certification]
+ B -->|"authorized, scoped, fresh evidence"| ENV["Bounded Authorized Envelope"]
+ B -->|"missing authority or evidence"| RR["Restrict / Review"]
+ ENV --> CI["Consequence Interface"]
+ CI --> W["Digital / Physical Consequence"]
+ M["Mechanical safety and physical isolation"] --> W
+ T["Technology watch, incidents and AIVE"] --> U["Technology Evolution Review"]
+ U --> S["Standards, policy, metrics and certification"]
 ```
 
 
