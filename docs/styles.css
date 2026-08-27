@@ -906,6 +906,17 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .intro-map span {
+    width: 100%;
+    margin-left: 0 !important;
+    transform: none;
+  }
+
+  .intro-map i {
+    width: 2.8rem;
+    margin-left: calc(50% - 1.4rem);
+  }
+
   .boundary-note {
     min-height: 4rem;
     border: 2px solid rgba(48,45,54,.48);
