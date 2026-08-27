@@ -51,7 +51,7 @@ async function main() {
     const smoke = await browser.newPage({ viewport: { width: 1366, height: 768 } });
     await smoke.goto(`http://127.0.0.1:${port}/#page=guardian-architecture`, { waitUntil: "networkidle" });
     const statusText = await smoke.locator("#reader-status").innerText();
-    if (!statusText.includes("Guardian Architecture")) throw new Error(`direct hash route failed: ${statusText}`);
+    if (!statusText.includes("Архитектура защитника полномочий")) throw new Error(`direct hash route failed: ${statusText}`);
     await smoke.keyboard.press("ArrowRight");
     const nextText = await smoke.locator("#reader-status").innerText();
     if (nextText === statusText) throw new Error("keyboard navigation did not advance");
@@ -69,14 +69,18 @@ async function main() {
 
     const shots = [
       ["desktop-cover.png", { width: 1440, height: 900 }, "#page=cover", "book"],
-      ["desktop-guardian.png", { width: 1440, height: 900 }, "#page=guardian-architecture", "book"],
+      ["desktop-p07.png", { width: 1440, height: 900 }, "#page=capability-authority-reachability", "book"],
+      ["desktop-p14.png", { width: 1440, height: 900 }, "#page=hazard-disclosure-passport", "book"],
+      ["desktop-p18.png", { width: 1440, height: 900 }, "#page=aria-refunds-example", "book"],
       ["mobile-cover.png", { width: 390, height: 844 }, "#page=cover", "book"],
-      ["mobile-scroll.png", { width: 390, height: 844 }, "#page=metrics-assurance", "scroll"],
+      ["mobile-p07.png", { width: 390, height: 844 }, "#page=capability-authority-reachability", "book"],
+      ["mobile-p14.png", { width: 390, height: 844 }, "#page=hazard-disclosure-passport", "book"],
+      ["mobile-p18.png", { width: 390, height: 844 }, "#page=aria-refunds-example", "book"],
     ];
     for (const [name, viewport, hash, mode] of shots) {
       const page = await browser.newPage({ viewport });
       await page.goto(`http://127.0.0.1:${port}/${hash}`, { waitUntil: "networkidle" });
-      if (mode === "scroll") await page.click('[data-mode="scroll"]');
+      await page.click(`[data-mode="${mode}"]`);
       await page.screenshot({ path: path.join(outDir, name), fullPage: true });
       await page.close();
     }

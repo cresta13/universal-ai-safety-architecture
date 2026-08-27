@@ -28,6 +28,53 @@ PALETTE = {
     "paper": colors.HexColor("#FFFDF8"),
 }
 
+GLOSSARY_REQUIRED_IDS = [
+    "capability",
+    "authority",
+    "legitimate-authority",
+    "effective-reachable-authority",
+    "illicit-reachable-authority",
+    "authority-ceiling",
+    "capability-boundary",
+    "consequence-interface",
+    "guardian",
+    "evidence-carrying-alert",
+    "structured-evidence-package",
+    "deterministic-evidence-verifier",
+    "human-sovereignty",
+    "manual-sovereignty-controller",
+    "physical-sovereignty",
+    "physical-sovereignty-threshold",
+    "safety-passport",
+    "consumer-ai-safety-class",
+    "safety-assurance-level",
+    "ai-trustworthiness",
+    "authority-expansion-event",
+]
+
+PDF_GLOSSARY_SUMMARY = {
+    "capability": "Технически доступное действие системы.",
+    "legitimate-authority": "Выданное право действовать в заданных пределах.",
+    "effective-reachable-authority": "Практически достижимый путь к значимому действию.",
+    "illicit-reachable-authority": "Достижимый путь без выданного права.",
+    "authority-ceiling": "Максимум полномочий без нового внешнего решения.",
+    "capability-boundary": "Обязательная проверка перед защищённым последствием.",
+    "consequence-interface": "Место, где действие достигает человека, имущества или среды.",
+    "guardian": "Ограниченный наблюдатель, выпускающий доказательства, а не команды.",
+    "evidence-carrying-alert": "Предупреждение, связанное с проверяемыми доказательствами.",
+    "structured-evidence-package": "Пакет наблюдений, допущений, неопределённости и срока действия.",
+    "deterministic-evidence-verifier": "Проверяет механические свойства доказательств, не истину мира.",
+    "human-sovereignty": "Подотчётное человеческое или внешне легитимное решение.",
+    "manual-sovereignty-controller": "Независимый ручной способ остановить значимую функцию.",
+    "physical-sovereignty": "Внешние зависимости уже почти не ограничивают автономность.",
+    "physical-sovereignty-threshold": "Порог потери эффективного внешнего ограничения.",
+    "safety-passport": "Понятная карточка конфигурации, опасностей, контролей и ограничений.",
+    "consumer-ai-safety-class": "Потребительский профиль видимых защитных механизмов.",
+    "safety-assurance-level": "Сила процедур и доказательств; не разрешение на внедрение.",
+    "ai-trustworthiness": "Наблюдаемая надёжность конкретной версии в конкретной области.",
+    "authority-expansion-event": "Переход, требующий внешней проверки расширения полномочий.",
+}
+
 
 def register_fonts() -> None:
     candidates = [
@@ -58,13 +105,33 @@ def draw_wrapped(c: canvas.Canvas, text: str, x: float, y: float, width: int, si
     return y
 
 
-def draw_note(c: canvas.Canvas, x: float, y: float, w: float, title: str, body: str, accent: str, items: list[str] | None = None) -> float:
-    title_lines = wrap_text(title, 28)
-    body_lines = wrap_text(body or "", 44)
+def draw_sources(c: canvas.Canvas, page: dict) -> None:
+    files = [source.split(":")[0].strip() for source in page.get("sourceSections", [])]
+    source_text = "Источники: " + "; ".join(files)
+    c.setFillColor(PALETTE["soft"])
+    c.setFont("UAISRegular", 6.7)
+    draw_wrapped(c, source_text, 18 * mm, 12 * mm, 112, 6.7, "UAISRegular", 8)
+
+
+def draw_note(
+    c: canvas.Canvas,
+    x: float,
+    y: float,
+    w: float,
+    title: str,
+    body: str,
+    accent: str,
+    items: list[str] | None = None,
+    canonical: str | None = None,
+) -> float:
+    text_width = max(24, int((w / mm) * 0.58))
+    title_lines = wrap_text(title, max(18, text_width - 4))
+    canonical_lines = wrap_text(canonical or "", max(18, text_width - 2))
+    body_lines = wrap_text(body or "", text_width)
     item_lines: list[str] = []
     for item in items or []:
-        item_lines.extend(wrap_text(f"- {item}", 42))
-    h = max(31 * mm, (len(title_lines) * 13 + len(body_lines) * 10 + len(item_lines) * 10 + 19) * 1.05)
+        item_lines.extend(wrap_text(f"- {item}", max(18, text_width - 2)))
+    h = max(31 * mm, (len(title_lines) * 13 + len(canonical_lines) * 8 + len(body_lines) * 10 + len(item_lines) * 10 + 20) * 1.05)
     c.setFillColor(PALETTE.get(accent, PALETTE["cream"]))
     c.setStrokeColor(colors.Color(0.18, 0.17, 0.21, alpha=.22))
     c.roundRect(x, y - h, w, h, 4, stroke=1, fill=1)
@@ -76,12 +143,19 @@ def draw_note(c: canvas.Canvas, x: float, y: float, w: float, title: str, body: 
     for line in title_lines:
       c.drawString(x + 7 * mm, cursor, line)
       cursor -= 12
+    if canonical_lines:
+        c.setFillColor(PALETTE["soft"])
+        c.setFont("UAISBold", 6.8)
+        for line in canonical_lines:
+            c.drawString(x + 7 * mm, cursor, line)
+            cursor -= 8
+        c.setFillColor(PALETTE["ink"])
     cursor -= 2
     if body:
-        cursor = draw_wrapped(c, body, x + 7 * mm, cursor, 48, 8, "UAISRegular", 10)
+        cursor = draw_wrapped(c, body, x + 7 * mm, cursor, text_width, 8, "UAISRegular", 10)
     if items:
         for item in items:
-            cursor = draw_wrapped(c, f"- {item}", x + 7 * mm, cursor, 45, 8, "UAISRegular", 10)
+            cursor = draw_wrapped(c, f"- {item}", x + 7 * mm, cursor, max(18, text_width - 2), 8, "UAISRegular", 10)
     return y - h - 6 * mm
 
 
@@ -96,11 +170,21 @@ def draw_header(c: canvas.Canvas, page: dict, number: int, total: int) -> float:
     c.drawString(margin, PAGE_H - 16 * mm, f"{page.get('kicker', 'UAIS')} · {page['id']} · {number}/{total}")
     c.setFillColor(PALETTE["ink"])
     c.setFont("UAISBold", 21)
-    c.drawString(margin + 4 * mm, PAGE_H - 30 * mm, page["title"])
+    cursor = PAGE_H - 30 * mm
+    for line in wrap_text(page["title"], 34)[:2]:
+        c.drawString(margin + 4 * mm, cursor, line)
+        cursor -= 19
     if page.get("subtitle"):
         c.setFont("UAISRegular", 10)
-        c.drawString(margin + 4 * mm, PAGE_H - 39 * mm, page["subtitle"])
-    return PAGE_H - 51 * mm
+        for line in wrap_text(page["subtitle"], 82)[:2]:
+            c.drawString(margin + 4 * mm, cursor - 1 * mm, line)
+            cursor -= 12
+    if page.get("canonical"):
+        c.setFillColor(PALETTE["soft"])
+        c.setFont("UAISBold", 7.5)
+        c.drawString(margin + 4 * mm, cursor - 1 * mm, page["canonical"])
+        cursor -= 10
+    return min(PAGE_H - 51 * mm, cursor - 8 * mm)
 
 
 def draw_cover(c: canvas.Canvas, data: dict, page: dict) -> None:
@@ -117,8 +201,24 @@ def draw_cover(c: canvas.Canvas, data: dict, page: dict) -> None:
     c.drawString(24 * mm, PAGE_H - 100 * mm, "Может сделать ≠ имеет право сделать.")
     y = draw_wrapped(c, page["lead"], 24 * mm, PAGE_H - 117 * mm, 74, 11, "UAISRegular", 15)
     y -= 7 * mm
-    for note in page["notes"]:
-        y = draw_note(c, 24 * mm, y, PAGE_W - 48 * mm, note["title"], note.get("body", ""), note.get("accent", "cream"), note.get("items"))
+    notes = page["notes"]
+    if notes:
+        y = draw_note(c, 24 * mm, y, PAGE_W - 48 * mm, notes[0]["title"], notes[0].get("body", ""), notes[0].get("accent", "cream"), notes[0].get("items"), notes[0].get("canonical"))
+    col_w = (PAGE_W - 54 * mm) / 2
+    col_y = [y, y]
+    for note_index, note in enumerate(notes[1:]):
+        col = note_index % 2
+        col_y[col] = draw_note(
+            c,
+            24 * mm + col * (col_w + 6 * mm),
+            col_y[col],
+            col_w,
+            note["title"],
+            note.get("body", ""),
+            note.get("accent", "cream"),
+            note.get("items"),
+            note.get("canonical"),
+        )
     c.setFillColor(PALETTE["soft"])
     c.setFont("UAISRegular", 8)
     c.drawString(24 * mm, 18 * mm, data["meta"]["version"])
@@ -139,12 +239,70 @@ def draw_toc(c: canvas.Canvas, data: dict, page: dict) -> None:
         y -= 10 * mm
 
 
+def draw_glossary_terms(c: canvas.Canvas, data: dict, y: float) -> None:
+    terms_by_id = {term["id"]: term for term in data.get("terms", [])}
+    terms = [terms_by_id[term_id] for term_id in GLOSSARY_REQUIRED_IDS if term_id in terms_by_id and term_id != "authority"]
+    x0 = 18 * mm
+    gap = 4 * mm
+    col_w = (PAGE_W - 36 * mm - 2 * gap) / 3
+    col_y = [y, y, y]
+    for index, term in enumerate(terms):
+        col = index % 3
+        x = x0 + col * (col_w + gap)
+        local_y = col_y[col]
+        c.setFillColor(PALETTE["cream"])
+        c.setStrokeColor(colors.Color(0.18, 0.17, 0.21, alpha=.16))
+        c.roundRect(x, local_y - 23 * mm, col_w, 21.5 * mm, 3, stroke=1, fill=1)
+        c.setFillColor(PALETTE["ink"])
+        c.setFont("UAISBold", 6.6)
+        cursor = local_y - 4.5 * mm
+        for line in wrap_text(term["ru"], 27)[:2]:
+            c.drawString(x + 3 * mm, cursor, line)
+            cursor -= 6.9
+        c.setFillColor(PALETTE["soft"])
+        c.setFont("UAISBold", 5.2)
+        for line in wrap_text(term["canonical"], 31)[:2]:
+            c.drawString(x + 3 * mm, cursor, line)
+            cursor -= 5.8
+        c.setFillColor(PALETTE["ink"])
+        c.setFont("UAISRegular", 5.1)
+        summary = PDF_GLOSSARY_SUMMARY.get(term["id"], term["definition"])
+        for line in wrap_text(summary, 34)[:4]:
+            c.drawString(x + 3 * mm, cursor, line)
+            cursor -= 5.8
+        col_y[col] = local_y - 24.5 * mm
+
+
+def draw_glossary(c: canvas.Canvas, data: dict, page: dict, index: int) -> None:
+    y = draw_header(c, page, index + 1, len(data["pages"]))
+    c.setFillColor(PALETTE["ink"])
+    y = draw_wrapped(c, page["lead"], 18 * mm, y, 84, 10, "UAISRegular", 13) - 3 * mm
+    authority = next((term for term in data.get("terms", []) if term.get("id") == "authority"), None)
+    if authority:
+        y = draw_note(c, 18 * mm, y, PAGE_W - 36 * mm, authority["ru"], authority["definition"], "cream", canonical=authority["canonical"])
+    version = next((note for note in page.get("notes", []) if note.get("title") == "Версия"), None)
+    if version:
+        c.setFillColor(PALETTE["soft"])
+        c.setFont("UAISRegular", 6.8)
+        y = draw_wrapped(c, version.get("body", ""), 18 * mm, y + 2 * mm, 118, 6.8, "UAISRegular", 8) - 2 * mm
+    draw_glossary_terms(c, data, y)
+    rights = next((note for note in page.get("notes", []) if note.get("title") == "Права"), None)
+    if rights:
+        c.setFillColor(PALETTE["soft"])
+        c.setFont("UAISRegular", 6.6)
+        draw_wrapped(c, rights.get("body", ""), 18 * mm, 24 * mm, 112, 6.6, "UAISRegular", 8)
+    draw_sources(c, page)
+
+
 def draw_page(c: canvas.Canvas, data: dict, page: dict, index: int) -> None:
     if page["layout"] == "cover":
         draw_cover(c, data, page)
         return
     if page["layout"] == "toc":
         draw_toc(c, data, page)
+        return
+    if page["layout"] == "glossary":
+        draw_glossary(c, data, page, index)
         return
     y = draw_header(c, page, index + 1, len(data["pages"]))
     c.setFillColor(PALETTE["ink"])
@@ -153,15 +311,6 @@ def draw_page(c: canvas.Canvas, data: dict, page: dict, index: int) -> None:
     x_positions = [18 * mm, 24 * mm + col_w]
     col_y = [y, y]
     notes = page.get("notes", [])
-    if page["layout"] == "glossary":
-        notes = notes + [
-            {
-                "title": f"{term['canonical']} -> {term['ru']}",
-                "body": term["definition"],
-                "accent": "cream",
-            }
-            for term in data.get("terms", [])[:6]
-        ]
     for note_index, note in enumerate(notes):
         col = note_index % 2
         col_y[col] = draw_note(
@@ -173,10 +322,9 @@ def draw_page(c: canvas.Canvas, data: dict, page: dict, index: int) -> None:
             note.get("body", ""),
             note.get("accent", "cream"),
             note.get("items"),
+            note.get("canonical"),
         )
-    c.setFillColor(PALETTE["soft"])
-    c.setFont("UAISRegular", 7.5)
-    c.drawString(18 * mm, 12 * mm, "Источники: " + "; ".join(page.get("sourceSections", []))[:125])
+    draw_sources(c, page)
 
 
 def main() -> None:

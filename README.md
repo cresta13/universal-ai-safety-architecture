@@ -12,7 +12,7 @@ This repository publishes a public Draft 1.0 Candidate for technical and policy 
 
 ## Russian GitHub Pages web book
 
-The GitHub Pages site now publishes a Russian interactive visual web book for Phase 1 review. It is built from structured Russian content in [docs/data/ru-content.json](docs/data/ru-content.json), with the static interface in [docs/index.html](docs/index.html), [docs/styles.css](docs/styles.css), and [docs/app.js](docs/app.js).
+The GitHub Pages site publishes a 20-page Russian interactive visual web book for public review, including a worked Aria refunds example. It is built from structured Russian content in [docs/data/ru-content.json](docs/data/ru-content.json), with the static interface in [docs/index.html](docs/index.html), [docs/styles.css](docs/styles.css), and [docs/app.js](docs/app.js).
 
 Local build:
 

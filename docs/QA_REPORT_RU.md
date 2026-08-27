@@ -1,10 +1,10 @@
-# QA-отчёт русской веб-книги UAIS
+# QA-сводка русской веб-книги UAIS
 
-Дата проверки: 2026-08-27. Проверяемый кандидат: Draft 1.0 Candidate 3 / Public Review, русская GitHub Pages web-book phase 1.
+Дата локальной проверки: 2026-08-27. Проверяемый кандидат: Draft 1.0 Candidate 3 / Public Review, русская GitHub Pages web-book.
 
 ## Проверенный объём
 
-- Русская интерактивная веб-книга в `docs/`.
+- Интерактивная русская веб-книга в `docs/`.
 - Структурированный контент `docs/data/ru-content.json`.
 - PDF `public/pdfs/UAIS-Manifesto-RU.pdf`.
 - GitHub Pages build artifact `dist/`.
@@ -25,56 +25,41 @@
 | `git diff --check` | Пройдено |
 | `python ../tools/publication_qa.py .` | Пройдено: `FAILURES=0` |
 
-## PDF-проверка
+## Content QA
+
+- Веб-книга содержит 20 листов: P00–P19.
+- Добавлен сквозной пример `P18 Сквозной пример: Ария и возвраты`.
+- Главные заголовки русские; английские canonical names используются как вторичные подписи или технические имена.
+- `Authority` отделено от технической возможности и фактической достижимости.
+- `Illicit Reachable Authority` передано как «нелегитимно достижимое полномочие», без обязательной юридической трактовки.
+- `Safety Passport`, `Consumer AI Safety Class`, `SAL` и `AI Trustworthiness` разведены по смыслу.
+- `Guardian` описан как ограниченный наблюдатель, который выпускает доказательства и не принимает окончательное защищённое решение.
+- Public Review явно не представлен как независимая валидация, консенсус, принятие или одобрение.
+- `OPEN RESEARCH` представлен как открытая исследовательская граница, а не решённая инженерная задача.
+- Пример с тремя месяцами помечен как условный срок компании, а не универсальное правило UAIS.
+
+## PDF
 
 - Файл: `public/pdfs/UAIS-Manifesto-RU.pdf`.
-- Количество страниц: 19.
-- Размер после генерации: 140902 bytes.
-- Проверено извлечение русского текста и ключевых фраз.
-- Poppler-render выполнен для всех страниц; вручную просмотрены обложка, оглавление, Guardian, terminology/authority, assurance и glossary/source pages.
-- На просмотренных страницах не найдено обрезанного текста или критических наложений.
+- Количество страниц: 20.
+- Проверено извлечение ключевых фраз: Public Review, Authority, Safety Passport, Consumer AI Safety Class, Aria example и оговорка про срок.
+- Poppler-render выполнен для контрольных страниц P00, P07, P14, P18 и P19; критических наложений или обрезки не найдено.
 
 ## Browser smoke и screenshots
 
-Скрипт `scripts/capture_screenshots.js` проверил:
-
-- прямое открытие `#page=guardian-architecture`;
-- навигацию клавишей ArrowRight;
-- включение последовательного режима;
-- открытие полноэкранного листа;
-- доступность PDF по `pdfs/UAIS-Manifesto-RU.pdf`.
+Скрипт `scripts/capture_screenshots.js` проверяет прямой hash-route, клавиатурную навигацию, последовательный режим, диалог листа и доступность PDF.
 
 Сохранённые screenshots:
 
-- `docs/qa/screenshots/desktop-cover.png` — desktop 1440x900, обложка.
-- `docs/qa/screenshots/desktop-guardian.png` — desktop 1440x900, прямой раздел Guardian.
-- `docs/qa/screenshots/mobile-cover.png` — mobile 390x844, обложка.
-- `docs/qa/screenshots/mobile-scroll.png` — mobile 390x844, последовательный режим.
+- `docs/qa/screenshots/desktop-cover.png`
+- `docs/qa/screenshots/desktop-p07.png`
+- `docs/qa/screenshots/desktop-p14.png`
+- `docs/qa/screenshots/desktop-p18.png`
+- `docs/qa/screenshots/mobile-cover.png`
+- `docs/qa/screenshots/mobile-p07.png`
+- `docs/qa/screenshots/mobile-p14.png`
+- `docs/qa/screenshots/mobile-p18.png`
 
-## Проверка опубликованной GitHub Pages версии
+## Ограничения
 
-- Workflow: `Deploy GitHub Pages`, conclusion `success`.
-- Site URL: `https://cresta13.github.io/universal-ai-safety-architecture/` — HTTP 200.
-- PDF URL: `https://cresta13.github.io/universal-ai-safety-architecture/pdfs/UAIS-Manifesto-RU.pdf` — HTTP 200, `content-type: application/pdf`.
-- OG image URL: `https://cresta13.github.io/universal-ai-safety-architecture/assets/og-ru.png` — HTTP 200, `content-type: image/png`.
-- Published browser smoke: `lang=ru`, `dir=ltr`, direct route `#page=guardian-architecture`, keyboard navigation, scroll mode and PDF HEAD check passed.
-
-## Содержательные проверки
-
-- `Guardian` представлен как restricted observer, выпускающий evidence, а не commands.
-- `Capability`, `Authority`, `Effective Reachable Authority` и `Illicit Reachable Authority` разведены отдельно.
-- `Trustworthiness` не создаёт authority и не повышает authority ceiling.
-- `Autonomy` не смешивается с `Physical Sovereignty`.
-- `Safety Claim` привязан к scope, evidence и сроку действия.
-- Многомерная classification model не сведена к одному рейтингу.
-
-## Неоднозначности и допущения
-
-- Русская версия является объяснительной, а не нормативным переводом спецификации.
-- Часть канонических терминов оставлена на английском там, где русская замена могла бы исказить смысл.
-- Reference scrapbook-изображения использованы как визуальный канон, а не как источник текста.
-- PDF создан отдельным воспроизводимым генератором из того же JSON-контента; он передаёт тот же порядок и основные смысловые блоки, но использует более строгую A4-композицию без веб-навигации.
-
-## Стоп-шлюз
-
-Переводы на `en`, `zh-Hans`, `es` и `ar` не создавались. Активный переключатель языков не добавлялся.
+Русская версия остаётся объяснительной веб-книгой. При конфликте приоритет имеет англоязычная Candidate 3 specification. Переводы на другие языки не создавались и не публиковались.

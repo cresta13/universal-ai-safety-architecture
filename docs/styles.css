@@ -219,11 +219,18 @@ h1 {
 
 .intro-line {
   display: inline-block;
-  margin: 2.2rem 0 1.2rem;
+  margin: 1.35rem 0 1.2rem;
   padding: .45rem .85rem;
   background: linear-gradient(transparent 52%, rgba(221, 182, 213, .72) 52%);
   font-family: var(--font-hand);
   font-size: 2.15rem;
+  font-weight: 900;
+}
+
+.intro-subtitle {
+  margin: .65rem 0 0;
+  color: var(--soft-ink);
+  font-size: 1.12rem;
   font-weight: 900;
 }
 
@@ -491,6 +498,26 @@ h1 {
   line-height: 1.12;
 }
 
+.note-title:has(.principle-number) {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.canonical-label {
+  display: block;
+  margin: -.22rem 0 .5rem;
+  color: #595466;
+  font-size: .72rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.sheet > .canonical-label {
+  margin: -.65rem 0 .15rem;
+  font-size: .88rem;
+}
+
 .note p,
 .note li {
   margin: 0;
@@ -567,7 +594,7 @@ h1 {
 }
 
 .route-line {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(7.4rem, 1fr));
 }
 
 .route-line span:nth-child(1) { background: var(--blue); }
@@ -603,21 +630,20 @@ h1 {
 .sheet-principles .notes,
 .sheet-axis .notes,
 .sheet-passport .notes,
-.sheet-evidence .notes {
+.sheet-evidence .notes,
+.sheet-example .notes {
   grid-template-columns: 1fr;
 }
 
 .sheet-principles .note {
-  display: grid;
-  grid-template-columns: 3.2rem 1fr;
-  gap: .75rem;
-  align-items: start;
+  display: block;
   min-height: 4.9rem;
 }
 
 .principle-number {
   display: grid;
   place-items: center;
+  flex: 0 0 auto;
   width: 2.7rem;
   height: 2.7rem;
   border: 2px solid rgba(48,45,54,.65);
@@ -688,6 +714,14 @@ h1 {
 
 .decision-strip {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sheet-glossary .notes {
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.sheet-glossary .note {
+  min-height: auto;
 }
 
 .source-list {

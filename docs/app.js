@@ -23,6 +23,10 @@
     return node;
   }
 
+  function canonicalLabel(text) {
+    return text ? el("small", "canonical-label", text) : null;
+  }
+
   function noteElement(note, index) {
     const box = el("section", `note ${accentClass(note.accent)}`);
     if (note.title) {
@@ -36,6 +40,8 @@
         title.textContent = note.title;
       }
       box.append(title);
+      const canonical = canonicalLabel(note.canonical);
+      if (canonical) box.append(canonical);
     }
     if (note.body) box.append(el("p", "", note.body));
     if (Array.isArray(note.items) && note.items.length) {
@@ -78,7 +84,9 @@
       img.src = "assets/uais-favicon.svg";
       img.alt = "";
       const text = el("div", "cover-title");
-      text.append(el("h2", "", page.title), el("p", "lead", page.lead));
+      const heading = el("h2", "", page.title);
+      heading.id = `${page.slug}-title`;
+      text.append(heading, el("p", "lead", page.lead));
       mark.append(img, text);
       sheet.append(mark);
       const routeNote = page.notes.find((note) => note.items);
@@ -115,7 +123,7 @@
 
     if (page.layout === "map") {
       sheet.append(el("p", "lead", page.lead));
-      sheet.append(renderRouteLine(["Capability request", "Capability Boundary", "Bounded envelope", "Consequence Interface", "Protected consequence"]));
+      sheet.append(renderRouteLine(page.route || ["запрос на возможность", "граница возможностей", "разрешённый диапазон", "интерфейс последствий", "защищённое последствие"]));
       const notes = el("div", "notes");
       page.notes.forEach((note, index) => notes.append(noteElement(note, index)));
       sheet.append(notes);
@@ -126,7 +134,7 @@
       sheet.append(el("p", "lead", page.lead));
       const strip = el("div", "decision-strip");
       strip.append(el("span", "", page.layout === "sovereignty" ? "человек сохраняет внешний путь" : "разрешённое"));
-      strip.append(el("span", "", page.layout === "sovereignty" ? "AI-путь не отменяет физический контроль" : "достижимое"));
+      strip.append(el("span", "", page.layout === "sovereignty" ? "ИИ-путь не отменяет физический контроль" : "достижимое"));
       sheet.append(strip);
       return false;
     }
@@ -151,6 +159,8 @@
       title.id = `${page.slug}-title`;
       sheet.append(title);
       if (page.subtitle) sheet.append(el("h3", "", page.subtitle));
+      const canonical = canonicalLabel(page.canonical);
+      if (canonical) sheet.append(canonical);
     }
 
     const handled = renderSpecial(page, sheet);
@@ -170,10 +180,11 @@
 
     if (page.layout === "glossary") {
       const terms = el("div", "notes");
-      state.data.terms.slice(0, 8).forEach((term) => {
+      state.data.terms.forEach((term) => {
         terms.append(noteElement({
           accent: "cream",
-          title: `${term.canonical} → ${term.ru}`,
+          title: term.ru,
+          canonical: term.canonical,
           body: term.definition,
         }, 0));
       });
