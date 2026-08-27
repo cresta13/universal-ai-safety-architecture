@@ -10,6 +10,35 @@ This repository publishes a public Draft 1.0 Candidate for technical and policy 
 
 [Visual explainer](https://cresta13.github.io/universal-ai-safety-architecture/) · [Manifesto](spec/01_MANIFESTO.md) · [Full Technical Manifesto](spec/01A_FULL_TECHNICAL_MANIFESTO.md) · [Master Index](spec/00_MASTER_INDEX.md) · [Roadmap](ROADMAP.md) · [Known Limitations](KNOWN_LIMITATIONS.md)
 
+## Russian GitHub Pages web book
+
+The GitHub Pages site now publishes a Russian interactive visual web book for Phase 1 review. It is built from structured Russian content in [docs/data/ru-content.json](docs/data/ru-content.json), with the static interface in [docs/index.html](docs/index.html), [docs/styles.css](docs/styles.css), and [docs/app.js](docs/app.js).
+
+Local build:
+
+```bash
+python -m pip install -r requirements.txt
+python scripts/generate_og.py
+python scripts/generate_pdf.py
+python scripts/check_site.py
+python scripts/build_site.py
+python scripts/check_site.py --site dist
+python -m http.server 4179 --directory dist
+```
+
+Open `http://localhost:4179/universal-ai-safety-architecture/` only if serving behind the same base path; otherwise open `http://localhost:4179/` for the local static preview. The public site is published at <https://cresta13.github.io/universal-ai-safety-architecture/>.
+
+Phase 1 artifacts:
+
+- Russian web book: [docs/](docs/)
+- Russian PDF: [public/pdfs/UAIS-Manifesto-RU.pdf](public/pdfs/UAIS-Manifesto-RU.pdf)
+- Manifest coverage: [docs/CONTENT_COVERAGE_RU.md](docs/CONTENT_COVERAGE_RU.md)
+- Russian glossary: [docs/RUSSIAN_GLOSSARY.md](docs/RUSSIAN_GLOSSARY.md)
+- QA report: [docs/QA_REPORT_RU.md](docs/QA_REPORT_RU.md)
+- Translation readiness notes: [docs/TRANSLATION_READINESS.md](docs/TRANSLATION_READINESS.md)
+
+Only the Russian version is active in Phase 1. Future locales are configuration-only until the Russian version is explicitly approved.
+
 ## What UAIS controls
 
 ```mermaid

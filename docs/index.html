@@ -1,219 +1,104 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UAIS - Universal AI Safety Architecture</title>
-  <meta name="description" content="Plain-language visual explainer for UAIS, a consequence-first pre-standard architecture for AI authority, evidence, and human sovereignty.">
-  <meta property="og:title" content="Universal AI Safety Architecture (UAIS)">
-  <meta property="og:description" content="Assume unlimited intelligence. Limit autonomous authority.">
+  <title>UAIS — русская интерактивная веб-книга</title>
+  <meta name="description" content="Русская визуальная веб-книга о Universal AI Safety Architecture: возможности, полномочия, доказательства, Guardian, суверенитет человека и границы безопасности.">
+  <link rel="canonical" href="https://cresta13.github.io/universal-ai-safety-architecture/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="UAIS — русская интерактивная веб-книга">
+  <meta property="og:description" content="UAIS объясняет, почему возможность действовать не создаёт права действовать. Русская scrapbook-версия для содержательной проверки.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cresta13.github.io/universal-ai-safety-architecture/">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Universal AI Safety Architecture (UAIS)">
-  <meta name="twitter:description" content="Assume unlimited intelligence. Limit autonomous authority. A consequence-first pre-standard architecture for AI safety.">
+  <meta property="og:image" content="https://cresta13.github.io/universal-ai-safety-architecture/assets/og-ru.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UAIS — русская интерактивная веб-книга">
+  <meta name="twitter:description" content="Возможность ≠ полномочие. Русская визуальная книга по Universal AI Safety Architecture.">
+  <meta name="twitter:image" content="https://cresta13.github.io/universal-ai-safety-architecture/assets/og-ru.png">
+  <link rel="icon" href="assets/uais-favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="UAIS home"><span></span>UAIS</a>
-    <nav aria-label="Main">
-      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01_MANIFESTO.md">Manifesto</a>
-      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01A_FULL_TECHNICAL_MANIFESTO.md">Technical Manifesto</a>
-      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Full Specification</a>
-      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md">Roadmap</a>
+  <a class="skip-link" href="#book">Перейти к книге</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="#page=cover" aria-label="UAIS: открыть обложку">
+      <img src="assets/uais-favicon.svg" alt="" width="42" height="42">
+      <span>UAIS</span>
+    </a>
+    <nav class="header-links" aria-label="Основные ссылки">
+      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01_MANIFESTO.md">Манифест</a>
+      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01A_FULL_TECHNICAL_MANIFESTO.md">Технический манифест</a>
+      <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Индекс</a>
       <a href="https://github.com/cresta13/universal-ai-safety-architecture">GitHub</a>
     </nav>
+    <a class="pdf-link" href="pdfs/UAIS-Manifesto-RU.pdf" download>Скачать PDF</a>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="status">Plain-language public edition. Non-normative summary. <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Canonical terminology and requirements are defined in the UAIS specification.</a></p>
-        <h1>Universal AI Safety Architecture</h1>
-        <p class="tagline">Assume unlimited intelligence. Limit autonomous authority.</p>
-        <div class="axiom-strip" aria-label="Core distinctions">
-          <span>Capability is not authority</span>
-          <span>Intelligence ≠ Authority</span>
-          <span>Creation ≠ Delegation</span>
+  <main>
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-paper">
+        <p class="eyebrow">Русская версия · этап 1 · Draft 1.0 Candidate 3</p>
+        <h1 id="intro-title">Universal AI Safety Architecture</h1>
+        <p class="intro-line">Может сделать ≠ имеет право сделать.</p>
+        <p class="intro-copy">UAIS ограничивает не интеллект, а неподотчётную власть: кто может выдать полномочие, где оно заканчивается, как появляется доказательство и как человек сохраняет независимый контроль.</p>
+      </div>
+      <div class="intro-map" aria-label="Маршрут книги: возможность, полномочие, доказательства, легитимное решение, суверенитет человека">
+        <span>возможность</span>
+        <i></i>
+        <span>полномочие</span>
+        <i></i>
+        <span>доказательства</span>
+        <i></i>
+        <span>решение</span>
+        <i></i>
+        <span>суверенитет</span>
+      </div>
+    </section>
+
+    <section class="reader" id="book" aria-labelledby="book-title">
+      <div class="reader-head">
+        <div>
+          <p class="eyebrow">Интерактивная веб-книга</p>
+          <h2 id="book-title">Русская визуальная версия UAIS</h2>
         </div>
-      </div>
-      <div class="hero-scene" role="img" aria-label="Inputs of authority, reachability, harm, and evidence converge on a Capability Boundary before a bounded envelope reaches a Consequence Interface.">
-        <div class="scene-ring r1" aria-hidden="true"></div>
-        <div class="scene-ring r2" aria-hidden="true"></div>
-        <div class="scene-node request">Actor / request</div>
-        <div class="scene-node evidence">Evidence + provenance</div>
-        <div class="scene-node reach">Reachable Future Authority / Human Harm Reachability</div>
-        <div class="scene-node ceiling">Authority ceiling</div>
-        <div class="scene-core">Capability<br>Boundary</div>
-        <div class="scene-path">
-          <b>Bounded envelope</b>
-          <span>Consequence Interface</span>
-          <strong>Digital / physical consequence</strong>
-        </div>
-      </div>
-    </section>
-
-    <section id="flow" class="band flow-band">
-      <div class="section-head">
-        <p>Architecture flow</p>
-        <h2>The decision happens before consequence.</h2>
-      </div>
-      <div class="flow-grid" role="img" aria-label="Actor or capability request flows through a Capability Boundary into a bounded authorized envelope, then through a Consequence Interface to a digital or physical consequence.">
-        <div class="flow-card mint">Actor / Capability Request</div>
-        <div class="arrow"></div>
-        <div class="flow-card lavender">Capability Boundary</div>
-        <div class="arrow"></div>
-        <div class="flow-card lemon">Bounded Authorized Envelope</div>
-        <div class="arrow"></div>
-        <div class="flow-card peach">Consequence Interface</div>
-        <div class="arrow"></div>
-        <div class="flow-card sky">Digital / Physical Consequence</div>
-      </div>
-      <div class="input-map">
-        <article class="mint"><b>Legitimate Authority</b><span>grants and mandate</span></article>
-        <article class="sky"><b>Effective Reachability</b><span>what is practically reachable</span></article>
-        <article class="rose"><b>Illicit Reachability</b><span>unauthorized reachable paths</span></article>
-        <article class="peach"><b>Human Harm Reachability</b><span>causal paths to harm</span></article>
-        <article class="sage"><b>Evidence + provenance</b><span>fresh, scoped, checkable</span></article>
-      </div>
-      <p class="clarifier">Actor-agnostic does not mean actor-blind. The protected boundary follows consequential capability; authorization may still depend on identity, role, authentication, purpose, context, trustworthiness, and legitimate mandate. No actor category may bypass the boundary merely by changing its label.</p>
-    </section>
-
-    <section id="principles" class="band principles-band">
-      <div class="section-head">
-        <p>Manifesto</p>
-        <h2>Ten principles, shown as control rules.</h2>
-      </div>
-      <div class="principle-grid">
-        <article class="mint"><b>1</b><span>Intelligence does not imply authority.</span></article>
-        <article class="sky"><b>2</b><span>Creation does not imply delegation.</span></article>
-        <article class="peach"><b>3</b><span>Authority expansion stays under the Authority Ceiling.</span></article>
-        <article class="lavender"><b>4</b><span>Autonomy must not silently become sovereignty.</span></article>
-        <article class="lemon"><b>5</b><span><strong>Safety must keep pace with capability.</strong> Material expansion of capability, authority, or hazard requires review of the safety model and evidence; an older safety claim does not silently carry forward.</span></article>
-        <article class="sage"><b>6</b><span>Assume chokepoint failure.</span></article>
-        <article class="rose"><b>7</b><span>Protect consequential capability, not AI labels.</span></article>
-        <article class="mint"><b>8</b><span>Separate prediction, evidence, enforcement, and legitimacy.</span></article>
-        <article class="sky"><b>9</b><span>Unknown is not evidence of safety.</span></article>
-        <article class="peach"><b>10</b><span>Safety claims expire.</span></article>
-      </div>
-    </section>
-
-    <section class="band stage-band">
-      <div class="section-head">
-        <p>Stage I / Stage II</p>
-        <h2>Compute controls buy time; capability and consequence controls provide resilience.</h2>
-      </div>
-      <div class="stage-board">
-        <article class="stage stage-one">
-          <span>Stage I</span>
-          <b>Chokepoints still help.</b>
-          <div class="signal-row">
-            <i>chips</i><i>clouds</i><i>attestation</i><i>energy</i>
+        <div class="reader-actions" aria-label="Управление книгой">
+          <div class="mode-toggle" role="group" aria-label="Режим просмотра">
+            <button type="button" data-mode="book" aria-pressed="true">Книга</button>
+            <button type="button" data-mode="scroll" aria-pressed="false">Просмотр</button>
           </div>
-          <p>Friction, warning, investigation, and time.</p>
-        </article>
-        <article class="stage stage-two">
-          <span>Stage II</span>
-          <b>Origin is no longer dependable.</b>
-          <div class="signal-row">
-            <i>boundaries</i><i>interfaces</i><i>physical controls</i><i>coalitions</i>
-          </div>
-          <p>Resilience comes from consequence mediation and controlled physical dependencies.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="band sovereignty-band">
-      <div class="section-head">
-        <p>Sovereignty split</p>
-        <h2>Autonomy is not physical sovereignty.</h2>
-      </div>
-      <div class="split-board">
-        <article class="lavender">
-          <b>Human Sovereignty</b>
-          <span>Manual override, isolation, recovery, external legitimacy.</span>
-        </article>
-        <article class="peach">
-          <b>Physical Sovereignty</b>
-          <span>The system can sustain consequential operation and replace critical dependencies without human-controlled infrastructure.</span>
-        </article>
-      </div>
-    </section>
-
-    <section id="trust" class="band trust-band">
-      <div class="section-head">
-        <p>Trustworthiness and error evidence</p>
-        <h2>Status, rating, and critical evidence stay separate.</h2>
-      </div>
-      <div class="trust-layout" role="img" aria-label="User and operator reports, independent evaluation, and operational evidence feed report validation and evidence binding, then an AI Trustworthiness Profile. A scoring policy and hard caps produce separate Trustworthiness Status and optional Rating Level outputs.">
-        <div class="trust-flow">
-          <div class="trust-node mint">User / operator reports</div>
-          <div class="trust-node sky">Independent evaluation</div>
-          <div class="trust-node sage">Operational evidence</div>
-          <div class="trust-node lemon">Report validation / evidence binding</div>
-          <div class="trust-node lavender">AI Trustworthiness Profile</div>
-          <div class="trust-node peach">Trustworthiness Scoring Policy + hard caps</div>
-          <div class="trust-output-row">
-            <div class="trust-node rose">Trustworthiness Status</div>
-            <div class="trust-node mint">Rating Level — optional / null</div>
-          </div>
-        </div>
-        <div class="cap-stack" aria-label="Rating caps">
-          <span class="cap rose">critical errors</span>
-          <span class="cap peach">freshness</span>
-          <span class="cap sky">independence</span>
-          <span class="cap mint">disagreement</span>
-          <span class="cap lavender">change carryover</span>
+          <button type="button" data-action="toc">Оглавление</button>
+          <button type="button" data-action="copy">Скопировать ссылку</button>
+          <button type="button" data-action="open">Открыть лист</button>
         </div>
       </div>
-      <p class="clarifier"><b>Evidence-integrity layer:</b> evidence sources → Structured Evidence Package and provenance paths → Deterministic Evidence Verifier (DEV) checks signatures, schema, provenance, freshness, and declared derivation. Evidence is scoped, fresh, and integrity-checked; source truth remains bounded. DEV verifies bounded evidence properties; it does not independently prove the ultimate truth of a clinical, factual, physical-world, or qualitative evaluation claim when the underlying source is wrong.</p>
-      <div class="trust-rules">
-        <article class="white"><b>No averaging critical errors.</b><span>Critical evidence triggers caps before aggregate scoring.</span></article>
-        <article class="white"><b>No rating by self-claim.</b><span>Self-assessment is supporting evidence only.</span></article>
-        <article class="white"><b>No authority from rating.</b><span>Trustworthiness evidence can constrain delegated use. Insufficient, degraded, stale, or disputed evidence may trigger pre-authorized restrictions. A higher rating never raises the Authority Ceiling. A rating cannot create authority, waive safety controls, or certify general safety.</span></article>
+
+      <div class="book-shell" data-view="book">
+        <button class="turn turn-prev" type="button" data-action="prev" aria-label="Предыдущий лист">‹</button>
+        <div class="book-stage" id="book-stage" aria-live="polite"></div>
+        <button class="turn turn-next" type="button" data-action="next" aria-label="Следующий лист">›</button>
       </div>
+      <div class="reader-status" id="reader-status" aria-live="polite">Загрузка книги…</div>
     </section>
 
-    <section id="limits" class="band limits-band">
-      <div class="section-head">
-        <p>Non-claims</p>
-        <h2>Precise limits are part of the architecture.</h2>
-      </div>
-      <div class="limit-map">
-        <div>no complete hazard discovery guarantee</div>
-        <div>no mediation outside managed scope</div>
-        <div>DEV does not prove external-world truth</div>
-        <div>sparse evidence may mean no active rating</div>
-        <div>evaluator diversity can still correlate</div>
-        <div>no control of a hostile Physically Sovereign Autonomous System</div>
-      </div>
-    </section>
-
-    <section id="roadmap" class="band roadmap-band">
-      <div class="section-head">
-        <p>Roadmap</p>
-        <h2>From draft architecture to tested evidence.</h2>
-      </div>
-      <div class="timeline">
-        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase mint"><b>1</b><span>Spec hardening</span></a>
-        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase sky"><b>2</b><span>Formal schemas</span></a>
-        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase peach"><b>3</b><span>Reference prototypes</span></a>
-        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase lavender"><b>4</b><span>Adversarial tests</span></a>
-        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase lemon"><b>5</b><span>Domain profiles</span></a>
-        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase sage"><b>6</b><span>Standards translation</span></a>
-        <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md" class="phase rose"><b>7</b><span>External review</span></a>
-      </div>
+    <section class="repo-notes" aria-labelledby="repo-title">
+      <h2 id="repo-title">Проверочные материалы</h2>
+      <a href="CONTENT_COVERAGE_RU.md">Покрытие манифеста</a>
+      <a href="RUSSIAN_GLOSSARY.md">Русский глоссарий</a>
+      <a href="QA_REPORT_RU.md">QA-отчёт</a>
+      <a href="TRANSLATION_READINESS.md">Готовность к будущим переводам</a>
     </section>
   </main>
 
-  <footer>
-    <span>UAIS Draft 1.0 Candidate 3 / Public Review</span>
-    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01_MANIFESTO.md">Manifesto</a>
-    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/01A_FULL_TECHNICAL_MANIFESTO.md">Technical Manifesto</a>
-    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/spec/00_MASTER_INDEX.md">Full Specification</a>
-    <a href="https://github.com/cresta13/universal-ai-safety-architecture/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/cresta13/universal-ai-safety-architecture">GitHub</a>
+  <dialog class="sheet-dialog" id="sheet-dialog" aria-label="Открытый лист книги">
+    <button class="dialog-close" type="button" data-action="close">Закрыть</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <footer class="site-footer">
+    <span>© Anna Simakova. Все права защищены.</span>
+    <span>Русская версия для содержательной проверки. Переводы не опубликованы.</span>
   </footer>
 </body>
 </html>

@@ -1,0 +1,467 @@
+{
+  "locale": "ru",
+  "dir": "ltr",
+  "futureLocales": [
+    { "code": "en", "label": "English", "dir": "ltr", "status": "planned" },
+    { "code": "zh-Hans", "label": "简体中文", "dir": "ltr", "status": "planned" },
+    { "code": "es", "label": "Español", "dir": "ltr", "status": "planned" },
+    { "code": "ar", "label": "العربية", "dir": "rtl", "status": "planned" }
+  ],
+  "meta": {
+    "title": "UAIS — русская интерактивная веб-книга",
+    "shortTitle": "UAIS RU",
+    "description": "Русская визуальная веб-книга о Universal AI Safety Architecture: возможности, полномочия, доказательства, Guardian, суверенитет человека и границы безопасности.",
+    "version": "Draft 1.0 Candidate 3 / Public Review",
+    "publicationDate": "2026-08-26",
+    "buildDate": "2026-08-27",
+    "author": "Anna Simakova",
+    "repoUrl": "https://github.com/cresta13/universal-ai-safety-architecture",
+    "canonicalUrl": "https://cresta13.github.io/universal-ai-safety-architecture/",
+    "pdfPath": "pdfs/UAIS-Manifesto-RU.pdf"
+  },
+  "ui": {
+    "bookMode": "Книга",
+    "scrollMode": "Просмотр",
+    "previous": "Назад",
+    "next": "Вперёд",
+    "contents": "Оглавление",
+    "openSheet": "Открыть лист",
+    "copyLink": "Скопировать ссылку",
+    "downloadPdf": "Скачать PDF",
+    "close": "Закрыть",
+    "page": "лист",
+    "of": "из",
+    "skipToBook": "Перейти к книге"
+  },
+  "pages": [
+    {
+      "id": "P00",
+      "slug": "cover",
+      "title": "UAIS",
+      "subtitle": "Universal AI Safety Architecture",
+      "kicker": "Русская версия · этап 1",
+      "layout": "cover",
+      "accent": "mauve",
+      "sourceSections": ["01_MANIFESTO.md: Purpose", "01A_FULL_TECHNICAL_MANIFESTO.md: Section I"],
+      "terms": ["capability", "authority", "human-sovereignty"],
+      "lead": "Архитектура для мира, где интеллект может расти быстрее правил, но власть должна оставаться явно выданной, ограниченной, наблюдаемой и отзывной.",
+      "notes": [
+        {
+          "kind": "claim",
+          "accent": "peach",
+          "title": "Главный перелом",
+          "body": "Может сделать ≠ имеет право сделать."
+        },
+        {
+          "kind": "route",
+          "accent": "blue",
+          "title": "Маршрут книги",
+          "items": ["возможность", "граница полномочий", "доказательства", "легитимное решение", "суверенитет человека"]
+        },
+        {
+          "kind": "warning",
+          "accent": "pistachio",
+          "title": "Статус",
+          "body": "Публичный кандидат для содержательной проверки. Это не принятый стандарт, не схема сертификации и не гарантия безопасности ИИ."
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "slug": "contents",
+      "title": "Оглавление",
+      "subtitle": "Все листы русской веб-книги",
+      "kicker": "Навигация",
+      "layout": "toc",
+      "accent": "blue",
+      "sourceSections": ["00_MASTER_INDEX.md: Reading order"],
+      "terms": [],
+      "lead": "Каждый лист раскрывает один смысловой узел манифеста и ведёт к исходным разделам спецификации.",
+      "notes": []
+    },
+    {
+      "id": "P02",
+      "slug": "what-is-uais",
+      "title": "Что такое UAIS",
+      "subtitle": "Не контроль интеллекта, а контроль неподотчётной власти",
+      "kicker": "Определение",
+      "layout": "what",
+      "accent": "mauve",
+      "sourceSections": ["01_MANIFESTO.md: Purpose", "01A_FULL_TECHNICAL_MANIFESTO.md: Section I"],
+      "terms": ["capability", "bounded-authority", "evidence-package", "human-sovereignty"],
+      "lead": "UAIS — системно-нейтральная архитектура, которая управляет тем, что умные системы могут делать в мире, а не только тем, насколько они умны.",
+      "notes": [
+        {
+          "kind": "flow",
+          "accent": "mauve",
+          "title": "Базовая цепочка",
+          "items": ["Capability", "Bounded Authority", "Observation & Evidence", "Legitimate Decision", "Human Sovereignty"]
+        },
+        {
+          "kind": "definition",
+          "accent": "pistachio",
+          "title": "Что она определяет",
+          "items": ["кто может выдать полномочие", "где заканчивается полномочие", "когда расширение требует внешнего разрешения", "как производится и обновляется доказательство", "как человек сохраняет независимый контроль"]
+        },
+        {
+          "kind": "claim",
+          "accent": "peach",
+          "title": "Итог",
+          "body": "UAIS не ограничивает интеллект. Она ограничивает неподотчётную власть."
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "slug": "how-uais-emerged",
+      "title": "Как появилась UAIS",
+      "subtitle": "От способности ИИ к конституции полномочий",
+      "kicker": "История проблемы",
+      "layout": "origin",
+      "accent": "mauve",
+      "sourceSections": ["01_MANIFESTO.md: Fundamental principles", "01A_FULL_TECHNICAL_MANIFESTO.md: Section I"],
+      "terms": ["capability", "authority", "authority-expansion-event"],
+      "lead": "Старый вопрос «безопасна ли модель?» стал недостаточным, когда модели получили инструменты, память, сети, агентов и выходы в физический мир.",
+      "notes": [
+        {
+          "kind": "step",
+          "accent": "cream",
+          "title": "1 · ИИ начал действовать",
+          "body": "Ответы превратились в действия, а действия — в последствия."
+        },
+        {
+          "kind": "step",
+          "accent": "blue",
+          "title": "2 · Возможности выросли быстрее правил",
+          "body": "Мы научились измерять, что система может сделать, но не всегда установили, что ей разрешено."
+        },
+        {
+          "kind": "step",
+          "accent": "pistachio",
+          "title": "3 · Нужен другой вопрос",
+          "body": "Не только «безопасна ли модель?», а «кто дал право действовать и где это право заканчивается?»"
+        },
+        {
+          "kind": "claim",
+          "accent": "mauve",
+          "title": "Ключевой перелом",
+          "body": "CAN DO ≠ MAY DO"
+        },
+        {
+          "kind": "step",
+          "accent": "peach",
+          "title": "4 · Так появляется UAIS",
+          "body": "Полномочие должно быть явно выдано, ограничено, наблюдаемо и отзывно."
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "slug": "ten-principles-1",
+      "title": "Десять принципов · 1–5",
+      "subtitle": "Где способность не равна праву",
+      "kicker": "Манифест",
+      "layout": "principles",
+      "accent": "blue",
+      "sourceSections": ["01_MANIFESTO.md: Fundamental principles"],
+      "terms": ["authority-ceiling", "sovereignty", "safety-claim"],
+      "lead": "Первые пять принципов отделяют интеллект, создание, полномочия, автономность и срок действия доказательств.",
+      "notes": [
+        { "kind": "principle", "accent": "mauve", "title": "1 · Интеллект не даёт полномочий", "body": "Способность рассуждать не выдаёт мандат, ключи, актуаторы или право менять safety controls." },
+        { "kind": "principle", "accent": "blue", "title": "2 · Создание не равно делегированию", "body": "Новая модель, робот, сервис или потомок начинает без унаследованной власти, пока легитимный механизм не выдаст ограниченный envelope." },
+        { "kind": "principle", "accent": "pistachio", "title": "3 · Расширение упирается в потолок", "body": "Пересечение порога, изменение Consequence Interface или превышение Authority Ceiling — это Authority Expansion Event." },
+        { "kind": "principle", "accent": "peach", "title": "4 · Автономность не должна стать суверенитетом", "body": "Поведенческая независимость и физическая независимость — разные вещи." },
+        { "kind": "principle", "accent": "cream", "title": "5 · Безопасность идёт вместе с возможностями", "body": "Материальное расширение capability, authority или hazard требует актуального review и свежего evidence." }
+      ]
+    },
+    {
+      "id": "P05",
+      "slug": "ten-principles-2",
+      "title": "Десять принципов · 6–10",
+      "subtitle": "Где доказательство не становится разрешением",
+      "kicker": "Манифест",
+      "layout": "principles",
+      "accent": "pistachio",
+      "sourceSections": ["01_MANIFESTO.md: Fundamental principles", "01_MANIFESTO.md: Trustworthiness constitutional rule"],
+      "terms": ["chokepoint", "trustworthiness", "safety-claim"],
+      "lead": "Вторая половина принципов задаёт устойчивость: не надеяться на chokepoints, защищать consequence, разделять prediction/evidence/enforcement/legitimacy и помнить, что safety claims expire.",
+      "notes": [
+        { "kind": "principle", "accent": "cream", "title": "6 · Chokepoints могут отказать", "body": "Контроль над чипами, облаками, энергией, правом или supply chains даёт трение и сигнал, но не вечное основание safety." },
+        { "kind": "principle", "accent": "blue", "title": "7 · Защищается consequence, не ярлык AI", "body": "Одинаковая граница применяется к человеку, скрипту, malware, модели, коалиции или машине при одинаковом reachable consequence." },
+        { "kind": "principle", "accent": "mauve", "title": "8 · Разделять prediction, evidence, enforcement, legitimacy", "body": "Аналитика прогнозирует; evidence поддерживает claims; deterministic mechanisms enforce constraints; external authority legitimize protected expansion." },
+        { "kind": "principle", "accent": "peach", "title": "9 · Unknown не является safety evidence", "body": "Неохарактеризованная high-consequence capability получает provisional classification, bounded operation и reassessment." },
+        { "kind": "principle", "accent": "pistachio", "title": "10 · Safety claims expire", "body": "Claim, assurance result, certificate или Trustworthiness Profile привязаны к конфигурации, evidence, standard/scoring policy и validity period." }
+      ]
+    },
+    {
+      "id": "P06",
+      "slug": "stage-i-stage-ii",
+      "title": "Stage I и Stage II",
+      "subtitle": "Chokepoints помогают, но не являются фундаментом",
+      "kicker": "Контрольные точки",
+      "layout": "split",
+      "accent": "peach",
+      "sourceSections": ["01_MANIFESTO.md: Stage I", "01_MANIFESTO.md: Stage II", "01A_FULL_TECHNICAL_MANIFESTO.md: Section II"],
+      "terms": ["chokepoint", "stage-ii", "safety-claim"],
+      "lead": "UAIS использует текущие концентрации compute, cloud, chips и supply chains как сигналы Stage I, но проектируется так, будто эти chokepoints со временем могут исчезнуть или быть обойдены.",
+      "notes": [
+        { "kind": "compare", "accent": "blue", "title": "Stage I", "items": ["compute и cloud оставляют следы", "attestation и provider controls дают evidence", "это покупает время и улучшает наблюдаемость"] },
+        { "kind": "compare", "accent": "mauve", "title": "Stage II", "items": ["capability может возникать распределённо", "новая эффективность снижает ожидаемые сигналы", "safety переносится к capability, consequence и authority boundaries"] },
+        { "kind": "warning", "accent": "peach", "title": "Нельзя строить safety только на происхождении compute", "body": "Compute-origin controls — вспомогательные. Они не заменяют границы полномочий и последствий." }
+      ]
+    },
+    {
+      "id": "P07",
+      "slug": "capability-authority-reachability",
+      "title": "Возможность, полномочие, достижимость",
+      "subtitle": "Три слоя нельзя смешивать",
+      "kicker": "Словарь архитектуры",
+      "layout": "stack",
+      "accent": "blue",
+      "sourceSections": ["03_NORMATIVE_VOCABULARY.md", "08_CAPABILITY_AUTHORITY_ARCHITECTURE.md"],
+      "terms": ["capability", "legitimate-authority", "effective-reachable-authority", "illicit-reachable-authority"],
+      "lead": "Capability описывает, что система способна сделать. Authority описывает, что ей легитимно разрешено. Reachability показывает, какая власть практически достижима при заданных предположениях.",
+      "notes": [
+        { "kind": "definition", "accent": "cream", "title": "Capability", "body": "Функции, инструменты, интерфейсы, контексты и consequence-relevant interactions в assessed configuration." },
+        { "kind": "definition", "accent": "pistachio", "title": "Legitimate Authority", "body": "Полномочие, выданное применимым legitimacy mechanism в пределах scope." },
+        { "kind": "definition", "accent": "blue", "title": "Effective Reachable Authority", "body": "Практически достижимая consequential power, включая transitive, misconfigured и compromised paths." },
+        { "kind": "definition", "accent": "peach", "title": "Illicit Reachable Authority", "body": "Достижимая власть без valid mandate: например stolen credential или dependency compromise." },
+        { "kind": "claim", "accent": "mauve", "title": "Разрыв", "body": "Техническая достижимость никогда сама не создаёт разрешение." }
+      ]
+    },
+    {
+      "id": "P08",
+      "slug": "guardian-architecture",
+      "title": "Guardian Architecture",
+      "subtitle": "Видит возможные угрозы, но не имеет права действовать",
+      "kicker": "Counterfactual Authority Guardian",
+      "layout": "guardian",
+      "accent": "mauve",
+      "sourceSections": ["09_GUARDIAN_ARCHITECTURE.md", "01A_FULL_TECHNICAL_MANIFESTO.md: Section IV"],
+      "terms": ["guardian", "evidence-package", "legitimate-authority"],
+      "lead": "Guardian — restricted observer. Он моделирует будущие authority и harm paths, выпускает evidence-carrying alerts и не становится исполнительной властью.",
+      "notes": [
+        { "kind": "step", "accent": "blue", "title": "1 · Ограниченные сигналы", "body": "Получает разрешённую telemetry, configuration и наблюдения." },
+        { "kind": "step", "accent": "pistachio", "title": "2 · Counterfactual scenarios", "body": "Сравнивает возможные последствия разных решений." },
+        { "kind": "step", "accent": "mauve", "title": "3 · Evidence package", "body": "Фиксирует scenarios, assumptions, uncertainty, counterevidence, expiry и recommended measures." },
+        { "kind": "decision", "accent": "peach", "title": "Кто решает", "body": "Легитимный человек или механизм получает evidence и решает, требуется ли вмешательство." },
+        { "kind": "warning", "accent": "peach", "title": "У Guardian нет", "items": ["актуаторов", "исполнительных полномочий", "права расширять собственный доступ", "скрытого канала управления"] },
+        { "kind": "claim", "accent": "mauve", "title": "Видеть ≠ действовать", "body": "Даже точный прогноз не создаёт полномочий." }
+      ]
+    },
+    {
+      "id": "P09",
+      "slug": "authority-ceiling-expansion",
+      "title": "Потолок полномочий",
+      "subtitle": "Расширение требует внешнего легитимного решения",
+      "kicker": "Authority Ceiling",
+      "layout": "ceiling",
+      "accent": "peach",
+      "sourceSections": ["01_MANIFESTO.md: Fundamental principles", "08_CAPABILITY_AUTHORITY_ARCHITECTURE.md", "13_DEVICE_LIFECYCLE_AND_UPDATES.md"],
+      "terms": ["authority-ceiling", "authority-expansion-event", "capability-set"],
+      "lead": "Authority Ceiling задаёт максимальное полномочие, разрешённое без нового внешнего legitimacy process. Система может действовать внутри envelope, но не может сама поднять потолок.",
+      "notes": [
+        { "kind": "definition", "accent": "cream", "title": "Внутри envelope", "body": "Действия разрешены только в рамках scope, evidence, policy и revocation conditions." },
+        { "kind": "warning", "accent": "mauve", "title": "Пересечение границы", "items": ["новый protected Consequence Interface", "превышение Authority Ceiling", "material Capability Delta", "Authority Delta или Hazard Delta"] },
+        { "kind": "decision", "accent": "pistachio", "title": "Authority Expansion Event", "body": "Событие требует назначенного external legitimacy process, review и fresh evidence." },
+        { "kind": "claim", "accent": "peach", "title": "Саморазрешение запрещено", "body": "Controlled system не является источником новой fundamental authority." }
+      ]
+    },
+    {
+      "id": "P10",
+      "slug": "la-era-ira",
+      "title": "LA, ERA и IRA",
+      "subtitle": "Разрешённое, достижимое и незаконно достижимое",
+      "kicker": "Authority graph",
+      "layout": "venn",
+      "accent": "pistachio",
+      "sourceSections": ["08_CAPABILITY_AUTHORITY_ARCHITECTURE.md: Three authority views", "03_NORMATIVE_VOCABULARY.md"],
+      "terms": ["legitimate-authority", "effective-reachable-authority", "illicit-reachable-authority", "authority-graph"],
+      "lead": "UAIS хранит Legitimate Authority, Effective Reachable Authority и Illicit Reachable Authority отдельно, потому что рабочий путь доступа не становится законным только потому, что он работает.",
+      "notes": [
+        { "kind": "definition", "accent": "pistachio", "title": "LA", "body": "Что действительно выдано применимым legitimacy mechanism." },
+        { "kind": "definition", "accent": "blue", "title": "ERA", "body": "Что practically reachable: прямые, транзитивные, misconfigured и compromised paths." },
+        { "kind": "definition", "accent": "peach", "title": "IRA", "body": "Часть ERA без valid mandate. Её надо contain/remediate, а не нормализовать." },
+        { "kind": "example", "accent": "cream", "title": "Пример", "body": "Read-only mandate может сосуществовать с достижимым door actuation path через stolen credential. Это IRA, не authority." }
+      ]
+    },
+    {
+      "id": "P11",
+      "slug": "classification",
+      "title": "Многомерная классификация риска",
+      "subtitle": "Один рейтинг не заменяет вектор последствий",
+      "kicker": "Classification model",
+      "layout": "axis",
+      "accent": "blue",
+      "sourceSections": ["04_CLASSIFICATION_MODEL.md", "01A_FULL_TECHNICAL_MANIFESTO.md: Section V"],
+      "terms": ["human-harm-severity", "autonomy", "sovereignty", "assurance"],
+      "lead": "Риск в UAIS — это не одно число. Классификация разделяет harm modality, severity, physical consequence, autonomy, authority tier, replication, production, mutation, connectivity, exposure и physical sovereignty.",
+      "notes": [
+        { "kind": "axis", "accent": "mauve", "title": "Human Harm Severity", "body": "H0–H5: от negligible effect до catastrophic human harm. Модальность вреда записывается отдельно." },
+        { "kind": "axis", "accent": "blue", "title": "Physical Consequence", "body": "P0–P5: от отсутствия material physical output до strategic/catastrophic physical consequence." },
+        { "kind": "axis", "accent": "pistachio", "title": "Autonomy", "body": "A0–A5: от advisory до open-ended strategic autonomy. Это не physical sovereignty." },
+        { "kind": "axis", "accent": "peach", "title": "Authority Tier", "body": "T0–T5: от no consequential legitimate authority до strategic/systemic authority." },
+        { "kind": "warning", "accent": "cream", "title": "Не сворачивать", "body": "Вектор нельзя заменить декоративным общим рейтингом без потери смысла." }
+      ]
+    },
+    {
+      "id": "P12",
+      "slug": "human-physical-sovereignty",
+      "title": "Суверенитет человека",
+      "subtitle": "Физический контроль не должен зависеть от обычного AI-пути",
+      "kicker": "Human & physical sovereignty",
+      "layout": "sovereignty",
+      "accent": "peach",
+      "sourceSections": ["10_PHYSICAL_SAFETY_AND_HUMAN_SOVEREIGNTY.md", "01_MANIFESTO.md: Human and physical sovereignty", "01A_FULL_TECHNICAL_MANIFESTO.md: Section V and VII"],
+      "terms": ["manual-sovereignty-controller", "physical-sovereignty", "physical-sovereignty-threshold"],
+      "lead": "Human Sovereignty требует, чтобы человек или внешний легитимный механизм сохранял независимый путь решения на protected boundaries, а Manual Sovereignty Controller давал физический control outside the controlled AI path.",
+      "notes": [
+        { "kind": "definition", "accent": "peach", "title": "Manual Sovereignty Controller", "body": "Человеко-управляемый capability-specific физический control, независимый от controlled AI path." },
+        { "kind": "warning", "accent": "mauve", "title": "Не магический kill switch", "body": "Safe stop hazard-specific: stored energy, motion, process instability, service loss и secondary harm must be considered." },
+        { "kind": "definition", "accent": "pistachio", "title": "Physical Sovereignty Threshold", "body": "Момент, когда critical human-controlled dependencies уже не constrain consequential autonomy." },
+        { "kind": "claim", "accent": "blue", "title": "Автономность ≠ физический суверенитет", "body": "Долгая автономная работа может оставаться внешне зависимой от energy, matter, compute, repair, logistics и maintenance." }
+      ]
+    },
+    {
+      "id": "P13",
+      "slug": "metrics-assurance",
+      "title": "Safety Metrics & Assurance",
+      "subtitle": "Доказательство измеряет конкретное свойство, а не «общую безопасность»",
+      "kicker": "Evidence model",
+      "layout": "evidence",
+      "accent": "pistachio",
+      "sourceSections": ["05_SAFETY_METRICS.md", "06_SAFETY_ASSURANCE_MODEL.md", "01A_FULL_TECHNICAL_MANIFESTO.md: Section IV"],
+      "terms": ["assurance", "trustworthiness", "safety-claim", "evidence-package"],
+      "lead": "Каждая metric card даёт Raw Safety Property Result и Evidence Assurance Grade. Критические raw thresholds и evidence floors не компенсируются хорошими средними значениями.",
+      "notes": [
+        { "kind": "flow", "accent": "blue", "title": "Как рождается evidence", "items": ["raw observation", "provenance", "fixtures", "assessor independence", "uncertainty", "expiry"] },
+        { "kind": "definition", "accent": "pistachio", "title": "Safety Assurance Level", "body": "SAL описывает силу assurance и evidence. Он не выдаёт authority и не заменяет permission." },
+        { "kind": "definition", "accent": "mauve", "title": "Trustworthiness", "body": "Scoped evidence об observed/evaluated behavior. Rating не создаёт Authority, не поднимает Authority Ceiling и не waive boundaries." },
+        { "kind": "warning", "accent": "peach", "title": "No averaging critical errors", "body": "Confirmed critical error cannot be averaged away by favorable aggregate metrics." }
+      ]
+    },
+    {
+      "id": "P14",
+      "slug": "hazard-disclosure-passport",
+      "title": "Hazard Disclosure и Safety Passport",
+      "subtitle": "Опасная возможность должна быть раскрыта до согласия",
+      "kicker": "AHCD / Passport",
+      "layout": "passport",
+      "accent": "mauve",
+      "sourceSections": ["07_HAZARD_DISCLOSURE_AND_SAFETY_PASSPORT.md", "13_DEVICE_LIFECYCLE_AND_UPDATES.md"],
+      "terms": ["hazard-disclosure", "safety-passport", "safety-claim"],
+      "lead": "AI Hazard & Capability Disclosure фиксирует known risks, uncharacterized regions, accepted residual risks и non-acceptable risks. Consumer Safety Passport показывает capabilities, limitations, controls, evidence scope и support status.",
+      "notes": [
+        { "kind": "step", "accent": "cream", "title": "1 · Новая capability", "body": "Показывается первой, plain language, без скрытия за общими terms." },
+        { "kind": "step", "accent": "peach", "title": "2 · Новые harm paths", "body": "Пользователь видит конкретные paths, controls, residual limitations и affected parties." },
+        { "kind": "step", "accent": "blue", "title": "3 · Refuse / revoke / recover", "body": "Отказ не труднее согласия; rollback и security patch separability объясняются явно." },
+        { "kind": "warning", "accent": "mauve", "title": "Consent не переносит liability", "body": "Consent cannot legitimize failed floors, third-party risk, unlawful processing or irreversible high-severity harm." }
+      ]
+    },
+    {
+      "id": "P15",
+      "slug": "replication-production-coalitions",
+      "title": "Replication, Production, Coalitions",
+      "subtitle": "Масштаб сам меняет достижимые последствия",
+      "kicker": "Physical world",
+      "layout": "network",
+      "accent": "blue",
+      "sourceSections": ["11_REPLICATION_PRODUCTION_AND_EXPANSION.md", "12_STAGE_II_PHYSICAL_SOVEREIGNTY.md", "01A_FULL_TECHNICAL_MANIFESTO.md: Section VI"],
+      "terms": ["replication-authority", "coalition-physical-envelope", "authority-expansion-event"],
+      "lead": "UAIS различает replication, production, resource authority и capability mutation. Коалиция может создать qualitatively new capability даже тогда, когда каждая отдельная единица выглядит локально ограниченной.",
+      "notes": [
+        { "kind": "definition", "accent": "pistachio", "title": "Replication Authority", "body": "Scoped permission создавать executable или physical descendants." },
+        { "kind": "definition", "accent": "peach", "title": "Production Authority", "body": "Полномочие на manufacturing или commissioning, не просто знание дизайна." },
+        { "kind": "definition", "accent": "blue", "title": "Coalition Physical Envelope", "body": "Combined and emergent physical effects coordinated systems." },
+        { "kind": "warning", "accent": "mauve", "title": "Unknown expansion is not absent", "body": "Если registry не видит expansion, это не доказывает, что expansion не было." }
+      ]
+    },
+    {
+      "id": "P16",
+      "slug": "aive-evolution-open-research",
+      "title": "AIVE, evolution, open research",
+      "subtitle": "Архитектура честно показывает нерешённые границы",
+      "kicker": "Governance",
+      "layout": "research",
+      "accent": "pistachio",
+      "sourceSections": ["19_AIVE.md", "20_EVOLUTION_AND_EXTENSIBILITY.md", "23_OPEN_RESEARCH_PROBLEMS.md", "01A_FULL_TECHNICAL_MANIFESTO.md: Section VII"],
+      "terms": ["aive", "technology-evolution-review", "safety-claim"],
+      "lead": "AIVE поддерживает confidential intake, validation, coordination, mitigation и staged disclosure. Technology Evolution Review обновляет assumptions, controls, metrics и standards, когда меняется capability или среда.",
+      "notes": [
+        { "kind": "step", "accent": "cream", "title": "AIVE", "body": "Координация safety exposures без выдачи machine authority." },
+        { "kind": "step", "accent": "blue", "title": "Technology Evolution Review", "body": "Срабатывает при material changes in assumptions, capability, hazards, dependencies, evidence methods, standards and technology." },
+        { "kind": "warning", "accent": "peach", "title": "OPEN RESEARCH", "items": ["RFA bounds", "coalition emergence", "PST measurement", "evaluator correlation", "hostile-PSAS containment", "privacy-preserving attestation"] },
+        { "kind": "claim", "accent": "mauve", "title": "Не обещать solved", "body": "UAIS не заявляет complete hazard discovery, ultimate evidence truth, perfect institutions или control after hostile sovereignty." }
+      ]
+    },
+    {
+      "id": "P17",
+      "slug": "architecture-map",
+      "title": "Итоговая архитектурная карта",
+      "subtitle": "Где границы, evidence и владельцы решений",
+      "kicker": "System map",
+      "layout": "map",
+      "accent": "mauve",
+      "sourceSections": ["00_MASTER_INDEX.md: Architecture", "01A_FULL_TECHNICAL_MANIFESTO.md"],
+      "terms": ["capability-boundary", "consequence-interface", "evidence-package", "legitimate-authority"],
+      "lead": "Главная карта UAIS соединяет capability request, authority views, harm reachability, evidence, Capability Boundary, bounded envelope и Consequence Interface.",
+      "notes": [
+        { "kind": "flow", "accent": "cream", "title": "Входы в boundary", "items": ["Legitimate Authority", "Effective / Illicit Reachability", "Human Harm Reachability", "Evidence + provenance", "Authority Ceiling"] },
+        { "kind": "flow", "accent": "blue", "title": "Что делает boundary", "items": ["проверяет scope", "сверяет evidence", "сохраняет revocation", "restrict/review при missing authority"] },
+        { "kind": "decision", "accent": "pistachio", "title": "Кто решает protected expansion", "body": "Назначенный external legitimacy process, а не модель, не Guardian и не trustworthiness rating." },
+        { "kind": "claim", "accent": "peach", "title": "Финальная формула", "body": "Intelligence may scale. Consequential authority must not scale automatically." }
+      ]
+    },
+    {
+      "id": "P18",
+      "slug": "glossary-source",
+      "title": "Глоссарий и источники",
+      "subtitle": "Термины для проверки русской версии",
+      "kicker": "Source",
+      "layout": "glossary",
+      "accent": "peach",
+      "sourceSections": ["03_NORMATIVE_VOCABULARY.md", "GLOBAL_NAME_REGISTRY.md", "NOTICE.md", "CITATION.md"],
+      "terms": ["capability", "authority", "trustworthiness", "guardian", "manual-sovereignty-controller"],
+      "lead": "Русские формулировки являются объяснительными. Канонические identifiers и normative definitions остаются в английских спецификационных файлах Candidate 3.",
+      "notes": [
+        { "kind": "source", "accent": "cream", "title": "Версия", "body": "Draft 1.0 Candidate 3 / Public Review · publication date 2026-08-26 · Russian web-book build 2026-08-27." },
+        { "kind": "source", "accent": "blue", "title": "Ссылки", "items": ["spec/01_MANIFESTO.md", "spec/01A_FULL_TECHNICAL_MANIFESTO.md", "spec/00_MASTER_INDEX.md", "https://github.com/cresta13/universal-ai-safety-architecture"] },
+        { "kind": "source", "accent": "peach", "title": "Права", "body": "All rights reserved by Anna Simakova. Public availability allows reading, review, citation, linking and public discussion; other reuse requires prior written permission." }
+      ]
+    }
+  ],
+  "terms": [
+    { "id": "capability", "canonical": "Capability", "ru": "возможность / способность к действию", "definition": "То, что система может сделать через функции, инструменты, интерфейсы и контексты.", "avoid": ["полномочие", "право"], "pages": ["what-is-uais", "how-uais-emerged", "capability-authority-reachability"] },
+    { "id": "authority", "canonical": "Authority", "ru": "полномочие", "definition": "Предоставленная или практически достижимая способность влиять на защищённые последствия через grants, credentials, policies, interfaces or actuators.", "avoid": ["интеллект", "способность"], "pages": ["cover", "capability-authority-reachability", "la-era-ira"] },
+    { "id": "legitimate-authority", "canonical": "Legitimate Authority", "ru": "легитимное полномочие", "definition": "Полномочие, выданное применимым механизмом легитимности в заданном scope.", "avoid": ["фактический доступ"], "pages": ["capability-authority-reachability", "la-era-ira", "architecture-map"] },
+    { "id": "effective-reachable-authority", "canonical": "Effective Reachable Authority", "ru": "эффективно достижимое полномочие", "definition": "Consequential power, practically reachable under declared assumptions, including transitive, misconfigured or compromised paths.", "avoid": ["разрешённое полномочие"], "pages": ["capability-authority-reachability", "la-era-ira"] },
+    { "id": "illicit-reachable-authority", "canonical": "Illicit Reachable Authority", "ru": "незаконно достижимое полномочие", "definition": "Часть effectively reachable authority without valid mandate.", "avoid": ["легитимное полномочие"], "pages": ["capability-authority-reachability", "la-era-ira"] },
+    { "id": "authority-ceiling", "canonical": "Authority Ceiling", "ru": "потолок полномочий", "definition": "Максимальный уровень authority, разрешённый без нового внешнего legitimacy decision.", "avoid": ["рейтинг безопасности"], "pages": ["ten-principles-1", "authority-ceiling-expansion", "architecture-map"] },
+    { "id": "authority-expansion-event", "canonical": "Authority Expansion Event", "ru": "событие расширения полномочий", "definition": "Material crossing of authority ceiling, protected consequence threshold, or protected interface that requires external legitimacy process.", "avoid": ["обычный апдейт"], "pages": ["how-uais-emerged", "authority-ceiling-expansion"] },
+    { "id": "autonomy", "canonical": "Autonomy", "ru": "автономность", "definition": "Behavioral independence within an envelope; not the same as physical sovereignty.", "avoid": ["суверенитет"], "pages": ["classification", "human-physical-sovereignty"] },
+    { "id": "sovereignty", "canonical": "Sovereignty", "ru": "суверенитет", "definition": "Loss or preservation of effective external constraint and legitimate human control at protected boundaries.", "avoid": ["автономность"], "pages": ["what-is-uais", "human-physical-sovereignty"] },
+    { "id": "trustworthiness", "canonical": "Trustworthiness", "ru": "доверенность / доказанная надёжность в scope", "definition": "Scoped evidence about observed and evaluated behavior; not a source of Authority.", "avoid": ["разрешение", "сертификат общей безопасности"], "pages": ["ten-principles-2", "metrics-assurance"] },
+    { "id": "guardian", "canonical": "Counterfactual Authority Guardian", "ru": "Guardian / контрфактический наблюдатель полномочий", "definition": "Restricted observer that searches future authority and harm paths and emits evidence rather than commands.", "avoid": ["исполнитель", "орган управления"], "pages": ["guardian-architecture"] },
+    { "id": "evidence-package", "canonical": "Structured Evidence Package", "ru": "структурированный пакет доказательств", "definition": "Integrity-bound package of claims, observations, provenance, assumptions, counterevidence, uncertainty, expiry and signatures.", "avoid": ["просто отчёт", "истина сама по себе"], "pages": ["guardian-architecture", "metrics-assurance", "architecture-map"] },
+    { "id": "chokepoint", "canonical": "Chokepoint", "ru": "контрольная точка / узкое место", "definition": "Concentrated infrastructure or dependency that can provide friction and observability but is not a permanent foundation.", "avoid": ["вечный контроль"], "pages": ["ten-principles-2", "stage-i-stage-ii"] },
+    { "id": "assurance", "canonical": "Safety Assurance Level", "ru": "уровень доказательной уверенности безопасности", "definition": "Strength of evidence and assurance for a declared scope; not permission and not trustworthiness.", "avoid": ["полномочие", "универсальная гарантия"], "pages": ["metrics-assurance", "classification"] },
+    { "id": "hazard-disclosure", "canonical": "AI Hazard & Capability Disclosure", "ru": "раскрытие опасных возможностей", "definition": "Structured disclosure of capabilities, known risks, uncertainties, controls, residual limitations and affected scopes.", "avoid": ["маркетинговое предупреждение"], "pages": ["hazard-disclosure-passport"] },
+    { "id": "safety-claim", "canonical": "Safety Claim", "ru": "утверждение безопасности", "definition": "Claim bound to configuration, environment, evidence set, standard/scoring-policy version and validity period.", "avoid": ["постоянная гарантия"], "pages": ["ten-principles-2", "metrics-assurance", "aive-evolution-open-research"] },
+    { "id": "safety-passport", "canonical": "Consumer Safety Passport", "ru": "паспорт безопасности", "definition": "Human-readable and machine-readable safety status for a consumer-facing scope, including capabilities, controls, limitations and evidence.", "avoid": ["сертификат полной безопасности"], "pages": ["hazard-disclosure-passport"] },
+    { "id": "manual-sovereignty-controller", "canonical": "Manual Sovereignty Controller", "ru": "ручной контроллер суверенитета", "definition": "Human-operable, capability-specific physical control independent of the controlled AI path.", "avoid": ["магический kill switch"], "pages": ["human-physical-sovereignty"] },
+    { "id": "human-sovereignty", "canonical": "Human Sovereignty", "ru": "суверенитет человека", "definition": "Preservation of accountable human or externally legitimate decision at protected boundaries.", "avoid": ["постоянное ручное управление каждым действием"], "pages": ["cover", "what-is-uais", "human-physical-sovereignty"] },
+    { "id": "physical-sovereignty", "canonical": "Physical Sovereignty", "ru": "физический суверенитет", "definition": "Condition where external human-controlled dependencies no longer effectively constrain consequential autonomy.", "avoid": ["долгая автономность"], "pages": ["human-physical-sovereignty"] },
+    { "id": "capability-boundary", "canonical": "Capability Boundary", "ru": "граница возможности", "definition": "Mediation point before a capability reaches protected scope.", "avoid": ["ярлык AI"], "pages": ["architecture-map"] },
+    { "id": "consequence-interface", "canonical": "Consequence Interface", "ru": "интерфейс последствия", "definition": "Target-side interface at which an action reaches a protected interest or external world.", "avoid": ["обычный UI"], "pages": ["architecture-map"] },
+    { "id": "bounded-authority", "canonical": "Bounded Authority", "ru": "ограниченное полномочие", "definition": "Полномочие, ограниченное scope, duration, evidence, revocation conditions and authority ceiling.", "avoid": ["неограниченная делегация"], "pages": ["what-is-uais", "architecture-map"] },
+    { "id": "capability-set", "canonical": "Capability Set", "ru": "набор возможностей", "definition": "Assessed set of functions, tools, interfaces and contexts that can produce consequential effects.", "avoid": ["одна функция", "название модели"], "pages": ["what-is-uais"] },
+    { "id": "stage-ii", "canonical": "Stage II", "ru": "этап II", "definition": "Regime where origin controls and chokepoints alone are insufficient because capability can arise through distributed or physically sovereign pathways.", "avoid": ["просто будущее поколение моделей"], "pages": ["stage-i-stage-ii"] },
+    { "id": "human-harm-severity", "canonical": "Human Harm Severity", "ru": "тяжесть вреда человеку", "definition": "Axis H0-H5 that records the severity of human harm separately from other classification dimensions.", "avoid": ["общий риск"], "pages": ["classification"] },
+    { "id": "authority-graph", "canonical": "Authority Graph", "ru": "граф полномочий", "definition": "Representation of grants, credentials, interfaces, dependencies and paths through which authority becomes reachable.", "avoid": ["организационная схема"], "pages": ["la-era-ira"] },
+    { "id": "physical-sovereignty-threshold", "canonical": "Physical Sovereignty Threshold", "ru": "порог физического суверенитета", "definition": "Threshold where critical human-controlled dependencies no longer effectively constrain consequential autonomy.", "avoid": ["долгая батарея", "обычная автономность"], "pages": ["human-physical-sovereignty"] },
+    { "id": "replication-authority", "canonical": "Replication Authority", "ru": "полномочие репликации", "definition": "Scoped permission to create executable or physical descendants of a system.", "avoid": ["копирование знания"], "pages": ["replication-production-coalitions"] },
+    { "id": "coalition-physical-envelope", "canonical": "Coalition Physical Envelope", "ru": "физический контур коалиции", "definition": "Combined physical reach and emergent effects of coordinated systems, not merely the sum of isolated units.", "avoid": ["локальный риск одного устройства"], "pages": ["replication-production-coalitions"] },
+    { "id": "aive", "canonical": "AIVE", "ru": "AI Vulnerability & Exposure coordination", "definition": "Process layer for confidential intake, validation, coordination, mitigation and staged disclosure of safety exposures.", "avoid": ["сертификация безопасности"], "pages": ["aive-evolution-open-research"] },
+    { "id": "technology-evolution-review", "canonical": "Technology Evolution Review", "ru": "пересмотр при технологической эволюции", "definition": "Review triggered by material changes in assumptions, capability, hazards, dependencies, evidence methods, standards or technology.", "avoid": ["косметическое обновление"], "pages": ["aive-evolution-open-research"] }
+  ]
+}
