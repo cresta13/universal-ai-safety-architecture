@@ -23,6 +23,7 @@
 | `python scripts/build_site.py` | Пройдено |
 | `python scripts/check_site.py --site dist` | Пройдено |
 | `git diff --check` | Пройдено |
+| `python ../tools/publication_qa.py .` | Пройдено: `FAILURES=0` |
 
 ## PDF-проверка
 
@@ -49,6 +50,14 @@
 - `docs/qa/screenshots/desktop-guardian.png` — desktop 1440x900, прямой раздел Guardian.
 - `docs/qa/screenshots/mobile-cover.png` — mobile 390x844, обложка.
 - `docs/qa/screenshots/mobile-scroll.png` — mobile 390x844, последовательный режим.
+
+## Проверка опубликованной GitHub Pages версии
+
+- Workflow: `Deploy GitHub Pages`, run `33080715078`, conclusion `success`.
+- Site URL: `https://cresta13.github.io/universal-ai-safety-architecture/` — HTTP 200.
+- PDF URL: `https://cresta13.github.io/universal-ai-safety-architecture/pdfs/UAIS-Manifesto-RU.pdf` — HTTP 200, `content-type: application/pdf`.
+- OG image URL: `https://cresta13.github.io/universal-ai-safety-architecture/assets/og-ru.png` — HTTP 200, `content-type: image/png`.
+- Published browser smoke: `lang=ru`, `dir=ltr`, direct route `#page=guardian-architecture`, keyboard navigation, scroll mode and PDF HEAD check passed.
 
 ## Содержательные проверки
 
