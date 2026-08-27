@@ -53,7 +53,7 @@
 
 ## Проверка опубликованной GitHub Pages версии
 
-- Workflow: `Deploy GitHub Pages`, run `33080715078`, conclusion `success`.
+- Workflow: `Deploy GitHub Pages`, conclusion `success`.
 - Site URL: `https://cresta13.github.io/universal-ai-safety-architecture/` — HTTP 200.
 - PDF URL: `https://cresta13.github.io/universal-ai-safety-architecture/pdfs/UAIS-Manifesto-RU.pdf` — HTTP 200, `content-type: application/pdf`.
 - OG image URL: `https://cresta13.github.io/universal-ai-safety-architecture/assets/og-ru.png` — HTTP 200, `content-type: image/png`.
