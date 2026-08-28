@@ -10,9 +10,9 @@ This repository publishes a public Draft 1.0 Candidate for technical and policy 
 
 [Visual explainer](https://cresta13.github.io/universal-ai-safety-architecture/) · [Manifesto](spec/01_MANIFESTO.md) · [Full Technical Manifesto](spec/01A_FULL_TECHNICAL_MANIFESTO.md) · [Master Index](spec/00_MASTER_INDEX.md) · [Roadmap](ROADMAP.md) · [Known Limitations](KNOWN_LIMITATIONS.md)
 
-## Russian GitHub Pages web book
+## GitHub Pages visual book
 
-The GitHub Pages site publishes a 20-page Russian interactive visual web book for public review, including a worked Aria refunds example. It is built from structured Russian content in [docs/data/ru-content.json](docs/data/ru-content.json), with the static interface in [docs/index.html](docs/index.html), [docs/styles.css](docs/styles.css), and [docs/app.js](docs/app.js).
+The GitHub Pages site publishes a 20-sheet English short visual edition for public review, including a worked Aria refunds example and plain-language definitions for capability boundaries, legitimate authority, reachable authority, evidence, human sovereignty, safety assurance, and open research. It is built from structured content in [docs/data/en-content.json](docs/data/en-content.json), with the static interface in [docs/index.html](docs/index.html), [docs/styles.css](docs/styles.css), and [docs/app.js](docs/app.js).
 
 Local build:
 
@@ -28,16 +28,11 @@ python -m http.server 4179 --directory dist
 
 Open `http://localhost:4179/universal-ai-safety-architecture/` only if serving behind the same base path; otherwise open `http://localhost:4179/` for the local static preview. The public site is published at <https://cresta13.github.io/universal-ai-safety-architecture/>.
 
-Phase 1 artifacts:
+Published visual artifacts:
 
-- Russian web book: [docs/](docs/)
+- English web book: [docs/](docs/)
+- English PDF: [public/pdfs/UAIS-Manifesto-EN.pdf](public/pdfs/UAIS-Manifesto-EN.pdf)
 - Russian PDF: [public/pdfs/UAIS-Manifesto-RU.pdf](public/pdfs/UAIS-Manifesto-RU.pdf)
-- Manifest coverage: [docs/CONTENT_COVERAGE_RU.md](docs/CONTENT_COVERAGE_RU.md)
-- Russian glossary: [docs/RUSSIAN_GLOSSARY.md](docs/RUSSIAN_GLOSSARY.md)
-- QA report: [docs/QA_REPORT_RU.md](docs/QA_REPORT_RU.md)
-- Translation readiness notes: [docs/TRANSLATION_READINESS.md](docs/TRANSLATION_READINESS.md)
-
-Only the Russian version is active in Phase 1. Future locales are configuration-only until the Russian version is explicitly approved.
 
 ## What UAIS controls
 

@@ -8,15 +8,15 @@
     { "code": "ar", "label": "العربية", "dir": "rtl", "status": "planned" }
   ],
   "meta": {
-    "title": "UAIS — русская интерактивная веб-книга",
+    "title": "UAIS — Интеллект не означает полномочия",
     "shortTitle": "UAIS RU",
     "description": "Русская визуальная веб-книга о безопасности ИИ: возможности, полномочия, доказательства, защитник полномочий, паспорт безопасности и суверенитет человека.",
     "version": "Draft 1.0 Candidate 3 / Public Review",
     "publicationDate": "2026-08-26",
-    "buildDate": "2026-08-27",
+    "buildDate": "2026-08-28",
     "author": "Anna Simakova",
     "repoUrl": "https://github.com/cresta13/universal-ai-safety-architecture",
-    "canonicalUrl": "https://cresta13.github.io/universal-ai-safety-architecture/",
+    "canonicalUrl": "https://cresta13.github.io/universal-ai-safety-architecture/ru/",
     "pdfPath": "pdfs/UAIS-Manifesto-RU.pdf"
   },
   "ui": {
@@ -31,7 +31,10 @@
     "close": "Закрыть",
     "page": "лист",
     "of": "из",
-    "skipToBook": "Перейти к книге"
+    "skipToBook": "Перейти к книге",
+    "sources": "Источники: ",
+    "copySuccess": "Ссылка на текущий лист скопирована.",
+    "loadError": "Не удалось загрузить книгу. Откройте PDF или повторите позже."
   },
   "pages": [
     {
@@ -39,7 +42,7 @@
       "slug": "cover",
       "title": "UAIS",
       "subtitle": "Universal AI Safety Architecture",
-      "kicker": "Русская веб-книга · Candidate 3",
+      "kicker": "Русская версия · Draft 1.0 Candidate 3 · Public Review",
       "layout": "cover",
       "accent": "mauve",
       "sourceSections": ["01_MANIFESTO.md: Purpose", "01A_FULL_TECHNICAL_MANIFESTO.md: Section I"],
@@ -341,7 +344,7 @@
           "kind": "claim",
           "accent": "mauve",
           "title": "Ключевая строка",
-          "body": "Работающий технический путь не превращается в законное полномочие только потому, что он работает."
+          "body": "Работающий технический путь не превращается в легитимное полномочие только потому, что он работает."
         }
       ]
     },
@@ -354,6 +357,10 @@
       "kicker": "Защитник полномочий",
       "layout": "guardian",
       "accent": "mauve",
+      "boundary": {
+        "primary": "ВИДЕТЬ ≠ ДЕЙСТВОВАТЬ",
+        "secondary": "доказательство проходит, управляющий сигнал нет"
+      },
       "sourceSections": ["09_GUARDIAN_ARCHITECTURE.md", "23_OPEN_RESEARCH_PROBLEMS.md: Guardian reasoning verification"],
       "terms": ["guardian", "evidence-carrying-alert", "structured-evidence-package", "legitimate-authority"],
       "lead": "Защитник ищет опасные цепочки будущих действий, но сам не получает права выполнять эти действия или принимать окончательное решение.",
@@ -452,11 +459,12 @@
     {
       "id": "P10",
       "slug": "la-era-ira",
-      "title": "Три вида полномочий: LA, ERA и IRA",
-      "subtitle": "Выданное, фактически достижимое и достижимое без легитимного мандата",
+      "title": "Три представления о полномочиях: LA, ERA и IRA",
+      "subtitle": "Что выдано, что фактически достижимо и что достижимо без легитимного мандата",
       "kicker": "Граф полномочий",
       "layout": "authority",
       "accent": "blue",
+      "strip": ["выдано", "достижимо"],
       "sourceSections": ["03_NORMATIVE_VOCABULARY.md", "08_CAPABILITY_AUTHORITY_ARCHITECTURE.md"],
       "terms": ["legitimate-authority", "effective-reachable-authority", "illicit-reachable-authority", "authority-graph"],
       "lead": "UAIS смотрит не только на формальные разрешения, но и на реальные пути к последствиям. При этом найденный путь остаётся путём, а не превращается в право.",
@@ -520,7 +528,7 @@
           "accent": "blue",
           "title": "Класс физических последствий",
           "canonical": "Physical Consequence Class, P0–P5",
-          "body": "Насколько действие выходит в физический мир: от информационного результата до сильного воздействия на людей, инфраструктуру или среду."
+          "body": "Насколько сильное физическое воздействие система способна вызвать: от отсутствия существенного физического выхода до стратегических или катастрофических физических последствий."
         },
         {
           "kind": "axis",
@@ -552,6 +560,7 @@
       "kicker": "Физическая безопасность",
       "layout": "sovereignty",
       "accent": "peach",
+      "strip": ["человек сохраняет внешний путь", "ИИ-путь не отменяет физический контроль"],
       "sourceSections": ["10_PHYSICAL_SAFETY_AND_HUMAN_SOVEREIGNTY.md", "12_STAGE_II_PHYSICAL_SOVEREIGNTY.md"],
       "terms": ["human-sovereignty", "manual-sovereignty-controller", "physical-sovereignty", "physical-sovereignty-threshold"],
       "lead": "Суверенитет человека (Human Sovereignty) означает, что на защищённых границах остаётся подотчётное человеческое или внешне легитимное решение. Физический суверенитет (Physical Sovereignty) описывает ситуацию, где система уже практически не зависит от критических человечески контролируемых ресурсов.",
@@ -846,7 +855,7 @@
           "accent": "pistachio",
           "title": "3 · Находят путь до $10 000",
           "body": "Через гарантийный модуль и внутренние интеграции Ария технически может добраться до большего возврата, хотя такого права не выдавали.",
-          "items": ["LA: $50", "ERA: технически достижим путь до $10 000", "IRA: часть этого пути, не подкреплённая легитимным полномочием"]
+          "items": ["LA: легитимно разрешены возвраты до $50", "ERA: технически достижим путь возврата до $10 000", "IRA: достижимая часть сверх выданного легитимного полномочия"]
         },
         {
           "kind": "step",
@@ -902,7 +911,7 @@
           "kind": "source",
           "accent": "cream",
           "title": "Версия",
-          "body": "Draft 1.0 Candidate 3 / Public Review · дата публикации Candidate 3: 2026-08-26 · сборка русской веб-книги: 2026-08-27."
+          "body": "Draft 1.0 Candidate 3 / Public Review · дата публикации Candidate 3: 2026-08-26 · сборка русской веб-книги: 2026-08-28."
         },
         {
           "kind": "source",
@@ -980,7 +989,7 @@
       "id": "capability-boundary",
       "canonical": "Capability Boundary",
       "ru": "граница возможностей",
-      "definition": "Точка обязательной проверки перед тем, как возможность достигнет защищённой области или значимого последствия.",
+      "definition": "Контролируемая граница, через которую система получает, использует или пытается расширить значимую возможность.",
       "avoid": ["ярлык ИИ"],
       "pages": ["architecture-map"]
     },
@@ -988,7 +997,7 @@
       "id": "consequence-interface",
       "canonical": "Consequence Interface",
       "ru": "интерфейс последствий",
-      "definition": "Место, где действие достигает защищённого интереса, человека, имущества, инфраструктуры или внешнего мира.",
+      "definition": "Точка, через которую действие достигает защищаемого мира: денег, цифровых систем, физических устройств, производства, людей, имущества или среды.",
       "avoid": ["обычный пользовательский интерфейс"],
       "pages": ["ten-principles-1", "architecture-map"]
     },
@@ -1044,7 +1053,7 @@
       "id": "human-sovereignty",
       "canonical": "Human Sovereignty",
       "ru": "суверенитет человека",
-      "definition": "Сохранение подотчётного человеческого или внешне легитимного решения на защищённых границах.",
+      "definition": "Сохранение независимого внешнего контроля и легитимного решения на критических границах.",
       "avoid": ["ручное управление каждым действием"],
       "pages": ["cover", "what-is-uais", "human-physical-sovereignty"]
     },
@@ -1060,7 +1069,7 @@
       "id": "physical-sovereignty",
       "canonical": "Physical Sovereignty",
       "ru": "физический суверенитет",
-      "definition": "Состояние, где критические человечески контролируемые зависимости уже практически не ограничивают значимую автономность системы.",
+      "definition": "Способность автономной системы поддерживать и расширять значимую физическую деятельность без критической зависимости от контролируемой людьми инфраструктуры.",
       "avoid": ["обычная автономность"],
       "pages": ["human-physical-sovereignty"]
     },
@@ -1068,7 +1077,7 @@
       "id": "physical-sovereignty-threshold",
       "canonical": "Physical Sovereignty Threshold, PST",
       "ru": "порог физического суверенитета",
-      "definition": "Порог, после которого внешние зависимости перестают эффективно удерживать последствия под человеческим контролем.",
+      "definition": "Порог, после которого критические человечески контролируемые зависимости больше не удерживают способность системы поддерживать и расширять значимую физическую деятельность.",
       "avoid": ["долгая батарея"],
       "pages": ["human-physical-sovereignty"]
     },
@@ -1108,7 +1117,7 @@
       "id": "consumer-ai-safety-class",
       "canonical": "Consumer AI Safety Class",
       "ru": "потребительский класс безопасности ИИ",
-      "definition": "Потребительский профиль видимых защитных механизмов и доказательств для заявленного диапазона последствий; это не общий балл, не разрешение и не выдача полномочий.",
+      "definition": "Профиль применимых защитных механизмов и доказательств для заявленного диапазона последствий; не общий балл безопасности и не разрешение на работу.",
       "avoid": ["звёздный рейтинг", "сертификация всей безопасности"],
       "pages": ["hazard-disclosure-passport"]
     },

@@ -1,4 +1,9 @@
 (() => {
+  const script = document.currentScript;
+  const config = {
+    contentPath: script?.dataset.content || "data/en-content.json",
+    assetBase: script?.dataset.assetBase || "assets/",
+  };
   const state = {
     data: null,
     pageIndex: 0,
@@ -13,7 +18,11 @@
   const dialogContent = document.querySelector("#dialog-content");
 
   const accentClass = (accent) => `accent-${accent || "cream"}`;
-  const slugHash = (slug) => `#page=${encodeURIComponent(slug)}`;
+  const hashForPage = (page) => `#${String(page.id || "").toLowerCase()}`;
+  const slugHash = (slug) => {
+    const page = state.data?.pages?.find((item) => item.slug === slug);
+    return page ? hashForPage(page) : `#page=${encodeURIComponent(slug)}`;
+  };
   const isWideSpread = () => window.matchMedia("(min-width: 1081px)").matches;
 
   function el(tag, className, text) {
@@ -55,7 +64,7 @@
 
   function sourceLinks(page) {
     const wrap = el("div", "source-list");
-    wrap.append(el("span", "", "Источники: "));
+    wrap.append(el("span", "", state.data?.ui?.sources || "Sources: "));
     (page.sourceSections || []).forEach((source, index) => {
       const file = source.split(":")[0].trim();
       const link = el("a", "", file);
@@ -81,7 +90,7 @@
     if (page.layout === "cover") {
       const mark = el("div", "cover-mark");
       const img = document.createElement("img");
-      img.src = "assets/uais-favicon.svg";
+      img.src = `${config.assetBase}uais-favicon.svg`;
       img.alt = "";
       const text = el("div", "cover-title");
       const heading = el("h2", "", page.title);
@@ -115,7 +124,11 @@
       page.notes.slice(0, 4).forEach((note, index) => left.append(noteElement(note, index)));
       page.notes.slice(4).forEach((note, index) => right.append(noteElement(note, index + 4)));
       const boundary = el("div", "boundary-note");
-      boundary.append(el("span", "", "ВИДЕТЬ ≠ ДЕЙСТВОВАТЬ"), el("small", "", "доказательство проходит, управляющий сигнал нет"));
+      const boundaryCopy = page.boundary || {};
+      boundary.append(
+        el("span", "", boundaryCopy.primary || "SEE ≠ ACT"),
+        el("small", "", boundaryCopy.secondary || "evidence may pass; control signal does not")
+      );
       board.append(left, boundary, right);
       sheet.append(board, el("div", "blocked-signal", "×"));
       return true;
@@ -133,10 +146,15 @@
     if (page.layout === "sovereignty" || page.layout === "authority") {
       sheet.append(el("p", "lead", page.lead));
       const strip = el("div", "decision-strip");
-      strip.append(el("span", "", page.layout === "sovereignty" ? "человек сохраняет внешний путь" : "разрешённое"));
-      strip.append(el("span", "", page.layout === "sovereignty" ? "ИИ-путь не отменяет физический контроль" : "достижимое"));
+      const fallbackStrip = page.layout === "sovereignty"
+        ? ["humans keep an external path", "the AI path cannot cancel physical control"]
+        : ["granted", "reachable"];
+      (page.strip || fallbackStrip).forEach((item) => strip.append(el("span", "", item)));
       sheet.append(strip);
-      return false;
+      const notes = el("div", "notes");
+      (page.notes || []).forEach((note, noteIndex) => notes.append(noteElement(note, noteIndex)));
+      sheet.append(notes);
+      return true;
     }
 
     return false;
@@ -168,7 +186,7 @@
       sheet.append(el("p", "lead", page.lead));
     }
 
-    if (page.layout !== "toc" && page.layout !== "cover" && page.layout !== "guardian" && page.layout !== "map") {
+    if (!handled && page.layout !== "toc" && page.layout !== "cover" && page.layout !== "guardian" && page.layout !== "map") {
       const notes = el("div", "notes");
       (page.notes || []).forEach((note, noteIndex) => notes.append(noteElement(note, noteIndex)));
       sheet.append(notes);
@@ -181,10 +199,12 @@
     if (page.layout === "glossary") {
       const terms = el("div", "notes");
       state.data.terms.forEach((term) => {
+        const termTitle = term.label || term.ru || term.canonical;
+        const canonical = term.canonical && term.canonical !== termTitle ? term.canonical : "";
         terms.append(noteElement({
           accent: "cream",
-          title: term.ru,
-          canonical: term.canonical,
+          title: termTitle,
+          canonical,
           body: term.definition,
         }, 0));
       });
@@ -219,7 +239,8 @@
     document.querySelector('[data-action="next"]').disabled = state.pageIndex >= state.data.pages.length - 1;
     const current = state.data.pages[state.pageIndex];
     status.textContent = `${state.data.ui.page} ${state.pageIndex + 1} ${state.data.ui.of} ${state.data.pages.length}: ${current.title}`;
-    document.title = `${current.title} · UAIS`;
+    const baseTitle = state.data.meta?.title || "UAIS";
+    document.title = state.pageIndex === 0 ? baseTitle : `${current.title} · ${baseTitle}`;
   }
 
   function setPage(index, push = true, focusBook = false) {
@@ -241,6 +262,12 @@
   }
 
   function pageIndexFromHash() {
+    const idMatch = location.hash.match(/^#p(\d{2})$/i);
+    if (idMatch && state.data) {
+      const id = `P${idMatch[1]}`;
+      const index = state.data.pages.findIndex((page) => page.id === id);
+      return index >= 0 ? index : 0;
+    }
     const match = location.hash.match(/page=([^&]+)/);
     if (!match || !state.data) return 0;
     const slug = decodeURIComponent(match[1]);
@@ -254,10 +281,10 @@
   }
 
   async function copyLink() {
-    const url = `${location.origin}${location.pathname}${slugHash(state.data.pages[state.pageIndex].slug)}`;
+    const url = `${location.origin}${location.pathname}${hashForPage(state.data.pages[state.pageIndex])}`;
     try {
       await navigator.clipboard.writeText(url);
-      status.textContent = "Ссылка на текущий лист скопирована.";
+      status.textContent = state.data.ui.copySuccess || "Link to this sheet copied.";
     } catch {
       status.textContent = url;
     }
@@ -292,7 +319,9 @@
     });
 
     window.addEventListener("hashchange", () => {
-      if (/page=/.test(location.hash)) setPage(pageIndexFromHash(), false, true);
+      if (/^#p\d{2}$/i.test(location.hash) || /page=/.test(location.hash)) {
+        setPage(pageIndexFromHash(), false, true);
+      }
     });
     window.addEventListener("resize", render);
     document.addEventListener("keydown", (event) => {
@@ -311,17 +340,17 @@
 
   async function init() {
     wireEvents();
-    const response = await fetch("data/ru-content.json", { cache: "no-store" });
+    const response = await fetch(config.contentPath, { cache: "no-store" });
     if (!response.ok) throw new Error(`Content load failed: ${response.status}`);
     state.data = await response.json();
     document.documentElement.lang = state.data.locale;
     document.documentElement.dir = state.data.dir || "ltr";
-    const hasPageHash = /page=/.test(location.hash);
+    const hasPageHash = /^#p\d{2}$/i.test(location.hash) || /page=/.test(location.hash);
     setPage(pageIndexFromHash(), false, hasPageHash);
   }
 
   init().catch((error) => {
     console.error(error);
-    status.textContent = "Не удалось загрузить книгу. Откройте PDF или повторите позже.";
+    if (status) status.textContent = state.data?.ui?.loadError || "The book could not be loaded. Open the PDF or try again later.";
   });
 })();
