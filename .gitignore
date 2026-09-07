@@ -7,5 +7,5 @@ Thumbs.db
 __pycache__/
 tmp/
 dist/
-FINAL_UAIS_RU_WEBBOOK_QA.md
-FINAL_UAIS_BILINGUAL_WEBBOOK_QA.md
+local-qa/
+output/

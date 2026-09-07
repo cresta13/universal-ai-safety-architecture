@@ -36,21 +36,45 @@ def note(draw: ImageDraw.ImageDraw, xy: tuple[int, int], size: tuple[int, int], 
     draw.multiline_text((x + 24, y + 68), body, fill=INK, font=font(24), spacing=7)
 
 
+def wrap_by_width(text: str, max_width: int, text_font: ImageFont.FreeTypeFont) -> list[str]:
+    lines: list[str] = []
+    current = ""
+    measure = Image.new("RGB", (1, 1))
+    draw = ImageDraw.Draw(measure)
+    for word in text.split():
+        candidate = f"{current} {word}".strip()
+        bbox = draw.textbbox((0, 0), candidate, font=text_font)
+        if bbox[2] - bbox[0] <= max_width or not current:
+            current = candidate
+        else:
+            lines.append(current)
+            current = word
+    if current:
+        lines.append(current)
+    return lines
+
+
 def draw_card(out: Path, title: str, line: str, notes: list[tuple[str, str, str]], footer: str) -> None:
     img = Image.new("RGB", (W, H), PAPER)
     draw = ImageDraw.Draw(img)
     for x in range(-120, W, 36):
         draw.line((x, 0, x + 140, H), fill="#F2EBDD", width=1)
-    draw.rectangle((125, 70, 1075, 150), fill=MAUVE)
-    draw.text((155, 82), title, fill=INK, font=font(46, True))
-    draw.text((155, 176), line, fill=INK, font=font(40, True))
+    title_font = font(42, True)
+    title_lines = wrap_by_width(title, 850, title_font)[:2]
+    header_h = 82 if len(title_lines) == 1 else 126
+    draw.rectangle((95, 58, 1105, 58 + header_h), fill=MAUVE)
+    title_y = 74
+    for title_line in title_lines:
+        draw.text((125, title_y), title_line, fill=INK, font=title_font)
+        title_y += 48
+    draw.text((125, 204 if len(title_lines) > 1 else 174), line, fill=INK, font=font(42, True))
     xs = [120, 460, 800]
     sizes = [(285, 190), (285, 220), (285, 185)]
     for (x, size, item) in zip(xs, sizes, notes):
         fill, note_title, body = item
-        note(draw, (x, 280 if x != 460 else 255), size, fill, note_title, body)
-    draw.line((405, 375, 460, 365), fill=INK, width=5)
-    draw.line((745, 365, 800, 380), fill=INK, width=5)
+        note(draw, (x, 305 if x != 460 else 280), size, fill, note_title, body)
+    draw.line((405, 400, 460, 390), fill=INK, width=5)
+    draw.line((745, 390, 800, 405), fill=INK, width=5)
     draw.text((155, 535), footer, fill=SOFT, font=font(25, True))
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, quality=92)

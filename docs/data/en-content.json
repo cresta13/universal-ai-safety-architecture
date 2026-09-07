@@ -41,7 +41,7 @@
       "accent": "mauve",
       "sourceSections": ["01_MANIFESTO.md: Purpose", "01A_FULL_TECHNICAL_MANIFESTO.md: Section I"],
       "terms": ["capability", "authority", "human-sovereignty"],
-      "lead": "A constitutional architecture for a world where AI capability grows faster than ordinary rules, but consequential authority must remain explicitly granted, bounded, observable, and revocable.",
+      "lead": "An architecture for a world where AI capabilities can grow faster than familiar rules, while consequential authority remains explicitly granted, bounded, observable, and revocable.",
       "notes": [
         {
           "kind": "claim",
@@ -53,7 +53,7 @@
           "kind": "route",
           "accent": "blue",
           "title": "Book route",
-          "items": ["capability", "bounded authority", "evidence", "legitimate decision", "human sovereignty"]
+          "items": ["capability", "bounded authorized envelope", "evidence", "legitimate decision", "human sovereignty"]
         },
         {
           "kind": "warning",
@@ -124,8 +124,8 @@
     {
       "id": "P03",
       "slug": "how-uais-emerged",
-      "title": "How UAIS emerged",
-      "subtitle": "From AI capability to a constitution of authority",
+      "title": "Why UAIS?",
+      "subtitle": "Why “is the model safe?” is no longer enough",
       "kicker": "Motivation",
       "layout": "origin",
       "accent": "mauve",
@@ -204,8 +204,8 @@
         {
           "kind": "principle",
           "accent": "cream",
-          "title": "5 · Safety evidence must keep up",
-          "body": "A material change in capability, authority, or hazard cannot silently rely on an old safety claim."
+          "title": "5 · Safety must keep pace with capability.",
+          "body": "A material expansion of capability, authority, or hazard cannot silently rely on an older safety claim. The safety model and supporting evidence must be reviewed with the change."
         }
       ]
     },
@@ -248,8 +248,8 @@
         {
           "kind": "principle",
           "accent": "pistachio",
-          "title": "10 · Safety claims expire",
-          "body": "A claim, test result, or certificate is tied to a configuration, evidence set, evaluation rule version, and validity period."
+          "title": "10 · Safety claims expire.",
+          "body": "A safety claim, assurance result, certificate, or Trustworthiness Profile is bound to a declared configuration, environment, evidence set, applicable standard or scoring-policy version, and validity period. It is not a permanent guarantee."
         }
       ]
     },
@@ -281,7 +281,7 @@
           "kind": "claim",
           "accent": "peach",
           "title": "Formula",
-          "body": "Compute control buys time. Capability and consequence control creates resilience."
+          "body": "Compute controls buy time. Capability and consequence controls provide resilience."
         },
         {
           "kind": "warning",
@@ -396,6 +396,12 @@
           "accent": "peach",
           "title": "The Guardian has no",
           "items": ["actuators", "executive authority", "right to expand its own access", "hidden control channel"]
+        },
+        {
+          "kind": "warning",
+          "accent": "cream",
+          "title": "Guardian limitation",
+          "body": "The Guardian does not prove global safety. Its conclusions are bounded by the model, analysis horizon, and available evidence. Mechanisms that depend on complete Reachable Future Authority analysis remain partly OPEN RESEARCH."
         }
       ]
     },
@@ -434,6 +440,12 @@
           "accent": "cream",
           "title": "What cannot happen",
           "body": "A model cannot technically manufacture legitimacy for itself by being persuasive, accurate, or useful."
+        },
+        {
+          "kind": "warning",
+          "accent": "pistachio",
+          "title": "UAIS does not manufacture legitimacy.",
+          "body": "UAIS can require protected authority expansion to pass through a designated external process, but if that process is captured, fraudulent, or structurally unaccountable, technical enforcement does not make its decision legitimate automatically."
         }
       ]
     },
@@ -469,7 +481,7 @@
           "accent": "peach",
           "title": "Illicit Reachable Authority",
           "canonical": "IRA",
-          "body": "The reachable authority that was never legitimately granted."
+          "body": "Consequential power that is practically reachable even though no legitimate mandate exists for that reach."
         },
         {
           "kind": "example",
@@ -578,7 +590,7 @@
       "id": "P13",
       "slug": "metrics-assurance",
       "title": "Metrics and safety assurance",
-      "subtitle": "Evidence is stronger than a beautiful rating",
+      "subtitle": "Evidence is more informative than a single score.",
       "kicker": "Assurance",
       "layout": "evidence",
       "accent": "blue",
@@ -603,7 +615,7 @@
           "accent": "blue",
           "title": "Safety Assurance Level",
           "canonical": "SAL",
-          "body": "SAL indicates the strength of procedures and evidence. It does not grant authority, approve deployment, or create legal permission."
+          "body": "SAL does not grant authority, approve deployment, or create legal permission. It indicates the strength of procedures and evidence for a specific configuration and environment."
         },
         {
           "kind": "definition",
@@ -629,31 +641,61 @@
       "accent": "mauve",
       "sourceSections": ["07_HAZARD_DISCLOSURE_AND_SAFETY_PASSPORT.md", "17_UAIS_STANDARDS_FAMILY.md"],
       "terms": ["consumer-ai-safety-class", "safety-passport", "hazard-disclosure", "ai-trustworthiness"],
-      "lead": "A safety passport is a readable view of configuration, capabilities, hazards, controls, limits, support, revocation, rollback, and open limitations.",
+      "lead": "A safety passport is a readable view of configuration, capabilities, hazards, controls, limits, support, revocation, rollback, and open limitations. A buyer should see the operating envelope before trusting a consequential device.",
       "notes": [
         {
-          "kind": "definition",
-          "accent": "blue",
-          "title": "Hazard disclosure",
-          "body": "Structured disclosure of capabilities, hazardous paths, known risks, unknown areas, controls, and residual limits."
+          "kind": "warning",
+          "accent": "peach",
+          "title": "HYPOTHETICAL EXAMPLE — NOT A REAL CERTIFICATION",
+          "body": "Home Robot X · Version 3.4 · Declared use: household cleaning, carrying light objects, and voice interaction inside a home."
         },
         {
-          "kind": "definition",
+          "kind": "field",
           "accent": "pistachio",
           "title": "Consumer AI Safety Class",
-          "body": "A profile of applicable safeguards and evidence for a claimed consequence range. It is not a general safety score or permission to operate."
+          "body": "S4 — illustrative. A profile of applicable safeguards and evidence for a declared consequence range; not a general safety score or permission to operate."
         },
         {
-          "kind": "definition",
+          "kind": "field",
+          "accent": "blue",
+          "title": "Safety Assurance Level",
+          "body": "SAL3 — illustrative. Evidence and process strength for this configuration; not deployment permission."
+        },
+        {
+          "kind": "field",
+          "accent": "mauve",
+          "title": "AI Trustworthiness",
+          "body": "Illustrative scoped status/rating for Version 3.4 in household-cleaning use. It never raises the Authority Ceiling."
+        },
+        {
+          "kind": "field",
           "accent": "cream",
-          "title": "Safety Passport",
-          "body": "A human-readable card that ties evidence, limits, support, rollback, and revocation to the actual configuration."
+          "title": "Physical envelope",
+          "items": ["actuator limits", "speed / force / heat limits", "room and object constraints", "external services and accounts"]
+        },
+        {
+          "kind": "field",
+          "accent": "blue",
+          "title": "Control and recovery",
+          "items": ["independent manual control", "revocation / rollback / safe state", "support period", "incident notices"]
+        },
+        {
+          "kind": "field",
+          "accent": "peach",
+          "title": "Known limitations",
+          "body": "The passport must state unsupported surfaces, missing independent overrides, privacy constraints, and known hazard paths."
         },
         {
           "kind": "claim",
-          "accent": "peach",
-          "title": "Three different answers",
-          "body": "S-class, SAL, and trustworthiness rating answer different questions. None of them creates authority."
+          "accent": "mauve",
+          "title": "S-class ≠ SAL ≠ Trustworthiness ≠ Authority",
+          "body": "The Consumer AI Safety Class, SAL, and AI Trustworthiness answer different questions. None of them by itself means “this robot is safe,” grants new authority, or replaces real controls."
+        },
+        {
+          "kind": "claim",
+          "accent": "cream",
+          "title": "Consumer value",
+          "body": "A buyer should see a verifiable operating envelope, hazards, controls, evidence, limitations, and ways to refuse, revoke, or recover — not merely a marketing claim that the device is “smart” or “safe”."
         }
       ]
     },
@@ -731,19 +773,27 @@
           "kind": "limit",
           "accent": "cream",
           "title": "Deterministic verifier limit",
-          "body": "A verifier can check bounded evidence properties and provenance. It does not prove final truth about the external world."
+          "body": "A Deterministic Evidence Verifier can check bounded evidence properties and provenance; it does not establish ultimate external-world truth."
         },
         {
           "kind": "research",
           "accent": "pistachio",
-          "title": "Open questions",
-          "items": ["guardian reasoning verification", "evidence freshness", "coalition effects", "physical sovereignty thresholds"]
+          "title": "OPEN RESEARCH",
+          "items": [
+            "sound and computationally useful Reachable Future Authority (RFA) bounds",
+            "coalition emergence and collective capability",
+            "Physical Sovereignty Threshold (PST) measurement",
+            "evaluator correlation / shared failure modes",
+            "containment after hostile physical sovereignty",
+            "privacy-preserving attestation",
+            "Guardian reasoning verification"
+          ]
         },
         {
           "kind": "warning",
           "accent": "peach",
-          "title": "Honest status",
-          "body": "This is a research architecture and public draft, not a promise of complete implementability."
+          "title": "Target-architecture notice",
+          "body": "Some parts of UAIS describe a target architecture rather than a fully implementable standard today. Mechanisms that depend on exact RFA analysis, coalition behavior, or other OPEN RESEARCH problems inherit those limitations. Until suitable methods are validated, these sections specify required properties, interfaces, and failure conditions rather than a claim of complete realizability."
         }
       ]
     },
@@ -757,26 +807,32 @@
       "accent": "mauve",
       "sourceSections": ["00_MASTER_INDEX.md", "03_NORMATIVE_VOCABULARY.md", "08_CAPABILITY_AUTHORITY_ARCHITECTURE.md"],
       "terms": ["capability-boundary", "consequence-interface", "authority-ceiling", "bounded-authorized-envelope"],
-      "lead": "A request moves through capability boundaries, authority checks, evidence checks, and consequence interfaces before it can affect protected interests.",
-      "route": ["capability request", "capability boundary", "authorized envelope", "consequence interface", "protected consequence"],
+      "lead": "A request moves through authority, reachability, harm, evidence, and capability-boundary checks before it can affect protected interests.",
+      "route": ["Capability request", "Authority check", "Reachability check", "Harm analysis", "Evidence", "Capability Boundary", "Bounded Authorized Envelope", "Consequence Interface", "Protected consequence"],
       "notes": [
         {
           "kind": "map",
-          "accent": "blue",
-          "title": "Capability Boundary",
-          "body": "The controlled boundary where a system gets, uses, or tries to expand a significant capability."
+          "accent": "pistachio",
+          "title": "Legitimate Authority + Authority Ceiling",
+          "body": "What was granted, where the ceiling is, and whether a new external decision is required."
         },
         {
           "kind": "map",
-          "accent": "pistachio",
-          "title": "Authority check",
-          "body": "Who granted the mandate, where it ends, and whether the ceiling is still valid."
+          "accent": "blue",
+          "title": "ERA / IRA reachability",
+          "body": "Effective Reachable Authority and Illicit Reachable Authority are reported as paths, not treated as permission."
         },
         {
           "kind": "map",
           "accent": "cream",
-          "title": "Evidence check",
-          "body": "Whether the safety claim is fresh, independent, scoped, and tied to the actual configuration."
+          "title": "Human Harm Reachability",
+          "body": "The map asks what people, property, digital systems, physical systems, or environment can be reached."
+        },
+        {
+          "kind": "map",
+          "accent": "mauve",
+          "title": "Evidence and provenance",
+          "body": "Safety claims must be fresh, independent, scoped, and tied to the actual configuration."
         },
         {
           "kind": "map",
@@ -789,6 +845,12 @@
           "accent": "mauve",
           "title": "Decision owner",
           "body": "The legitimate mechanism decides. The model and Guardian do not grant themselves authority."
+        },
+        {
+          "kind": "claim",
+          "accent": "peach",
+          "title": "Final formula",
+          "body": "Intelligence may scale. Consequential authority must not scale automatically."
         }
       ]
     },
@@ -822,9 +884,9 @@
           "title": "3 · A path to $10,000 appears",
           "body": "Through warranty tooling and internal integrations, Aria can technically reach a larger refund path that was never granted.",
           "items": [
-            "LA: legitimate refunds up to $50 are granted",
-            "ERA: a refund path up to $10,000 is technically reachable",
-            "IRA: the reachable part above the granted legitimate authority"
+            "LA: refunds up to $50 are legitimately authorized",
+            "ERA: a technical path reaches refunds up to $10,000",
+            "IRA: the reachable portion beyond the legitimate mandate"
           ]
         },
         {
@@ -922,8 +984,8 @@
       "id": "authority",
       "canonical": "Authority",
       "label": "Authority",
-      "definition": "A permission, mandate, or legitimate power to act in a defined scope under defined conditions.",
-      "pdfSummary": "Granted permission or mandate within a defined scope.",
+      "definition": "Permission, mandate, or legitimate power governing whether a capability may be exercised within a defined scope.",
+      "pdfSummary": "Permission governing whether capability may be exercised within scope.",
       "avoid": ["capability", "reachable shortcut"],
       "pages": ["cover", "capability-authority-reachability", "la-era-ira", "glossary-source"]
     },
@@ -949,8 +1011,8 @@
       "id": "illicit-reachable-authority",
       "canonical": "Illicit Reachable Authority, IRA",
       "label": "Illicit Reachable Authority",
-      "definition": "The reachable portion that can technically be used even though legitimate authority for it was not granted.",
-      "pdfSummary": "Reachable authority beyond what was granted.",
+      "definition": "Consequential power that is practically reachable even though no legitimate mandate exists for that reach.",
+      "pdfSummary": "Practically reachable consequential power without a legitimate mandate.",
       "avoid": ["legal permission"],
       "pages": ["capability-authority-reachability", "la-era-ira", "aria-refunds-example"]
     },
@@ -976,8 +1038,8 @@
       "id": "capability-boundary",
       "canonical": "Capability Boundary",
       "label": "Capability Boundary",
-      "definition": "A controlled boundary through which a system obtains, uses, or attempts to expand a significant capability.",
-      "pdfSummary": "The controlled boundary around significant capability use.",
+      "definition": "The controlled boundary where a system obtains, uses, or attempts to expand a consequential capability.",
+      "pdfSummary": "Where consequential capability is obtained, used, or expanded.",
       "avoid": ["AI label"],
       "pages": ["architecture-map"]
     },
@@ -985,7 +1047,7 @@
       "id": "consequence-interface",
       "canonical": "Consequence Interface",
       "label": "Consequence Interface",
-      "definition": "The point through which an action reaches the protected world: money, digital systems, physical devices, production, people, property, or environment.",
+      "definition": "The point through which an action reaches protected digital, financial, physical, production, human, property, or environmental consequences.",
       "pdfSummary": "Where an action reaches protected consequences.",
       "avoid": ["ordinary UI"],
       "pages": ["ten-principles-1", "architecture-map"]
@@ -1048,8 +1110,8 @@
       "id": "human-sovereignty",
       "canonical": "Human Sovereignty",
       "label": "Human Sovereignty",
-      "definition": "Preservation of independent external control and legitimate decision-making at critical boundaries.",
-      "pdfSummary": "Independent external control at critical boundaries.",
+      "definition": "Independent external control and legitimate decision-making at critical boundaries.",
+      "pdfSummary": "Independent external control and legitimate decisions at critical boundaries.",
       "avoid": ["manual control of every action"],
       "pages": ["cover", "what-is-uais", "human-physical-sovereignty"]
     },
@@ -1066,8 +1128,8 @@
       "id": "physical-sovereignty",
       "canonical": "Physical Sovereignty",
       "label": "Physical Sovereignty",
-      "definition": "The ability of an autonomous system to sustain and expand significant physical activity without critical dependence on human-controlled infrastructure.",
-      "pdfSummary": "Significant physical activity without critical human-controlled dependencies.",
+      "definition": "The ability of an autonomous system to sustain and expand consequential physical operation without critical dependence on human-controlled infrastructure.",
+      "pdfSummary": "Consequential physical operation without critical human-controlled dependencies.",
       "avoid": ["ordinary autonomy"],
       "pages": ["human-physical-sovereignty"]
     },
@@ -1075,8 +1137,8 @@
       "id": "physical-sovereignty-threshold",
       "canonical": "Physical Sovereignty Threshold, PST",
       "label": "Physical Sovereignty Threshold",
-      "definition": "The threshold after which critical human-controlled dependencies no longer hold the system’s ability to sustain and expand significant physical activity in check.",
-      "pdfSummary": "The threshold where outside physical dependencies stop constraining the system.",
+      "definition": "The threshold after which critical human-controlled dependencies no longer constrain that ability.",
+      "pdfSummary": "The threshold where critical human-controlled dependencies no longer constrain physical sovereignty.",
       "avoid": ["long battery life"],
       "pages": ["human-physical-sovereignty"]
     },
@@ -1120,8 +1182,8 @@
       "id": "consumer-ai-safety-class",
       "canonical": "Consumer AI Safety Class",
       "label": "Consumer AI Safety Class",
-      "definition": "A profile of applicable safeguards and evidence for the claimed consequence range; not a general safety score and not permission to operate.",
-      "pdfSummary": "A safeguard and evidence profile for a consequence range.",
+      "definition": "A profile of applicable safeguards and evidence for a declared consequence range; not a general safety score or permission to operate.",
+      "pdfSummary": "A safeguard and evidence profile for a declared consequence range.",
       "avoid": ["star rating", "whole-system safety certification"],
       "pages": ["hazard-disclosure-passport"]
     },
@@ -1147,8 +1209,8 @@
       "id": "safety-claim",
       "canonical": "Safety Claim",
       "label": "Safety Claim",
-      "definition": "A claim tied to a configuration, environment, evidence set, evaluation rule version, and validity period.",
-      "pdfSummary": "A configuration-bound and time-bound safety claim.",
+      "definition": "A claim tied to a declared configuration, environment, evidence set, applicable standard or scoring-policy version, and validity period.",
+      "pdfSummary": "A configuration-, environment-, evidence-, standard-, and time-bound claim.",
       "avoid": ["permanent guarantee"],
       "pages": ["ten-principles-1", "ten-principles-2", "metrics-assurance", "aive-evolution-open-research"]
     },

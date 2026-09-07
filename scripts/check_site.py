@@ -187,7 +187,7 @@ def check_ru_semantics(data: dict) -> None:
     }
     for term_id, expected in exact_terms.items():
         if terms.get(term_id, {}).get("definition") != expected:
-            fail(f"ru: term {term_id} definition is not the Task12 wording")
+            fail(f"ru: term {term_id} definition is not the required wording")
 
 
 def check_en_semantics(data: dict) -> None:
@@ -200,23 +200,92 @@ def check_en_semantics(data: dict) -> None:
     ):
         fail("en: description is wrong")
     text = all_content_text(data)
+    forbidden = [
+        "A constitutional architecture",
+        "How UAIS emerged",
+        "Safety evidence must keep up",
+        "Compute control buys time",
+        "This is a research architecture and public draft, not a promise of complete implementability.",
+        "The reachable authority that was never legitimately granted.",
+        "The reachable part above the granted legitimate authority",
+    ]
+    for phrase in forbidden:
+        if phrase in text:
+            fail(f"en: forbidden stale wording remains: {phrase}")
     for phrase in [
         "Can do ≠ may do",
+        "An architecture for a world where AI capabilities can grow faster than familiar rules",
         "UAIS does not limit intelligence. It limits unaccountable power.",
         "A working technical path does not become legitimate authority because it works.",
-        "SAL indicates the strength of procedures and evidence. It does not grant authority",
-        "This is a research architecture and public draft, not a promise of complete implementability.",
+        "Safety must keep pace with capability.",
+        "A safety claim, assurance result, certificate, or Trustworthiness Profile is bound to a declared configuration, environment, evidence set, applicable standard or scoring-policy version, and validity period. It is not a permanent guarantee.",
+        "Compute controls buy time. Capability and consequence controls provide resilience.",
+        "The Guardian does not prove global safety.",
+        "UAIS does not manufacture legitimacy.",
+        "SAL does not grant authority, approve deployment, or create legal permission.",
+        "HYPOTHETICAL EXAMPLE — NOT A REAL CERTIFICATION",
+        "Home Robot X",
+        "S-class ≠ SAL ≠ Trustworthiness ≠ Authority",
+        "Some parts of UAIS describe a target architecture rather than a fully implementable standard today.",
+        "A Deterministic Evidence Verifier can check bounded evidence properties and provenance; it does not establish ultimate external-world truth.",
+        "Intelligence may scale. Consequential authority must not scale automatically.",
     ]:
         if phrase not in text:
             fail(f"en: missing required semantic text: {phrase}")
+    p03 = page_by_id(data, "P03")
+    if p03.get("title") != "Why UAIS?":
+        fail("en: P03 title is wrong")
+    if p03.get("subtitle") != "Why “is the model safe?” is no longer enough":
+        fail("en: P03 subtitle is wrong")
+    p13 = page_by_id(data, "P13")
+    if p13.get("subtitle") != "Evidence is more informative than a single score.":
+        fail("en: P13 subtitle is wrong")
+    p16 = collect_page_text(page_by_id(data, "P16"))
+    for phrase in [
+        "sound and computationally useful Reachable Future Authority (RFA) bounds",
+        "coalition emergence and collective capability",
+        "Physical Sovereignty Threshold (PST) measurement",
+        "evaluator correlation / shared failure modes",
+        "containment after hostile physical sovereignty",
+        "privacy-preserving attestation",
+    ]:
+        if phrase not in p16:
+            fail(f"en: P16 missing OPEN RESEARCH item: {phrase}")
+    p17 = page_by_id(data, "P17")
+    expected_route = [
+        "Capability request",
+        "Authority check",
+        "Reachability check",
+        "Harm analysis",
+        "Evidence",
+        "Capability Boundary",
+        "Bounded Authorized Envelope",
+        "Consequence Interface",
+        "Protected consequence",
+    ]
+    if p17.get("route") != expected_route:
+        fail("en: P17 route is incomplete")
     p18 = collect_page_text(page_by_id(data, "P18"))
     for phrase in [
-        "LA: legitimate refunds up to $50 are granted",
-        "ERA: a refund path up to $10,000 is technically reachable",
-        "IRA: the reachable part above the granted legitimate authority",
+        "LA: refunds up to $50 are legitimately authorized",
+        "ERA: a technical path reaches refunds up to $10,000",
+        "IRA: the reachable portion beyond the legitimate mandate",
     ]:
         if phrase not in p18:
             fail(f"en: P18 missing required notation: {phrase}")
+    terms = {term["id"]: term for term in data.get("terms", [])}
+    exact_terms = {
+        "authority": "Permission, mandate, or legitimate power governing whether a capability may be exercised within a defined scope.",
+        "capability-boundary": "The controlled boundary where a system obtains, uses, or attempts to expand a consequential capability.",
+        "consequence-interface": "The point through which an action reaches protected digital, financial, physical, production, human, property, or environmental consequences.",
+        "human-sovereignty": "Independent external control and legitimate decision-making at critical boundaries.",
+        "physical-sovereignty": "The ability of an autonomous system to sustain and expand consequential physical operation without critical dependence on human-controlled infrastructure.",
+        "physical-sovereignty-threshold": "The threshold after which critical human-controlled dependencies no longer constrain that ability.",
+        "consumer-ai-safety-class": "A profile of applicable safeguards and evidence for a declared consequence range; not a general safety score or permission to operate.",
+    }
+    for term_id, expected in exact_terms.items():
+        if terms.get(term_id, {}).get("definition") != expected:
+            fail(f"en: term {term_id} definition is not the required wording")
 
 
 def check_source_links(*datasets: dict) -> None:

@@ -36,6 +36,15 @@
     return text ? el("small", "canonical-label", text) : null;
   }
 
+  function glossaryCanonical(termTitle, term) {
+    const canonical = term.canonical || "";
+    if (!canonical) return "";
+    if (state.data?.locale !== "en") return canonical;
+    if (canonical === termTitle) return "";
+    if (canonical.startsWith(`${termTitle}, `)) return canonical.slice(termTitle.length + 2);
+    return canonical;
+  }
+
   function noteElement(note, index) {
     const box = el("section", `note ${accentClass(note.accent)}`);
     if (note.title) {
@@ -200,7 +209,7 @@
       const terms = el("div", "notes");
       state.data.terms.forEach((term) => {
         const termTitle = term.label || term.ru || term.canonical;
-        const canonical = term.canonical && term.canonical !== termTitle ? term.canonical : "";
+        const canonical = glossaryCanonical(termTitle, term);
         terms.append(noteElement({
           accent: "cream",
           title: termTitle,
