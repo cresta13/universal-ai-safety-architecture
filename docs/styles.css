@@ -361,6 +361,10 @@ h1 {
   gap: 2rem;
 }
 
+.book-shell[data-view="book"] .book-stage {
+  touch-action: pan-y pinch-zoom;
+}
+
 .turn {
   display: grid;
   place-items: center;

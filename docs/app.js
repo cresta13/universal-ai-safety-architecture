@@ -8,7 +8,8 @@
     data: null,
     pageIndex: 0,
     mode: localStorage.getItem("uais-view-mode") || "book",
-    touchStartX: 0,
+    touchStartX: null,
+    touchStartY: 0,
   };
 
   const stage = document.querySelector("#book-stage");
@@ -23,7 +24,8 @@
     const page = state.data?.pages?.find((item) => item.slug === slug);
     return page ? hashForPage(page) : `#page=${encodeURIComponent(slug)}`;
   };
-  const isWideSpread = () => window.matchMedia("(min-width: 1081px)").matches;
+  const spreadMedia = window.matchMedia("(min-width: 1081px)");
+  const isWideSpread = () => spreadMedia.matches;
 
   function el(tag, className, text) {
     const node = document.createElement(tag);
@@ -257,7 +259,7 @@
     const page = state.data.pages[state.pageIndex];
     if (push) history.replaceState(null, "", slugHash(page.slug));
     render();
-    if (state.mode === "scroll") {
+    if (state.mode === "scroll" && (push || focusBook)) {
       document.querySelector(`#page-${CSS.escape(page.slug)}`)?.scrollIntoView({ block: "start", behavior: "smooth" });
     } else if (focusBook) {
       document.querySelector("#book")?.scrollIntoView({ block: "start", behavior: "smooth" });
@@ -332,18 +334,40 @@
         setPage(pageIndexFromHash(), false, true);
       }
     });
-    window.addEventListener("resize", render);
+    // Mobile browser chrome changes viewport height without changing the spread.
+    const onSpreadChange = () => {
+      if (state.mode === "book") render();
+    };
+    if (typeof spreadMedia.addEventListener === "function") {
+      spreadMedia.addEventListener("change", onSpreadChange);
+    } else {
+      spreadMedia.addListener(onSpreadChange);
+    }
     document.addEventListener("keydown", (event) => {
       if (event.key === "ArrowLeft") nextStep(-1);
       if (event.key === "ArrowRight") nextStep(1);
       if (event.key === "Escape" && dialog.open) dialog.close();
     });
     stage.addEventListener("touchstart", (event) => {
+      if (event.touches.length !== 1) {
+        state.touchStartX = null;
+        return;
+      }
       state.touchStartX = event.changedTouches[0].screenX;
+      state.touchStartY = event.changedTouches[0].screenY;
     }, { passive: true });
     stage.addEventListener("touchend", (event) => {
-      const delta = event.changedTouches[0].screenX - state.touchStartX;
-      if (Math.abs(delta) > 45) nextStep(delta > 0 ? -1 : 1);
+      const startX = state.touchStartX;
+      state.touchStartX = null;
+      if (state.mode !== "book" || startX === null) return;
+      const dx = event.changedTouches[0].screenX - startX;
+      const dy = event.changedTouches[0].screenY - state.touchStartY;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.35) {
+        nextStep(dx > 0 ? -1 : 1);
+      }
+    }, { passive: true });
+    stage.addEventListener("touchcancel", () => {
+      state.touchStartX = null;
     }, { passive: true });
   }
 

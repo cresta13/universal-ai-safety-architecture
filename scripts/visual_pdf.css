@@ -1,0 +1,124 @@
+@page { size: 1000px 1250px; margin: 0; }
+
+html, body {
+  width: 1000px;
+  min-width: 0;
+  margin: 0;
+  scroll-behavior: auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body::before { display: none; }
+
+#pdf-export { display: block; width: 1000px; }
+
+.pdf-page {
+  position: relative;
+  width: 1000px;
+  height: 1250px;
+  padding: 38px;
+  break-after: page;
+  background:
+    linear-gradient(90deg, rgba(48, 45, 54, .035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(48, 45, 54, .03) 1px, transparent 1px),
+    var(--paper);
+  background-size: 32px 32px;
+}
+
+.pdf-page:last-child { break-after: auto; }
+
+.pdf-page .sheet {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 34px;
+  gap: 14px;
+  overflow: visible;
+  transform: none;
+}
+
+.pdf-page .sheet > * { flex-shrink: 0; }
+.pdf-page .sheet::before { top: -10px; height: 22px; }
+.pdf-page .eyebrow { margin: 0; font-size: 11px; line-height: 1.4; }
+.pdf-page .sheet-id { flex-shrink: 0; font-size: 11px; }
+.pdf-page h2 { font-size: 38px; line-height: 1.12; overflow-wrap: anywhere; }
+.pdf-page h3 { margin: 0; font-size: 17px; line-height: 1.3; }
+.pdf-page .lead { padding: 10px 12px; font-size: 19px; line-height: 1.4; }
+.pdf-page .canonical-label { font-size: 12px; line-height: 1.3; overflow-wrap: anywhere; }
+
+.pdf-page .notes {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+}
+
+.pdf-page .sheet > .notes { flex-grow: 1; }
+.pdf-page .sheet:not(.sheet-cover):not(.sheet-glossary) > .notes > .note:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.pdf-page .note { min-height: min-content; padding: 17px; display: flex; flex-direction: column; justify-content: center; }
+.pdf-page .note > * { flex-shrink: 0; }
+.pdf-page .note::before { width: 66px; height: 13px; top: -7px; }
+.pdf-page .note-title { font-size: 24px; line-height: 1.2; margin-bottom: 8px; }
+.pdf-page .note-title > span:not(.principle-number) { min-width: 0; }
+.pdf-page .note p, .pdf-page .note li { font-size: 18px; line-height: 1.4; }
+.pdf-page .note ul { gap: 5px; margin-top: 5px; }
+.pdf-page .principle-number { width: 35px; height: 35px; font-size: 19px; }
+
+.pdf-page .source-list {
+  max-height: none;
+  overflow: visible;
+  padding-top: 9px;
+  font-size: 10px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.pdf-page .source-list a { margin-right: 6px; }
+.pdf-page .sheet-cover { justify-content: space-between; padding: 42px; }
+.pdf-page .cover-mark { grid-template-columns: 112px minmax(0, 1fr); gap: 22px; }
+.pdf-page .cover-mark img { width: 110px; height: 110px; }
+.pdf-page .cover-title h2 { font-size: 76px; }
+.pdf-page .sheet-cover .lead { font-size: 21px; }
+.pdf-page .sheet-cover > .notes { flex-grow: 0; }
+.pdf-page .sheet-cover .route-line { grid-template-columns: 1fr; gap: 13px; }
+.pdf-page .sheet-cover .route-line span {
+  min-height: 48px;
+  justify-content: flex-start;
+  padding-left: 22px;
+  font-family: var(--font-hand);
+  font-size: 22px;
+}
+
+.pdf-page .toc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; flex-grow: 1; }
+.pdf-page .toc-list a { grid-template-columns: 42px minmax(0, 1fr); padding: 10px; font-size: 15px; }
+.pdf-page .route-line { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+.pdf-page .decision-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pdf-page .route-line span, .pdf-page .decision-strip span {
+  min-height: 48px;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.pdf-page .guardian-board { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; flex-grow: 1; }
+.pdf-page .guardian-column { gap: 18px; }
+.pdf-page .boundary-note { min-height: 70px; padding: 10px; font-size: 26px; }
+.pdf-page .boundary-note small { font-size: 13px; }
+.pdf-page .blocked-signal { min-height: 30px; line-height: 1; font-size: 36px; }
+.pdf-page .sheet-guardian .note, .pdf-page .sheet-glossary .note { display: block; }
+.pdf-page .sheet-guardian .note-title { font-size: 21px; }
+.pdf-page .sheet-guardian .note p, .pdf-page .sheet-guardian .note li { font-size: 16px; }
+
+.pdf-page .sheet-glossary .note-title { font-size: 20px; }
+.pdf-page .sheet-glossary .lead { font-size: 17px; }
+.pdf-page .sheet-glossary .canonical-label { margin-bottom: 6px; }
+.pdf-page .sheet-glossary .note p { font-size: 16px; }
+.pdf-page .pdf-source-page .note:last-child { grid-column: 1 / -1; }
+.pdf-page .pdf-source-page a { overflow-wrap: anywhere; }
+
+/* Long sheets keep their content and flow onto a continuation when needed. */
+.pdf-page .pdf-continuation .lead { font-size: 17px; }
+.pdf-page .pdf-continuation .note { transform: rotate(var(--note-tilt, -1deg)); }
+
+.pdf-page .sheet-cover .source-list { margin-top: 0; }

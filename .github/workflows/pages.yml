@@ -34,9 +34,7 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Generate social preview
         run: python scripts/generate_og.py
-      - name: Generate Russian PDF
-        run: python scripts/generate_pdf.py
-      - name: Validate source site
+      - name: Validate source site and reviewed PDFs
         run: python scripts/check_site.py
       - name: Build static artifact
         run: python scripts/build_site.py
